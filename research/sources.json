@@ -1,0 +1,132 @@
+{
+  "reviewed_on": "2026-10-19",
+  "method": "Primary sources preferred; no copyrighted articles copied into the kit. Source/status notes distinguish direct reads, search extracts and unavailable pages.",
+  "sources": [
+    {
+      "id": 1,
+      "title": "Vox / Earth Studio",
+      "url": "https://medium.com/google-earth/how-vox-video-uses-earth-studio-for-dynamic-visual-storytelling-703fc871766e",
+      "evidence_scope": "Primary interview; relevant extracted section read."
+    },
+    {
+      "id": 2,
+      "title": "Ordinary Folk process",
+      "url": "https://www.ordinaryfolk.co/process",
+      "evidence_scope": "Official process; search extraction inspected."
+    },
+    {
+      "id": 3,
+      "title": "Kurzgesagt process",
+      "url": "https://kurzgesagt.org/what-we-do?visit=videos",
+      "evidence_scope": "Official process; search extraction inspected."
+    },
+    {
+      "id": 4,
+      "title": "Carbon motion",
+      "url": "https://carbondesignsystem.com/elements/motion/overview/",
+      "evidence_scope": "Official motion guidance; context-specific, not universal film rules."
+    },
+    {
+      "id": 5,
+      "title": "AE text animators",
+      "url": "https://helpx.adobe.com/after-effects/desktop/animating-text/text-animation/animating-text.html",
+      "evidence_scope": "Official documentation excerpt."
+    },
+    {
+      "id": 6,
+      "title": "AE RTL Universal Text Engine",
+      "url": "https://helpx.adobe.com/after-effects/desktop/add-text/create-and-edit-text-layers/creating-editing-text-layers.html",
+      "evidence_scope": "Official documentation excerpt."
+    },
+    {
+      "id": 7,
+      "title": "AE track mattes",
+      "url": "https://helpx.adobe.com/after-effects/desktop/work-with-transparency-and-compositing/work-with-track-mattes-and-traveling-mattes/track-mattes-and-traveling-mattes.html",
+      "evidence_scope": "Official documentation excerpt."
+    },
+    {
+      "id": 8,
+      "title": "AE trim paths",
+      "url": "https://helpx.adobe.com/after-effects/using/shape-attributes-paint-operations-path.html",
+      "evidence_scope": "Official documentation excerpt."
+    },
+    {
+      "id": 9,
+      "title": "AE speed/value graphs",
+      "url": "https://helpx.adobe.com/ca/after-effects/using/speed.html",
+      "evidence_scope": "Official documentation excerpt."
+    },
+    {
+      "id": 10,
+      "title": "AE shutter motion blur",
+      "url": "https://helpx.adobe.com/in/after-effects/using/assorted-animation-tools.html",
+      "evidence_scope": "Official documentation excerpt."
+    },
+    {
+      "id": 11,
+      "title": "Arabic layout requirements",
+      "url": "https://www.w3.org/International/alreq/",
+      "evidence_scope": "W3C requirements, bidi, joining and ligatures."
+    },
+    {
+      "id": 12,
+      "title": "Arabic browser gap analysis",
+      "url": "https://www.w3.org/TR/alreq-gap/",
+      "evidence_scope": "Distinguishes inline markup from joining-breaking transformations."
+    },
+    {
+      "id": 13,
+      "title": "Canvas compositing",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/globalCompositeOperation",
+      "evidence_scope": "API documentation; destination-in semantics tested locally."
+    },
+    {
+      "id": 14,
+      "title": "Canvas RTL",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/direction",
+      "evidence_scope": "API documentation; local Arabic bitmap tests."
+    },
+    {
+      "id": 15,
+      "title": "SVG arc-length point",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/API/SVGGeometryElement/getPointAtLength",
+      "evidence_scope": "API reference; matching endpoint contracts."
+    },
+    {
+      "id": 16,
+      "title": "GSAP license",
+      "url": "https://gsap.com/community/standard-license/",
+      "evidence_scope": "Full current terms fetched; free use is not an OSI license."
+    },
+    {
+      "id": 17,
+      "title": "Remotion license",
+      "url": "https://github.com/remotion-dev/remotion/blob/main/LICENSE.md",
+      "evidence_scope": "Full current terms fetched; not an assumed MIT/BUSL license."
+    },
+    {
+      "id": 18,
+      "title": "Claude plugin manifests",
+      "url": "https://code.claude.com/docs/en/plugins-reference",
+      "evidence_scope": "Official manifest structure reviewed."
+    },
+    {
+      "id": 19,
+      "title": "Claude marketplace",
+      "url": "https://code.claude.com/docs/en/plugins/marketplace-reference",
+      "evidence_scope": "Official relative-source rules reviewed."
+    },
+    {
+      "id": 20,
+      "title": "Codex skills",
+      "url": "https://developers.openai.com/codex/skills",
+      "evidence_scope": "Official progressive-disclosure and .agents/skills layout reviewed."
+    },
+    {
+      "id": 21,
+      "title": "Storybench Vox interview",
+      "url": "https://www.storybench.org/how-vox-uses-animation-to-make-complicated-topics-digestible-for-everyone/",
+      "evidence_scope": "Search excerpt only; direct fetch returned a WordPress error. Not used as sole critical evidence."
+    }
+  ]
+}

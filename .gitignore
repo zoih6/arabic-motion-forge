@@ -1,0 +1,11 @@
+.env
+.env.*
+.runtime/
+.cache/
+node_modules/
+__pycache__/
+deliverables/
+*.mp4
+*.wav
+*.m4a
+*.zip

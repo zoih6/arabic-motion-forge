@@ -1,7 +1,16 @@
 # Arabic Motion Forge
 ### نظام إنتاج موشن جرافيك عربي — لا مكتبة قوالب يعاد تلوينها
 
-حزمة تعليمات ومهارات وكود تنفيذي لبناء فيديوهات جديدة بطبقات مستقلة، كشف طباعي سليم، حركة مقصودة، وتصـيير قابل للتحقق. **الفيديو التجريبي منجز: 80 ثانية، 1080×1920، 32fps، 4.7 MB.** حزمة الإصدار تمر بفحص الروابط والتثبيت؛ راجع تقارير `research/` بدل افتراض دعم غير مختبر.
+حزمة تعليمات ومهارات وكود تنفيذي لبناء فيديوهات جديدة بطبقات مستقلة، كشف طباعي سليم، حركة مقصودة، وتصـيير قابل للتحقق. **الفيديو التجريبي منجز: 80 ثانية، 1080×1920، 32fps، 4.7 MB.** **الإصدار 1.0.0 جُرّب بتثبيت نظيف**: الحزمة لا تحمل الفيديو أو كود مشاهد المثال، وتعيد اختبارات النواة بنجاح. راجع تقارير `research/` لنطاق الإثبات والقيود.
+
+## التنزيل والتشغيل
+
+- [حزمة التثبيت الخفيفة — نحو 1.1 MB](https://github.com/zoih6/arabic-motion-forge/releases/download/v1.0.0/arabic-motion-forge-core-1.0.0.zip)
+- [الفيديو العمودي الكامل — 80 ثانية](https://github.com/zoih6/arabic-motion-forge/releases/download/v1.0.0/meaning-first-portrait-1080p32.mp4)
+- [مختبر مستقل قابل للتمرير الزمني](https://github.com/zoih6/arabic-motion-forge/releases/download/v1.0.0/motion-lab.html)
+- [تعليمات التثبيت والمنصات](INSTALL.md) · [المصادر والتراخيص](THIRD_PARTY.md) · [البحث](research/README.md)
+
+الفيديو يعرض الفئات الثماني بأمثلة منتقاة، وليس كل تسمية من 104 كأنها تقنية مستقلة. المختبر التشخيصي يعرض أربع آليات فعلية؛ بقية النطاق موثّق في القاموس والاختبارات.
 
 ## ابدأ من هنا
 
@@ -46,8 +55,7 @@ examples/vertical-showcase/    # دراسة تطبيقية، ممنوع استع
 ## تثبيت Claude Code plugin
 
 ```text
-/plugin marketplace add zoih6/arabic-motion-forge
-/plugin install arabic-motion-forge@arabic-motion-forge
+/plugin install arabic-motion-forge --marketplace zoih6/arabic-motion-forge
 /arabic-motion-forge:start
 ```
 

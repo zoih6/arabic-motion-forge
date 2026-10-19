@@ -1,0 +1,16 @@
+{
+  "topic": "",
+  "message": "",
+  "audience": "",
+  "duration_seconds": null,
+  "width": null,
+  "height": null,
+  "fps": null,
+  "locked_copy": [],
+  "supplied_assets": [],
+  "narration": null,
+  "style_constraints": [],
+  "approval_mode": "pending",
+  "publish_allowed": false,
+  "publish_destination": null
+}

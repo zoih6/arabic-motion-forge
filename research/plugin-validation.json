@@ -1,0 +1,9 @@
+{
+  "validator": "Claude Code 2.1.303",
+  "command": "claude plugin validate /home/user/arabic-motion-forge",
+  "result": "passed_with_warnings",
+  "warning": "Root CLAUDE.md is repository context, not automatically loaded plugin context. skills/start/SKILL.md explicitly loads the root instructions.",
+  "native_agent_workflow_invoked": false,
+  "model_api_called": false,
+  "codex_host_execution_tested": false
+}

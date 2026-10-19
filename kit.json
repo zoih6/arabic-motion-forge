@@ -1,13 +1,27 @@
 {
   "name": "arabic-motion-forge",
   "version": "1.0.0",
-  "status": "building_and_verifying",
+  "status": "verified_release_ready",
   "language": "ar",
   "default_runtime": "deterministic-canvas",
   "default_auto_download_media": false,
   "default_auto_publish": false,
-  "demo": {"width":1080,"height":1920,"fps":32,"duration_seconds":80,"frames":2560,"scope":"representative examples from all eight families, not every named alias as a separate shot"},
+  "demo": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 32,
+    "duration_seconds": 80,
+    "frames": 2560,
+    "scope": "representative examples from all eight families, not every named alias as a separate shot"
+  },
   "source_policy": "No project-specific scene reuse. Generic mathematical/runtime infrastructure is separate from newly authored composition code.",
   "native_after_effects_tested": false,
-  "credentials_persisted": false
+  "credentials_persisted": false,
+  "skills": 9,
+  "catalog_entries": 104,
+  "unique_motion_names": 103,
+  "mechanism_contracts": 33,
+  "audited_repositories": 18,
+  "bundled_libraries_tested": 4,
+  "core_install_excludes_demo_compositions": true
 }

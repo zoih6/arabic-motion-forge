@@ -1,0 +1,32 @@
+{
+  "native_after_effects_executed": false,
+  "default_runtime": "Canvas 2D with analytical time functions",
+  "verified": [
+    "alpha matte endpoints and intermediate coverage",
+    "RTL full-shaped bitmap preservation",
+    "defined luma matte endpoints",
+    "arc-length path trim",
+    "three spring damping regimes",
+    "parent transforms",
+    "contour correspondence",
+    "temporal multi-sampling",
+    "four bundled libraries in scoped unit tests"
+  ],
+  "conditional": [
+    "Latin character transforms",
+    "Arabic word/line selectors",
+    "authored write-on trajectories",
+    "arbitrary SVG correspondence"
+  ],
+  "unsupported_by_default": [
+    "native AEP generation",
+    "connected Arabic character transforms",
+    "unverified provider video APIs",
+    "true volumetric 3D and arbitrary font-pen-order reconstruction"
+  ],
+  "evidence": [
+    "research/node-tests.tap",
+    "research/browser-tests.json",
+    "examples/vertical-showcase/render-report.json"
+  ]
+}

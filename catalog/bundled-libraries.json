@@ -17,7 +17,8 @@
     ],
     "license_notice_path": "vendor/primitives/bezier-easing-LICENSE.txt",
     "notice_first_line": "Copyright (c) 2014 Ga\u00ebtan Renaudeau",
-    "runtime_tested": false
+    "runtime_tested": true,
+    "test_evidence": "tests/vendor.test.mjs; research/node-tests.tap"
   },
   {
     "package": "d3-ease",
@@ -37,7 +38,8 @@
     ],
     "license_notice_path": "vendor/primitives/d3-ease-LICENSE.txt",
     "notice_first_line": "Copyright 2010-2021 Mike Bostock",
-    "runtime_tested": false
+    "runtime_tested": true,
+    "test_evidence": "tests/vendor.test.mjs; research/node-tests.tap"
   },
   {
     "package": "animejs",
@@ -57,7 +59,8 @@
     ],
     "license_notice_path": "vendor/primitives/animejs-LICENSE.txt",
     "notice_first_line": "The MIT License",
-    "runtime_tested": false
+    "runtime_tested": true,
+    "test_evidence": "tests/vendor.test.mjs; research/node-tests.tap"
   },
   {
     "package": "svg-path-properties",
@@ -77,6 +80,7 @@
     ],
     "license_notice_path": "vendor/primitives/svg-path-properties-LICENSE.txt",
     "notice_first_line": "MIT License",
-    "runtime_tested": false
+    "runtime_tested": true,
+    "test_evidence": "tests/vendor.test.mjs; research/node-tests.tap"
   }
 ]

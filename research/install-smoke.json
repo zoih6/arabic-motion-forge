@@ -1,0 +1,9 @@
+{
+  "archive_sha256": "a1900452e51ad95444aa7ddca04b4dd958a645e0d27c05ca542d631f4e32c93c",
+  "clean_install": true,
+  "structure_validation_passed": true,
+  "installed_node_tests": 20,
+  "demo_composition_installed": false,
+  "media_files_installed": 0,
+  "native_agent_model_execution_tested": false
+}

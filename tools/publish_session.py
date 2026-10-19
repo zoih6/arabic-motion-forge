@@ -9,8 +9,9 @@ import argparse,os,json,time,shutil,subprocess,hashlib,base64,re,mimetypes
 from urllib.parse import urlsplit,quote
 import requests
 ROOT=Path(__file__).resolve().parents[1]
-P=argparse.ArgumentParser();P.add_argument('--name',default='arabic-motion-forge');P.add_argument('--visibility',choices=['public','private'],default='private');a=P.parse_args()
-CACHE=Path.home()/'.cache/motion-forge-session';WORK=CACHE/'publish-worktree';QUEUE=CACHE/'publish-queue';QUEUE.mkdir(parents=True,exist_ok=True)
+P=argparse.ArgumentParser();P.add_argument('--name',default='arabic-motion-forge');P.add_argument('--visibility',choices=['public','private'],default='private');P.add_argument('--root',default=str(ROOT));P.add_argument('--session-dir');a=P.parse_args();ROOT=Path(a.root).expanduser().resolve();(ROOT/'research').mkdir(exist_ok=True)
+if (ROOT/'project.json').exists() and not json.loads((ROOT/'project.json').read_text()).get('publish_allowed',False):raise SystemExit('Project publication needs explicit recorded user authorization.')
+CACHE=Path(a.session_dir).expanduser().resolve() if a.session_dir else Path.home()/'.cache'/('motion-forge-session' if ROOT.name=='arabic-motion-forge' else 'motion-forge-'+ROOT.name);WORK=CACHE/'publish-worktree';QUEUE=CACHE/'publish-queue';QUEUE.mkdir(parents=True,exist_ok=True)
 STATE=ROOT/'research/repository.json';token=os.environ.pop('GITHUB_TOKEN','');assert token,'Temporary GITHUB_TOKEN environment value required.'
 basic=base64.b64encode(('x-access-token:'+token).encode()).decode();session=requests.Session();session.headers.update(Authorization='Bearer '+token,Accept='application/vnd.github+json',**{'X-GitHub-Api-Version':'2022-11-28'})
 state={'status':'initializing','credential_persisted':False,'assets':[],'releases':{}}
@@ -71,7 +72,7 @@ try:
  if not (WORK/'.git').exists():
   git('init','-b','main');git('remote','add','origin',info['clone_url'])
   if previous.get('source_commit'):git('fetch','origin','main',auth=True);git('reset','--hard','origin/main')
- git('config','user.name','Motion Forge Production');git('config','user.email',f'{me["id"]}+{me["login"]}@users.noreply.github.com');git('config','pack.windowMemory','64m');git('config','pack.threads','1')
+ assert git('remote','get-url','origin')==info['clone_url'],'Publisher scope mismatch: choose a separate session directory';git('config','user.name','Motion Forge Production');git('config','user.email',f'{me["id"]}+{me["login"]}@users.noreply.github.com');git('config','pack.windowMemory','64m');git('config','pack.threads','1')
  commit('Initialize the independent lightweight motion-production system')
  while True:
   for file in sorted(QUEUE.glob('*.json')):

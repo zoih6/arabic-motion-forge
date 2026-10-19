@@ -1,0 +1,22 @@
+{
+  "frames": 2560,
+  "fps": 32,
+  "width": 1080,
+  "height": 1920,
+  "duration": 80,
+  "bytes": 4703190,
+  "sha256": "43fa32c8d52ee3ce589147fd2699fcd15d431ea3196d0db16d39100181fb5493",
+  "encoded_frame_samples": 8,
+  "full_decode_passed": true,
+  "audio": {
+    "measured_lufs": -14.64,
+    "measured_true_peak_dbtp": -1.51,
+    "duration": 80,
+    "sample_rate": 48000,
+    "source": "original procedural synthesis",
+    "path": "/home/user/.cache/motion-forge-session/showcase-audio.m4a"
+  },
+  "visual_review": "passed: actual encoded samples from all eight scenes reviewed; corrected focus-window line crossing, mass behaviour and arrow/text spacing",
+  "native_AE_executed": false,
+  "review_limit": "Technical and sampled visual review, not a claim of manual listening to every second."
+}

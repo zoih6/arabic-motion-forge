@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "id",
+    "width",
+    "height",
+    "fps",
+    "frames",
+    "duration",
+    "entry",
+    "layer_plan",
+    "copy_file",
+    "copy_sha256",
+    "render_allowed"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "width": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "height": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "fps": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "frames": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "duration": {
+      "type": "number",
+      "exclusiveMinimum": 0
+    },
+    "entry": {
+      "type": "string"
+    },
+    "layer_plan": {
+      "type": "string"
+    },
+    "copy_file": {
+      "type": "string"
+    },
+    "copy_sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "render_allowed": {
+      "type": "boolean"
+    }
+  }
+}

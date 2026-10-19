@@ -1,0 +1,30 @@
+{
+  "scenes": [
+    {
+      "id": "",
+      "purpose": "",
+      "start": 0,
+      "end": 0,
+      "camera": "",
+      "layers": [
+        {
+          "id": "",
+          "role": "",
+          "source": "",
+          "parent": null,
+          "depth": 0,
+          "channels": [],
+          "before": {},
+          "during": {},
+          "after": {},
+          "timing": {
+            "start": 0,
+            "settle_or_stage_end": 0
+          },
+          "reveal": "",
+          "camera_relation": ""
+        }
+      ]
+    }
+  ]
+}

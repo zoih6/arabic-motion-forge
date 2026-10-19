@@ -7,7 +7,7 @@ import argparse,json,subprocess,time,base64,hashlib,shutil,math,os
 import av,imageio_ffmpeg
 from playwright.sync_api import sync_playwright
 KIT=Path(__file__).resolve().parents[1]
-P=argparse.ArgumentParser();P.add_argument('--project',required=True);P.add_argument('--audio');P.add_argument('--publish-session');P.add_argument('--output');P.add_argument('--chunk-seconds',type=float,default=10);P.add_argument('--crf',type=int,default=18);a=P.parse_args()
+P=argparse.ArgumentParser();P.add_argument('--project',required=True);P.add_argument('--audio');P.add_argument('--publish-session');P.add_argument('--output');P.add_argument('--chunk-seconds',type=float,default=10);P.add_argument('--crf',type=int,default=18);P.add_argument('--workspace-root',default=str(Path.home()));P.add_argument('--snapshot-limit-mib',type=float,default=118);a=P.parse_args()
 PROJECT=Path(a.project).resolve();ROOT=PROJECT.parent;cfg=json.loads(PROJECT.read_text());fps=int(cfg['fps']);total=int(cfg['frames']);entry=(ROOT/cfg['entry']).resolve()
 assert cfg.get('render_allowed') is True,'Explicit render approval is required.'
 assert abs(total/fps-cfg['duration'])<1e-8,'Duration must explicitly match the frame grid.'
@@ -78,7 +78,12 @@ try:
   stream=c.streams.video[0];pts=sorted(p.pts for p in c.demux(stream) if p.pts is not None);delta=1/(fps*float(stream.time_base));assert len(pts)==total and all(abs(y-x-delta)<1e-6 for x,y in zip(pts,pts[1:]))
  decode=subprocess.run([FF,'-v','error','-i',str(master),'-f','null','-'],capture_output=True,text=True,timeout=600);assert decode.returncode==0 and not decode.stderr.strip(),decode.stderr
  if a.output:
-  output=Path(a.output).resolve();output.parent.mkdir(parents=True,exist_ok=True);shutil.copy2(master,output)
+  from storage import eligible_bytes
+  output=Path(a.output).resolve();output.parent.mkdir(parents=True,exist_ok=True)
+  if output.exists() and hashlib.sha256(output.read_bytes()).hexdigest()!=meta['sha256']:raise RuntimeError('Refusing to overwrite an existing delivery; use a new path or archive the verified previous version first.')
+  increase=0 if output.exists() else master.stat().st_size
+  if eligible_bytes(Path(a.workspace_root))+increase>a.snapshot_limit_mib*1024**2:raise RuntimeError('Persistent snapshot budget exceeded; master remains safely staged. Publish it before choosing a smaller same-resolution delivery.')
+  shutil.copy2(master,output)
  else:output=master
  report.update(status='rendered_media_checks_passed',master=meta,output=str(output),pts_constant=True,full_decode=True,elapsed_total=round(time.monotonic()-start,2));save();print('RENDER_COMPLETE',json.dumps({'output':str(output),**meta},ensure_ascii=False),flush=True)
 except Exception as e:

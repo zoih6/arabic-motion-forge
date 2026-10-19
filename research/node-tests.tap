@@ -2,102 +2,102 @@ TAP version 13
 # Subtest: keyframes: before, during, after, arrays and true hold
 ok 1 - keyframes: before, during, after, arrays and true hold
   ---
-  duration_ms: 1.601881
+  duration_ms: 2.001807
   ...
 # Subtest: Bezier solves time, has bounded time handles and correct endpoints
 ok 2 - Bezier solves time, has bounded time handles and correct endpoints
   ---
-  duration_ms: 1.103457
+  duration_ms: 1.747702
   ...
 # Subtest: all analytical spring damping regimes settle and have initial velocity
 ok 3 - all analytical spring damping regimes settle and have initial velocity
   ---
-  duration_ms: 0.393669
+  duration_ms: 0.430547
   ...
 # Subtest: heavy spring monotonic, playful has controlled overshoot
 ok 4 - heavy spring monotonic, playful has controlled overshoot
   ---
-  duration_ms: 0.609996
+  duration_ms: 0.901581
   ...
 # Subtest: ballistic impacts lose height and never tunnel below ground
 ok 5 - ballistic impacts lose height and never tunnel below ground
   ---
-  duration_ms: 0.320603
+  duration_ms: 0.33246
   ...
 # Subtest: inertia saturates at x0+v*tau; recoil is bounded and decays
 ok 6 - inertia saturates at x0+v*tau; recoil is bounded and decays
   ---
-  duration_ms: 0.1612
+  duration_ms: 0.146451
   ...
 # Subtest: noise is deterministic and independent of call order
 ok 7 - noise is deterministic and independent of call order
   ---
-  duration_ms: 1.144471
+  duration_ms: 1.451601
   ...
 # Subtest: arc-length trimming and marker agree exactly
 ok 8 - arc-length trimming and marker agree exactly
   ---
-  duration_ms: 0.331925
+  duration_ms: 0.332608
   ...
 # Subtest: Bezier sampled path preserves endpoints
 ok 9 - Bezier sampled path preserves endpoints
   ---
-  duration_ms: 0.406169
+  duration_ms: 0.323739
   ...
 # Subtest: morph rejects missing correspondence; endpoints are exact
 ok 10 - morph rejects missing correspondence; endpoints are exact
   ---
-  duration_ms: 0.649187
+  duration_ms: 0.719716
   ...
 # Subtest: parent controls preserve independent child channels and reject cycles
 ok 11 - parent controls preserve independent child channels and reject cycles
   ---
-  duration_ms: 0.319233
+  duration_ms: 0.430133
   ...
 # Subtest: Arabic guard rejects individual connected-letter transforms
 ok 12 - Arabic guard rejects individual connected-letter transforms
   ---
-  duration_ms: 11.326243
+  duration_ms: 27.312966
   ...
 # Subtest: scramble cannot silently mutate approved text or Arabic
 ok 13 - scramble cannot silently mutate approved text or Arabic
   ---
-  duration_ms: 0.462033
+  duration_ms: 0.503686
   ...
 # Subtest: stagger direction, baseline wave and secondary lag
 ok 14 - stagger direction, baseline wave and secondary lag
   ---
-  duration_ms: 0.255891
+  duration_ms: 0.33111
   ...
 # Subtest: shutter samples are temporal, centered and cover finite exposure
 ok 15 - shutter samples are temporal, centered and cover finite exposure
   ---
-  duration_ms: 0.201707
+  duration_ms: 0.192483
   ...
 # Subtest: speed is derivative of value, not a copied value graph
 ok 16 - speed is derivative of value, not a copied value graph
   ---
-  duration_ms: 0.193915
+  duration_ms: 0.192427
   ...
 # Subtest: bundled Bezier Easing: numerical agreement with independent implementation
 ok 17 - bundled Bezier Easing: numerical agreement with independent implementation
   ---
-  duration_ms: 2.734724
+  duration_ms: 3.385939
   ...
 # Subtest: bundled d3-ease: bounce and elastic endpoints
 ok 18 - bundled d3-ease: bounce and elastic endpoints
   ---
-  duration_ms: 0.215445
+  duration_ms: 0.273793
   ...
 # Subtest: bundled svg-path-properties: curve length and endpoint agreement
 ok 19 - bundled svg-path-properties: curve length and endpoint agreement
   ---
-  duration_ms: 3.624979
+  duration_ms: 4.135866
   ...
 # Subtest: bundled Anime.js: explicit paused seek is repeatable on a plain state object
 ok 20 - bundled Anime.js: explicit paused seek is repeatable on a plain state object
   ---
-  duration_ms: 2.660263
+  duration_ms: 2.523218
   ...
 1..20
 # tests 20
@@ -107,4 +107,4 @@ ok 20 - bundled Anime.js: explicit paused seek is repeatable on a plain state ob
 # cancelled 0
 # skipped 0
 # todo 0
-# duration_ms 149.953517
+# duration_ms 184.565383
