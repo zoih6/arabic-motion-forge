@@ -1,0 +1,22 @@
+# Provider registry template
+# Keep rapidly changing claims timestamped and source-backed.
+# Never store API keys or secrets here.
+version: "1.0.0"
+updated_at: "YYYY-MM-DD"
+providers:
+  - provider: "example"
+    model: "example-model"
+    version: "provider-version"
+    verified_at: "YYYY-MM-DD"
+    source_url: "https://example.com/docs"
+    modalities: [image, video]
+    capabilities:
+      reference_images: false
+      start_end_frames: false
+      dialogue_lipsync: false
+      max_duration_seconds: 10
+      aspect_ratios: ["16:9", "9:16", "1:1"]
+      max_resolution: "unknown"
+    cost_tier: unknown
+    fallbacks: []
+    notes: "Replace this example with a verified provider entry before routing production work."

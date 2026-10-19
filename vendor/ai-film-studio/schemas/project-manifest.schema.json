@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/zoih6/ai-film-studio/schemas/project-manifest.schema.json",
+  "title": "AI Film Studio Project Manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "project_id", "title", "status", "artifacts"],
+  "properties": {
+    "schema_version": {"type": "string", "const": "1.0.0"},
+    "project_id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9-]{2,63}$"},
+    "title": {"type": "string", "minLength": 1},
+    "status": {"enum": ["draft", "in-progress", "candidate", "qualified", "not-yet-verified", "archived"]},
+    "source_of_truth": {"type": "string", "const": "project-manifest"},
+    "locks": {"type": "object", "additionalProperties": {"type": "string"}},
+    "artifacts": {
+      "type": "array",
+      "items": {
+        "$ref": "artifact-record.schema.json"
+      }
+    },
+    "dependencies": {"type": "array", "items": {"type": "string"}},
+    "provenance": {"$ref": "artifact-provenance.schema.json"}
+  }
+}

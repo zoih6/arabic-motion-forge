@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/zoih6/ai-film-studio/schemas/generation-intent.schema.json",
+  "title": "AI Film Studio Generation Intent",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["intent_version", "request", "project_type", "scope", "constraints"],
+  "properties": {
+    "intent_version": {"type": "string", "const": "1.0.0"},
+    "request": {"type": "string", "minLength": 1},
+    "project_type": {"enum": ["short-film", "commercial", "brand-film", "documentary", "essay", "motion-graphics", "series", "single-shot", "prompt-only"]},
+    "scope": {"enum": ["prompt", "shot", "scene", "sequence", "full-production", "repair", "localization"]},
+    "platform": {"type": "string"},
+    "duration_seconds": {"type": "number", "exclusiveMinimum": 0},
+    "language": {"type": "string"},
+    "constraints": {"type": "array", "items": {"type": "string"}},
+    "existing_artifact_ids": {"type": "array", "items": {"type": "string"}},
+    "preferred_models": {"type": "array", "items": {"type": "string"}},
+    "approval_mode": {"enum": ["autonomous", "checkpointed", "manual"]}
+  }
+}

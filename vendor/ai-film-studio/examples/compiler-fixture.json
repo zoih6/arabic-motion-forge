@@ -1,0 +1,87 @@
+{
+  "model": "seedance-2.0",
+  "reference_manifest": {
+    "project_id": "DRAGON-VILLAGE-001",
+    "status": "locked",
+    "anchors": [
+      {
+        "anchor_id": "CHAR-01-ID",
+        "kind": "character_identity",
+        "approved_asset": "assets/anchors/char-01-id-v1.png",
+        "locked_description": "a young Arab man with an angular face, deep brown eyes, short curly black hair, and a thin scar above the left eyebrow",
+        "status": "locked"
+      },
+      {
+        "anchor_id": "CHAR-01-COSTUME",
+        "kind": "costume",
+        "approved_asset": "assets/anchors/char-01-costume-v1.png",
+        "locked_description": "a weathered olive wool cloak over a dark linen tunic, brown leather belt, and worn boots",
+        "status": "locked"
+      },
+      {
+        "anchor_id": "DRAGON-01-ID",
+        "kind": "creature_identity",
+        "approved_asset": "assets/anchors/dragon-01-id-v1.png",
+        "locked_description": "one pale ivory dragon with lavender tones, dusty pink wing membranes, a long neck, swept-back horns, four legs, and two wings",
+        "status": "locked"
+      },
+      {
+        "anchor_id": "LOC-01-ANCHOR",
+        "kind": "location",
+        "approved_asset": "assets/anchors/village-01-v1.png",
+        "locked_description": "a medieval mountain village courtyard with a stone well on the left, a timber gate at the far center, and a small stone house on the right",
+        "status": "locked"
+      },
+      {
+        "anchor_id": "STYLE-01-ANCHOR",
+        "kind": "style",
+        "approved_asset": "assets/anchors/style-01-v1.png",
+        "locked_description": "photorealistic fantasy film look, muted earth colors, soft overcast daylight, natural atmospheric haze",
+        "status": "locked"
+      }
+    ]
+  },
+  "shots": [
+    {
+      "shot_id": "SC01_SH02",
+      "output_type": "video",
+      "duration": 8,
+      "aspect_ratio": "16:9",
+      "intent": "The hero stops the frightened villagers from attacking the dragon.",
+      "subject": {
+        "identity_string": "a young Arab man with an angular face, deep brown eyes, short curly black hair, and a thin scar above the left eyebrow",
+        "wardrobe": "a weathered olive wool cloak over a dark linen tunic, brown leather belt, and worn boots",
+        "props": "an open empty right hand raised toward the dragon",
+        "pose": "standing between the villagers and the dragon, gaze fixed on the dragon"
+      },
+      "environment": {
+        "location": "a medieval mountain village courtyard with a stone well on the left, a timber gate at the far center, and a small stone house on the right",
+        "time_of_day": "late afternoon",
+        "weather": "dry mountain air",
+        "materials": "uneven cobblestones and weathered timber",
+        "atmosphere": "light dust suspended in the air"
+      },
+      "composition": "low-angle medium-wide two-subject composition; hero in the foreground center, dragon in the background right, villagers behind the hero",
+      "camera": {
+        "movement": "dolly_in",
+        "speed": "slow",
+        "duration": "8 seconds",
+        "lens": "35mm",
+        "aperture": "f/2.8",
+        "angle": "slightly low angle"
+      },
+      "lighting": "soft overcast key from camera-left, gentle cool fill from the open sky, no hard shadows",
+      "style": {
+        "palette": "muted olive, stone gray, dusty lavender, and warm brown",
+        "texture": "subtle 35mm grain and realistic skin, wool, scale, and stone texture"
+      },
+      "action": "the hero takes one firm step forward, raises his open right hand, and says silently through body language that the dragon must stop",
+      "timing": [
+        {"range": "0-2s", "action": "the dragon spreads its wings and villagers recoil"},
+        {"range": "2-5s", "action": "the hero takes one step forward and raises his open right hand"},
+        {"range": "5-8s", "action": "the dragon lowers its head and the crowd settles"}
+      ],
+      "sound": "dragon breath, frightened crowd murmurs, one firm spoken line: Ember, stop"
+    }
+  ]
+}

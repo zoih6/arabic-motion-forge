@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/zoih6/ai-film-studio/schemas/provider-capability.schema.json",
+  "title": "AI Film Studio Provider Capability",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["provider", "model", "verified_at", "modalities", "capabilities"],
+  "properties": {
+    "provider": {"type": "string", "minLength": 1},
+    "model": {"type": "string", "minLength": 1},
+    "version": {"type": "string"},
+    "verified_at": {"type": "string"},
+    "source_url": {"type": "string", "format": "uri"},
+    "modalities": {"type": "array", "items": {"enum": ["text", "image", "video", "audio"]}},
+    "capabilities": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "reference_images": {"type": "boolean"},
+        "start_end_frames": {"type": "boolean"},
+        "dialogue_lipsync": {"type": "boolean"},
+        "max_duration_seconds": {"type": "number", "minimum": 0},
+        "aspect_ratios": {"type": "array", "items": {"type": "string"}},
+        "max_resolution": {"type": "string"}
+      }
+    },
+    "cost_tier": {"enum": ["free", "low", "medium", "high", "unknown"]},
+    "fallbacks": {"type": "array", "items": {"type": "string"}},
+    "notes": {"type": "string"}
+  }
+}

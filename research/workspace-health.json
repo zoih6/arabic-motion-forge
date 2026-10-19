@@ -1,0 +1,16 @@
+{
+  "render_processes_found": 0,
+  "available_memory_mib": 1368,
+  "system_disk_free_gib": 19.97,
+  "browser_ui_diagnosis": "Not observable from sandbox; no diagnosis claimed. Large conversation and media previews are plausible contributors.",
+  "old_film_archive": {
+    "source_file": "/home/user/alhambra-vox/deliverables/alhambra-muwashah-viewing-1080p32.mp4",
+    "moved_to_runtime_not_deleted": "/home/user/.cache/motion-forge-session/retained-alhambra/alhambra-muwashah-viewing-1080p32.mp4",
+    "bytes": 34978929,
+    "sha256": "860c3ff5c91953c5d70334171ccd51c5be68e4b3b4ad91368ddb740bbd98332b",
+    "git_blob_sha": "e60014d5b076fb9b3174342e79cbe14168684c28",
+    "verified_public_url": "https://github.com/zoih6/alhambra-vox-cinematic-2026-10-19/blob/main/renders/final/alhambra-muwashah-viewing-1080p32.mp4",
+    "download_url": "https://raw.githubusercontent.com/zoih6/alhambra-vox-cinematic-2026-10-19/main/renders/final/alhambra-muwashah-viewing-1080p32.mp4",
+    "reason": "Make room for the new independent kit and demo; the previous film remains in its public repository."
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/zoih6/ai-film-studio/schemas/prompt-compiler-input.schema.json",
+  "title": "AI Film Studio Prompt Compiler Input",
+  "type": "object",
+  "required": ["reference_manifest", "shots"],
+  "additionalProperties": false,
+  "properties": {
+    "model": {"type": "string"},
+    "reference_manifest": {
+      "type": "object",
+      "required": ["anchors"],
+      "properties": {
+        "project_id": {"type": "string"},
+        "status": {"enum": ["draft", "approved", "locked"]},
+        "anchors": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["anchor_id", "approved_asset", "status"],
+            "properties": {
+              "anchor_id": {"type": "string"},
+              "kind": {"type": "string"},
+              "approved_asset": {"type": "string"},
+              "locked_description": {"type": "string"},
+              "status": {"enum": ["approved", "locked"]}
+            }
+          }
+        }
+      }
+    },
+    "shots": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["shot_id"],
+        "properties": {
+          "shot_id": {"type": "string"},
+          "output_type": {"enum": ["image", "video", "image_to_video", "text_to_video"]},
+          "duration": {"type": "integer", "minimum": 3},
+          "aspect_ratio": {"type": "string"},
+          "references": {"type": "array"},
+          "anchor_ids": {"type": "array", "items": {"type": "string"}},
+          "first_frame": {"type": "string"},
+          "last_frame": {"type": "string"},
+          "camera": {"type": "object"}
+        }
+      }
+    }
+  }
+}
