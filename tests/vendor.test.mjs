@@ -1,0 +1,10 @@
+import test from 'node:test';import assert from 'node:assert/strict';
+import BezierEasing from '../vendor/primitives/bezier-easing.mjs';
+import D3 from '../vendor/primitives/d3-ease.min.cjs';
+import {svgPathProperties} from '../vendor/primitives/svg-path-properties.mjs';
+import * as Anime from '../vendor/primitives/anime.esm.mjs';
+import {cubicBezier,pathMetrics,cubicPath,pathPoint} from '../runtime/core.mjs';
+test('bundled Bezier Easing: numerical agreement with independent implementation',()=>{const a=BezierEasing(.22,.05,.15,1),b=cubicBezier(.22,.05,.15,1);for(let i=0;i<=100;i++)assert.ok(Math.abs(a(i/100)-b(i/100))<1e-5);});
+test('bundled d3-ease: bounce and elastic endpoints',()=>{assert.equal(D3.easeBounceOut(0),0);assert.equal(D3.easeBounceOut(1),1);assert.ok(Math.abs(D3.easeElasticOut(1)-1)<1e-7);});
+test('bundled svg-path-properties: curve length and endpoint agreement',()=>{const svg=new svgPathProperties('M0 0 C20 120 180 -40 200 100');const own=pathMetrics(cubicPath([0,0],[20,120],[180,-40],[200,100],2048));assert.ok(Math.abs(svg.getTotalLength()-own.length)<.03);const p=svg.getPointAtLength(svg.getTotalLength()),q=pathPoint(own,1);assert.ok(Math.abs(p.x-q.x)<1e-6&&Math.abs(p.y-q.y)<1e-6);});
+test('bundled Anime.js: explicit paused seek is repeatable on a plain state object',()=>{Anime.engine.useDefaultMainLoop=false;Anime.engine.pause();const s={x:0};const timeline=Anime.createTimeline({autoplay:false}).add(s,{x:100,duration:1000,ease:'linear'});timeline.seek(250,true);assert.ok(Math.abs(s.x-25)<.01);timeline.seek(900,true);timeline.seek(250,true);assert.ok(Math.abs(s.x-25)<.01);timeline.cancel();});

@@ -1,0 +1,8 @@
+{
+  "measured_lufs": -14.64,
+  "measured_true_peak_dbtp": -1.51,
+  "duration": 80,
+  "sample_rate": 48000,
+  "source": "original procedural synthesis",
+  "path": "/home/user/.cache/motion-forge-session/showcase-audio.m4a"
+}

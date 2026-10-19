@@ -1,0 +1,2053 @@
+{
+  "version": "1.0.0",
+  "entries": [
+    {
+      "id": "entrance/slide-in",
+      "family": "entrance",
+      "family_ar": "الدخول",
+      "term": "Slide In",
+      "canonical_mechanism": "transform-track",
+      "status": "implemented",
+      "runtime_functions": [
+        "track",
+        "matrix",
+        "layerState"
+      ],
+      "recipe": "reference/recipes/transform-track.md",
+      "arabic_unit": "word/line/full-shaped-surface; connected character transforms blocked by default",
+      "purpose_ar": "حركة مكانية أو دوران أو حجم له سبب؛ ليست بديلًا عن بناء العنوان.",
+      "demo_coverage": "representative-or-combined",
+      "proof": "tests/core.test.mjs + tests/browser_checks.py; consult research/test-report.json for actual results, not blanket support"
+    },
+    {
+      "id": "entrance/pop-in",
+      "family": "entrance",
+      "family_ar": "الدخول",
+      "term": "Pop In",
+      "canonical_mechanism": "anticipation-settle",
+      "status": "implemented",
+      "runtime_functions": [
+        "track",
+        "spring"
+      ],
+      "recipe": "reference/recipes/anticipation-settle.md",
+      "arabic_unit": "word/line/full-shaped-surface; connected character transforms blocked by default",
+      "purpose_ar": "تحضير قصير ثم الفعل ثم الاستقرار؛ overshoot محدود ومقصود.",
+      "demo_coverage": "representative-or-combined",
+      "proof": "tests/core.test.mjs + tests/browser_checks.py; consult research/test-report.json for actual results, not blanket support"
+    },
+    {
+      "id": "entrance/scale-up",
+      "family": "entrance",
+      "family_ar": "الدخول",
+      "term": "Scale Up",
+      "canonical_mechanism": "transform-track",
+      "status": "implemented",
+      "runtime_functions": [
+        "track",
+        "matrix",
+        "layerState"
+      ],
+      "recipe": "reference/recipes/transform-track.md",
+      "arabic_unit": "word/line/full-shaped-surface; connected character transforms blocked by default",
+      "purpose_ar": "حركة مكانية أو دوران أو حجم له سبب؛ ليست بديلًا عن بناء العنوان.",
+      "demo_coverage": "catalog-and-lab-or-conditional-only",
+      "proof": "tests/core.test.mjs + tests/browser_checks.py; consult research/test-report.json for actual results, not blanket support"
+    },
+    {
+      "id": "entrance/scale-bounce",
+      "family": "entrance",
+      "family_ar": "الدخول",
+      "term": "Scale Bounce",
+      "canonical_mechanism": "anticipation-settle",
+      "status": "implemented",
+      "runtime_functions": [
+        "track",
+        "spring"
+      ],
+      "recipe": "reference/recipes/anticipation-settle.md",
+      "arabic_unit": "word/line/full-shaped-surface; connected character transforms blocked by default",
+      "purpose_ar": "تحضير قصير ثم الفعل ثم الاستقرار؛ overshoot محدود ومقصود.",
+      "demo_coverage": "catalog-and-lab-or-conditional-only",
+      "proof": "tests/core.test.mjs + tests/browser_checks.py; consult research/test-report.json for actual results, not blanket support"
+    },
+    {
+      "id": "entrance/spring-in",
+      "family": "entrance",
+      "family_ar": "الدخول",
+      "term": "Spring In",
+      "canonical_mechanism": "spring",
+      "status": "implemented",
+      "runtime_functions": [
+        "spring",
+        "springPresets"
+      ],
+      "recipe": "reference/recipes/spring.md",
+      "arabic_unit": "word/line/full-shaped-surface; connected character transforms blocked by default",
+      "purpose_ar": "حل تحليلي لنابض؛ كتلة وتخميد وصلابة، مستقل عن الإطار السابق.",
+      "demo_coverage": "representative-or-combined",
+      "proof": "tests/core.test.mjs + tests/browser_checks.py; consult research/test-report.json for actual results, not blanket support"
+    },
+    {
+      "id": "entrance/bounce-in",
+      "family": "entrance",
+      "family_ar": "الدخول",
+      "term": "Bounce In",
+      "canonical_mechanism": "ballistic",
+      "status": "implemented",
+      "runtime_functions": [
+        "ballistic"
+      ],
+      "recipe": "reference/recipes/ballistic.md",
+      "arabic_unit": "word/line/full-shaped-surface; connected character transforms blocked by default",
+      "purpose_ar": "سقوط وارتداد تحت الجاذبية مع تناقص الطاقة؛ لا bounce موحد لكل شيء.",
+      "demo_coverage": "catalog-and-lab-or-conditional-only",
+      "proof": "tests/core.test.mjs + tests/browser_checks.py; consult research/test-report.json for actual results, not blanket support"
+    },
+    {
+      "id": "entrance/drop-in",
+      "family": "entrance",
+      "family_ar": "الدخول",
+      "term": "Drop In",
+      "canonical_mechanism": "ballistic",
+      "status": "implemented",
+      "runtime_functions": [
+        "ballistic"
+      ],
+      "recipe": "reference/recipes/ballistic.md",
+      "arabic_unit": "word/line/full-shaped-surface; connected character transforms blocked by default",
+      "purpose_ar": "سقوط وارتداد تحت الجاذبية مع تناقص الطاقة؛ لا bounce موحد لكل شيء.",
+      "demo_coverage": "catalog-and-lab-or-conditional-only",
+      "proof": "tests/core.test.mjs + tests/browser_checks.py; consult research/test-report.json for actual results, not blanket support"
+    },
+    {
+      "id": "entrance/fly-in",
+      "family": "entrance",
+      "family_ar": "الدخول",
+      "term": "Fly In",
+      "canonical_mechanism": "path-follow",
+      "status": "implemented",
+      "runtime_functions": [
+        "pathMetrics",
+        "pathPoint"
+      ],
+      "recipe": "reference/recipes/path-follow.md",
+      "arabic_unit": "word/line/full-shaped-surface; connected character transforms blocked by default",
+      "purpose_ar": "موقع ومماس من طول القوس؛ لا سرعة وهمية من بارامتر Bezier وحده.",
+      "demo_coverage": "catalog-and-lab-or-conditional-only",
+      "proof": "tests/core.test.mjs + tests/browser_checks.py; consult research/test-report.json for actual results, not blanket support"
+    },
+    {
+      "id": "entrance/flip-in",
+      "family": "entrance",
+      "family_ar": "الدخول",
+      "term": "Flip In",
+      "canonical_mechanism": "flip",
+      "status": "requires-verified-3d-adapter",
+      "runtime_functions": [
+        "samplePerspective"
+      ],
+      "recipe": "reference/recipes/flip.md",
+      "arabic_unit": "word/line/full-shaped-surface; connected character transforms blocked by default",
+      "purpose_ar": "Flip هندسي صحيح يحتاج plane projection/mesh مختبرًا؛ scaleX=cos مجرد تقريب ولا يُعتمد مكافئًا أصليًا.",
+      "demo_coverage": "catalog-and-lab-or-conditional-only",
+      "proof": "tests/core.test.mjs + tests/browser_checks.py; consult research/test-report.json for actual results, not blanket support"
+    },
+    {
+      "id": "entrance/spin-in",
+      "family": "entrance",
+      "family_ar": "الدخول",
+      "term": "Spin In",
+      "canonical_mechanism": "transform-track",
+      "status": "implemented",
+      "runtime_functions": [
+        "track",
+        "matrix",
+        "layerState"
+      ],
+      "recipe": "reference/recipes/transform-track.md",
+      "arabic_unit": "word/line/full-shaped-surface; connected character transforms blocked by default",
+      "purpose_ar": "حركة مكانية أو دوران أو حجم له سبب؛ ليست بديلًا عن بناء العنوان.",
+      "demo_coverage": "catalog-and-lab-or-conditional-only",
+      "proof": "tests/core.test.mjs + tests/browser_checks.py; consult research/test-report.json for actual results, not blanket support"
+    },
+    {
+      "id": "entrance/blur-in",
+      "family": "entrance",
+      "family_ar": "الدخول",
+      "term": "Blur In",
+      "canonical_mechanism": "blur",
+      "status": "canvas-filter-adapter",
+      "runtime_functions": [
+        "track"
+      ],
+      "recipe": "reference/recipes/blur.md",
+      "arabic_unit": "word/line/full-shaped-surface; connected character transforms blocked by default",
+      "purpose_ar": "تغيير نصف قطر blur فعلي؛ ليس motion blur ولا مبررًا لاستبدال الكشف الطباعي.",
+      "demo_coverage": "catalog-and-lab-or-conditional-only",
+      "proof": "tests/core.test.mjs + tests/browser_checks.py; consult research/test-report.json for actual results, not blanket support"
+    },
+    {
+      "id": "entrance/fade-in",
+      "family": "entrance",
+      "family_ar": "الدخول",
+      "term": "Fade In",
+      "canonical_mechanism": "transform-track",
+      "status": "implemented",
+      "runtime_functions": [
+        "track",
+        "matrix",
+        "layerState"
+      ],
+      "recipe": "reference/recipes/transform-track.md",
+      "arabic_unit": "word/line/full-shaped-surface; connected character transforms blocked by default",
+      "purpose_ar": "حركة مكانية أو دوران أو حجم له سبب؛ ليست بديلًا عن بناء العنوان.",
+      "demo_coverage": "catalog-and-lab-or-conditional-only",
+      "proof": "tests/core.test.mjs + tests/browser_checks.py; consult research/test-report.json for actual results, not blanket support"
+    },
+    {
+      "id": "entrance/reveal-in",
+      "family": "entrance",
+      "family_ar": "الدخول",
+      "term": "Reveal In",
+      "canonical_mechanism": "alpha-matte",
+      "status": "implemented",
+      "runtime_functions": [
+        "maskedSprite",
+        "rtlMatte"
+      ],
+      "recipe": "reference/recipes/alpha-matte.md",
+      "arabic_unit": "word/line/full-shaped-surface; connected character transforms blocked by default",
+      "purpose_ar": "ألفا قناع مستقلة مضروبة في ألفا المحتوى؛ كشف العربية بعد تشكيلها.",
+      "demo_coverage": "catalog-and-lab-or-conditional-only",
+      "proof": "tests/core.test.mjs + tests/browser_checks.py; consult research/test-report.json for actual results, not blanket support"
+    },
+    {
+      "id": "entrance/wipe-in",
+      "family": "entrance",
+      "family_ar": "الدخول",
+      "term": "Wipe In",
+      "canonical_mechanism": "alpha-matte",
+      "status": "implemented",
+      "runtime_functions": [
+        "maskedSprite",
+        "rtlMatte"
+      ],
+      "recipe": "reference/recipes/alpha-matte.md",
+      "arabic_unit": "word/line/full-shaped-surface; connected character transforms blocked by default",
+      "purpose_ar": "ألفا قناع مستقلة مضروبة في ألفا المحتوى؛ كشف العربية بعد تشكيلها.",
+      "demo_coverage": "catalog-and-lab-or-conditional-only",
+      "proof": "tests/core.test.mjs + tests/browser_checks.py; consult research/test-report.json for actual results, not blanket support"
+    },
+    {
+      "id": "entrance/mask-reveal",
+      "family": "entrance",
+      "family_ar": "الدخول",
+      "term": "Mask Reveal",
+      "canonical_mechanism": "alpha-matte",
+      "status": "implemented",
+      "runtime_functions": [
+        "maskedSprite",
+        "rtlMatte"
+      ],
+      "recipe": "reference/recipes/alpha-matte.md",
+      "arabic_unit": "word/line/full-shaped-surface; connected character transforms blocked by default",
+      "purpose_ar": "ألفا قناع مستقلة مضروبة في ألفا المحتوى؛ كشف العربية بعد تشكيلها.",
+      "demo_coverage": "representative-or-combined",
+      "proof": "tests/core.test.mjs + tests/browser_checks.py; consult research/test-report.json for actual results, not blanket support"
+    },
+    {
+      "id": "physics/spring-motion",
+      "family": "physics",
+      "family_ar": "النابض والفيزياء",
+      "term": "Spring Motion",
+      "canonical_mechanism": "spring",
+      "status": "implemented",
+      "runtime_functions": [
+        "spring",
+        "springPresets"
+      ],
+      "recipe": "reference/recipes/spring.md",
+      "arabic_unit": "word/line/full-shaped-surface; connected character transforms blocked by default",
+      "purpose_ar": "حل تحليلي لنابض؛ كتلة وتخميد وصلابة، مستقل عن الإطار السابق.",
+      "demo_coverage": "representative-or-combined",
+      "proof": "tests/core.test.mjs + tests/browser_checks.py; consult research/test-report.json for actual results, not blanket support"
+    },
+    {
+      "id": "physics/spring-overshoot",
+      "family": "physics",
+      "family_ar": "النابض والفيزياء",
+      "term": "Spring Overshoot",
+      "canonical_mechanism": "spring",
+      "status": "implemented",
+      "runtime_functions": [
+        "spring",
+        "springPresets"
+      ],
+      "recipe": "reference/recipes/spring.md",
+      "arabic_unit": "word/line/full-shaped-surface; connected character transforms blocked by default",
+      "purpose_ar": "حل تحليلي لنابض؛ كتلة وتخميد وصلابة، مستقل عن الإطار السابق.",
+      "demo_coverage": "catalog-and-lab-or-conditional-only",
+      "proof": "tests/core.test.mjs + tests/browser_checks.py; consult research/test-report.json for actual results, not blanket support"
+    },
+    {
+      "id": "physics/overshoot-settle",
+      "family": "physics",
+      "family_ar": "النابض والفيزياء",
+      "term": "Overshoot & Settle",
+      "canonical_mechanism": "spring",
+      "status": "implemented",
+      "runtime_functions": [
+        "spring",
+        "springPresets"
+      ],
+      "recipe": "reference/recipes/spring.md",
+      "arabic_unit": "word/line/full-shaped-surface; connected character transforms blocked by default",
+      "purpose_ar": "حل تحليلي لنابض؛ كتلة وتخميد وصلابة، مستقل عن الإطار السابق.",
+      "demo_coverage": "representative-or-combined",
+      "proof": "tests/core.test.mjs + tests/browser_checks.py; consult research/test-report.json for actual results, not blanket support"
+    },
+    {
+      "id": "physics/bounce",
+      "family": "physics",
+      "family_ar": "النابض والفيزياء",
+      "term": "Bounce",
+      "canonical_mechanism": "ballistic",
+      "status": "implemented",
+      "runtime_functions": [
+        "ballistic"
+      ],
+      "recipe": "reference/recipes/ballistic.md",
+      "arabic_unit": "word/line/full-shaped-surface; connected character transforms blocked by default",
+      "purpose_ar": "سقوط وارتداد تحت الجاذبية مع تناقص الطاقة؛ لا bounce موحد لكل شيء.",
+      "demo_coverage": "representative-or-combined",
+      "proof": "tests/core.test.mjs + tests/browser_checks.py; consult research/test-report.json for actual results, not blanket support"
+    },
+    {
+      "id": "physics/elastic",
+      "family": "physics",
+      "family_ar": "النابض والفيزياء",
+      "term": "Elastic",
+      "canonical_mechanism": "spring",
+      "status": "implemented",
+      "runtime_functions": [
+        "spring",
+        "springPresets"
+      ],
+      "recipe": "reference/recipes/spring.md",
+      "arabic_unit": "word/line/full-shaped-surface; connected character transforms blocked by default",
+      "purpose_ar": "حل تحليلي لنابض؛ كتلة وتخميد وصلابة، مستقل عن الإطار السابق.",
+      "demo_coverage": "catalog-and-lab-or-conditional-only",
+      "proof": "tests/core.test.mjs + tests/browser_checks.py; consult research/test-report.json for actual results, not blanket support"
+    },
+    {
+      "id": "physics/inertial-bounce",
+      "family": "physics",
+      "family_ar": "النابض والفيزياء",
+      "term": "Inertial Bounce",
+      "canonical_mechanism": "inertia",
+      "status": "implemented",
+      "runtime_functions": [
+        "inertia",
+        "track"
+      ],
+      "recipe": "reference/recipes/inertia.md",
+      "arabic_unit": "word/line/full-shaped-surface; connected character transforms blocked by default",
+      "purpose_ar": "تباطؤ بعد دفع/سحب؛ مسار الإدخال مسجّل لا تفاعل حي في التصدير.",
+      "demo_coverage": "catalog-and-lab-or-conditional-only",
+      "proof": "tests/core.test.mjs + tests/browser_checks.py; consult research/test-report.json for actual results, not blanket support"
+    },
+    {
+      "id": "physics/wobble",
+      "family": "physics",
+      "family_ar": "النابض والفيزياء",
+      "term": "Wobble",
+      "canonical_mechanism": "damped-oscillation",
+      "status": "implemented",
+      "runtime_functions": [
+        "recoil",
+        "spring"
+      ],
+      "recipe": "reference/recipes/damped-oscillation.md",
+      "arabic_unit": "word/line/full-shaped-surface; connected character transforms blocked by default",
+      "purpose_ar": "ذبذبة متناقصة أو رد فعل محلي؛ لا اهتزاز دائم بلا معنى.",
+      "demo_coverage": "catalog-and-lab-or-conditional-only",
+      "proof": "tests/core.test.mjs + tests/browser_checks.py; consult research/test-report.json for actual results, not blanket support"
+    },
+    {
+      "id": "physics/wiggle",
+      "family": "physics",
+      "family_ar": "النابض والفيزياء",
+      "term": "Wiggle",
+      "canonical_mechanism": "seeded-noise",
+      "status": "implemented",
+      "runtime_functions": [
+        "noise",
+        "hash01"
+      ],
+      "recipe": "reference/recipes/seeded-noise.md",
+      "arabic_unit": "word/line/full-shaped-surface; connected character transforms blocked by default",
+      "purpose_ar": "تذبذب مثبت البذرة، محدود السعة، لا عشوائية غير قابلة للإعادة.",
+      "demo_coverage": "catalog-and-lab-or-conditional-only",
+      "proof": "tests/core.test.mjs + tests/browser_checks.py; consult research/test-report.json for actual results, not blanket support"
+    },
+    {
+      "id": "physics/jiggle",
+      "family": "physics",
+      "family_ar": "النابض والفيزياء",
+      "term": "Jiggle",
+      "canonical_mechanism": "damped-oscillation",
+      "status": "implemented",
+      "runtime_functions": [
+        "recoil",
+        "spring"
+      ],
+      "recipe": "reference/recipes/damped-oscillation.md",
+      "arabic_unit": "word/line/full-shaped-surface; connected character transforms blocked by default",
+      "purpose_ar": "ذبذبة متناقصة أو رد فعل محلي؛ لا اهتزاز دائم بلا معنى.",
+      "demo_coverage": "catalog-and-lab-or-conditional-only",
+      "proof": "tests/core.test.mjs + tests/browser_checks.py; consult research/test-report.json for actual results, not blanket support"
+    },
+    {
+      "id": "physics/recoil",
+      "family": "physics",
+      "family_ar": "النابض والفيزياء",
+      "term": "Recoil",
+      "canonical_mechanism": "damped-oscillation",
+      "status": "implemented",
+      "runtime_functions": [
+        "recoil",
+        "spring"
+      ],
+      "recipe": "reference/recipes/damped-oscillation.md",
+      "arabic_unit": "word/line/full-shaped-surface; connected character transforms blocked by default",
+      "purpose_ar": "ذبذبة متناقصة أو رد فعل محلي؛ لا اهتزاز دائم بلا معنى.",
+      "demo_coverage": "catalog-and-lab-or-conditional-only",
+      "proof": "tests/core.test.mjs + tests/browser_checks.py; consult research/test-report.json for actual results, not blanket support"
+    },
+    {
+      "id": "physics/squash-stretch",
+      "family": "physics",
+      "family_ar": "النابض والفيزياء",
+      "term": "Squash & Stretch",
+      "canonical_mechanism": "squash-stretch",
+      "status": "implemented",
+      "runtime_functions": [
+        "squashStretch"
+      ],
+      "recipe": "reference/recipes/squash-stretch.md",
+      "arabic_unit": "word/line/full-shaped-surface; connected character transforms blocked by default",
+      "purpose_ar": "امتداد يحافظ تقريبًا على الحجم؛ يخص مادة مرنة، لا كل النصوص.",
+      "demo_coverage": "representative-or-combined",
+      "proof": "tests/core.test.mjs + tests/browser_checks.py; consult research/test-report.json for actual results, not blanket support"
+    },
+    {
+      "id": "physics/follow-through",
+      "family": "physics",
+      "family_ar": "النابض والفيزياء",
+      "term": "Follow Through",
+      "canonical_mechanism": "secondary",
+      "status": "implemented",
+      "runtime_functions": [
+        "followThrough",
+        "track"
+      ],
+      "recipe": "reference/recipes/secondary.md",
+      "arabic_unit": "word/line/full-shaped-surface; connected character transforms blocked by default",
+      "purpose_ar": "حركة تابعة متأخرة لها توقيت مستقل وسبب ميكانيكي.",
+      "demo_coverage": "catalog-and-lab-or-conditional-only",
+      "proof": "tests/core.test.mjs + tests/browser_checks.py; consult research/test-report.json for actual results, not blanket support"
+    },
+    {
+      "id": "physics/secondary-motion",
+      "family": "physics",
+      "family_ar": "النابض والفيزياء",
+      "term": "Secondary Motion",
+      "canonical_mechanism": "secondary",
+      "status": "implemented",
+      "runtime_functions": [
+        "followThrough",
+        "track"
+      ],
+      "recipe": "reference/recipes/secondary.md",
+      "arabic_unit": "word/line/full-shaped-surface; connected character transforms blocked by default",
+      "purpose_ar": "حركة تابعة متأخرة لها توقيت مستقل وسبب ميكانيكي.",
+      "demo_coverage": "representative-or-combined",
+      "proof": "tests/core.test.mjs + tests/browser_checks.py; consult research/test-report.json for actual results, not blanket support"
+    },
+    {
+      "id": "physics/damped-oscillation",
+      "family": "physics",
+      "family_ar": "النابض والفيزياء",
+      "term": "Damped Oscillation",
+      "canonical_mechanism": "damped-oscillation",
+      "status": "implemented",
+      "runtime_functions": [
+        "recoil",
+        "spring"
+      ],
+      "recipe": "reference/recipes/damped-oscillation.md",
+      "arabic_unit": "word/line/full-shaped-surface; connected character transforms blocked by default",
+      "purpose_ar": "ذبذبة متناقصة أو رد فعل محلي؛ لا اهتزاز دائم بلا معنى.",
+      "demo_coverage": "catalog-and-lab-or-conditional-only",
+      "proof": "tests/core.test.mjs + tests/browser_checks.py; consult research/test-report.json for actual results, not blanket support"
+    },
+    {
+      "id": "scrolling/slide",
+      "family": "scrolling",
+      "family_ar": "التمرير والانزلاق",
+      "term": "Slide",
+      "canonical_mechanism": "transform-track",
+      "status": "implemented",
+      "runtime_functions": [
+        "track",
+        "matrix",
+        "layerState"
+      ],
+      "recipe": "reference/recipes/transform-track.md",
+      "arabic_unit": "word/line/full-shaped-surface; connected character transforms blocked by default",
+      "purpose_ar": "حركة مكانية أو دوران أو حجم له سبب؛ ليست بديلًا عن بناء العنوان.",
+      "demo_coverage": "catalog-and-lab-or-conditional-only",
+      "proof": "tests/core.test.mjs + tests/browser_checks.py; consult research/test-report.json for actual results, not blanket support"
+    },
+    {
+      "id": "scrolling/scroll",
+      "family": "scrolling",
+      "family_ar": "التمرير والانزلاق",
+      "term": "Scroll",
+      "canonical_mechanism": "scroll",
+      "status": "implemented",
+      "runtime_functions": [
+        "scrollOffset",
+        "track"
+      ],
+      "recipe": "reference/recipes/scroll.md",
+      "arabic_unit": "word/line/full-shaped-surface; connected character transforms blocked by default",
+      "purpose_ar": "تمرير محتوى داخل نافذة كشف، مع hold للقراءة عند الحاجة.",
+      "demo_coverage": "catalog-and-lab-or-conditional-only",
+      "proof": "tests/core.test.mjs + tests/browser_checks.py; consult research/test-report.json for actual results, not blanket support"
+    },
+    {
+      "id": "scrolling/vertical-scroll",
+      "family": "scrolling",
+      "family_ar": "التمرير والانزلاق",
+      "term": "Vertical Scroll",
+      "canonical_mechanism": "scroll",
+      "status": "implemented",
+      "runtime_functions": [
+        "scrollOffset",
+        "track"
+      ],
+      "recipe": "reference/recipes/scroll.md",
+      "arabic_unit": "word/line/full-shaped-surface; connected character transforms blocked by default",
+      "purpose_ar": "تمرير محتوى داخل نافذة كشف، مع hold للقراءة عند الحاجة.",
+      "demo_coverage": "representative-or-combined",
+      "proof": "tests/core.test.mjs + tests/browser_checks.py; consult research/test-report.json for actual results, not blanket support"
+    },
+    {
+      "id": "scrolling/horizontal-scroll",
+      "family": "scrolling",
+      "family_ar": "التمرير والانزلاق",
+      "term": "Horizontal Scroll",
+      "canonical_mechanism": "scroll",
+      "status": "implemented",
+      "runtime_functions": [
+        "scrollOffset",
+        "track"
+      ],
+      "recipe": "reference/recipes/scroll.md",
+      "arabic_unit": "word/line/full-shaped-surface; connected character transforms blocked by default",
+      "purpose_ar": "تمرير محتوى داخل نافذة كشف، مع hold للقراءة عند الحاجة.",
+      "demo_coverage": "representative-or-combined",
+      "proof": "tests/core.test.mjs + tests/browser_checks.py; consult research/test-report.json for actual results, not blanket support"
+    },
+    {
+      "id": "scrolling/rolling-credits",
+      "family": "scrolling",
+      "family_ar": "التمرير والانزلاق",
+      "term": "Rolling Credits",
+      "canonical_mechanism": "scroll",
+      "status": "implemented",
+      "runtime_functions": [
+        "scrollOffset",
+        "track"
+      ],
+      "recipe": "reference/recipes/scroll.md",
+      "arabic_unit": "word/line/full-shaped-surface; connected character transforms blocked by default",
+      "purpose_ar": "تمرير محتوى داخل نافذة كشف، مع hold للقراءة عند الحاجة.",
+      "demo_coverage": "catalog-and-lab-or-conditional-only",
+      "proof": "tests/core.test.mjs + tests/browser_checks.py; consult research/test-report.json for actual results, not blanket support"
+    },
+    {
+      "id": "scrolling/ticker",
+      "family": "scrolling",
+      "family_ar": "التمرير والانزلاق",
+      "term": "Ticker",
+      "canonical_mechanism": "scroll",
+      "status": "implemented",
+      "runtime_functions": [
+        "scrollOffset",
+        "track"
+      ],
+      "recipe": "reference/recipes/scroll.md",
+      "arabic_unit": "word/line/full-shaped-surface; connected character transforms blocked by default",
+      "purpose_ar": "تمرير محتوى داخل نافذة كشف، مع hold للقراءة عند الحاجة.",
+      "demo_coverage": "catalog-and-lab-or-conditional-only",
+      "proof": "tests/core.test.mjs + tests/browser_checks.py; consult research/test-report.json for actual results, not blanket support"
+    },
+    {
+      "id": "scrolling/marquee",
+      "family": "scrolling",
+      "family_ar": "التمرير والانزلاق",
+      "term": "Marquee",
+      "canonical_mechanism": "scroll",
+      "status": "implemented",
+      "runtime_functions": [
+        "scrollOffset",
+        "track"
+      ],
+      "recipe": "reference/recipes/scroll.md",
+      "arabic_unit": "word/line/full-shaped-surface; connected character transforms blocked by default",
+      "purpose_ar": "تمرير محتوى داخل نافذة كشف، مع hold للقراءة عند الحاجة.",
+      "demo_coverage": "catalog-and-lab-or-conditional-only",
+      "proof": "tests/core.test.mjs + tests/browser_checks.py; consult research/test-report.json for actual results, not blanket support"
+    },
+    {
+      "id": "scrolling/push",
+      "family": "scrolling",
+      "family_ar": "التمرير والانزلاق",
+      "term": "Push",
+      "canonical_mechanism": "transform-track",
+      "status": "implemented",
+      "runtime_functions": [
+        "track",
+        "matrix",
+        "layerState"
+      ],
+      "recipe": "reference/recipes/transform-track.md",
+      "arabic_unit": "word/line/full-shaped-surface; connected character transforms blocked by default",
+      "purpose_ar": "حركة مكانية أو دوران أو حجم له سبب؛ ليست بديلًا عن بناء العنوان.",
+      "demo_coverage": "catalog-and-lab-or-conditional-only",
+      "proof": "tests/core.test.mjs + tests/browser_checks.py; consult research/test-report.json for actual results, not blanket support"
+    },
+    {
+      "id": "scrolling/pull",
+      "family": "scrolling",
+      "family_ar": "التمرير والانزلاق",
+      "term": "Pull",
+      "canonical_mechanism": "transform-track",
+      "status": "implemented",
+      "runtime_functions": [
+        "track",
+        "matrix",
+        "layerState"
+      ],
+      "recipe": "reference/recipes/transform-track.md",
+      "arabic_unit": "word/line/full-shaped-surface; connected character transforms blocked by default",
+      "purpose_ar": "حركة مكانية أو دوران أو حجم له سبب؛ ليست بديلًا عن بناء العنوان.",
+      "demo_coverage": "catalog-and-lab-or-conditional-only",
+      "proof": "tests/core.test.mjs + tests/browser_checks.py; consult research/test-report.json for actual results, not blanket support"
+    },
+    {
+      "id": "scrolling/drag",
+      "family": "scrolling",
+      "family_ar": "التمرير والانزلاق",
+      "term": "Drag",
+      "canonical_mechanism": "inertia",
+      "status": "implemented",
+      "runtime_functions": [
+        "inertia",
+        "track"
+      ],
+      "recipe": "reference/recipes/inertia.md",
+      "arabic_unit": "word/line/full-shaped-surface; connected character transforms blocked by default",
+      "purpose_ar": "تباطؤ بعد دفع/سحب؛ مسار الإدخال مسجّل لا تفاعل حي في التصدير.",
+      "demo_coverage": "catalog-and-lab-or-conditional-only",
+      "proof": "tests/core.test.mjs + tests/browser_checks.py; consult research/test-report.json for actual results, not blanket support"
+    },
+    {
+      "id": "scrolling/slide-reveal",
+      "family": "scrolling",
+      "family_ar": "التمرير والانزلاق",
+      "term": "Slide Reveal",
+      "canonical_mechanism": "alpha-matte",
+      "status": "implemented",
+      "runtime_functions": [
+        "maskedSprite",
+        "rtlMatte"
+      ],
+      "recipe": "reference/recipes/alpha-matte.md",
+      "arabic_unit": "word/line/full-shaped-surface; connected character transforms blocked by default",
+      "purpose_ar": "ألفا قناع مستقلة مضروبة في ألفا المحتوى؛ كشف العربية بعد تشكيلها.",
+      "demo_coverage": "catalog-and-lab-or-conditional-only",
+      "proof": "tests/core.test.mjs + tests/browser_checks.py; consult research/test-report.json for actual results, not blanket support"
+    },
+    {
+      "id": "scrolling/parallax-scroll",
+      "family": "scrolling",
+      "family_ar": "التمرير والانزلاق",
+      "term": "Parallax Scroll",
+      "canonical_mechanism": "parallax",
+      "status": "implemented-2.5d",
+      "runtime_functions": [
+        "samplePerspective",
+        "layerState"
+      ],
+      "recipe": "reference/recipes/parallax.md",
+      "arabic_unit": "word/line/full-shaped-surface; connected character transforms blocked by default",
+      "purpose_ar": "إسقاط عمق لطبقات مستوية؛ ليس renderer ثلاثي الأبعاد حجميًا.",
+      "demo_coverage": "representative-or-combined",
+      "proof": "tests/core.test.mjs + tests/browser_checks.py; consult research/test-report.json for actual results, not blanket support"
+    },
+    {
+      "id": "scrolling/continuous-scroll",
+      "family": "scrolling",
+      "family_ar": "التمرير والانزلاق",
+      "term": "Continuous Scroll",
+      "canonical_mechanism": "scroll",
+      "status": "implemented",
+      "runtime_functions": [
+        "scrollOffset",
+        "track"
+      ],
+      "recipe": "reference/recipes/scroll.md",
+      "arabic_unit": "word/line/full-shaped-surface; connected character transforms blocked by default",
+      "purpose_ar": "تمرير محتوى داخل نافذة كشف، مع hold للقراءة عند الحاجة.",
+      "demo_coverage": "catalog-and-lab-or-conditional-only",
+      "proof": "tests/core.test.mjs + tests/browser_checks.py; consult research/test-report.json for actual results, not blanket support"
+    },
+    {
+      "id": "reveal/typewriter",
+      "family": "reveal",
+      "family_ar": "كشف النصوص",
+      "term": "Typewriter",
+      "canonical_mechanism": "typewriter",
+      "status": "conditional",
+      "runtime_functions": [
+        "safeTextUnits",
+        "rtlMatte"
+      ],
+      "recipe": "reference/recipes/typewriter.md",
+      "arabic_unit": "word/line/full-shaped-surface; connected character transforms blocked by default",
+      "purpose_ar": "ASCII يمكن بناء prefix له؛ العربية تستخدم كشف النص المشكّل مع تسمية صحيحة، لا ادعاء محرّك typewriter حرفي مطابق.",
+      "demo_coverage": "catalog-and-lab-or-conditional-only",
+      "proof": "tests/core.test.mjs + tests/browser_checks.py; consult research/test-report.json for actual results, not blanket support"
+    },
+    {
+      "id": "reveal/write-on",
+      "family": "reveal",
+      "family_ar": "كشف النصوص",
+      "term": "Write On",
+      "canonical_mechanism": "write-on",
+      "status": "requires-authored-strokes",
+      "runtime_functions": [
+        "strokePath",
+        "trimPath"
+      ],
+      "recipe": "reference/recipes/write-on.md",
+      "arabic_unit": "word/line/full-shaped-surface; connected character transforms blocked by default",
+      "purpose_ar": "رسم قلم حقيقي فقط عند توفر مسارات ضربات مرتبة؛ outline الخط ليس مسار كتابة.",
+      "demo_coverage": "catalog-and-lab-or-conditional-only",
+      "proof": "tests/core.test.mjs + tests/browser_checks.py; consult research/test-report.json for actual results, not blanket support"
+    },
+    {
+      "id": "reveal/character-reveal",
+      "family": "reveal",
+      "family_ar": "كشف النصوص",
+      "term": "Character Reveal",
+      "canonical_mechanism": "alpha-matte",
+      "status": "implemented",
+      "runtime_functions": [
+        "maskedSprite",
+        "rtlMatte"
+      ],
+      "recipe": "reference/recipes/alpha-matte.md",
+      "arabic_unit": "word/line/full-shaped-surface; connected character transforms blocked by default",
+      "purpose_ar": "ألفا قناع مستقلة مضروبة في ألفا المحتوى؛ كشف العربية بعد تشكيلها.",
+      "demo_coverage": "catalog-and-lab-or-conditional-only",
+      "proof": "tests/core.test.mjs + tests/browser_checks.py; consult research/test-report.json for actual results, not blanket support"
+    },
+    {
+      "id": "reveal/word-reveal",
+      "family": "reveal",
+      "family_ar": "كشف النصوص",
+      "term": "Word Reveal",
+      "canonical_mechanism": "alpha-matte",
+      "status": "implemented",
+      "runtime_functions": [
+        "maskedSprite",
+        "rtlMatte"
+      ],
+      "recipe": "reference/recipes/alpha-matte.md",
+      "arabic_unit": "word/line/full-shaped-surface; connected character transforms blocked by default",
+      "purpose_ar": "ألفا قناع مستقلة مضروبة في ألفا المحتوى؛ كشف العربية بعد تشكيلها.",
+      "demo_coverage": "catalog-and-lab-or-conditional-only",
+      "proof": "tests/core.test.mjs + tests/browser_checks.py; consult research/test-report.json for actual results, not blanket support"
+    },
+    {
+      "id": "reveal/line-reveal",
+      "family": "reveal",
+      "family_ar": "كشف النصوص",
+      "term": "Line Reveal",
+      "canonical_mechanism": "alpha-matte",
+      "status": "implemented",
+      "runtime_functions": [
+        "maskedSprite",
+        "rtlMatte"
+      ],
+      "recipe": "reference/recipes/alpha-matte.md",
+      "arabic_unit": "word/line/full-shaped-surface; connected character transforms blocked by default",
+      "purpose_ar": "ألفا قناع مستقلة مضروبة في ألفا المحتوى؛ كشف العربية بعد تشكيلها.",
+      "demo_coverage": "catalog-and-lab-or-conditional-only",
+      "proof": "tests/core.test.mjs + tests/browser_checks.py; consult research/test-report.json for actual results, not blanket support"
+    },
+    {
+      "id": "reveal/tracking-reveal",
+      "family": "reveal",
+      "family_ar": "كشف النصوص",
+      "term": "Tracking Reveal",
+      "canonical_mechanism": "tracking",
+      "status": "conditional",
+      "runtime_functions": [
+        "safeTextUnits",
+        "track"
+      ],
+      "recipe": "reference/recipes/tracking.md",
+      "arabic_unit": "word/line/full-shaped-surface; connected character transforms blocked by default",
+      "purpose_ar": "تباعد كلمات عربية أو أحرف ASCII؛ تغيير tracking بين حروف عربية متصلة محظور افتراضيًا.",
+      "demo_coverage": "catalog-and-lab-or-conditional-only",
+      "proof": "tests/core.test.mjs + tests/browser_checks.py; consult research/test-report.json for actual results, not blanket support"
+    },
+    {
+      "id": "reveal/mask-wipe",
+      "family": "reveal",
+      "family_ar": "كشف النصوص",
+      "term": "Mask Wipe",
+      "canonical_mechanism": "alpha-matte",
+      "status": "implemented",
+      "runtime_functions": [
+        "maskedSprite",
+        "rtlMatte"
+      ],
+      "recipe": "reference/recipes/alpha-matte.md",
+      "arabic_unit": "word/line/full-shaped-surface; connected character transforms blocked by default",
+      "purpose_ar": "ألفا قناع مستقلة مضروبة في ألفا المحتوى؛ كشف العربية بعد تشكيلها.",
+      "demo_coverage": "catalog-and-lab-or-conditional-only",
+      "proof": "tests/core.test.mjs + tests/browser_checks.py; consult research/test-report.json for actual results, not blanket support"
+    },
+    {
+      "id": "reveal/matte-reveal",
+      "family": "reveal",
+      "family_ar": "كشف النصوص",
+      "term": "Matte Reveal",
+      "canonical_mechanism": "alpha-matte",
+      "status": "implemented",
+      "runtime_functions": [
+        "maskedSprite",
+        "rtlMatte"
+      ],
+      "recipe": "reference/recipes/alpha-matte.md",
+      "arabic_unit": "word/line/full-shaped-surface; connected character transforms blocked by default",
+      "purpose_ar": "ألفا قناع مستقلة مضروبة في ألفا المحتوى؛ كشف العربية بعد تشكيلها.",
+      "demo_coverage": "representative-or-combined",
+      "proof": "tests/core.test.mjs + tests/browser_checks.py; consult research/test-report.json for actual results, not blanket support"
+    },
+    {
+      "id": "reveal/stroke-reveal",
+      "family": "reveal",
+      "family_ar": "كشف النصوص",
+      "term": "Stroke Reveal",
+      "canonical_mechanism": "path-trim",
+      "status": "implemented",
+      "runtime_functions": [
+        "pathMetrics",
+        "trimPath",
+        "strokePath"
+      ],
+      "recipe": "reference/recipes/path-trim.md",
+      "arabic_unit": "word/line/full-shaped-surface; connected character transforms blocked by default",
+      "purpose_ar": "طول قوس مجزّأ، ورأس مؤشر على نهاية المسار نفسها؛ لا ظهور كامل للخط.",
+      "demo_coverage": "catalog-and-lab-or-conditional-only",
+      "proof": "tests/core.test.mjs + tests/browser_checks.py; consult research/test-report.json for actual results, not blanket support"
+    },
+    {
+      "id": "reveal/clipping-reveal",
+      "family": "reveal",
+      "family_ar": "كشف النصوص",
+      "term": "Clipping Reveal",
+      "canonical_mechanism": "alpha-matte",
+      "status": "implemented",
+      "runtime_functions": [
+        "maskedSprite",
+        "rtlMatte"
+      ],
+      "recipe": "reference/recipes/alpha-matte.md",
+      "arabic_unit": "word/line/full-shaped-surface; connected character transforms blocked by default",
+      "purpose_ar": "ألفا قناع مستقلة مضروبة في ألفا المحتوى؛ كشف العربية بعد تشكيلها.",
+      "demo_coverage": "catalog-and-lab-or-conditional-only",
+      "proof": "tests/core.test.mjs + tests/browser_checks.py; consult research/test-report.json for actual results, not blanket support"
+    },
+    {
+      "id": "reveal/split-reveal",
+      "family": "reveal",
+      "family_ar": "كشف النصوص",
+      "term": "Split Reveal",
+      "canonical_mechanism": "alpha-matte",
+      "status": "implemented",
+      "runtime_functions": [
+        "maskedSprite",
+        "rtlMatte"
+      ],
+      "recipe": "reference/recipes/alpha-matte.md",
+      "arabic_unit": "word/line/full-shaped-surface; connected character transforms blocked by default",
+      "purpose_ar": "ألفا قناع مستقلة مضروبة في ألفا المحتوى؛ كشف العربية بعد تشكيلها.",
+      "demo_coverage": "representative-or-combined",
+      "proof": "tests/core.test.mjs + tests/browser_checks.py; consult research/test-report.json for actual results, not blanket support"
+    },
+    {
+      "id": "reveal/word-by-word",
+      "family": "reveal",
+      "family_ar": "كشف النصوص",
+      "term": "Word-by-Word",
+      "canonical_mechanism": "range-stagger",
+      "status": "implemented-with-arabic-guard",
+      "runtime_functions": [
+        "stagger",
+        "selectorWeight",
+        "safeTextUnits"
+      ],
+      "recipe": "reference/recipes/range-stagger.md",
+      "arabic_unit": "word/line/full-shaped-surface; connected character transforms blocked by default",
+      "purpose_ar": "تتابع وحدات مستقلة؛ كلمات/سطور للعربية، وحروف منفصلة فقط عند سلامة البنية.",
+      "demo_coverage": "catalog-and-lab-or-conditional-only",
+      "proof": "tests/core.test.mjs + tests/browser_checks.py; consult research/test-report.json for actual results, not blanket support"
+    },
+    {
+      "id": "reveal/line-by-line",
+      "family": "reveal",
+      "family_ar": "كشف النصوص",
+      "term": "Line-by-Line",
+      "canonical_mechanism": "range-stagger",
+      "status": "implemented-with-arabic-guard",
+      "runtime_functions": [
+        "stagger",
+        "selectorWeight",
+        "safeTextUnits"
+      ],
+      "recipe": "reference/recipes/range-stagger.md",
+      "arabic_unit": "word/line/full-shaped-surface; connected character transforms blocked by default",
+      "purpose_ar": "تتابع وحدات مستقلة؛ كلمات/سطور للعربية، وحروف منفصلة فقط عند سلامة البنية.",
+      "demo_coverage": "catalog-and-lab-or-conditional-only",
+      "proof": "tests/core.test.mjs + tests/browser_checks.py; consult research/test-report.json for actual results, not blanket support"
+    },
+    {
+      "id": "reveal/text-build",
+      "family": "reveal",
+      "family_ar": "كشف النصوص",
+      "term": "Text Build",
+      "canonical_mechanism": "alpha-matte",
+      "status": "implemented",
+      "runtime_functions": [
+        "maskedSprite",
+        "rtlMatte"
+      ],
+      "recipe": "reference/recipes/alpha-matte.md",
+      "arabic_unit": "word/line/full-shaped-surface; connected character transforms blocked by default",
+      "purpose_ar": "ألفا قناع مستقلة مضروبة في ألفا المحتوى؛ كشف العربية بعد تشكيلها.",
+      "demo_coverage": "catalog-and-lab-or-conditional-only",
+      "proof": "tests/core.test.mjs + tests/browser_checks.py; consult research/test-report.json for actual results, not blanket support"
+    },
+    {
+      "id": "kinetic/character-stagger",
+      "family": "kinetic",
+      "family_ar": "الطباعة الحركية",
+      "term": "Character Stagger",
+      "canonical_mechanism": "range-stagger",
+      "status": "implemented-with-arabic-guard",
+      "runtime_functions": [
+        "stagger",
+        "selectorWeight",
+        "safeTextUnits"
+      ],
+      "recipe": "reference/recipes/range-stagger.md",
+      "arabic_unit": "word/line/full-shaped-surface; connected character transforms blocked by default",
+      "purpose_ar": "تتابع وحدات مستقلة؛ كلمات/سطور للعربية، وحروف منفصلة فقط عند سلامة البنية.",
+      "demo_coverage": "catalog-and-lab-or-conditional-only",
+      "proof": "tests/core.test.mjs + tests/browser_checks.py; consult research/test-report.json for actual results, not blanket support"
+    },
+    {
+      "id": "kinetic/word-stagger",
+      "family": "kinetic",
+      "family_ar": "الطباعة الحركية",
+      "term": "Word Stagger",
+      "canonical_mechanism": "range-stagger",
+      "status": "implemented-with-arabic-guard",
+      "runtime_functions": [
+        "stagger",
+        "selectorWeight",
+        "safeTextUnits"
+      ],
+      "recipe": "reference/recipes/range-stagger.md",
+      "arabic_unit": "word/line/full-shaped-surface; connected character transforms blocked by default",
+      "purpose_ar": "تتابع وحدات مستقلة؛ كلمات/سطور للعربية، وحروف منفصلة فقط عند سلامة البنية.",
+      "demo_coverage": "representative-or-combined",
+      "proof": "tests/core.test.mjs + tests/browser_checks.py; consult research/test-report.json for actual results, not blanket support"
+    },
+    {
+      "id": "kinetic/cascade",
+      "family": "kinetic",
+      "family_ar": "الطباعة الحركية",
+      "term": "Cascade",
+      "canonical_mechanism": "range-stagger",
+      "status": "implemented-with-arabic-guard",
+      "runtime_functions": [
+        "stagger",
+        "selectorWeight",
+        "safeTextUnits"
+      ],
+      "recipe": "reference/recipes/range-stagger.md",
+      "arabic_unit": "word/line/full-shaped-surface; connected character transforms blocked by default",
+      "purpose_ar": "تتابع وحدات مستقلة؛ كلمات/سطور للعربية، وحروف منفصلة فقط عند سلامة البنية.",
+      "demo_coverage": "catalog-and-lab-or-conditional-only",
+      "proof": "tests/core.test.mjs + tests/browser_checks.py; consult research/test-report.json for actual results, not blanket support"
+    },
+    {
+      "id": "kinetic/wave",
+      "family": "kinetic",
+      "family_ar": "الطباعة الحركية",
+      "term": "Wave",
+      "canonical_mechanism": "baseline-wave",
+      "status": "implemented-with-arabic-guard",
+      "runtime_functions": [
+        "waveOffset",
+        "safeTextUnits"
+      ],
+      "recipe": "reference/recipes/baseline-wave.md",
+      "arabic_unit": "word/line/full-shaped-surface; connected character transforms blocked by default",
+      "purpose_ar": "موجة على الكلمات أو الوحدات المعتمدة؛ لا تفكيك للحروف العربية المتصلة.",
+      "demo_coverage": "catalog-and-lab-or-conditional-only",
+      "proof": "tests/core.test.mjs + tests/browser_checks.py; consult research/test-report.json for actual results, not blanket support"
+    },
+    {
+      "id": "kinetic/ripple",
+      "family": "kinetic",
+      "family_ar": "الطباعة الحركية",
+      "term": "Ripple",
+      "canonical_mechanism": "baseline-wave",
+      "status": "implemented-with-arabic-guard",
+      "runtime_functions": [
+        "waveOffset",
+        "safeTextUnits"
+      ],
+      "recipe": "reference/recipes/baseline-wave.md",
+      "arabic_unit": "word/line/full-shaped-surface; connected character transforms blocked by default",
+      "purpose_ar": "موجة على الكلمات أو الوحدات المعتمدة؛ لا تفكيك للحروف العربية المتصلة.",
+      "demo_coverage": "catalog-and-lab-or-conditional-only",
+      "proof": "tests/core.test.mjs + tests/browser_checks.py; consult research/test-report.json for actual results, not blanket support"
+    },
+    {
+      "id": "kinetic/float",
+      "family": "kinetic",
+      "family_ar": "الطباعة الحركية",
+      "term": "Float",
+      "canonical_mechanism": "seeded-noise",
+      "status": "implemented",
+      "runtime_functions": [
+        "noise",
+        "hash01"
+      ],
+      "recipe": "reference/recipes/seeded-noise.md",
+      "arabic_unit": "word/line/full-shaped-surface; connected character transforms blocked by default",
+      "purpose_ar": "تذبذب مثبت البذرة، محدود السعة، لا عشوائية غير قابلة للإعادة.",
+      "demo_coverage": "catalog-and-lab-or-conditional-only",
+      "proof": "tests/core.test.mjs + tests/browser_checks.py; consult research/test-report.json for actual results, not blanket support"
+    },
+    {
+      "id": "kinetic/drift",
+      "family": "kinetic",
+      "family_ar": "الطباعة الحركية",
+      "term": "Drift",
+      "canonical_mechanism": "seeded-noise",
+      "status": "implemented",
+      "runtime_functions": [
+        "noise",
+        "hash01"
+      ],
+      "recipe": "reference/recipes/seeded-noise.md",
+      "arabic_unit": "word/line/full-shaped-surface; connected character transforms blocked by default",
+      "purpose_ar": "تذبذب مثبت البذرة، محدود السعة، لا عشوائية غير قابلة للإعادة.",
+      "demo_coverage": "catalog-and-lab-or-conditional-only",
+      "proof": "tests/core.test.mjs + tests/browser_checks.py; consult research/test-report.json for actual results, not blanket support"
+    },
+    {
+      "id": "kinetic/tracking-in",
+      "family": "kinetic",
+      "family_ar": "الطباعة الحركية",
+      "term": "Tracking In",
+      "canonical_mechanism": "tracking",
+      "status": "conditional",
+      "runtime_functions": [
+        "safeTextUnits",
+        "track"
+      ],
+      "recipe": "reference/recipes/tracking.md",
+      "arabic_unit": "word/line/full-shaped-surface; connected character transforms blocked by default",
+      "purpose_ar": "تباعد كلمات عربية أو أحرف ASCII؛ تغيير tracking بين حروف عربية متصلة محظور افتراضيًا.",
+      "demo_coverage": "catalog-and-lab-or-conditional-only",
+      "proof": "tests/core.test.mjs + tests/browser_checks.py; consult research/test-report.json for actual results, not blanket support"
+    },
+    {
+      "id": "kinetic/tracking-out",
+      "family": "kinetic",
+      "family_ar": "الطباعة الحركية",
+      "term": "Tracking Out",
+      "canonical_mechanism": "tracking",
+      "status": "conditional",
+      "runtime_functions": [
+        "safeTextUnits",
+        "track"
+      ],
+      "recipe": "reference/recipes/tracking.md",
+      "arabic_unit": "word/line/full-shaped-surface; connected character transforms blocked by default",
+      "purpose_ar": "تباعد كلمات عربية أو أحرف ASCII؛ تغيير tracking بين حروف عربية متصلة محظور افتراضيًا.",
+      "demo_coverage": "catalog-and-lab-or-conditional-only",
+      "proof": "tests/core.test.mjs + tests/browser_checks.py; consult research/test-report.json for actual results, not blanket support"
+    },
+    {
+      "id": "kinetic/character-rotation",
+      "family": "kinetic",
+      "family_ar": "الطباعة الحركية",
+      "term": "Character Rotation",
+      "canonical_mechanism": "range-stagger",
+      "status": "implemented-with-arabic-guard",
+      "runtime_functions": [
+        "stagger",
+        "selectorWeight",
+        "safeTextUnits"
+      ],
+      "recipe": "reference/recipes/range-stagger.md",
+      "arabic_unit": "word/line/full-shaped-surface; connected character transforms blocked by default",
+      "purpose_ar": "تتابع وحدات مستقلة؛ كلمات/سطور للعربية، وحروف منفصلة فقط عند سلامة البنية.",
+      "demo_coverage": "catalog-and-lab-or-conditional-only",
+      "proof": "tests/core.test.mjs + tests/browser_checks.py; consult research/test-report.json for actual results, not blanket support"
+    },
+    {
+      "id": "kinetic/character-lift",
+      "family": "kinetic",
+      "family_ar": "الطباعة الحركية",
+      "term": "Character Lift",
+      "canonical_mechanism": "range-stagger",
+      "status": "implemented-with-arabic-guard",
+      "runtime_functions": [
+        "stagger",
+        "selectorWeight",
+        "safeTextUnits"
+      ],
+      "recipe": "reference/recipes/range-stagger.md",
+      "arabic_unit": "word/line/full-shaped-surface; connected character transforms blocked by default",
+      "purpose_ar": "تتابع وحدات مستقلة؛ كلمات/سطور للعربية، وحروف منفصلة فقط عند سلامة البنية.",
+      "demo_coverage": "catalog-and-lab-or-conditional-only",
+      "proof": "tests/core.test.mjs + tests/browser_checks.py; consult research/test-report.json for actual results, not blanket support"
+    },
+    {
+      "id": "kinetic/baseline-wave",
+      "family": "kinetic",
+      "family_ar": "الطباعة الحركية",
+      "term": "Baseline Wave",
+      "canonical_mechanism": "baseline-wave",
+      "status": "implemented-with-arabic-guard",
+      "runtime_functions": [
+        "waveOffset",
+        "safeTextUnits"
+      ],
+      "recipe": "reference/recipes/baseline-wave.md",
+      "arabic_unit": "word/line/full-shaped-surface; connected character transforms blocked by default",
+      "purpose_ar": "موجة على الكلمات أو الوحدات المعتمدة؛ لا تفكيك للحروف العربية المتصلة.",
+      "demo_coverage": "representative-or-combined",
+      "proof": "tests/core.test.mjs + tests/browser_checks.py; consult research/test-report.json for actual results, not blanket support"
+    },
+    {
+      "id": "kinetic/text-scramble",
+      "family": "kinetic",
+      "family_ar": "الطباعة الحركية",
+      "term": "Text Scramble",
+      "canonical_mechanism": "scramble",
+      "status": "ascii-explicit-copy-permission",
+      "runtime_functions": [
+        "scrambleASCII"
+      ],
+      "recipe": "reference/recipes/scramble.md",
+      "arabic_unit": "word/line/full-shaped-surface; connected character transforms blocked by default",
+      "purpose_ar": "محظور على العربية وعلى النص المعتمد؛ يسمح ASCII فقط بتفويض تغيير مؤقت للنص.",
+      "demo_coverage": "catalog-and-lab-or-conditional-only",
+      "proof": "tests/core.test.mjs + tests/browser_checks.py; consult research/test-report.json for actual results, not blanket support"
+    },
+    {
+      "id": "transitions/match-cut",
+      "family": "transitions",
+      "family_ar": "الانتقالات",
+      "term": "Match Cut",
+      "canonical_mechanism": "match-cut",
+      "status": "composition-recipe",
+      "runtime_functions": [
+        "track"
+      ],
+      "recipe": "reference/recipes/match-cut.md",
+      "arabic_unit": "word/line/full-shaped-surface; connected character transforms blocked by default",
+      "purpose_ar": "تطابق موضع/شكل/معنى بين لقطتين؛ عقد continuity وليس فلترًا مستقلًا.",
+      "demo_coverage": "representative-or-combined",
+      "proof": "tests/core.test.mjs + tests/browser_checks.py; consult research/test-report.json for actual results, not blanket support"
+    },
+    {
+      "id": "transitions/whip-pan",
+      "family": "transitions",
+      "family_ar": "الانتقالات",
+      "term": "Whip Pan",
+      "canonical_mechanism": "camera-transition",
+      "status": "composition-recipe",
+      "runtime_functions": [
+        "track",
+        "layerState",
+        "temporalAverage"
+      ],
+      "recipe": "reference/recipes/camera-transition.md",
+      "arabic_unit": "word/line/full-shaped-surface; connected character transforms blocked by default",
+      "purpose_ar": "حركة كاميرا مدفوعة بعلاقة المشهدين مع محاذاة وطمس زمني عند السرعة.",
+      "demo_coverage": "representative-or-combined",
+      "proof": "tests/core.test.mjs + tests/browser_checks.py; consult research/test-report.json for actual results, not blanket support"
+    },
+    {
+      "id": "transitions/whip-transition",
+      "family": "transitions",
+      "family_ar": "الانتقالات",
+      "term": "Whip Transition",
+      "canonical_mechanism": "camera-transition",
+      "status": "composition-recipe",
+      "runtime_functions": [
+        "track",
+        "layerState",
+        "temporalAverage"
+      ],
+      "recipe": "reference/recipes/camera-transition.md",
+      "arabic_unit": "word/line/full-shaped-surface; connected character transforms blocked by default",
+      "purpose_ar": "حركة كاميرا مدفوعة بعلاقة المشهدين مع محاذاة وطمس زمني عند السرعة.",
+      "demo_coverage": "catalog-and-lab-or-conditional-only",
+      "proof": "tests/core.test.mjs + tests/browser_checks.py; consult research/test-report.json for actual results, not blanket support"
+    },
+    {
+      "id": "transitions/push-transition",
+      "family": "transitions",
+      "family_ar": "الانتقالات",
+      "term": "Push Transition",
+      "canonical_mechanism": "camera-transition",
+      "status": "composition-recipe",
+      "runtime_functions": [
+        "track",
+        "layerState",
+        "temporalAverage"
+      ],
+      "recipe": "reference/recipes/camera-transition.md",
+      "arabic_unit": "word/line/full-shaped-surface; connected character transforms blocked by default",
+      "purpose_ar": "حركة كاميرا مدفوعة بعلاقة المشهدين مع محاذاة وطمس زمني عند السرعة.",
+      "demo_coverage": "catalog-and-lab-or-conditional-only",
+      "proof": "tests/core.test.mjs + tests/browser_checks.py; consult research/test-report.json for actual results, not blanket support"
+    },
+    {
+      "id": "transitions/wipe-transition",
+      "family": "transitions",
+      "family_ar": "الانتقالات",
+      "term": "Wipe Transition",
+      "canonical_mechanism": "alpha-matte",
+      "status": "implemented",
+      "runtime_functions": [
+        "maskedSprite",
+        "rtlMatte"
+      ],
+      "recipe": "reference/recipes/alpha-matte.md",
+      "arabic_unit": "word/line/full-shaped-surface; connected character transforms blocked by default",
+      "purpose_ar": "ألفا قناع مستقلة مضروبة في ألفا المحتوى؛ كشف العربية بعد تشكيلها.",
+      "demo_coverage": "catalog-and-lab-or-conditional-only",
+      "proof": "tests/core.test.mjs + tests/browser_checks.py; consult research/test-report.json for actual results, not blanket support"
+    },
+    {
+      "id": "transitions/zoom-transition",
+      "family": "transitions",
+      "family_ar": "الانتقالات",
+      "term": "Zoom Transition",
+      "canonical_mechanism": "camera-transition",
+      "status": "composition-recipe",
+      "runtime_functions": [
+        "track",
+        "layerState",
+        "temporalAverage"
+      ],
+      "recipe": "reference/recipes/camera-transition.md",
+      "arabic_unit": "word/line/full-shaped-surface; connected character transforms blocked by default",
+      "purpose_ar": "حركة كاميرا مدفوعة بعلاقة المشهدين مع محاذاة وطمس زمني عند السرعة.",
+      "demo_coverage": "catalog-and-lab-or-conditional-only",
+      "proof": "tests/core.test.mjs + tests/browser_checks.py; consult research/test-report.json for actual results, not blanket support"
+    },
+    {
+      "id": "transitions/spin-transition",
+      "family": "transitions",
+      "family_ar": "الانتقالات",
+      "term": "Spin Transition",
+      "canonical_mechanism": "camera-transition",
+      "status": "composition-recipe",
+      "runtime_functions": [
+        "track",
+        "layerState",
+        "temporalAverage"
+      ],
+      "recipe": "reference/recipes/camera-transition.md",
+      "arabic_unit": "word/line/full-shaped-surface; connected character transforms blocked by default",
+      "purpose_ar": "حركة كاميرا مدفوعة بعلاقة المشهدين مع محاذاة وطمس زمني عند السرعة.",
+      "demo_coverage": "catalog-and-lab-or-conditional-only",
+      "proof": "tests/core.test.mjs + tests/browser_checks.py; consult research/test-report.json for actual results, not blanket support"
+    },
+    {
+      "id": "transitions/morph-transition",
+      "family": "transitions",
+      "family_ar": "الانتقالات",
+      "term": "Morph Transition",
+      "canonical_mechanism": "contour-morph",
+      "status": "implemented-with-correspondence",
+      "runtime_functions": [
+        "morphContours",
+        "radialShape"
+      ],
+      "recipe": "reference/recipes/contour-morph.md",
+      "arabic_unit": "word/line/full-shaped-surface; connected character transforms blocked by default",
+      "purpose_ar": "رؤوس متقابلة بنفس العدد والاتجاه؛ يرفض topology غير المدعوم بدل crossfade مزيف.",
+      "demo_coverage": "catalog-and-lab-or-conditional-only",
+      "proof": "tests/core.test.mjs + tests/browser_checks.py; consult research/test-report.json for actual results, not blanket support"
+    },
+    {
+      "id": "transitions/mask-transition",
+      "family": "transitions",
+      "family_ar": "الانتقالات",
+      "term": "Mask Transition",
+      "canonical_mechanism": "alpha-matte",
+      "status": "implemented",
+      "runtime_functions": [
+        "maskedSprite",
+        "rtlMatte"
+      ],
+      "recipe": "reference/recipes/alpha-matte.md",
+      "arabic_unit": "word/line/full-shaped-surface; connected character transforms blocked by default",
+      "purpose_ar": "ألفا قناع مستقلة مضروبة في ألفا المحتوى؛ كشف العربية بعد تشكيلها.",
+      "demo_coverage": "catalog-and-lab-or-conditional-only",
+      "proof": "tests/core.test.mjs + tests/browser_checks.py; consult research/test-report.json for actual results, not blanket support"
+    },
+    {
+      "id": "transitions/parallax-transition",
+      "family": "transitions",
+      "family_ar": "الانتقالات",
+      "term": "Parallax Transition",
+      "canonical_mechanism": "camera-transition",
+      "status": "composition-recipe",
+      "runtime_functions": [
+        "track",
+        "layerState",
+        "temporalAverage"
+      ],
+      "recipe": "reference/recipes/camera-transition.md",
+      "arabic_unit": "word/line/full-shaped-surface; connected character transforms blocked by default",
+      "purpose_ar": "حركة كاميرا مدفوعة بعلاقة المشهدين مع محاذاة وطمس زمني عند السرعة.",
+      "demo_coverage": "catalog-and-lab-or-conditional-only",
+      "proof": "tests/core.test.mjs + tests/browser_checks.py; consult research/test-report.json for actual results, not blanket support"
+    },
+    {
+      "id": "transitions/seamless-transition",
+      "family": "transitions",
+      "family_ar": "الانتقالات",
+      "term": "Seamless Transition",
+      "canonical_mechanism": "match-cut",
+      "status": "composition-recipe",
+      "runtime_functions": [
+        "track"
+      ],
+      "recipe": "reference/recipes/match-cut.md",
+      "arabic_unit": "word/line/full-shaped-surface; connected character transforms blocked by default",
+      "purpose_ar": "تطابق موضع/شكل/معنى بين لقطتين؛ عقد continuity وليس فلترًا مستقلًا.",
+      "demo_coverage": "catalog-and-lab-or-conditional-only",
+      "proof": "tests/core.test.mjs + tests/browser_checks.py; consult research/test-report.json for actual results, not blanket support"
+    },
+    {
+      "id": "transitions/object-wipe",
+      "family": "transitions",
+      "family_ar": "الانتقالات",
+      "term": "Object Wipe",
+      "canonical_mechanism": "object-wipe",
+      "status": "composition-recipe",
+      "runtime_functions": [
+        "maskedSprite",
+        "track"
+      ],
+      "recipe": "reference/recipes/object-wipe.md",
+      "arabic_unit": "word/line/full-shaped-surface; connected character transforms blocked by default",
+      "purpose_ar": "الساتر والقناع واللقطة التالية طبقات مستقلة مربوطة بهندسة مشتركة.",
+      "demo_coverage": "representative-or-combined",
+      "proof": "tests/core.test.mjs + tests/browser_checks.py; consult research/test-report.json for actual results, not blanket support"
+    },
+    {
+      "id": "paths/line-draw",
+      "family": "paths",
+      "family_ar": "الخطوط والأشكال",
+      "term": "Line Draw",
+      "canonical_mechanism": "path-trim",
+      "status": "implemented",
+      "runtime_functions": [
+        "pathMetrics",
+        "trimPath",
+        "strokePath"
+      ],
+      "recipe": "reference/recipes/path-trim.md",
+      "arabic_unit": "word/line/full-shaped-surface; connected character transforms blocked by default",
+      "purpose_ar": "طول قوس مجزّأ، ورأس مؤشر على نهاية المسار نفسها؛ لا ظهور كامل للخط.",
+      "demo_coverage": "representative-or-combined",
+      "proof": "tests/core.test.mjs + tests/browser_checks.py; consult research/test-report.json for actual results, not blanket support"
+    },
+    {
+      "id": "paths/trim-paths",
+      "family": "paths",
+      "family_ar": "الخطوط والأشكال",
+      "term": "Trim Paths",
+      "canonical_mechanism": "path-trim",
+      "status": "implemented",
+      "runtime_functions": [
+        "pathMetrics",
+        "trimPath",
+        "strokePath"
+      ],
+      "recipe": "reference/recipes/path-trim.md",
+      "arabic_unit": "word/line/full-shaped-surface; connected character transforms blocked by default",
+      "purpose_ar": "طول قوس مجزّأ، ورأس مؤشر على نهاية المسار نفسها؛ لا ظهور كامل للخط.",
+      "demo_coverage": "representative-or-combined",
+      "proof": "tests/core.test.mjs + tests/browser_checks.py; consult research/test-report.json for actual results, not blanket support"
+    },
+    {
+      "id": "paths/stroke-reveal",
+      "family": "paths",
+      "family_ar": "الخطوط والأشكال",
+      "term": "Stroke Reveal",
+      "canonical_mechanism": "path-trim",
+      "status": "implemented",
+      "runtime_functions": [
+        "pathMetrics",
+        "trimPath",
+        "strokePath"
+      ],
+      "recipe": "reference/recipes/path-trim.md",
+      "arabic_unit": "word/line/full-shaped-surface; connected character transforms blocked by default",
+      "purpose_ar": "طول قوس مجزّأ، ورأس مؤشر على نهاية المسار نفسها؛ لا ظهور كامل للخط.",
+      "demo_coverage": "catalog-and-lab-or-conditional-only",
+      "proof": "tests/core.test.mjs + tests/browser_checks.py; consult research/test-report.json for actual results, not blanket support"
+    },
+    {
+      "id": "paths/underline-draw",
+      "family": "paths",
+      "family_ar": "الخطوط والأشكال",
+      "term": "Underline Draw",
+      "canonical_mechanism": "path-trim",
+      "status": "implemented",
+      "runtime_functions": [
+        "pathMetrics",
+        "trimPath",
+        "strokePath"
+      ],
+      "recipe": "reference/recipes/path-trim.md",
+      "arabic_unit": "word/line/full-shaped-surface; connected character transforms blocked by default",
+      "purpose_ar": "طول قوس مجزّأ، ورأس مؤشر على نهاية المسار نفسها؛ لا ظهور كامل للخط.",
+      "demo_coverage": "catalog-and-lab-or-conditional-only",
+      "proof": "tests/core.test.mjs + tests/browser_checks.py; consult research/test-report.json for actual results, not blanket support"
+    },
+    {
+      "id": "paths/arrow-draw",
+      "family": "paths",
+      "family_ar": "الخطوط والأشكال",
+      "term": "Arrow Draw",
+      "canonical_mechanism": "path-trim",
+      "status": "implemented",
+      "runtime_functions": [
+        "pathMetrics",
+        "trimPath",
+        "strokePath"
+      ],
+      "recipe": "reference/recipes/path-trim.md",
+      "arabic_unit": "word/line/full-shaped-surface; connected character transforms blocked by default",
+      "purpose_ar": "طول قوس مجزّأ، ورأس مؤشر على نهاية المسار نفسها؛ لا ظهور كامل للخط.",
+      "demo_coverage": "representative-or-combined",
+      "proof": "tests/core.test.mjs + tests/browser_checks.py; consult research/test-report.json for actual results, not blanket support"
+    },
+    {
+      "id": "paths/path-follow",
+      "family": "paths",
+      "family_ar": "الخطوط والأشكال",
+      "term": "Path Follow",
+      "canonical_mechanism": "path-follow",
+      "status": "implemented",
+      "runtime_functions": [
+        "pathMetrics",
+        "pathPoint"
+      ],
+      "recipe": "reference/recipes/path-follow.md",
+      "arabic_unit": "word/line/full-shaped-surface; connected character transforms blocked by default",
+      "purpose_ar": "موقع ومماس من طول القوس؛ لا سرعة وهمية من بارامتر Bezier وحده.",
+      "demo_coverage": "representative-or-combined",
+      "proof": "tests/core.test.mjs + tests/browser_checks.py; consult research/test-report.json for actual results, not blanket support"
+    },
+    {
+      "id": "paths/callout-animation",
+      "family": "paths",
+      "family_ar": "الخطوط والأشكال",
+      "term": "Callout Animation",
+      "canonical_mechanism": "path-trim",
+      "status": "implemented",
+      "runtime_functions": [
+        "pathMetrics",
+        "trimPath",
+        "strokePath"
+      ],
+      "recipe": "reference/recipes/path-trim.md",
+      "arabic_unit": "word/line/full-shaped-surface; connected character transforms blocked by default",
+      "purpose_ar": "طول قوس مجزّأ، ورأس مؤشر على نهاية المسار نفسها؛ لا ظهور كامل للخط.",
+      "demo_coverage": "catalog-and-lab-or-conditional-only",
+      "proof": "tests/core.test.mjs + tests/browser_checks.py; consult research/test-report.json for actual results, not blanket support"
+    },
+    {
+      "id": "paths/circle-reveal",
+      "family": "paths",
+      "family_ar": "الخطوط والأشكال",
+      "term": "Circle Reveal",
+      "canonical_mechanism": "iris",
+      "status": "implemented",
+      "runtime_functions": [
+        "irisMatte"
+      ],
+      "recipe": "reference/recipes/iris.md",
+      "arabic_unit": "word/line/full-shaped-surface; connected character transforms blocked by default",
+      "purpose_ar": "كشف دائري بقناع حقيقي؛ الحركة ليست scale للنص كله.",
+      "demo_coverage": "catalog-and-lab-or-conditional-only",
+      "proof": "tests/core.test.mjs + tests/browser_checks.py; consult research/test-report.json for actual results, not blanket support"
+    },
+    {
+      "id": "paths/circular-wipe",
+      "family": "paths",
+      "family_ar": "الخطوط والأشكال",
+      "term": "Circular Wipe",
+      "canonical_mechanism": "iris",
+      "status": "implemented",
+      "runtime_functions": [
+        "irisMatte"
+      ],
+      "recipe": "reference/recipes/iris.md",
+      "arabic_unit": "word/line/full-shaped-surface; connected character transforms blocked by default",
+      "purpose_ar": "كشف دائري بقناع حقيقي؛ الحركة ليست scale للنص كله.",
+      "demo_coverage": "catalog-and-lab-or-conditional-only",
+      "proof": "tests/core.test.mjs + tests/browser_checks.py; consult research/test-report.json for actual results, not blanket support"
+    },
+    {
+      "id": "paths/shape-morph",
+      "family": "paths",
+      "family_ar": "الخطوط والأشكال",
+      "term": "Shape Morph",
+      "canonical_mechanism": "contour-morph",
+      "status": "implemented-with-correspondence",
+      "runtime_functions": [
+        "morphContours",
+        "radialShape"
+      ],
+      "recipe": "reference/recipes/contour-morph.md",
+      "arabic_unit": "word/line/full-shaped-surface; connected character transforms blocked by default",
+      "purpose_ar": "رؤوس متقابلة بنفس العدد والاتجاه؛ يرفض topology غير المدعوم بدل crossfade مزيف.",
+      "demo_coverage": "representative-or-combined",
+      "proof": "tests/core.test.mjs + tests/browser_checks.py; consult research/test-report.json for actual results, not blanket support"
+    },
+    {
+      "id": "timing/keyframe-animation",
+      "family": "timing",
+      "family_ar": "التوقيت والحركة",
+      "term": "Keyframe Animation",
+      "canonical_mechanism": "keyframes",
+      "status": "implemented",
+      "runtime_functions": [
+        "track"
+      ],
+      "recipe": "reference/recipes/keyframes.md",
+      "arabic_unit": "word/line/full-shaped-surface; connected character transforms blocked by default",
+      "purpose_ar": "قبل/أثناء/بعد، حالات متعددة وhold؛ لا يبدأ الجميع وينتهي الجميع معًا.",
+      "demo_coverage": "representative-or-combined",
+      "proof": "tests/core.test.mjs + tests/browser_checks.py; consult research/test-report.json for actual results, not blanket support"
+    },
+    {
+      "id": "timing/ease-in",
+      "family": "timing",
+      "family_ar": "التوقيت والحركة",
+      "term": "Ease In",
+      "canonical_mechanism": "easing",
+      "status": "implemented",
+      "runtime_functions": [
+        "cubicBezier",
+        "eases",
+        "derivative"
+      ],
+      "recipe": "reference/recipes/easing.md",
+      "arabic_unit": "word/line/full-shaped-surface; connected character transforms blocked by default",
+      "purpose_ar": "منحنى قيمة مختلف عن منحنى سرعة؛ قيمة السرعة مشتقة وليست نفس الرسم.",
+      "demo_coverage": "catalog-and-lab-or-conditional-only",
+      "proof": "tests/core.test.mjs + tests/browser_checks.py; consult research/test-report.json for actual results, not blanket support"
+    },
+    {
+      "id": "timing/ease-out",
+      "family": "timing",
+      "family_ar": "التوقيت والحركة",
+      "term": "Ease Out",
+      "canonical_mechanism": "easing",
+      "status": "implemented",
+      "runtime_functions": [
+        "cubicBezier",
+        "eases",
+        "derivative"
+      ],
+      "recipe": "reference/recipes/easing.md",
+      "arabic_unit": "word/line/full-shaped-surface; connected character transforms blocked by default",
+      "purpose_ar": "منحنى قيمة مختلف عن منحنى سرعة؛ قيمة السرعة مشتقة وليست نفس الرسم.",
+      "demo_coverage": "catalog-and-lab-or-conditional-only",
+      "proof": "tests/core.test.mjs + tests/browser_checks.py; consult research/test-report.json for actual results, not blanket support"
+    },
+    {
+      "id": "timing/ease-in-out",
+      "family": "timing",
+      "family_ar": "التوقيت والحركة",
+      "term": "Ease In Out",
+      "canonical_mechanism": "easing",
+      "status": "implemented",
+      "runtime_functions": [
+        "cubicBezier",
+        "eases",
+        "derivative"
+      ],
+      "recipe": "reference/recipes/easing.md",
+      "arabic_unit": "word/line/full-shaped-surface; connected character transforms blocked by default",
+      "purpose_ar": "منحنى قيمة مختلف عن منحنى سرعة؛ قيمة السرعة مشتقة وليست نفس الرسم.",
+      "demo_coverage": "representative-or-combined",
+      "proof": "tests/core.test.mjs + tests/browser_checks.py; consult research/test-report.json for actual results, not blanket support"
+    },
+    {
+      "id": "timing/graph-editor",
+      "family": "timing",
+      "family_ar": "التوقيت والحركة",
+      "term": "Graph Editor",
+      "canonical_mechanism": "graph-editor",
+      "status": "diagnostic-lab-not-native-ae",
+      "runtime_functions": [
+        "cubicBezier",
+        "derivative"
+      ],
+      "recipe": "reference/recipes/graph-editor.md",
+      "arabic_unit": "word/line/full-shaped-surface; connected character transforms blocked by default",
+      "purpose_ar": "مختبر منحنيات قيمة/سرعة قابل للضبط، وليس واجهة Adobe Graph Editor الأصلية.",
+      "demo_coverage": "catalog-and-lab-or-conditional-only",
+      "proof": "tests/core.test.mjs + tests/browser_checks.py; consult research/test-report.json for actual results, not blanket support"
+    },
+    {
+      "id": "timing/speed-graph",
+      "family": "timing",
+      "family_ar": "التوقيت والحركة",
+      "term": "Speed Graph",
+      "canonical_mechanism": "graph-editor",
+      "status": "diagnostic-lab-not-native-ae",
+      "runtime_functions": [
+        "cubicBezier",
+        "derivative"
+      ],
+      "recipe": "reference/recipes/graph-editor.md",
+      "arabic_unit": "word/line/full-shaped-surface; connected character transforms blocked by default",
+      "purpose_ar": "مختبر منحنيات قيمة/سرعة قابل للضبط، وليس واجهة Adobe Graph Editor الأصلية.",
+      "demo_coverage": "representative-or-combined",
+      "proof": "tests/core.test.mjs + tests/browser_checks.py; consult research/test-report.json for actual results, not blanket support"
+    },
+    {
+      "id": "timing/value-graph",
+      "family": "timing",
+      "family_ar": "التوقيت والحركة",
+      "term": "Value Graph",
+      "canonical_mechanism": "graph-editor",
+      "status": "diagnostic-lab-not-native-ae",
+      "runtime_functions": [
+        "cubicBezier",
+        "derivative"
+      ],
+      "recipe": "reference/recipes/graph-editor.md",
+      "arabic_unit": "word/line/full-shaped-surface; connected character transforms blocked by default",
+      "purpose_ar": "مختبر منحنيات قيمة/سرعة قابل للضبط، وليس واجهة Adobe Graph Editor الأصلية.",
+      "demo_coverage": "representative-or-combined",
+      "proof": "tests/core.test.mjs + tests/browser_checks.py; consult research/test-report.json for actual results, not blanket support"
+    },
+    {
+      "id": "timing/anticipation",
+      "family": "timing",
+      "family_ar": "التوقيت والحركة",
+      "term": "Anticipation",
+      "canonical_mechanism": "anticipation-settle",
+      "status": "implemented",
+      "runtime_functions": [
+        "track",
+        "spring"
+      ],
+      "recipe": "reference/recipes/anticipation-settle.md",
+      "arabic_unit": "word/line/full-shaped-surface; connected character transforms blocked by default",
+      "purpose_ar": "تحضير قصير ثم الفعل ثم الاستقرار؛ overshoot محدود ومقصود.",
+      "demo_coverage": "representative-or-combined",
+      "proof": "tests/core.test.mjs + tests/browser_checks.py; consult research/test-report.json for actual results, not blanket support"
+    },
+    {
+      "id": "timing/overshoot",
+      "family": "timing",
+      "family_ar": "التوقيت والحركة",
+      "term": "Overshoot",
+      "canonical_mechanism": "anticipation-settle",
+      "status": "implemented",
+      "runtime_functions": [
+        "track",
+        "spring"
+      ],
+      "recipe": "reference/recipes/anticipation-settle.md",
+      "arabic_unit": "word/line/full-shaped-surface; connected character transforms blocked by default",
+      "purpose_ar": "تحضير قصير ثم الفعل ثم الاستقرار؛ overshoot محدود ومقصود.",
+      "demo_coverage": "catalog-and-lab-or-conditional-only",
+      "proof": "tests/core.test.mjs + tests/browser_checks.py; consult research/test-report.json for actual results, not blanket support"
+    },
+    {
+      "id": "timing/settle",
+      "family": "timing",
+      "family_ar": "التوقيت والحركة",
+      "term": "Settle",
+      "canonical_mechanism": "anticipation-settle",
+      "status": "implemented",
+      "runtime_functions": [
+        "track",
+        "spring"
+      ],
+      "recipe": "reference/recipes/anticipation-settle.md",
+      "arabic_unit": "word/line/full-shaped-surface; connected character transforms blocked by default",
+      "purpose_ar": "تحضير قصير ثم الفعل ثم الاستقرار؛ overshoot محدود ومقصود.",
+      "demo_coverage": "catalog-and-lab-or-conditional-only",
+      "proof": "tests/core.test.mjs + tests/browser_checks.py; consult research/test-report.json for actual results, not blanket support"
+    },
+    {
+      "id": "timing/stagger",
+      "family": "timing",
+      "family_ar": "التوقيت والحركة",
+      "term": "Stagger",
+      "canonical_mechanism": "range-stagger",
+      "status": "implemented-with-arabic-guard",
+      "runtime_functions": [
+        "stagger",
+        "selectorWeight",
+        "safeTextUnits"
+      ],
+      "recipe": "reference/recipes/range-stagger.md",
+      "arabic_unit": "word/line/full-shaped-surface; connected character transforms blocked by default",
+      "purpose_ar": "تتابع وحدات مستقلة؛ كلمات/سطور للعربية، وحروف منفصلة فقط عند سلامة البنية.",
+      "demo_coverage": "representative-or-combined",
+      "proof": "tests/core.test.mjs + tests/browser_checks.py; consult research/test-report.json for actual results, not blanket support"
+    },
+    {
+      "id": "timing/hold",
+      "family": "timing",
+      "family_ar": "التوقيت والحركة",
+      "term": "Hold",
+      "canonical_mechanism": "hold",
+      "status": "implemented",
+      "runtime_functions": [
+        "track"
+      ],
+      "recipe": "reference/recipes/hold.md",
+      "arabic_unit": "word/line/full-shaped-surface; connected character transforms blocked by default",
+      "purpose_ar": "تثبيت حقيقي لا interpolation بطيء؛ له مدة قراءة محددة.",
+      "demo_coverage": "representative-or-combined",
+      "proof": "tests/core.test.mjs + tests/browser_checks.py; consult research/test-report.json for actual results, not blanket support"
+    },
+    {
+      "id": "timing/motion-blur",
+      "family": "timing",
+      "family_ar": "التوقيت والحركة",
+      "term": "Motion Blur",
+      "canonical_mechanism": "motion-blur",
+      "status": "implemented-temporal-sampling",
+      "runtime_functions": [
+        "shutterTimes",
+        "temporalAverage"
+      ],
+      "recipe": "reference/recipes/motion-blur.md",
+      "arabic_unit": "word/line/full-shaped-surface; connected character transforms blocked by default",
+      "purpose_ar": "عينات زمنية داخل فترة الغالق مع متوسط RGBA؛ لا Gaussian ثابتًا. عدد العينات ونموذج اللون موثقان.",
+      "demo_coverage": "representative-or-combined",
+      "proof": "tests/core.test.mjs + tests/browser_checks.py; consult research/test-report.json for actual results, not blanket support"
+    }
+  ],
+  "mechanisms": {
+    "transform-track": {
+      "functions": [
+        "track",
+        "matrix",
+        "layerState"
+      ],
+      "status": "implemented",
+      "purpose_ar": "حركة مكانية أو دوران أو حجم له سبب؛ ليست بديلًا عن بناء العنوان."
+    },
+    "anticipation-settle": {
+      "functions": [
+        "track",
+        "spring"
+      ],
+      "status": "implemented",
+      "purpose_ar": "تحضير قصير ثم الفعل ثم الاستقرار؛ overshoot محدود ومقصود."
+    },
+    "spring": {
+      "functions": [
+        "spring",
+        "springPresets"
+      ],
+      "status": "implemented",
+      "purpose_ar": "حل تحليلي لنابض؛ كتلة وتخميد وصلابة، مستقل عن الإطار السابق."
+    },
+    "ballistic": {
+      "functions": [
+        "ballistic"
+      ],
+      "status": "implemented",
+      "purpose_ar": "سقوط وارتداد تحت الجاذبية مع تناقص الطاقة؛ لا bounce موحد لكل شيء."
+    },
+    "inertia": {
+      "functions": [
+        "inertia",
+        "track"
+      ],
+      "status": "implemented",
+      "purpose_ar": "تباطؤ بعد دفع/سحب؛ مسار الإدخال مسجّل لا تفاعل حي في التصدير."
+    },
+    "damped-oscillation": {
+      "functions": [
+        "recoil",
+        "spring"
+      ],
+      "status": "implemented",
+      "purpose_ar": "ذبذبة متناقصة أو رد فعل محلي؛ لا اهتزاز دائم بلا معنى."
+    },
+    "seeded-noise": {
+      "functions": [
+        "noise",
+        "hash01"
+      ],
+      "status": "implemented",
+      "purpose_ar": "تذبذب مثبت البذرة، محدود السعة، لا عشوائية غير قابلة للإعادة."
+    },
+    "squash-stretch": {
+      "functions": [
+        "squashStretch"
+      ],
+      "status": "implemented",
+      "purpose_ar": "امتداد يحافظ تقريبًا على الحجم؛ يخص مادة مرنة، لا كل النصوص."
+    },
+    "secondary": {
+      "functions": [
+        "followThrough",
+        "track"
+      ],
+      "status": "implemented",
+      "purpose_ar": "حركة تابعة متأخرة لها توقيت مستقل وسبب ميكانيكي."
+    },
+    "scroll": {
+      "functions": [
+        "scrollOffset",
+        "track"
+      ],
+      "status": "implemented",
+      "purpose_ar": "تمرير محتوى داخل نافذة كشف، مع hold للقراءة عند الحاجة."
+    },
+    "parallax": {
+      "functions": [
+        "samplePerspective",
+        "layerState"
+      ],
+      "status": "implemented-2.5d",
+      "purpose_ar": "إسقاط عمق لطبقات مستوية؛ ليس renderer ثلاثي الأبعاد حجميًا."
+    },
+    "alpha-matte": {
+      "functions": [
+        "maskedSprite",
+        "rtlMatte"
+      ],
+      "status": "implemented",
+      "purpose_ar": "ألفا قناع مستقلة مضروبة في ألفا المحتوى؛ كشف العربية بعد تشكيلها."
+    },
+    "luma-matte": {
+      "functions": [
+        "lumaMatte",
+        "lumaAlpha"
+      ],
+      "status": "implemented-defined-color-model",
+      "purpose_ar": "سطوع Rec.709 موزون على قيم sRGB؛ ليست مطابقة لكل إعدادات ألوان AE."
+    },
+    "iris": {
+      "functions": [
+        "irisMatte"
+      ],
+      "status": "implemented",
+      "purpose_ar": "كشف دائري بقناع حقيقي؛ الحركة ليست scale للنص كله."
+    },
+    "path-trim": {
+      "functions": [
+        "pathMetrics",
+        "trimPath",
+        "strokePath"
+      ],
+      "status": "implemented",
+      "purpose_ar": "طول قوس مجزّأ، ورأس مؤشر على نهاية المسار نفسها؛ لا ظهور كامل للخط."
+    },
+    "path-follow": {
+      "functions": [
+        "pathMetrics",
+        "pathPoint"
+      ],
+      "status": "implemented",
+      "purpose_ar": "موقع ومماس من طول القوس؛ لا سرعة وهمية من بارامتر Bezier وحده."
+    },
+    "contour-morph": {
+      "functions": [
+        "morphContours",
+        "radialShape"
+      ],
+      "status": "implemented-with-correspondence",
+      "purpose_ar": "رؤوس متقابلة بنفس العدد والاتجاه؛ يرفض topology غير المدعوم بدل crossfade مزيف."
+    },
+    "range-stagger": {
+      "functions": [
+        "stagger",
+        "selectorWeight",
+        "safeTextUnits"
+      ],
+      "status": "implemented-with-arabic-guard",
+      "purpose_ar": "تتابع وحدات مستقلة؛ كلمات/سطور للعربية، وحروف منفصلة فقط عند سلامة البنية."
+    },
+    "baseline-wave": {
+      "functions": [
+        "waveOffset",
+        "safeTextUnits"
+      ],
+      "status": "implemented-with-arabic-guard",
+      "purpose_ar": "موجة على الكلمات أو الوحدات المعتمدة؛ لا تفكيك للحروف العربية المتصلة."
+    },
+    "tracking": {
+      "functions": [
+        "safeTextUnits",
+        "track"
+      ],
+      "status": "conditional",
+      "purpose_ar": "تباعد كلمات عربية أو أحرف ASCII؛ تغيير tracking بين حروف عربية متصلة محظور افتراضيًا."
+    },
+    "typewriter": {
+      "functions": [
+        "safeTextUnits",
+        "rtlMatte"
+      ],
+      "status": "conditional",
+      "purpose_ar": "ASCII يمكن بناء prefix له؛ العربية تستخدم كشف النص المشكّل مع تسمية صحيحة، لا ادعاء محرّك typewriter حرفي مطابق."
+    },
+    "write-on": {
+      "functions": [
+        "strokePath",
+        "trimPath"
+      ],
+      "status": "requires-authored-strokes",
+      "purpose_ar": "رسم قلم حقيقي فقط عند توفر مسارات ضربات مرتبة؛ outline الخط ليس مسار كتابة."
+    },
+    "scramble": {
+      "functions": [
+        "scrambleASCII"
+      ],
+      "status": "ascii-explicit-copy-permission",
+      "purpose_ar": "محظور على العربية وعلى النص المعتمد؛ يسمح ASCII فقط بتفويض تغيير مؤقت للنص."
+    },
+    "blur": {
+      "functions": [
+        "track"
+      ],
+      "status": "canvas-filter-adapter",
+      "purpose_ar": "تغيير نصف قطر blur فعلي؛ ليس motion blur ولا مبررًا لاستبدال الكشف الطباعي."
+    },
+    "flip": {
+      "functions": [
+        "samplePerspective"
+      ],
+      "status": "requires-verified-3d-adapter",
+      "purpose_ar": "Flip هندسي صحيح يحتاج plane projection/mesh مختبرًا؛ scaleX=cos مجرد تقريب ولا يُعتمد مكافئًا أصليًا."
+    },
+    "match-cut": {
+      "functions": [
+        "track"
+      ],
+      "status": "composition-recipe",
+      "purpose_ar": "تطابق موضع/شكل/معنى بين لقطتين؛ عقد continuity وليس فلترًا مستقلًا."
+    },
+    "object-wipe": {
+      "functions": [
+        "maskedSprite",
+        "track"
+      ],
+      "status": "composition-recipe",
+      "purpose_ar": "الساتر والقناع واللقطة التالية طبقات مستقلة مربوطة بهندسة مشتركة."
+    },
+    "camera-transition": {
+      "functions": [
+        "track",
+        "layerState",
+        "temporalAverage"
+      ],
+      "status": "composition-recipe",
+      "purpose_ar": "حركة كاميرا مدفوعة بعلاقة المشهدين مع محاذاة وطمس زمني عند السرعة."
+    },
+    "keyframes": {
+      "functions": [
+        "track"
+      ],
+      "status": "implemented",
+      "purpose_ar": "قبل/أثناء/بعد، حالات متعددة وhold؛ لا يبدأ الجميع وينتهي الجميع معًا."
+    },
+    "easing": {
+      "functions": [
+        "cubicBezier",
+        "eases",
+        "derivative"
+      ],
+      "status": "implemented",
+      "purpose_ar": "منحنى قيمة مختلف عن منحنى سرعة؛ قيمة السرعة مشتقة وليست نفس الرسم."
+    },
+    "graph-editor": {
+      "functions": [
+        "cubicBezier",
+        "derivative"
+      ],
+      "status": "diagnostic-lab-not-native-ae",
+      "purpose_ar": "مختبر منحنيات قيمة/سرعة قابل للضبط، وليس واجهة Adobe Graph Editor الأصلية."
+    },
+    "hold": {
+      "functions": [
+        "track"
+      ],
+      "status": "implemented",
+      "purpose_ar": "تثبيت حقيقي لا interpolation بطيء؛ له مدة قراءة محددة."
+    },
+    "motion-blur": {
+      "functions": [
+        "shutterTimes",
+        "temporalAverage"
+      ],
+      "status": "implemented-temporal-sampling",
+      "purpose_ar": "عينات زمنية داخل فترة الغالق مع متوسط RGBA؛ لا Gaussian ثابتًا. عدد العينات ونموذج اللون موثقان."
+    }
+  }
+}

@@ -1,0 +1,105 @@
+﻿family,family_ar,term,mechanism,status,recipe,demo_coverage
+entrance,الدخول,Slide In,transform-track,implemented,reference/recipes/transform-track.md,representative-or-combined
+entrance,الدخول,Pop In,anticipation-settle,implemented,reference/recipes/anticipation-settle.md,representative-or-combined
+entrance,الدخول,Scale Up,transform-track,implemented,reference/recipes/transform-track.md,catalog-and-lab-or-conditional-only
+entrance,الدخول,Scale Bounce,anticipation-settle,implemented,reference/recipes/anticipation-settle.md,catalog-and-lab-or-conditional-only
+entrance,الدخول,Spring In,spring,implemented,reference/recipes/spring.md,representative-or-combined
+entrance,الدخول,Bounce In,ballistic,implemented,reference/recipes/ballistic.md,catalog-and-lab-or-conditional-only
+entrance,الدخول,Drop In,ballistic,implemented,reference/recipes/ballistic.md,catalog-and-lab-or-conditional-only
+entrance,الدخول,Fly In,path-follow,implemented,reference/recipes/path-follow.md,catalog-and-lab-or-conditional-only
+entrance,الدخول,Flip In,flip,requires-verified-3d-adapter,reference/recipes/flip.md,catalog-and-lab-or-conditional-only
+entrance,الدخول,Spin In,transform-track,implemented,reference/recipes/transform-track.md,catalog-and-lab-or-conditional-only
+entrance,الدخول,Blur In,blur,canvas-filter-adapter,reference/recipes/blur.md,catalog-and-lab-or-conditional-only
+entrance,الدخول,Fade In,transform-track,implemented,reference/recipes/transform-track.md,catalog-and-lab-or-conditional-only
+entrance,الدخول,Reveal In,alpha-matte,implemented,reference/recipes/alpha-matte.md,catalog-and-lab-or-conditional-only
+entrance,الدخول,Wipe In,alpha-matte,implemented,reference/recipes/alpha-matte.md,catalog-and-lab-or-conditional-only
+entrance,الدخول,Mask Reveal,alpha-matte,implemented,reference/recipes/alpha-matte.md,representative-or-combined
+physics,النابض والفيزياء,Spring Motion,spring,implemented,reference/recipes/spring.md,representative-or-combined
+physics,النابض والفيزياء,Spring Overshoot,spring,implemented,reference/recipes/spring.md,catalog-and-lab-or-conditional-only
+physics,النابض والفيزياء,Overshoot & Settle,spring,implemented,reference/recipes/spring.md,representative-or-combined
+physics,النابض والفيزياء,Bounce,ballistic,implemented,reference/recipes/ballistic.md,representative-or-combined
+physics,النابض والفيزياء,Elastic,spring,implemented,reference/recipes/spring.md,catalog-and-lab-or-conditional-only
+physics,النابض والفيزياء,Inertial Bounce,inertia,implemented,reference/recipes/inertia.md,catalog-and-lab-or-conditional-only
+physics,النابض والفيزياء,Wobble,damped-oscillation,implemented,reference/recipes/damped-oscillation.md,catalog-and-lab-or-conditional-only
+physics,النابض والفيزياء,Wiggle,seeded-noise,implemented,reference/recipes/seeded-noise.md,catalog-and-lab-or-conditional-only
+physics,النابض والفيزياء,Jiggle,damped-oscillation,implemented,reference/recipes/damped-oscillation.md,catalog-and-lab-or-conditional-only
+physics,النابض والفيزياء,Recoil,damped-oscillation,implemented,reference/recipes/damped-oscillation.md,catalog-and-lab-or-conditional-only
+physics,النابض والفيزياء,Squash & Stretch,squash-stretch,implemented,reference/recipes/squash-stretch.md,representative-or-combined
+physics,النابض والفيزياء,Follow Through,secondary,implemented,reference/recipes/secondary.md,catalog-and-lab-or-conditional-only
+physics,النابض والفيزياء,Secondary Motion,secondary,implemented,reference/recipes/secondary.md,representative-or-combined
+physics,النابض والفيزياء,Damped Oscillation,damped-oscillation,implemented,reference/recipes/damped-oscillation.md,catalog-and-lab-or-conditional-only
+scrolling,التمرير والانزلاق,Slide,transform-track,implemented,reference/recipes/transform-track.md,catalog-and-lab-or-conditional-only
+scrolling,التمرير والانزلاق,Scroll,scroll,implemented,reference/recipes/scroll.md,catalog-and-lab-or-conditional-only
+scrolling,التمرير والانزلاق,Vertical Scroll,scroll,implemented,reference/recipes/scroll.md,representative-or-combined
+scrolling,التمرير والانزلاق,Horizontal Scroll,scroll,implemented,reference/recipes/scroll.md,representative-or-combined
+scrolling,التمرير والانزلاق,Rolling Credits,scroll,implemented,reference/recipes/scroll.md,catalog-and-lab-or-conditional-only
+scrolling,التمرير والانزلاق,Ticker,scroll,implemented,reference/recipes/scroll.md,catalog-and-lab-or-conditional-only
+scrolling,التمرير والانزلاق,Marquee,scroll,implemented,reference/recipes/scroll.md,catalog-and-lab-or-conditional-only
+scrolling,التمرير والانزلاق,Push,transform-track,implemented,reference/recipes/transform-track.md,catalog-and-lab-or-conditional-only
+scrolling,التمرير والانزلاق,Pull,transform-track,implemented,reference/recipes/transform-track.md,catalog-and-lab-or-conditional-only
+scrolling,التمرير والانزلاق,Drag,inertia,implemented,reference/recipes/inertia.md,catalog-and-lab-or-conditional-only
+scrolling,التمرير والانزلاق,Slide Reveal,alpha-matte,implemented,reference/recipes/alpha-matte.md,catalog-and-lab-or-conditional-only
+scrolling,التمرير والانزلاق,Parallax Scroll,parallax,implemented-2.5d,reference/recipes/parallax.md,representative-or-combined
+scrolling,التمرير والانزلاق,Continuous Scroll,scroll,implemented,reference/recipes/scroll.md,catalog-and-lab-or-conditional-only
+reveal,كشف النصوص,Typewriter,typewriter,conditional,reference/recipes/typewriter.md,catalog-and-lab-or-conditional-only
+reveal,كشف النصوص,Write On,write-on,requires-authored-strokes,reference/recipes/write-on.md,catalog-and-lab-or-conditional-only
+reveal,كشف النصوص,Character Reveal,alpha-matte,implemented,reference/recipes/alpha-matte.md,catalog-and-lab-or-conditional-only
+reveal,كشف النصوص,Word Reveal,alpha-matte,implemented,reference/recipes/alpha-matte.md,catalog-and-lab-or-conditional-only
+reveal,كشف النصوص,Line Reveal,alpha-matte,implemented,reference/recipes/alpha-matte.md,catalog-and-lab-or-conditional-only
+reveal,كشف النصوص,Tracking Reveal,tracking,conditional,reference/recipes/tracking.md,catalog-and-lab-or-conditional-only
+reveal,كشف النصوص,Mask Wipe,alpha-matte,implemented,reference/recipes/alpha-matte.md,catalog-and-lab-or-conditional-only
+reveal,كشف النصوص,Matte Reveal,alpha-matte,implemented,reference/recipes/alpha-matte.md,representative-or-combined
+reveal,كشف النصوص,Stroke Reveal,path-trim,implemented,reference/recipes/path-trim.md,catalog-and-lab-or-conditional-only
+reveal,كشف النصوص,Clipping Reveal,alpha-matte,implemented,reference/recipes/alpha-matte.md,catalog-and-lab-or-conditional-only
+reveal,كشف النصوص,Split Reveal,alpha-matte,implemented,reference/recipes/alpha-matte.md,representative-or-combined
+reveal,كشف النصوص,Word-by-Word,range-stagger,implemented-with-arabic-guard,reference/recipes/range-stagger.md,catalog-and-lab-or-conditional-only
+reveal,كشف النصوص,Line-by-Line,range-stagger,implemented-with-arabic-guard,reference/recipes/range-stagger.md,catalog-and-lab-or-conditional-only
+reveal,كشف النصوص,Text Build,alpha-matte,implemented,reference/recipes/alpha-matte.md,catalog-and-lab-or-conditional-only
+kinetic,الطباعة الحركية,Character Stagger,range-stagger,implemented-with-arabic-guard,reference/recipes/range-stagger.md,catalog-and-lab-or-conditional-only
+kinetic,الطباعة الحركية,Word Stagger,range-stagger,implemented-with-arabic-guard,reference/recipes/range-stagger.md,representative-or-combined
+kinetic,الطباعة الحركية,Cascade,range-stagger,implemented-with-arabic-guard,reference/recipes/range-stagger.md,catalog-and-lab-or-conditional-only
+kinetic,الطباعة الحركية,Wave,baseline-wave,implemented-with-arabic-guard,reference/recipes/baseline-wave.md,catalog-and-lab-or-conditional-only
+kinetic,الطباعة الحركية,Ripple,baseline-wave,implemented-with-arabic-guard,reference/recipes/baseline-wave.md,catalog-and-lab-or-conditional-only
+kinetic,الطباعة الحركية,Float,seeded-noise,implemented,reference/recipes/seeded-noise.md,catalog-and-lab-or-conditional-only
+kinetic,الطباعة الحركية,Drift,seeded-noise,implemented,reference/recipes/seeded-noise.md,catalog-and-lab-or-conditional-only
+kinetic,الطباعة الحركية,Tracking In,tracking,conditional,reference/recipes/tracking.md,catalog-and-lab-or-conditional-only
+kinetic,الطباعة الحركية,Tracking Out,tracking,conditional,reference/recipes/tracking.md,catalog-and-lab-or-conditional-only
+kinetic,الطباعة الحركية,Character Rotation,range-stagger,implemented-with-arabic-guard,reference/recipes/range-stagger.md,catalog-and-lab-or-conditional-only
+kinetic,الطباعة الحركية,Character Lift,range-stagger,implemented-with-arabic-guard,reference/recipes/range-stagger.md,catalog-and-lab-or-conditional-only
+kinetic,الطباعة الحركية,Baseline Wave,baseline-wave,implemented-with-arabic-guard,reference/recipes/baseline-wave.md,representative-or-combined
+kinetic,الطباعة الحركية,Text Scramble,scramble,ascii-explicit-copy-permission,reference/recipes/scramble.md,catalog-and-lab-or-conditional-only
+transitions,الانتقالات,Match Cut,match-cut,composition-recipe,reference/recipes/match-cut.md,representative-or-combined
+transitions,الانتقالات,Whip Pan,camera-transition,composition-recipe,reference/recipes/camera-transition.md,representative-or-combined
+transitions,الانتقالات,Whip Transition,camera-transition,composition-recipe,reference/recipes/camera-transition.md,catalog-and-lab-or-conditional-only
+transitions,الانتقالات,Push Transition,camera-transition,composition-recipe,reference/recipes/camera-transition.md,catalog-and-lab-or-conditional-only
+transitions,الانتقالات,Wipe Transition,alpha-matte,implemented,reference/recipes/alpha-matte.md,catalog-and-lab-or-conditional-only
+transitions,الانتقالات,Zoom Transition,camera-transition,composition-recipe,reference/recipes/camera-transition.md,catalog-and-lab-or-conditional-only
+transitions,الانتقالات,Spin Transition,camera-transition,composition-recipe,reference/recipes/camera-transition.md,catalog-and-lab-or-conditional-only
+transitions,الانتقالات,Morph Transition,contour-morph,implemented-with-correspondence,reference/recipes/contour-morph.md,catalog-and-lab-or-conditional-only
+transitions,الانتقالات,Mask Transition,alpha-matte,implemented,reference/recipes/alpha-matte.md,catalog-and-lab-or-conditional-only
+transitions,الانتقالات,Parallax Transition,camera-transition,composition-recipe,reference/recipes/camera-transition.md,catalog-and-lab-or-conditional-only
+transitions,الانتقالات,Seamless Transition,match-cut,composition-recipe,reference/recipes/match-cut.md,catalog-and-lab-or-conditional-only
+transitions,الانتقالات,Object Wipe,object-wipe,composition-recipe,reference/recipes/object-wipe.md,representative-or-combined
+paths,الخطوط والأشكال,Line Draw,path-trim,implemented,reference/recipes/path-trim.md,representative-or-combined
+paths,الخطوط والأشكال,Trim Paths,path-trim,implemented,reference/recipes/path-trim.md,representative-or-combined
+paths,الخطوط والأشكال,Stroke Reveal,path-trim,implemented,reference/recipes/path-trim.md,catalog-and-lab-or-conditional-only
+paths,الخطوط والأشكال,Underline Draw,path-trim,implemented,reference/recipes/path-trim.md,catalog-and-lab-or-conditional-only
+paths,الخطوط والأشكال,Arrow Draw,path-trim,implemented,reference/recipes/path-trim.md,representative-or-combined
+paths,الخطوط والأشكال,Path Follow,path-follow,implemented,reference/recipes/path-follow.md,representative-or-combined
+paths,الخطوط والأشكال,Callout Animation,path-trim,implemented,reference/recipes/path-trim.md,catalog-and-lab-or-conditional-only
+paths,الخطوط والأشكال,Circle Reveal,iris,implemented,reference/recipes/iris.md,catalog-and-lab-or-conditional-only
+paths,الخطوط والأشكال,Circular Wipe,iris,implemented,reference/recipes/iris.md,catalog-and-lab-or-conditional-only
+paths,الخطوط والأشكال,Shape Morph,contour-morph,implemented-with-correspondence,reference/recipes/contour-morph.md,representative-or-combined
+timing,التوقيت والحركة,Keyframe Animation,keyframes,implemented,reference/recipes/keyframes.md,representative-or-combined
+timing,التوقيت والحركة,Ease In,easing,implemented,reference/recipes/easing.md,catalog-and-lab-or-conditional-only
+timing,التوقيت والحركة,Ease Out,easing,implemented,reference/recipes/easing.md,catalog-and-lab-or-conditional-only
+timing,التوقيت والحركة,Ease In Out,easing,implemented,reference/recipes/easing.md,representative-or-combined
+timing,التوقيت والحركة,Graph Editor,graph-editor,diagnostic-lab-not-native-ae,reference/recipes/graph-editor.md,catalog-and-lab-or-conditional-only
+timing,التوقيت والحركة,Speed Graph,graph-editor,diagnostic-lab-not-native-ae,reference/recipes/graph-editor.md,representative-or-combined
+timing,التوقيت والحركة,Value Graph,graph-editor,diagnostic-lab-not-native-ae,reference/recipes/graph-editor.md,representative-or-combined
+timing,التوقيت والحركة,Anticipation,anticipation-settle,implemented,reference/recipes/anticipation-settle.md,representative-or-combined
+timing,التوقيت والحركة,Overshoot,anticipation-settle,implemented,reference/recipes/anticipation-settle.md,catalog-and-lab-or-conditional-only
+timing,التوقيت والحركة,Settle,anticipation-settle,implemented,reference/recipes/anticipation-settle.md,catalog-and-lab-or-conditional-only
+timing,التوقيت والحركة,Stagger,range-stagger,implemented-with-arabic-guard,reference/recipes/range-stagger.md,representative-or-combined
+timing,التوقيت والحركة,Hold,hold,implemented,reference/recipes/hold.md,representative-or-combined
+timing,التوقيت والحركة,Motion Blur,motion-blur,implemented-temporal-sampling,reference/recipes/motion-blur.md,representative-or-combined

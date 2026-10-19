@@ -1,0 +1,26 @@
+{
+  "id": "meaning-first-showcase",
+  "subject": "الحركة تخدم المعنى",
+  "audience": "Arabic-speaking viewers evaluating actual motion design",
+  "message": "Build movement around meaning, independent layers, direction and timing.",
+  "format": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 32,
+    "duration": 80,
+    "frame_count": 2560
+  },
+  "narration": "none requested; Arabic onscreen phrases carry the story",
+  "audio": "original procedural demonstration-only score and timed effects",
+  "approval": {
+    "mode": "direct_execution_requested",
+    "evidence": "User selected new system + a 60–90 second vertical demo, then explicitly asked to proceed."
+  },
+  "copy_sha256": "6971168f69e694b69f42a1c27d783427a0985cd813025ed7a2713ffd0700902f",
+  "source_exclusions": [
+    "Alhambra assets",
+    "Alhambra scene code",
+    "Alhambra palette and compositional grammar"
+  ],
+  "render_entry": "index.html"
+}

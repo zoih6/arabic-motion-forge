@@ -1,0 +1,14 @@
+{
+  "name": "arabic-motion-forge",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "description": "Original motion-production infrastructure, not a project scene template. Vendor licenses are separate.",
+  "scripts": {
+    "test": "node --test tests/core.test.mjs tests/vendor.test.mjs",
+    "catalog": "python3 tools/build_catalog.py",
+    "showcase:build": "python3 tools/build_showcase.py",
+    "doctor": "python3 tools/doctor.py"
+  }
+}

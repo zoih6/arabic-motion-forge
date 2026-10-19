@@ -1,0 +1,82 @@
+[
+  {
+    "package": "bezier-easing",
+    "version": "3.2.0",
+    "declared_license": "MIT",
+    "integrity": "sha512-QOKIYCgHd06gsQg0G9k1/JnzzZ+PT99qqUmgRHQ+r5PI/gsjCn0l7LXW6gtXoPhVJviIjP01xg9E7eNime9fVw==",
+    "tarball": "https://registry.npmjs.org/bezier-easing/-/bezier-easing-3.2.0.tgz",
+    "main": "./src/index.js",
+    "module": null,
+    "bundled_files": [
+      {
+        "path": "vendor/primitives/bezier-easing.mjs",
+        "upstream_path": "package/src/index.js",
+        "bytes": 2386,
+        "sha256": "5c5cb5b7ce28e959176b1d41daa958080baf1a0a63396d86d0a261ede8a54a30"
+      }
+    ],
+    "license_notice_path": "vendor/primitives/bezier-easing-LICENSE.txt",
+    "notice_first_line": "Copyright (c) 2014 Ga\u00ebtan Renaudeau",
+    "runtime_tested": false
+  },
+  {
+    "package": "d3-ease",
+    "version": "3.0.1",
+    "declared_license": "BSD-3-Clause",
+    "integrity": "sha512-wR/XK3D3XcLIZwpbvQwQ5fK+8Ykds1ip7A2Txe0yxncXSdq1L9skcG7blcedkOX+ZcgxGAmLX1FrRGbADwzi0w==",
+    "tarball": "https://registry.npmjs.org/d3-ease/-/d3-ease-3.0.1.tgz",
+    "main": "src/index.js",
+    "module": "src/index.js",
+    "bundled_files": [
+      {
+        "path": "vendor/primitives/d3-ease.min.cjs",
+        "upstream_path": "package/dist/d3-ease.min.js",
+        "bytes": 3173,
+        "sha256": "e60a1ed750a1ad138dd18e8d3f463238113cfbf7d89685a13d19bd4e048dc3ce"
+      }
+    ],
+    "license_notice_path": "vendor/primitives/d3-ease-LICENSE.txt",
+    "notice_first_line": "Copyright 2010-2021 Mike Bostock",
+    "runtime_tested": false
+  },
+  {
+    "package": "animejs",
+    "version": "4.5.0",
+    "declared_license": "MIT",
+    "integrity": "sha512-NQimYX+lz8WaXonGS9zVVoviCIAjONeJayxacUditaivYLqyXgGjFKjuyl0aUUhFKm5MriX9ty1TGovNzoJQWA==",
+    "tarball": "https://registry.npmjs.org/animejs/-/animejs-4.5.0.tgz",
+    "main": "./dist/modules/index.cjs",
+    "module": "./dist/modules/index.js",
+    "bundled_files": [
+      {
+        "path": "vendor/primitives/anime.esm.mjs",
+        "upstream_path": "package/dist/bundles/anime.esm.min.js",
+        "bytes": 118678,
+        "sha256": "a19015a1a92d52025a2fb6703b6d67eadd1cc2aeaf880770e96e04cf6aa07be1"
+      }
+    ],
+    "license_notice_path": "vendor/primitives/animejs-LICENSE.txt",
+    "notice_first_line": "The MIT License",
+    "runtime_tested": false
+  },
+  {
+    "package": "svg-path-properties",
+    "version": "2.2.0",
+    "declared_license": "ISC",
+    "integrity": "sha512-sHyCQCJXfPXbxG6Nj3eWZ6gUsRpkjRia+3hPwy8iWt0AIdnLRacY5SnGxLnjWtsPhE0ICS8fY7xOUNl+90yLSw==",
+    "tarball": "https://registry.npmjs.org/svg-path-properties/-/svg-path-properties-2.2.0.tgz",
+    "main": null,
+    "module": null,
+    "bundled_files": [
+      {
+        "path": "vendor/primitives/svg-path-properties.mjs",
+        "upstream_path": "package/dist/main.mjs",
+        "bytes": 25884,
+        "sha256": "4be733a6c5024f0a43bc1d4a2b86a8740bdd54d4b2ee0726969a12ef34c22fe4"
+      }
+    ],
+    "license_notice_path": "vendor/primitives/svg-path-properties-LICENSE.txt",
+    "notice_first_line": "MIT License",
+    "runtime_tested": false
+  }
+]

@@ -1,0 +1,9 @@
+﻿scene,start,end,frames,purpose,camera,mechanisms,independent_layer_specs
+S01,0,10,320,الحركة ليست زينة,locked composition,"alpha-matte,transform-track,path-trim,spring",9
+S02,10,20,320,وزن وإيقاع,locked composition,"ballistic,spring,secondary,independent-shadow",11
+S03,20,30,320,وجّه العين,depth scroll,"scroll,parallax,hold",6
+S04,30,40,320,اكشف المعنى,locked composition,"alpha-matte,iris,path-trim",7
+S05,40,50,320,كل كلمة لها إيقاع,locked composition,"range-stagger,baseline-wave,alpha-matte",8
+S06,50,60,320,اربط فكرة بأخرى,motivated whip with temporal sampling,"match-cut,object-wipe,camera-transition,motion-blur",9
+S07,60,70,320,الخط يشرح,locked composition,"path-trim,path-follow,contour-morph",8
+S08,70,80,320,التوقيت يصنع المعنى,locked composition,"easing,graph-editor,keyframes,hold",9

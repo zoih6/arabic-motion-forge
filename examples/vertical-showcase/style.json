@@ -1,0 +1,29 @@
+{
+  "purpose": "Original portrait demonstration of meaningful motion; not an Alhambra derivative.",
+  "palette": [
+    "#101d35",
+    "#245bff",
+    "#d7f85b",
+    "#f3f7ff",
+    "#70d8ef"
+  ],
+  "fonts": [
+    "IBM Plex Sans Arabic SemiBold",
+    "IBM Plex Sans Arabic Regular"
+  ],
+  "material_language": "flat editorial vector geometry; no stone, parchment, collage photograph or red-thread motif",
+  "composition_grammar": "monumental Arabic shapes, large whitespace, independent rules, moving vector anchors, functional diagrams",
+  "camera_grammar": "mostly static framing; depth-dependent scroll and one motivated whip; no arbitrary zoom per shot",
+  "motif": "a geometric anchor that becomes a route or a sample point",
+  "shot_order": [
+    "entrance",
+    "physics",
+    "scrolling",
+    "reveal",
+    "kinetic",
+    "transitions",
+    "paths",
+    "timing"
+  ],
+  "forbidden_to_reuse_as_new_project": true
+}

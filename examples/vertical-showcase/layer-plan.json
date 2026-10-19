@@ -1,0 +1,1469 @@
+{
+  "scenes": [
+    {
+      "id": "S01",
+      "name": "الحركة ليست زينة",
+      "start": 0,
+      "end": 10,
+      "purpose": "الحركة ليست زينة",
+      "mechanisms": [
+        "alpha-matte",
+        "transform-track",
+        "path-trim",
+        "spring"
+      ],
+      "camera": "locked composition",
+      "layers": [
+        {
+          "id": "entry-field",
+          "role": "background",
+          "source": "new vector geometry or native shaped Arabic text",
+          "parent": null,
+          "depth": "explicit only where the composition calls for parallax",
+          "channels": [
+            "width"
+          ],
+          "timing": {
+            "start": 0,
+            "settle_or_stage_end": 0.9
+          },
+          "before": "defined by the source sampler; not always invisible",
+          "during": "only the channels named here change; see source function",
+          "after": "hold, bounded loop, or exit as explicitly authored",
+          "reveal": "independent matte/path where applicable",
+          "cache_policy": "cache static shaped text only, not animated groups",
+          "camera_relation": "independent unless documented as a camera/parent control"
+        },
+        {
+          "id": "entry-rail",
+          "role": "accent",
+          "source": "new vector geometry or native shaped Arabic text",
+          "parent": null,
+          "depth": "explicit only where the composition calls for parallax",
+          "channels": [
+            "height"
+          ],
+          "timing": {
+            "start": 0.35,
+            "settle_or_stage_end": 1.4
+          },
+          "before": "defined by the source sampler; not always invisible",
+          "during": "only the channels named here change; see source function",
+          "after": "hold, bounded loop, or exit as explicitly authored",
+          "reveal": "independent matte/path where applicable",
+          "cache_policy": "cache static shaped text only, not animated groups",
+          "camera_relation": "independent unless documented as a camera/parent control"
+        },
+        {
+          "id": "entry-title",
+          "role": "headline",
+          "source": "new vector geometry or native shaped Arabic text",
+          "parent": null,
+          "depth": "explicit only where the composition calls for parallax",
+          "channels": [
+            "matte"
+          ],
+          "timing": {
+            "start": 0.2,
+            "settle_or_stage_end": 1.4
+          },
+          "before": "defined by the source sampler; not always invisible",
+          "during": "only the channels named here change; see source function",
+          "after": "hold, bounded loop, or exit as explicitly authored",
+          "reveal": "independent matte/path where applicable",
+          "cache_policy": "cache static shaped text only, not animated groups",
+          "camera_relation": "independent unless documented as a camera/parent control"
+        },
+        {
+          "id": "entry-thesis",
+          "role": "headline",
+          "source": "new vector geometry or native shaped Arabic text",
+          "parent": null,
+          "depth": "explicit only where the composition calls for parallax",
+          "channels": [
+            "matte"
+          ],
+          "timing": {
+            "start": 1.45,
+            "settle_or_stage_end": 2.45
+          },
+          "before": "defined by the source sampler; not always invisible",
+          "during": "only the channels named here change; see source function",
+          "after": "hold, bounded loop, or exit as explicitly authored",
+          "reveal": "independent matte/path where applicable",
+          "cache_policy": "cache static shaped text only, not animated groups",
+          "camera_relation": "independent unless documented as a camera/parent control"
+        },
+        {
+          "id": "entry-rule",
+          "role": "stroke",
+          "source": "new vector geometry or native shaped Arabic text",
+          "parent": null,
+          "depth": "explicit only where the composition calls for parallax",
+          "channels": [
+            "arc_length"
+          ],
+          "timing": {
+            "start": 2.05,
+            "settle_or_stage_end": 3.25
+          },
+          "before": "defined by the source sampler; not always invisible",
+          "during": "only the channels named here change; see source function",
+          "after": "hold, bounded loop, or exit as explicitly authored",
+          "reveal": "independent matte/path where applicable",
+          "cache_policy": "cache static shaped text only, not animated groups",
+          "camera_relation": "independent unless documented as a camera/parent control"
+        },
+        {
+          "id": "entry-anchor",
+          "role": "marker",
+          "source": "new vector geometry or native shaped Arabic text",
+          "parent": null,
+          "depth": "explicit only where the composition calls for parallax",
+          "channels": [
+            "spring_y"
+          ],
+          "timing": {
+            "start": 3,
+            "settle_or_stage_end": 4.5
+          },
+          "before": "defined by the source sampler; not always invisible",
+          "during": "only the channels named here change; see source function",
+          "after": "hold, bounded loop, or exit as explicitly authored",
+          "reveal": "independent matte/path where applicable",
+          "cache_policy": "cache static shaped text only, not animated groups",
+          "camera_relation": "independent unless documented as a camera/parent control"
+        },
+        {
+          "id": "entry-message",
+          "role": "support",
+          "source": "new vector geometry or native shaped Arabic text",
+          "parent": null,
+          "depth": "explicit only where the composition calls for parallax",
+          "channels": [
+            "matte"
+          ],
+          "timing": {
+            "start": 3,
+            "settle_or_stage_end": 3.9
+          },
+          "before": "defined by the source sampler; not always invisible",
+          "during": "only the channels named here change; see source function",
+          "after": "hold, bounded loop, or exit as explicitly authored",
+          "reveal": "independent matte/path where applicable",
+          "cache_policy": "cache static shaped text only, not animated groups",
+          "camera_relation": "independent unless documented as a camera/parent control"
+        },
+        {
+          "id": "entry-detail",
+          "role": "support",
+          "source": "new vector geometry or native shaped Arabic text",
+          "parent": null,
+          "depth": "explicit only where the composition calls for parallax",
+          "channels": [
+            "matte"
+          ],
+          "timing": {
+            "start": 5.2,
+            "settle_or_stage_end": 6.25
+          },
+          "before": "defined by the source sampler; not always invisible",
+          "during": "only the channels named here change; see source function",
+          "after": "hold, bounded loop, or exit as explicitly authored",
+          "reveal": "independent matte/path where applicable",
+          "cache_policy": "cache static shaped text only, not animated groups",
+          "camera_relation": "independent unless documented as a camera/parent control"
+        },
+        {
+          "id": "entry-outgoing-occluder",
+          "role": "transition",
+          "source": "new vector geometry or native shaped Arabic text",
+          "parent": null,
+          "depth": "explicit only where the composition calls for parallax",
+          "channels": [
+            "mask_geometry"
+          ],
+          "timing": {
+            "start": 8.9,
+            "settle_or_stage_end": 10
+          },
+          "before": "defined by the source sampler; not always invisible",
+          "during": "only the channels named here change; see source function",
+          "after": "hold, bounded loop, or exit as explicitly authored",
+          "reveal": "independent matte/path where applicable",
+          "cache_policy": "cache static shaped text only, not animated groups",
+          "camera_relation": "independent unless documented as a camera/parent control"
+        }
+      ]
+    },
+    {
+      "id": "S02",
+      "name": "وزن وإيقاع",
+      "start": 10,
+      "end": 20,
+      "purpose": "وزن وإيقاع",
+      "mechanisms": [
+        "ballistic",
+        "spring",
+        "secondary",
+        "independent-shadow"
+      ],
+      "camera": "locked composition",
+      "layers": [
+        {
+          "id": "physics-a",
+          "role": "headline",
+          "source": "new vector geometry or native shaped Arabic text",
+          "parent": null,
+          "depth": "explicit only where the composition calls for parallax",
+          "channels": [
+            "matte"
+          ],
+          "timing": {
+            "start": 0.22,
+            "settle_or_stage_end": 1.12
+          },
+          "before": "defined by the source sampler; not always invisible",
+          "during": "only the channels named here change; see source function",
+          "after": "hold, bounded loop, or exit as explicitly authored",
+          "reveal": "independent matte/path where applicable",
+          "cache_policy": "cache static shaped text only, not animated groups",
+          "camera_relation": "independent unless documented as a camera/parent control"
+        },
+        {
+          "id": "physics-b",
+          "role": "headline",
+          "source": "new vector geometry or native shaped Arabic text",
+          "parent": null,
+          "depth": "explicit only where the composition calls for parallax",
+          "channels": [
+            "matte"
+          ],
+          "timing": {
+            "start": 0.9,
+            "settle_or_stage_end": 2
+          },
+          "before": "defined by the source sampler; not always invisible",
+          "during": "only the channels named here change; see source function",
+          "after": "hold, bounded loop, or exit as explicitly authored",
+          "reveal": "independent matte/path where applicable",
+          "cache_policy": "cache static shaped text only, not animated groups",
+          "camera_relation": "independent unless documented as a camera/parent control"
+        },
+        {
+          "id": "gravity-ball",
+          "role": "shape",
+          "source": "new vector geometry or native shaped Arabic text",
+          "parent": null,
+          "depth": "explicit only where the composition calls for parallax",
+          "channels": [
+            "ballistic_y/squash"
+          ],
+          "timing": {
+            "start": 1.3,
+            "settle_or_stage_end": 3.1
+          },
+          "before": "defined by the source sampler; not always invisible",
+          "during": "only the channels named here change; see source function",
+          "after": "hold, bounded loop, or exit as explicitly authored",
+          "reveal": "independent matte/path where applicable",
+          "cache_policy": "cache static shaped text only, not animated groups",
+          "camera_relation": "independent unless documented as a camera/parent control"
+        },
+        {
+          "id": "ball-shadow",
+          "role": "shadow",
+          "source": "new vector geometry or native shaped Arabic text",
+          "parent": null,
+          "depth": "explicit only where the composition calls for parallax",
+          "channels": [
+            "altitude-derived opacity/width"
+          ],
+          "timing": {
+            "start": 1.3,
+            "settle_or_stage_end": 3.1
+          },
+          "before": "defined by the source sampler; not always invisible",
+          "during": "only the channels named here change; see source function",
+          "after": "hold, bounded loop, or exit as explicitly authored",
+          "reveal": "independent matte/path where applicable",
+          "cache_policy": "cache static shaped text only, not animated groups",
+          "camera_relation": "independent unless documented as a camera/parent control"
+        },
+        {
+          "id": "weighted-block",
+          "role": "shape",
+          "source": "new vector geometry or native shaped Arabic text",
+          "parent": null,
+          "depth": "explicit only where the composition calls for parallax",
+          "channels": [
+            "heavy_spring_y"
+          ],
+          "timing": {
+            "start": 1.65,
+            "settle_or_stage_end": 4
+          },
+          "before": "defined by the source sampler; not always invisible",
+          "during": "only the channels named here change; see source function",
+          "after": "hold, bounded loop, or exit as explicitly authored",
+          "reveal": "independent matte/path where applicable",
+          "cache_policy": "cache static shaped text only, not animated groups",
+          "camera_relation": "independent unless documented as a camera/parent control"
+        },
+        {
+          "id": "block-shadow",
+          "role": "shadow",
+          "source": "new vector geometry or native shaped Arabic text",
+          "parent": null,
+          "depth": "explicit only where the composition calls for parallax",
+          "channels": [
+            "altitude-derived opacity/width"
+          ],
+          "timing": {
+            "start": 1.65,
+            "settle_or_stage_end": 4
+          },
+          "before": "defined by the source sampler; not always invisible",
+          "during": "only the channels named here change; see source function",
+          "after": "hold, bounded loop, or exit as explicitly authored",
+          "reveal": "independent matte/path where applicable",
+          "cache_policy": "cache static shaped text only, not animated groups",
+          "camera_relation": "independent unless documented as a camera/parent control"
+        },
+        {
+          "id": "spring-link",
+          "role": "stroke",
+          "source": "new vector geometry or native shaped Arabic text",
+          "parent": null,
+          "depth": "explicit only where the composition calls for parallax",
+          "channels": [
+            "arc_length"
+          ],
+          "timing": {
+            "start": 3.6,
+            "settle_or_stage_end": 4.4
+          },
+          "before": "defined by the source sampler; not always invisible",
+          "during": "only the channels named here change; see source function",
+          "after": "hold, bounded loop, or exit as explicitly authored",
+          "reveal": "independent matte/path where applicable",
+          "cache_policy": "cache static shaped text only, not animated groups",
+          "camera_relation": "independent unless documented as a camera/parent control"
+        },
+        {
+          "id": "weight-light",
+          "role": "text",
+          "source": "new vector geometry or native shaped Arabic text",
+          "parent": null,
+          "depth": "explicit only where the composition calls for parallax",
+          "channels": [
+            "matte"
+          ],
+          "timing": {
+            "start": 2.5,
+            "settle_or_stage_end": 3.05
+          },
+          "before": "defined by the source sampler; not always invisible",
+          "during": "only the channels named here change; see source function",
+          "after": "hold, bounded loop, or exit as explicitly authored",
+          "reveal": "independent matte/path where applicable",
+          "cache_policy": "cache static shaped text only, not animated groups",
+          "camera_relation": "independent unless documented as a camera/parent control"
+        },
+        {
+          "id": "weight-heavy",
+          "role": "text",
+          "source": "new vector geometry or native shaped Arabic text",
+          "parent": null,
+          "depth": "explicit only where the composition calls for parallax",
+          "channels": [
+            "matte"
+          ],
+          "timing": {
+            "start": 3.1,
+            "settle_or_stage_end": 3.75
+          },
+          "before": "defined by the source sampler; not always invisible",
+          "during": "only the channels named here change; see source function",
+          "after": "hold, bounded loop, or exit as explicitly authored",
+          "reveal": "independent matte/path where applicable",
+          "cache_policy": "cache static shaped text only, not animated groups",
+          "camera_relation": "independent unless documented as a camera/parent control"
+        },
+        {
+          "id": "physics-limit",
+          "role": "text",
+          "source": "new vector geometry or native shaped Arabic text",
+          "parent": null,
+          "depth": "explicit only where the composition calls for parallax",
+          "channels": [
+            "matte"
+          ],
+          "timing": {
+            "start": 4.2,
+            "settle_or_stage_end": 5.1
+          },
+          "before": "defined by the source sampler; not always invisible",
+          "during": "only the channels named here change; see source function",
+          "after": "hold, bounded loop, or exit as explicitly authored",
+          "reveal": "independent matte/path where applicable",
+          "cache_policy": "cache static shaped text only, not animated groups",
+          "camera_relation": "independent unless documented as a camera/parent control"
+        },
+        {
+          "id": "physics-response",
+          "role": "curve",
+          "source": "new vector geometry or native shaped Arabic text",
+          "parent": null,
+          "depth": "explicit only where the composition calls for parallax",
+          "channels": [
+            "arc_length"
+          ],
+          "timing": {
+            "start": 6,
+            "settle_or_stage_end": 7.4
+          },
+          "before": "defined by the source sampler; not always invisible",
+          "during": "only the channels named here change; see source function",
+          "after": "hold, bounded loop, or exit as explicitly authored",
+          "reveal": "independent matte/path where applicable",
+          "cache_policy": "cache static shaped text only, not animated groups",
+          "camera_relation": "independent unless documented as a camera/parent control"
+        }
+      ]
+    },
+    {
+      "id": "S03",
+      "name": "وجّه العين",
+      "start": 20,
+      "end": 30,
+      "purpose": "وجّه العين",
+      "mechanisms": [
+        "scroll",
+        "parallax",
+        "hold"
+      ],
+      "camera": "depth scroll",
+      "layers": [
+        {
+          "id": "far-word-plane",
+          "role": "repeater",
+          "source": "new vector geometry or native shaped Arabic text",
+          "parent": null,
+          "depth": "explicit only where the composition calls for parallax",
+          "channels": [
+            "scroll*0.48"
+          ],
+          "timing": {
+            "start": 1.2,
+            "settle_or_stage_end": 7.6
+          },
+          "before": "defined by the source sampler; not always invisible",
+          "during": "only the channels named here change; see source function",
+          "after": "hold, bounded loop, or exit as explicitly authored",
+          "reveal": "independent matte/path where applicable",
+          "cache_policy": "cache static shaped text only, not animated groups",
+          "camera_relation": "independent unless documented as a camera/parent control"
+        },
+        {
+          "id": "main-word-plane",
+          "role": "repeater",
+          "source": "new vector geometry or native shaped Arabic text",
+          "parent": null,
+          "depth": "explicit only where the composition calls for parallax",
+          "channels": [
+            "scroll/focus-weight"
+          ],
+          "timing": {
+            "start": 1.2,
+            "settle_or_stage_end": 7.6
+          },
+          "before": "defined by the source sampler; not always invisible",
+          "during": "only the channels named here change; see source function",
+          "after": "hold, bounded loop, or exit as explicitly authored",
+          "reveal": "independent matte/path where applicable",
+          "cache_policy": "cache static shaped text only, not animated groups",
+          "camera_relation": "independent unless documented as a camera/parent control"
+        },
+        {
+          "id": "near-word-plane",
+          "role": "repeater",
+          "source": "new vector geometry or native shaped Arabic text",
+          "parent": null,
+          "depth": "explicit only where the composition calls for parallax",
+          "channels": [
+            "scroll*1.42"
+          ],
+          "timing": {
+            "start": 1.2,
+            "settle_or_stage_end": 7.6
+          },
+          "before": "defined by the source sampler; not always invisible",
+          "during": "only the channels named here change; see source function",
+          "after": "hold, bounded loop, or exit as explicitly authored",
+          "reveal": "independent matte/path where applicable",
+          "cache_policy": "cache static shaped text only, not animated groups",
+          "camera_relation": "independent unless documented as a camera/parent control"
+        },
+        {
+          "id": "focus-rules",
+          "role": "two-independent-strokes",
+          "source": "new vector geometry or native shaped Arabic text",
+          "parent": null,
+          "depth": "explicit only where the composition calls for parallax",
+          "channels": [
+            "width"
+          ],
+          "timing": {
+            "start": 0.6,
+            "settle_or_stage_end": 1.65
+          },
+          "before": "defined by the source sampler; not always invisible",
+          "during": "only the channels named here change; see source function",
+          "after": "hold, bounded loop, or exit as explicitly authored",
+          "reveal": "independent matte/path where applicable",
+          "cache_policy": "cache static shaped text only, not animated groups",
+          "camera_relation": "independent unless documented as a camera/parent control"
+        },
+        {
+          "id": "scroll-point",
+          "role": "headline",
+          "source": "new vector geometry or native shaped Arabic text",
+          "parent": null,
+          "depth": "explicit only where the composition calls for parallax",
+          "channels": [
+            "matte"
+          ],
+          "timing": {
+            "start": 1.6,
+            "settle_or_stage_end": 2.45
+          },
+          "before": "defined by the source sampler; not always invisible",
+          "during": "only the channels named here change; see source function",
+          "after": "hold, bounded loop, or exit as explicitly authored",
+          "reveal": "independent matte/path where applicable",
+          "cache_policy": "cache static shaped text only, not animated groups",
+          "camera_relation": "independent unless documented as a camera/parent control"
+        },
+        {
+          "id": "ticker",
+          "role": "repeater",
+          "source": "new vector geometry or native shaped Arabic text",
+          "parent": null,
+          "depth": "explicit only where the composition calls for parallax",
+          "channels": [
+            "horizontal_recorded_scroll"
+          ],
+          "timing": {
+            "start": 0,
+            "settle_or_stage_end": 10
+          },
+          "before": "defined by the source sampler; not always invisible",
+          "during": "only the channels named here change; see source function",
+          "after": "hold, bounded loop, or exit as explicitly authored",
+          "reveal": "independent matte/path where applicable",
+          "cache_policy": "cache static shaped text only, not animated groups",
+          "camera_relation": "independent unless documented as a camera/parent control"
+        }
+      ]
+    },
+    {
+      "id": "S04",
+      "name": "اكشف المعنى",
+      "start": 30,
+      "end": 40,
+      "purpose": "اكشف المعنى",
+      "mechanisms": [
+        "alpha-matte",
+        "iris",
+        "path-trim"
+      ],
+      "camera": "locked composition",
+      "layers": [
+        {
+          "id": "reveal-command",
+          "role": "headline",
+          "source": "new vector geometry or native shaped Arabic text",
+          "parent": null,
+          "depth": "explicit only where the composition calls for parallax",
+          "channels": [
+            "five-band-rtl-matte"
+          ],
+          "timing": {
+            "start": 0.18,
+            "settle_or_stage_end": 1.63
+          },
+          "before": "defined by the source sampler; not always invisible",
+          "during": "only the channels named here change; see source function",
+          "after": "hold, bounded loop, or exit as explicitly authored",
+          "reveal": "independent matte/path where applicable",
+          "cache_policy": "cache static shaped text only, not animated groups",
+          "camera_relation": "independent unless documented as a camera/parent control"
+        },
+        {
+          "id": "reveal-complement",
+          "role": "headline",
+          "source": "new vector geometry or native shaped Arabic text",
+          "parent": null,
+          "depth": "explicit only where the composition calls for parallax",
+          "channels": [
+            "iris-matte"
+          ],
+          "timing": {
+            "start": 1.35,
+            "settle_or_stage_end": 2.65
+          },
+          "before": "defined by the source sampler; not always invisible",
+          "during": "only the channels named here change; see source function",
+          "after": "hold, bounded loop, or exit as explicitly authored",
+          "reveal": "independent matte/path where applicable",
+          "cache_policy": "cache static shaped text only, not animated groups",
+          "camera_relation": "independent unless documented as a camera/parent control"
+        },
+        {
+          "id": "reveal-scanner",
+          "role": "shape",
+          "source": "new vector geometry or native shaped Arabic text",
+          "parent": null,
+          "depth": "explicit only where the composition calls for parallax",
+          "channels": [
+            "x"
+          ],
+          "timing": {
+            "start": 2.4,
+            "settle_or_stage_end": 3.8
+          },
+          "before": "defined by the source sampler; not always invisible",
+          "during": "only the channels named here change; see source function",
+          "after": "hold, bounded loop, or exit as explicitly authored",
+          "reveal": "independent matte/path where applicable",
+          "cache_policy": "cache static shaped text only, not animated groups",
+          "camera_relation": "independent unless documented as a camera/parent control"
+        },
+        {
+          "id": "reveal-stroke",
+          "role": "stroke",
+          "source": "new vector geometry or native shaped Arabic text",
+          "parent": null,
+          "depth": "explicit only where the composition calls for parallax",
+          "channels": [
+            "arc_length"
+          ],
+          "timing": {
+            "start": 2.8,
+            "settle_or_stage_end": 4.05
+          },
+          "before": "defined by the source sampler; not always invisible",
+          "during": "only the channels named here change; see source function",
+          "after": "hold, bounded loop, or exit as explicitly authored",
+          "reveal": "independent matte/path where applicable",
+          "cache_policy": "cache static shaped text only, not animated groups",
+          "camera_relation": "independent unless documented as a camera/parent control"
+        },
+        {
+          "id": "reveal-detail",
+          "role": "text",
+          "source": "new vector geometry or native shaped Arabic text",
+          "parent": null,
+          "depth": "explicit only where the composition calls for parallax",
+          "channels": [
+            "matte"
+          ],
+          "timing": {
+            "start": 3.4,
+            "settle_or_stage_end": 4.25
+          },
+          "before": "defined by the source sampler; not always invisible",
+          "during": "only the channels named here change; see source function",
+          "after": "hold, bounded loop, or exit as explicitly authored",
+          "reveal": "independent matte/path where applicable",
+          "cache_policy": "cache static shaped text only, not animated groups",
+          "camera_relation": "independent unless documented as a camera/parent control"
+        },
+        {
+          "id": "reveal-detail2",
+          "role": "text",
+          "source": "new vector geometry or native shaped Arabic text",
+          "parent": null,
+          "depth": "explicit only where the composition calls for parallax",
+          "channels": [
+            "matte"
+          ],
+          "timing": {
+            "start": 4.35,
+            "settle_or_stage_end": 5.2
+          },
+          "before": "defined by the source sampler; not always invisible",
+          "during": "only the channels named here change; see source function",
+          "after": "hold, bounded loop, or exit as explicitly authored",
+          "reveal": "independent matte/path where applicable",
+          "cache_policy": "cache static shaped text only, not animated groups",
+          "camera_relation": "independent unless documented as a camera/parent control"
+        },
+        {
+          "id": "reveal-bottom",
+          "role": "text",
+          "source": "new vector geometry or native shaped Arabic text",
+          "parent": null,
+          "depth": "explicit only where the composition calls for parallax",
+          "channels": [
+            "split-alpha-matte"
+          ],
+          "timing": {
+            "start": 6.3,
+            "settle_or_stage_end": 7.45
+          },
+          "before": "defined by the source sampler; not always invisible",
+          "during": "only the channels named here change; see source function",
+          "after": "hold, bounded loop, or exit as explicitly authored",
+          "reveal": "independent matte/path where applicable",
+          "cache_policy": "cache static shaped text only, not animated groups",
+          "camera_relation": "independent unless documented as a camera/parent control"
+        }
+      ]
+    },
+    {
+      "id": "S05",
+      "name": "كل كلمة لها إيقاع",
+      "start": 40,
+      "end": 50,
+      "purpose": "كل كلمة لها إيقاع",
+      "mechanisms": [
+        "range-stagger",
+        "baseline-wave",
+        "alpha-matte"
+      ],
+      "camera": "locked composition",
+      "layers": [
+        {
+          "id": "type-0",
+          "role": "word",
+          "source": "new vector geometry or native shaped Arabic text",
+          "parent": null,
+          "depth": "explicit only where the composition calls for parallax",
+          "channels": [
+            "matte/baseline"
+          ],
+          "timing": {
+            "start": 0.12,
+            "settle_or_stage_end": 1.07
+          },
+          "before": "defined by the source sampler; not always invisible",
+          "during": "only the channels named here change; see source function",
+          "after": "hold, bounded loop, or exit as explicitly authored",
+          "reveal": "independent matte/path where applicable",
+          "cache_policy": "cache static shaped text only, not animated groups",
+          "camera_relation": "independent unless documented as a camera/parent control"
+        },
+        {
+          "id": "type-1",
+          "role": "word",
+          "source": "new vector geometry or native shaped Arabic text",
+          "parent": null,
+          "depth": "explicit only where the composition calls for parallax",
+          "channels": [
+            "matte/baseline"
+          ],
+          "timing": {
+            "start": 0.55,
+            "settle_or_stage_end": 1.5
+          },
+          "before": "defined by the source sampler; not always invisible",
+          "during": "only the channels named here change; see source function",
+          "after": "hold, bounded loop, or exit as explicitly authored",
+          "reveal": "independent matte/path where applicable",
+          "cache_policy": "cache static shaped text only, not animated groups",
+          "camera_relation": "independent unless documented as a camera/parent control"
+        },
+        {
+          "id": "type-2",
+          "role": "word",
+          "source": "new vector geometry or native shaped Arabic text",
+          "parent": null,
+          "depth": "explicit only where the composition calls for parallax",
+          "channels": [
+            "matte/baseline"
+          ],
+          "timing": {
+            "start": 1.35,
+            "settle_or_stage_end": 2.3
+          },
+          "before": "defined by the source sampler; not always invisible",
+          "during": "only the channels named here change; see source function",
+          "after": "hold, bounded loop, or exit as explicitly authored",
+          "reveal": "independent matte/path where applicable",
+          "cache_policy": "cache static shaped text only, not animated groups",
+          "camera_relation": "independent unless documented as a camera/parent control"
+        },
+        {
+          "id": "type-3",
+          "role": "word",
+          "source": "new vector geometry or native shaped Arabic text",
+          "parent": null,
+          "depth": "explicit only where the composition calls for parallax",
+          "channels": [
+            "matte/baseline"
+          ],
+          "timing": {
+            "start": 1.85,
+            "settle_or_stage_end": 2.8
+          },
+          "before": "defined by the source sampler; not always invisible",
+          "during": "only the channels named here change; see source function",
+          "after": "hold, bounded loop, or exit as explicitly authored",
+          "reveal": "independent matte/path where applicable",
+          "cache_policy": "cache static shaped text only, not animated groups",
+          "camera_relation": "independent unless documented as a camera/parent control"
+        },
+        {
+          "id": "type-staff",
+          "role": "stroke",
+          "source": "new vector geometry or native shaped Arabic text",
+          "parent": null,
+          "depth": "explicit only where the composition calls for parallax",
+          "channels": [
+            "arc_length"
+          ],
+          "timing": {
+            "start": 2.4,
+            "settle_or_stage_end": 3.8
+          },
+          "before": "defined by the source sampler; not always invisible",
+          "during": "only the channels named here change; see source function",
+          "after": "hold, bounded loop, or exit as explicitly authored",
+          "reveal": "independent matte/path where applicable",
+          "cache_policy": "cache static shaped text only, not animated groups",
+          "camera_relation": "independent unless documented as a camera/parent control"
+        },
+        {
+          "id": "beat-bars",
+          "role": "repeater",
+          "source": "new vector geometry or native shaped Arabic text",
+          "parent": null,
+          "depth": "explicit only where the composition calls for parallax",
+          "channels": [
+            "stagger/phase"
+          ],
+          "timing": {
+            "start": 3.5,
+            "settle_or_stage_end": 10
+          },
+          "before": "defined by the source sampler; not always invisible",
+          "during": "only the channels named here change; see source function",
+          "after": "hold, bounded loop, or exit as explicitly authored",
+          "reveal": "independent matte/path where applicable",
+          "cache_policy": "cache static shaped text only, not animated groups",
+          "camera_relation": "independent unless documented as a camera/parent control"
+        },
+        {
+          "id": "type-rule",
+          "role": "text",
+          "source": "new vector geometry or native shaped Arabic text",
+          "parent": null,
+          "depth": "explicit only where the composition calls for parallax",
+          "channels": [
+            "matte"
+          ],
+          "timing": {
+            "start": 4,
+            "settle_or_stage_end": 4.95
+          },
+          "before": "defined by the source sampler; not always invisible",
+          "during": "only the channels named here change; see source function",
+          "after": "hold, bounded loop, or exit as explicitly authored",
+          "reveal": "independent matte/path where applicable",
+          "cache_policy": "cache static shaped text only, not animated groups",
+          "camera_relation": "independent unless documented as a camera/parent control"
+        },
+        {
+          "id": "type-rule2",
+          "role": "text",
+          "source": "new vector geometry or native shaped Arabic text",
+          "parent": null,
+          "depth": "explicit only where the composition calls for parallax",
+          "channels": [
+            "matte"
+          ],
+          "timing": {
+            "start": 5,
+            "settle_or_stage_end": 5.95
+          },
+          "before": "defined by the source sampler; not always invisible",
+          "during": "only the channels named here change; see source function",
+          "after": "hold, bounded loop, or exit as explicitly authored",
+          "reveal": "independent matte/path where applicable",
+          "cache_policy": "cache static shaped text only, not animated groups",
+          "camera_relation": "independent unless documented as a camera/parent control"
+        }
+      ]
+    },
+    {
+      "id": "S06",
+      "name": "اربط فكرة بأخرى",
+      "start": 50,
+      "end": 60,
+      "purpose": "اربط فكرة بأخرى",
+      "mechanisms": [
+        "match-cut",
+        "object-wipe",
+        "camera-transition",
+        "motion-blur"
+      ],
+      "camera": "motivated whip with temporal sampling",
+      "layers": [
+        {
+          "id": "transition-shared-anchor",
+          "role": "shape",
+          "source": "new vector geometry or native shaped Arabic text",
+          "parent": null,
+          "depth": "explicit only where the composition calls for parallax",
+          "channels": [
+            "preserved match position"
+          ],
+          "timing": {
+            "start": 0,
+            "settle_or_stage_end": 7
+          },
+          "before": "defined by the source sampler; not always invisible",
+          "during": "only the channels named here change; see source function",
+          "after": "hold, bounded loop, or exit as explicitly authored",
+          "reveal": "independent matte/path where applicable",
+          "cache_policy": "cache static shaped text only, not animated groups",
+          "camera_relation": "independent unless documented as a camera/parent control"
+        },
+        {
+          "id": "transition-first",
+          "role": "headline",
+          "source": "new vector geometry or native shaped Arabic text",
+          "parent": null,
+          "depth": "explicit only where the composition calls for parallax",
+          "channels": [
+            "matte + planned content change"
+          ],
+          "timing": {
+            "start": 0.15,
+            "settle_or_stage_end": 6
+          },
+          "before": "defined by the source sampler; not always invisible",
+          "during": "only the channels named here change; see source function",
+          "after": "hold, bounded loop, or exit as explicitly authored",
+          "reveal": "independent matte/path where applicable",
+          "cache_policy": "cache static shaped text only, not animated groups",
+          "camera_relation": "independent unless documented as a camera/parent control"
+        },
+        {
+          "id": "transition-second",
+          "role": "headline",
+          "source": "new vector geometry or native shaped Arabic text",
+          "parent": null,
+          "depth": "explicit only where the composition calls for parallax",
+          "channels": [
+            "matte + planned content change"
+          ],
+          "timing": {
+            "start": 1,
+            "settle_or_stage_end": 6.15
+          },
+          "before": "defined by the source sampler; not always invisible",
+          "during": "only the channels named here change; see source function",
+          "after": "hold, bounded loop, or exit as explicitly authored",
+          "reveal": "independent matte/path where applicable",
+          "cache_policy": "cache static shaped text only, not animated groups",
+          "camera_relation": "independent unless documented as a camera/parent control"
+        },
+        {
+          "id": "transition-link",
+          "role": "stroke",
+          "source": "new vector geometry or native shaped Arabic text",
+          "parent": null,
+          "depth": "explicit only where the composition calls for parallax",
+          "channels": [
+            "arc_length"
+          ],
+          "timing": {
+            "start": 1.6,
+            "settle_or_stage_end": 2.6
+          },
+          "before": "defined by the source sampler; not always invisible",
+          "during": "only the channels named here change; see source function",
+          "after": "hold, bounded loop, or exit as explicitly authored",
+          "reveal": "independent matte/path where applicable",
+          "cache_policy": "cache static shaped text only, not animated groups",
+          "camera_relation": "independent unless documented as a camera/parent control"
+        },
+        {
+          "id": "object-wipe-front",
+          "role": "occluder",
+          "source": "new vector geometry or native shaped Arabic text",
+          "parent": null,
+          "depth": "explicit only where the composition calls for parallax",
+          "channels": [
+            "x"
+          ],
+          "timing": {
+            "start": 3,
+            "settle_or_stage_end": 4.8
+          },
+          "before": "defined by the source sampler; not always invisible",
+          "during": "only the channels named here change; see source function",
+          "after": "hold, bounded loop, or exit as explicitly authored",
+          "reveal": "independent matte/path where applicable",
+          "cache_policy": "cache static shaped text only, not animated groups",
+          "camera_relation": "independent unless documented as a camera/parent control"
+        },
+        {
+          "id": "object-wipe-edge",
+          "role": "accent",
+          "source": "new vector geometry or native shaped Arabic text",
+          "parent": null,
+          "depth": "explicit only where the composition calls for parallax",
+          "channels": [
+            "x offset"
+          ],
+          "timing": {
+            "start": 3,
+            "settle_or_stage_end": 4.8
+          },
+          "before": "defined by the source sampler; not always invisible",
+          "during": "only the channels named here change; see source function",
+          "after": "hold, bounded loop, or exit as explicitly authored",
+          "reveal": "independent matte/path where applicable",
+          "cache_policy": "cache static shaped text only, not animated groups",
+          "camera_relation": "independent unless documented as a camera/parent control"
+        },
+        {
+          "id": "transition-camera",
+          "role": "parent-control",
+          "source": "new vector geometry or native shaped Arabic text",
+          "parent": null,
+          "depth": "explicit only where the composition calls for parallax",
+          "channels": [
+            "x"
+          ],
+          "timing": {
+            "start": 7.05,
+            "settle_or_stage_end": 8.05
+          },
+          "before": "defined by the source sampler; not always invisible",
+          "during": "only the channels named here change; see source function",
+          "after": "hold, bounded loop, or exit as explicitly authored",
+          "reveal": "independent matte/path where applicable",
+          "cache_policy": "cache static shaped text only, not animated groups",
+          "camera_relation": "independent unless documented as a camera/parent control"
+        },
+        {
+          "id": "whip-motion-blur",
+          "role": "render-operation",
+          "source": "new vector geometry or native shaped Arabic text",
+          "parent": null,
+          "depth": "explicit only where the composition calls for parallax",
+          "channels": [
+            "six temporal samples"
+          ],
+          "timing": {
+            "start": 7,
+            "settle_or_stage_end": 8.15
+          },
+          "before": "defined by the source sampler; not always invisible",
+          "during": "only the channels named here change; see source function",
+          "after": "hold, bounded loop, or exit as explicitly authored",
+          "reveal": "independent matte/path where applicable",
+          "cache_policy": "cache static shaped text only, not animated groups",
+          "camera_relation": "independent unless documented as a camera/parent control"
+        },
+        {
+          "id": "transition-after",
+          "role": "headline",
+          "source": "new vector geometry or native shaped Arabic text",
+          "parent": null,
+          "depth": "explicit only where the composition calls for parallax",
+          "channels": [
+            "matte"
+          ],
+          "timing": {
+            "start": 7.75,
+            "settle_or_stage_end": 8.65
+          },
+          "before": "defined by the source sampler; not always invisible",
+          "during": "only the channels named here change; see source function",
+          "after": "hold, bounded loop, or exit as explicitly authored",
+          "reveal": "independent matte/path where applicable",
+          "cache_policy": "cache static shaped text only, not animated groups",
+          "camera_relation": "independent unless documented as a camera/parent control"
+        }
+      ]
+    },
+    {
+      "id": "S07",
+      "name": "الخط يشرح",
+      "start": 60,
+      "end": 70,
+      "purpose": "الخط يشرح",
+      "mechanisms": [
+        "path-trim",
+        "path-follow",
+        "contour-morph"
+      ],
+      "camera": "locked composition",
+      "layers": [
+        {
+          "id": "path-main",
+          "role": "headline",
+          "source": "new vector geometry or native shaped Arabic text",
+          "parent": null,
+          "depth": "explicit only where the composition calls for parallax",
+          "channels": [
+            "matte"
+          ],
+          "timing": {
+            "start": 0.2,
+            "settle_or_stage_end": 1.2
+          },
+          "before": "defined by the source sampler; not always invisible",
+          "during": "only the channels named here change; see source function",
+          "after": "hold, bounded loop, or exit as explicitly authored",
+          "reveal": "independent matte/path where applicable",
+          "cache_policy": "cache static shaped text only, not animated groups",
+          "camera_relation": "independent unless documented as a camera/parent control"
+        },
+        {
+          "id": "path-second",
+          "role": "headline",
+          "source": "new vector geometry or native shaped Arabic text",
+          "parent": null,
+          "depth": "explicit only where the composition calls for parallax",
+          "channels": [
+            "matte"
+          ],
+          "timing": {
+            "start": 1,
+            "settle_or_stage_end": 2
+          },
+          "before": "defined by the source sampler; not always invisible",
+          "during": "only the channels named here change; see source function",
+          "after": "hold, bounded loop, or exit as explicitly authored",
+          "reveal": "independent matte/path where applicable",
+          "cache_policy": "cache static shaped text only, not animated groups",
+          "camera_relation": "independent unless documented as a camera/parent control"
+        },
+        {
+          "id": "path-route",
+          "role": "stroke",
+          "source": "new vector geometry or native shaped Arabic text",
+          "parent": null,
+          "depth": "explicit only where the composition calls for parallax",
+          "channels": [
+            "arc_length + tangent head"
+          ],
+          "timing": {
+            "start": 1.8,
+            "settle_or_stage_end": 4.5
+          },
+          "before": "defined by the source sampler; not always invisible",
+          "during": "only the channels named here change; see source function",
+          "after": "hold, bounded loop, or exit as explicitly authored",
+          "reveal": "independent matte/path where applicable",
+          "cache_policy": "cache static shaped text only, not animated groups",
+          "camera_relation": "independent unless documented as a camera/parent control"
+        },
+        {
+          "id": "path-start",
+          "role": "marker",
+          "source": "new vector geometry or native shaped Arabic text",
+          "parent": null,
+          "depth": "explicit only where the composition calls for parallax",
+          "channels": [
+            "conditional reveal"
+          ],
+          "timing": {
+            "start": 2,
+            "settle_or_stage_end": 4.5
+          },
+          "before": "defined by the source sampler; not always invisible",
+          "during": "only the channels named here change; see source function",
+          "after": "hold, bounded loop, or exit as explicitly authored",
+          "reveal": "independent matte/path where applicable",
+          "cache_policy": "cache static shaped text only, not animated groups",
+          "camera_relation": "independent unless documented as a camera/parent control"
+        },
+        {
+          "id": "path-arrival-ring",
+          "role": "shape",
+          "source": "new vector geometry or native shaped Arabic text",
+          "parent": null,
+          "depth": "explicit only where the composition calls for parallax",
+          "channels": [
+            "angular coverage"
+          ],
+          "timing": {
+            "start": 4.25,
+            "settle_or_stage_end": 5
+          },
+          "before": "defined by the source sampler; not always invisible",
+          "during": "only the channels named here change; see source function",
+          "after": "hold, bounded loop, or exit as explicitly authored",
+          "reveal": "independent matte/path where applicable",
+          "cache_policy": "cache static shaped text only, not animated groups",
+          "camera_relation": "independent unless documented as a camera/parent control"
+        },
+        {
+          "id": "path-callout",
+          "role": "text",
+          "source": "new vector geometry or native shaped Arabic text",
+          "parent": null,
+          "depth": "explicit only where the composition calls for parallax",
+          "channels": [
+            "matte"
+          ],
+          "timing": {
+            "start": 4.6,
+            "settle_or_stage_end": 5.25
+          },
+          "before": "defined by the source sampler; not always invisible",
+          "during": "only the channels named here change; see source function",
+          "after": "hold, bounded loop, or exit as explicitly authored",
+          "reveal": "independent matte/path where applicable",
+          "cache_policy": "cache static shaped text only, not animated groups",
+          "camera_relation": "independent unless documented as a camera/parent control"
+        },
+        {
+          "id": "path-corresponding-morph",
+          "role": "shape",
+          "source": "new vector geometry or native shaped Arabic text",
+          "parent": null,
+          "depth": "explicit only where the composition calls for parallax",
+          "channels": [
+            "64 vertex interpolation"
+          ],
+          "timing": {
+            "start": 6,
+            "settle_or_stage_end": 7.3
+          },
+          "before": "defined by the source sampler; not always invisible",
+          "during": "only the channels named here change; see source function",
+          "after": "hold, bounded loop, or exit as explicitly authored",
+          "reveal": "independent matte/path where applicable",
+          "cache_policy": "cache static shaped text only, not animated groups",
+          "camera_relation": "independent unless documented as a camera/parent control"
+        },
+        {
+          "id": "path-final",
+          "role": "text",
+          "source": "new vector geometry or native shaped Arabic text",
+          "parent": null,
+          "depth": "explicit only where the composition calls for parallax",
+          "channels": [
+            "matte"
+          ],
+          "timing": {
+            "start": 6.8,
+            "settle_or_stage_end": 7.7
+          },
+          "before": "defined by the source sampler; not always invisible",
+          "during": "only the channels named here change; see source function",
+          "after": "hold, bounded loop, or exit as explicitly authored",
+          "reveal": "independent matte/path where applicable",
+          "cache_policy": "cache static shaped text only, not animated groups",
+          "camera_relation": "independent unless documented as a camera/parent control"
+        }
+      ]
+    },
+    {
+      "id": "S08",
+      "name": "التوقيت يصنع المعنى",
+      "start": 70,
+      "end": 80,
+      "purpose": "التوقيت يصنع المعنى",
+      "mechanisms": [
+        "easing",
+        "graph-editor",
+        "keyframes",
+        "hold"
+      ],
+      "camera": "locked composition",
+      "layers": [
+        {
+          "id": "timing-a",
+          "role": "headline",
+          "source": "new vector geometry or native shaped Arabic text",
+          "parent": null,
+          "depth": "explicit only where the composition calls for parallax",
+          "channels": [
+            "matte"
+          ],
+          "timing": {
+            "start": 0.1,
+            "settle_or_stage_end": 1.1
+          },
+          "before": "defined by the source sampler; not always invisible",
+          "during": "only the channels named here change; see source function",
+          "after": "hold, bounded loop, or exit as explicitly authored",
+          "reveal": "independent matte/path where applicable",
+          "cache_policy": "cache static shaped text only, not animated groups",
+          "camera_relation": "independent unless documented as a camera/parent control"
+        },
+        {
+          "id": "timing-b",
+          "role": "headline",
+          "source": "new vector geometry or native shaped Arabic text",
+          "parent": null,
+          "depth": "explicit only where the composition calls for parallax",
+          "channels": [
+            "matte"
+          ],
+          "timing": {
+            "start": 0.95,
+            "settle_or_stage_end": 1.9
+          },
+          "before": "defined by the source sampler; not always invisible",
+          "during": "only the channels named here change; see source function",
+          "after": "hold, bounded loop, or exit as explicitly authored",
+          "reveal": "independent matte/path where applicable",
+          "cache_policy": "cache static shaped text only, not animated groups",
+          "camera_relation": "independent unless documented as a camera/parent control"
+        },
+        {
+          "id": "value-graph",
+          "role": "data-plot",
+          "source": "new vector geometry or native shaped Arabic text",
+          "parent": null,
+          "depth": "explicit only where the composition calls for parallax",
+          "channels": [
+            "actual Bezier values"
+          ],
+          "timing": {
+            "start": 2,
+            "settle_or_stage_end": 5.6
+          },
+          "before": "defined by the source sampler; not always invisible",
+          "during": "only the channels named here change; see source function",
+          "after": "hold, bounded loop, or exit as explicitly authored",
+          "reveal": "independent matte/path where applicable",
+          "cache_policy": "cache static shaped text only, not animated groups",
+          "camera_relation": "independent unless documented as a camera/parent control"
+        },
+        {
+          "id": "speed-graph",
+          "role": "data-plot",
+          "source": "new vector geometry or native shaped Arabic text",
+          "parent": null,
+          "depth": "explicit only where the composition calls for parallax",
+          "channels": [
+            "actual derivative"
+          ],
+          "timing": {
+            "start": 2,
+            "settle_or_stage_end": 5.6
+          },
+          "before": "defined by the source sampler; not always invisible",
+          "during": "only the channels named here change; see source function",
+          "after": "hold, bounded loop, or exit as explicitly authored",
+          "reveal": "independent matte/path where applicable",
+          "cache_policy": "cache static shaped text only, not animated groups",
+          "camera_relation": "independent unless documented as a camera/parent control"
+        },
+        {
+          "id": "timing-resolution",
+          "role": "occluder",
+          "source": "new vector geometry or native shaped Arabic text",
+          "parent": null,
+          "depth": "explicit only where the composition calls for parallax",
+          "channels": [
+            "height"
+          ],
+          "timing": {
+            "start": 5.5,
+            "settle_or_stage_end": 6.5
+          },
+          "before": "defined by the source sampler; not always invisible",
+          "during": "only the channels named here change; see source function",
+          "after": "hold, bounded loop, or exit as explicitly authored",
+          "reveal": "independent matte/path where applicable",
+          "cache_policy": "cache static shaped text only, not animated groups",
+          "camera_relation": "independent unless documented as a camera/parent control"
+        },
+        {
+          "id": "final-thesis",
+          "role": "headline",
+          "source": "new vector geometry or native shaped Arabic text",
+          "parent": null,
+          "depth": "explicit only where the composition calls for parallax",
+          "channels": [
+            "matte"
+          ],
+          "timing": {
+            "start": 6.25,
+            "settle_or_stage_end": 7.2
+          },
+          "before": "defined by the source sampler; not always invisible",
+          "during": "only the channels named here change; see source function",
+          "after": "hold, bounded loop, or exit as explicitly authored",
+          "reveal": "independent matte/path where applicable",
+          "cache_policy": "cache static shaped text only, not animated groups",
+          "camera_relation": "independent unless documented as a camera/parent control"
+        },
+        {
+          "id": "final-priority",
+          "role": "headline",
+          "source": "new vector geometry or native shaped Arabic text",
+          "parent": null,
+          "depth": "explicit only where the composition calls for parallax",
+          "channels": [
+            "matte"
+          ],
+          "timing": {
+            "start": 6.85,
+            "settle_or_stage_end": 7.75
+          },
+          "before": "defined by the source sampler; not always invisible",
+          "during": "only the channels named here change; see source function",
+          "after": "hold, bounded loop, or exit as explicitly authored",
+          "reveal": "independent matte/path where applicable",
+          "cache_policy": "cache static shaped text only, not animated groups",
+          "camera_relation": "independent unless documented as a camera/parent control"
+        },
+        {
+          "id": "final-subline",
+          "role": "text",
+          "source": "new vector geometry or native shaped Arabic text",
+          "parent": null,
+          "depth": "explicit only where the composition calls for parallax",
+          "channels": [
+            "matte"
+          ],
+          "timing": {
+            "start": 7.2,
+            "settle_or_stage_end": 8
+          },
+          "before": "defined by the source sampler; not always invisible",
+          "during": "only the channels named here change; see source function",
+          "after": "hold, bounded loop, or exit as explicitly authored",
+          "reveal": "independent matte/path where applicable",
+          "cache_policy": "cache static shaped text only, not animated groups",
+          "camera_relation": "independent unless documented as a camera/parent control"
+        },
+        {
+          "id": "end-fade",
+          "role": "transition",
+          "source": "new vector geometry or native shaped Arabic text",
+          "parent": null,
+          "depth": "explicit only where the composition calls for parallax",
+          "channels": [
+            "black opacity"
+          ],
+          "timing": {
+            "start": 9.5,
+            "settle_or_stage_end": 10
+          },
+          "before": "defined by the source sampler; not always invisible",
+          "during": "only the channels named here change; see source function",
+          "after": "hold, bounded loop, or exit as explicitly authored",
+          "reveal": "independent matte/path where applicable",
+          "cache_policy": "cache static shaped text only, not animated groups",
+          "camera_relation": "independent unless documented as a camera/parent control"
+        }
+      ]
+    }
+  ],
+  "note": "Repeaters represent independently positioned instances; full runtime ID audit is available in QA. No Alhambra composition was imported."
+}

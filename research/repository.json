@@ -1,5 +1,5 @@
 {
-  "status": "initializing",
+  "status": "awaiting_explicit_jobs",
   "credential_persisted": false,
   "assets": [],
   "releases": {},
@@ -8,5 +8,6 @@
   "full_name": "zoih6/arabic-motion-forge",
   "url": "https://github.com/zoih6/arabic-motion-forge",
   "clone_url": "https://github.com/zoih6/arabic-motion-forge.git",
-  "public": true
+  "public": true,
+  "source_commit": "6654f57caf601e1318c945c456c2a2e2507a5d87"
 }

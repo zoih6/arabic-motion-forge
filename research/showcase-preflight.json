@@ -1,0 +1,9 @@
+{
+  "errors": [],
+  "random_access_deterministic": true,
+  "capture_fps": 52.75,
+  "sampled_scenes": 8,
+  "width": 1080,
+  "height": 1920,
+  "fps": 32
+}

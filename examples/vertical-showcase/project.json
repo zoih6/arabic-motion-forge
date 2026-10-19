@@ -1,0 +1,17 @@
+{
+  "id": "meaning-first-showcase",
+  "title": "المعنى أولاً — دراسة حركة عربية",
+  "width": 1080,
+  "height": 1920,
+  "fps": 32,
+  "frames": 2560,
+  "duration": 80,
+  "entry": "index.html",
+  "render_allowed": true,
+  "approval_mode": "user_requested_direct_execution",
+  "layer_plan": "layer-plan.json",
+  "copy_file": "copy.txt",
+  "copy_sha256": "6971168f69e694b69f42a1c27d783427a0985cd813025ed7a2713ffd0700902f",
+  "originality_review": "newly authored; no prior project scene imports",
+  "distribution": "reference demonstration; excluded from core default install"
+}

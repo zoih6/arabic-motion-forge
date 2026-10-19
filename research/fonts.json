@@ -1,0 +1,23 @@
+[
+  {
+    "file": "IBMPlexSansArabic-Regular.ttf",
+    "bytes": 235924,
+    "git_blob_sha": "e779068718b9801b809605b2bf3067121cce524c",
+    "source_url": "https://raw.githubusercontent.com/google/fonts/main/ofl/ibmplexsansarabic/IBMPlexSansArabic-Regular.ttf",
+    "sha256": "6f611412270a132bbac838da9259d4c68569b4175f3b3b8fa3fa36a30b56dab9"
+  },
+  {
+    "file": "IBMPlexSansArabic-SemiBold.ttf",
+    "bytes": 244616,
+    "git_blob_sha": "f7a7fc87747a9ddabb3557d4a3f4140a7a1460b0",
+    "source_url": "https://raw.githubusercontent.com/google/fonts/main/ofl/ibmplexsansarabic/IBMPlexSansArabic-SemiBold.ttf",
+    "sha256": "597bd5502e5997be4414e4c9c88834b30ff3784250c84f20bce2b20e53ebd467"
+  },
+  {
+    "file": "OFL.txt",
+    "bytes": 4456,
+    "git_blob_sha": "c35c4c618fab33da8695177b3a6cefe0810b7b28",
+    "source_url": "https://raw.githubusercontent.com/google/fonts/main/ofl/ibmplexsansarabic/OFL.txt",
+    "sha256": "7e6b2818edbd8f6a01ae80641cc8f16a51080d08fb4e532be3a0b6f74adb07da"
+  }
+]

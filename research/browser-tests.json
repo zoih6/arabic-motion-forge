@@ -1,0 +1,100 @@
+{
+  "runtime": "Playwright Chromium",
+  "checks": [
+    {
+      "name": "matte zero is transparent: لا تكرار",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "full matte preserves every shaped pixel: لا تكرار",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "partial matte is neither empty nor full: لا تكرار",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "glyph bounds reserve diacritics/descent: لا تكرار",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "matte zero is transparent: المعنى أولاً",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "full matte preserves every shaped pixel: المعنى أولاً",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "partial matte is neither empty nor full: المعنى أولاً",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "glyph bounds reserve diacritics/descent: المعنى أولاً",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "matte zero is transparent: الطريق إلى ٢٠٢٦",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "full matte preserves every shaped pixel: الطريق إلى ٢٠٢٦",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "partial matte is neither empty nor full: الطريق إلى ٢٠٢٦",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "glyph bounds reserve diacritics/descent: الطريق إلى ٢٠٢٦",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "defined luma matte black/white endpoints",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "trim path leaves untraversed endpoint transparent",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "trim path paints its moving endpoint",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "real temporal blur expands moving coverage",
+      "pass": true,
+      "detail": {
+        "width": 36,
+        "partials": 640
+      }
+    },
+    {
+      "name": "temporal blur has partial exposure alpha",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "temporal blur approximately conserves coverage",
+      "pass": true,
+      "detail": null
+    }
+  ],
+  "passed": 18,
+  "native_after_effects_executed": false
+}
