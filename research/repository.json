@@ -65,6 +65,46 @@
       "tag": "session-checkpoints-2026-10-19",
       "url": "https://github.com/zoih6/arabic-motion-forge/releases/download/session-checkpoints-2026-10-19/meaning-first-showcase-42cdc35133-p08-53dbf7be.mp4",
       "sha256": "53dbf7be50a16c3c45a992f3c4a29d538e73fa745c1f9e6408fe8a2f7181a34f"
+    },
+    {
+      "name": "arabic-motion-forge-core-1.0.0.zip",
+      "bytes": 1126210,
+      "id": 657139718,
+      "tag": "v1.0.0",
+      "url": "https://github.com/zoih6/arabic-motion-forge/releases/download/v1.0.0/arabic-motion-forge-core-1.0.0.zip",
+      "sha256": "a1900452e51ad95444aa7ddca04b4dd958a645e0d27c05ca542d631f4e32c93c"
+    },
+    {
+      "name": "meaning-first-portrait-1080p32.mp4",
+      "bytes": 4703190,
+      "id": 657139756,
+      "tag": "v1.0.0",
+      "url": "https://github.com/zoih6/arabic-motion-forge/releases/download/v1.0.0/meaning-first-portrait-1080p32.mp4",
+      "sha256": "43fa32c8d52ee3ce589147fd2699fcd15d431ea3196d0db16d39100181fb5493"
+    },
+    {
+      "name": "motion-lab.html",
+      "bytes": 342532,
+      "id": 657139811,
+      "tag": "v1.0.0",
+      "url": "https://github.com/zoih6/arabic-motion-forge/releases/download/v1.0.0/motion-lab.html",
+      "sha256": "f3bed561cb9a35a7872207c0413c9357e9cb7cae393ce3a0121bc987afd924c6"
+    },
+    {
+      "name": "showcase-poster.jpg",
+      "bytes": 31335,
+      "id": 657139857,
+      "tag": "v1.0.0",
+      "url": "https://github.com/zoih6/arabic-motion-forge/releases/download/v1.0.0/showcase-poster.jpg",
+      "sha256": "eac603c66eb938eea77a673ad49877989a7b584fd84ac81343f42a3f653e59fa"
+    },
+    {
+      "name": "SHA256SUMS.txt",
+      "bytes": 370,
+      "id": 657139906,
+      "tag": "v1.0.0",
+      "url": "https://github.com/zoih6/arabic-motion-forge/releases/download/v1.0.0/SHA256SUMS.txt",
+      "sha256": "25bd4da124d85edcdf08685cba61738c15e833e8d158928774d310cd80983005"
     }
   ],
   "releases": {
@@ -73,6 +113,12 @@
       "upload_url": "https://uploads.github.com/repos/zoih6/arabic-motion-forge/releases/417544792/assets{?name,label}",
       "html_url": "https://github.com/zoih6/arabic-motion-forge/releases/tag/session-checkpoints-2026-10-19",
       "tag_name": "session-checkpoints-2026-10-19"
+    },
+    "v1.0.0": {
+      "id": 417633050,
+      "upload_url": "https://uploads.github.com/repos/zoih6/arabic-motion-forge/releases/417633050/assets{?name,label}",
+      "html_url": "https://github.com/zoih6/arabic-motion-forge/releases/tag/v1.0.0",
+      "tag_name": "v1.0.0"
     }
   },
   "owner": "zoih6",
@@ -81,5 +127,5 @@
   "url": "https://github.com/zoih6/arabic-motion-forge",
   "clone_url": "https://github.com/zoih6/arabic-motion-forge.git",
   "public": true,
-  "source_commit": "bce0d17f7c5a874a3805c5a2c5ed6594b959bb3e"
+  "source_commit": "d171e5dbfab90f4c11955c613a4255fc5f979fdf"
 }
