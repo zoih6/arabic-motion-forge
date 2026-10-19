@@ -1,0 +1,4 @@
+interface:
+  display_name: "Arabic Motion Forge"
+  short_description: "Layered Arabic motion production, not reusable scene templates"
+  default_prompt: "Use $arabic-motion-forge to plan and build an original motion project with verified tools and correct Arabic typography."

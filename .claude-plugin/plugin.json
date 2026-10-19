@@ -1,0 +1,19 @@
+{
+  "name": "arabic-motion-forge",
+  "version": "1.0.0",
+  "description": "Arabic-first layered motion production, verified primitives, original scene design, deterministic rendering and lightweight checkpointed delivery.",
+  "author": {
+    "name": "zoih6",
+    "url": "https://github.com/zoih6"
+  },
+  "homepage": "https://github.com/zoih6/arabic-motion-forge",
+  "repository": "https://github.com/zoih6/arabic-motion-forge",
+  "license": "MIT for original components; see THIRD_PARTY.md",
+  "keywords": [
+    "motion-design",
+    "arabic",
+    "animation",
+    "agent-skills"
+  ],
+  "skills": "./skills/"
+}

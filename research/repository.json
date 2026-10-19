@@ -1,13 +1,85 @@
 {
   "status": "awaiting_explicit_jobs",
   "credential_persisted": false,
-  "assets": [],
-  "releases": {},
+  "assets": [
+    {
+      "name": "meaning-first-showcase-42cdc35133-p01-5ec7c266.mp4",
+      "bytes": 471334,
+      "id": 656899561,
+      "tag": "session-checkpoints-2026-10-19",
+      "url": "https://github.com/zoih6/arabic-motion-forge/releases/download/session-checkpoints-2026-10-19/meaning-first-showcase-42cdc35133-p01-5ec7c266.mp4",
+      "sha256": "5ec7c26693621fe455e4ab89a3d7d0acff603a2e46a4e480b317a7e20ee0b530"
+    },
+    {
+      "name": "meaning-first-showcase-42cdc35133-p02-f2e11b76.mp4",
+      "bytes": 448198,
+      "id": 656900034,
+      "tag": "session-checkpoints-2026-10-19",
+      "url": "https://github.com/zoih6/arabic-motion-forge/releases/download/session-checkpoints-2026-10-19/meaning-first-showcase-42cdc35133-p02-f2e11b76.mp4",
+      "sha256": "f2e11b7608497c904e47d859d457b7711a6ec1878e103ddef2cc3934b0eeeba3"
+    },
+    {
+      "name": "meaning-first-showcase-42cdc35133-p03-03d9d5ee.mp4",
+      "bytes": 807114,
+      "id": 656900627,
+      "tag": "session-checkpoints-2026-10-19",
+      "url": "https://github.com/zoih6/arabic-motion-forge/releases/download/session-checkpoints-2026-10-19/meaning-first-showcase-42cdc35133-p03-03d9d5ee.mp4",
+      "sha256": "03d9d5ee126d8c506c8fb1924928fee938156fe51b715561cc2e37517d05380e"
+    },
+    {
+      "name": "meaning-first-showcase-42cdc35133-p04-26a22a9f.mp4",
+      "bytes": 502696,
+      "id": 656901068,
+      "tag": "session-checkpoints-2026-10-19",
+      "url": "https://github.com/zoih6/arabic-motion-forge/releases/download/session-checkpoints-2026-10-19/meaning-first-showcase-42cdc35133-p04-26a22a9f.mp4",
+      "sha256": "26a22a9ff4ce928ce3493e30053d535786c4e32daed31fd0244d63325b2f9e23"
+    },
+    {
+      "name": "meaning-first-showcase-42cdc35133-p05-1c031c7b.mp4",
+      "bytes": 1005661,
+      "id": 656901505,
+      "tag": "session-checkpoints-2026-10-19",
+      "url": "https://github.com/zoih6/arabic-motion-forge/releases/download/session-checkpoints-2026-10-19/meaning-first-showcase-42cdc35133-p05-1c031c7b.mp4",
+      "sha256": "1c031c7ba45ec87b0cfef16d38f6e9421068dc8cde7c47987c877deaacf7bf83"
+    },
+    {
+      "name": "meaning-first-showcase-42cdc35133-p06-51435208.mp4",
+      "bytes": 558848,
+      "id": 656901909,
+      "tag": "session-checkpoints-2026-10-19",
+      "url": "https://github.com/zoih6/arabic-motion-forge/releases/download/session-checkpoints-2026-10-19/meaning-first-showcase-42cdc35133-p06-51435208.mp4",
+      "sha256": "51435208d48e338bfd6162df959a70624a7ad316165ea75071121ad67d75296f"
+    },
+    {
+      "name": "meaning-first-showcase-42cdc35133-p07-28218b8d.mp4",
+      "bytes": 492836,
+      "id": 656902302,
+      "tag": "session-checkpoints-2026-10-19",
+      "url": "https://github.com/zoih6/arabic-motion-forge/releases/download/session-checkpoints-2026-10-19/meaning-first-showcase-42cdc35133-p07-28218b8d.mp4",
+      "sha256": "28218b8d73a006c6293db5cd870ee7fd2912955054d5bea0ce6b7b85192b7ab1"
+    },
+    {
+      "name": "meaning-first-showcase-42cdc35133-p08-53dbf7be.mp4",
+      "bytes": 442459,
+      "id": 656902742,
+      "tag": "session-checkpoints-2026-10-19",
+      "url": "https://github.com/zoih6/arabic-motion-forge/releases/download/session-checkpoints-2026-10-19/meaning-first-showcase-42cdc35133-p08-53dbf7be.mp4",
+      "sha256": "53dbf7be50a16c3c45a992f3c4a29d538e73fa745c1f9e6408fe8a2f7181a34f"
+    }
+  ],
+  "releases": {
+    "session-checkpoints-2026-10-19": {
+      "id": 417544792,
+      "upload_url": "https://uploads.github.com/repos/zoih6/arabic-motion-forge/releases/417544792/assets{?name,label}",
+      "html_url": "https://github.com/zoih6/arabic-motion-forge/releases/tag/session-checkpoints-2026-10-19",
+      "tag_name": "session-checkpoints-2026-10-19"
+    }
+  },
   "owner": "zoih6",
   "repository_id": 1425900875,
   "full_name": "zoih6/arabic-motion-forge",
   "url": "https://github.com/zoih6/arabic-motion-forge",
   "clone_url": "https://github.com/zoih6/arabic-motion-forge.git",
   "public": true,
-  "source_commit": "6654f57caf601e1318c945c456c2a2e2507a5d87"
+  "source_commit": "2eadd1d931d80f9104ec612e36dcf4d7c6fa8d5e"
 }

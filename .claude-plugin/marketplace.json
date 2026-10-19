@@ -1,0 +1,15 @@
+{
+  "$schema": "https://www.schemastore.org/claude-code-marketplace.json",
+  "name": "arabic-motion-forge",
+  "description": "Arabic motion-production skills, verified code primitives and safe lightweight project workflows.",
+  "owner": {
+    "name": "zoih6"
+  },
+  "plugins": [
+    {
+      "name": "arabic-motion-forge",
+      "source": "./",
+      "description": "Arabic-first layered motion production, verified primitives, original scene design, deterministic rendering and lightweight checkpointed delivery."
+    }
+  ]
+}

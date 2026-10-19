@@ -1,0 +1,5 @@
+{
+  "npm_package": "@anthropic-ai/claude-code",
+  "version": "2.1.303",
+  "purpose": "local manifest validation only; no model invocation or native agent workflow claimed"
+}

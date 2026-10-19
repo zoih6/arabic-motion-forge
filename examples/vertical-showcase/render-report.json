@@ -1,0 +1,198 @@
+{
+  "project_id": "meaning-first-showcase",
+  "build": "42cdc35133",
+  "status": "rendered_media_checks_passed",
+  "fps": 32,
+  "width": 1080,
+  "height": 1920,
+  "frames": 2560,
+  "duration": 80.0,
+  "segments": [
+    {
+      "bytes": 471334,
+      "sha256": "5ec7c26693621fe455e4ab89a3d7d0acff603a2e46a4e480b317a7e20ee0b530",
+      "frames": 320,
+      "fps": 32.0,
+      "width": 1080,
+      "height": 1920,
+      "start": 0,
+      "duration": 10.0,
+      "audio_streams": 1,
+      "file": "/home/user/.cache/motion-forge-session/renders/meaning-first-showcase/42cdc35133/part-001.mp4",
+      "frame_in": 0,
+      "frame_out": 320,
+      "elapsed": 8.76,
+      "backup": {
+        "job": "meaning-first-showcase-42cdc35133-p01-5ec7c266.json",
+        "source_commit": "2eadd1d931d80f9104ec612e36dcf4d7c6fa8d5e",
+        "release_tag": "session-checkpoints-2026-10-19",
+        "asset_name": "meaning-first-showcase-42cdc35133-p01-5ec7c266.mp4"
+      }
+    },
+    {
+      "bytes": 448198,
+      "sha256": "f2e11b7608497c904e47d859d457b7711a6ec1878e103ddef2cc3934b0eeeba3",
+      "frames": 320,
+      "fps": 32.0,
+      "width": 1080,
+      "height": 1920,
+      "start": 0,
+      "duration": 10.0,
+      "audio_streams": 1,
+      "file": "/home/user/.cache/motion-forge-session/renders/meaning-first-showcase/42cdc35133/part-002.mp4",
+      "frame_in": 320,
+      "frame_out": 640,
+      "elapsed": 8.01,
+      "backup": {
+        "job": "meaning-first-showcase-42cdc35133-p02-f2e11b76.json",
+        "source_commit": "2eadd1d931d80f9104ec612e36dcf4d7c6fa8d5e",
+        "release_tag": "session-checkpoints-2026-10-19",
+        "asset_name": "meaning-first-showcase-42cdc35133-p02-f2e11b76.mp4"
+      }
+    },
+    {
+      "bytes": 807114,
+      "sha256": "03d9d5ee126d8c506c8fb1924928fee938156fe51b715561cc2e37517d05380e",
+      "frames": 320,
+      "fps": 32.0,
+      "width": 1080,
+      "height": 1920,
+      "start": 0,
+      "duration": 10.0,
+      "audio_streams": 1,
+      "file": "/home/user/.cache/motion-forge-session/renders/meaning-first-showcase/42cdc35133/part-003.mp4",
+      "frame_in": 640,
+      "frame_out": 960,
+      "elapsed": 11.08,
+      "backup": {
+        "job": "meaning-first-showcase-42cdc35133-p03-03d9d5ee.json",
+        "source_commit": "2eadd1d931d80f9104ec612e36dcf4d7c6fa8d5e",
+        "release_tag": "session-checkpoints-2026-10-19",
+        "asset_name": "meaning-first-showcase-42cdc35133-p03-03d9d5ee.mp4"
+      }
+    },
+    {
+      "bytes": 502696,
+      "sha256": "26a22a9ff4ce928ce3493e30053d535786c4e32daed31fd0244d63325b2f9e23",
+      "frames": 320,
+      "fps": 32.0,
+      "width": 1080,
+      "height": 1920,
+      "start": 0,
+      "duration": 10.0,
+      "audio_streams": 1,
+      "file": "/home/user/.cache/motion-forge-session/renders/meaning-first-showcase/42cdc35133/part-004.mp4",
+      "frame_in": 960,
+      "frame_out": 1280,
+      "elapsed": 9.72,
+      "backup": {
+        "job": "meaning-first-showcase-42cdc35133-p04-26a22a9f.json",
+        "source_commit": "2eadd1d931d80f9104ec612e36dcf4d7c6fa8d5e",
+        "release_tag": "session-checkpoints-2026-10-19",
+        "asset_name": "meaning-first-showcase-42cdc35133-p04-26a22a9f.mp4"
+      }
+    },
+    {
+      "bytes": 1005661,
+      "sha256": "1c031c7ba45ec87b0cfef16d38f6e9421068dc8cde7c47987c877deaacf7bf83",
+      "frames": 320,
+      "fps": 32.0,
+      "width": 1080,
+      "height": 1920,
+      "start": 0,
+      "duration": 10.0,
+      "audio_streams": 1,
+      "file": "/home/user/.cache/motion-forge-session/renders/meaning-first-showcase/42cdc35133/part-005.mp4",
+      "frame_in": 1280,
+      "frame_out": 1600,
+      "elapsed": 9.12,
+      "backup": {
+        "job": "meaning-first-showcase-42cdc35133-p05-1c031c7b.json",
+        "source_commit": "2eadd1d931d80f9104ec612e36dcf4d7c6fa8d5e",
+        "release_tag": "session-checkpoints-2026-10-19",
+        "asset_name": "meaning-first-showcase-42cdc35133-p05-1c031c7b.mp4"
+      }
+    },
+    {
+      "bytes": 558848,
+      "sha256": "51435208d48e338bfd6162df959a70624a7ad316165ea75071121ad67d75296f",
+      "frames": 320,
+      "fps": 32.0,
+      "width": 1080,
+      "height": 1920,
+      "start": 0,
+      "duration": 10.0,
+      "audio_streams": 1,
+      "file": "/home/user/.cache/motion-forge-session/renders/meaning-first-showcase/42cdc35133/part-006.mp4",
+      "frame_in": 1600,
+      "frame_out": 1920,
+      "elapsed": 9.52,
+      "backup": {
+        "job": "meaning-first-showcase-42cdc35133-p06-51435208.json",
+        "source_commit": "2eadd1d931d80f9104ec612e36dcf4d7c6fa8d5e",
+        "release_tag": "session-checkpoints-2026-10-19",
+        "asset_name": "meaning-first-showcase-42cdc35133-p06-51435208.mp4"
+      }
+    },
+    {
+      "bytes": 492836,
+      "sha256": "28218b8d73a006c6293db5cd870ee7fd2912955054d5bea0ce6b7b85192b7ab1",
+      "frames": 320,
+      "fps": 32.0,
+      "width": 1080,
+      "height": 1920,
+      "start": 0,
+      "duration": 10.0,
+      "audio_streams": 1,
+      "file": "/home/user/.cache/motion-forge-session/renders/meaning-first-showcase/42cdc35133/part-007.mp4",
+      "frame_in": 1920,
+      "frame_out": 2240,
+      "elapsed": 8.37,
+      "backup": {
+        "job": "meaning-first-showcase-42cdc35133-p07-28218b8d.json",
+        "source_commit": "2eadd1d931d80f9104ec612e36dcf4d7c6fa8d5e",
+        "release_tag": "session-checkpoints-2026-10-19",
+        "asset_name": "meaning-first-showcase-42cdc35133-p07-28218b8d.mp4"
+      }
+    },
+    {
+      "bytes": 442459,
+      "sha256": "53dbf7be50a16c3c45a992f3c4a29d538e73fa745c1f9e6408fe8a2f7181a34f",
+      "frames": 320,
+      "fps": 32.0,
+      "width": 1080,
+      "height": 1920,
+      "start": 0,
+      "duration": 10.0,
+      "audio_streams": 1,
+      "file": "/home/user/.cache/motion-forge-session/renders/meaning-first-showcase/42cdc35133/part-008.mp4",
+      "frame_in": 2240,
+      "frame_out": 2560,
+      "elapsed": 8.96,
+      "backup": {
+        "job": "meaning-first-showcase-42cdc35133-p08-53dbf7be.json",
+        "source_commit": "2eadd1d931d80f9104ec612e36dcf4d7c6fa8d5e",
+        "release_tag": "session-checkpoints-2026-10-19",
+        "asset_name": "meaning-first-showcase-42cdc35133-p08-53dbf7be.mp4"
+      }
+    }
+  ],
+  "publish_requested": true,
+  "copy_checked_against": "copy.txt",
+  "source_entry_sha256": "133a526a79f2684b2ad1b9ce24b389222b7db8d65d6bb587ec0a0ba74ba2331e",
+  "master": {
+    "bytes": 4703190,
+    "sha256": "43fa32c8d52ee3ce589147fd2699fcd15d431ea3196d0db16d39100181fb5493",
+    "frames": 2560,
+    "fps": 32.0,
+    "width": 1080,
+    "height": 1920,
+    "start": 0,
+    "duration": 80.0,
+    "audio_streams": 1
+  },
+  "output": "/home/user/arabic-motion-forge/deliverables/meaning-first-portrait-1080p32.mp4",
+  "pts_constant": true,
+  "full_decode": true,
+  "elapsed_total": 94.85
+}
