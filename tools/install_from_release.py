@@ -17,9 +17,9 @@ else:
  core=sorted(n for n in assets if n.startswith('arabic-motion-forge-core-') and n.endswith('.zip'))
  if not core:raise SystemExit('No core archive asset found on this release.')
  name=core[-1]  # highest-sorted version asset
+ _cb='?cb=%d'%int(__import__('time').time())
  if 'SHA256SUMS.txt' in assets:
-  import time as _t;_cb='?cb=%d'%_t.time()
- sums=get(assets['SHA256SUMS.txt']['browser_download_url']+_cb).decode();expected=next(l.split()[0] for l in sums.splitlines() if len(l.split())>=2 and l.split()[1]==name)
+  sums=get(assets['SHA256SUMS.txt']['browser_download_url']+_cb).decode();expected=next(l.split()[0] for l in sums.splitlines() if len(l.split())>=2 and l.split()[1]==name)
  else:
   expected=assets[name].get('digest') or ''
   if not expected:raise SystemExit('Release carries no verifiable checksum; refuse blind install. Pass --sha256 if you have one.')
