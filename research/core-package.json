@@ -1,8 +1,8 @@
 {
   "file": "arabic-motion-forge-core-2.4.0.zip",
-  "bytes": 1221309,
-  "sha256": "1cd2d25668451bc32bdcd01a36820747ebc68ed5650071027949c5da9cf7b78e",
-  "files": 411,
+  "bytes": 1222532,
+  "sha256": "eb9e0a7e391e694708b0db5efae5d32f4d76e71ad7f394bbda7a1d40cf9993a3",
+  "files": 412,
   "excluded_demo_compositions": true,
   "included_media_files": 0,
   "members": [
@@ -129,6 +129,7 @@
     "runtime/core.mjs",
     "runtime/spatial.mjs",
     "schemas/project.schema.json",
+    "skill_launcher.md",
     "skills/arabic-type/SKILL.md",
     "skills/asset-craft/SKILL.md",
     "skills/audio-sync/SKILL.md",

@@ -2,7 +2,7 @@
 from pathlib import Path
 import zipfile,hashlib,json
 R=Path(__file__).resolve().parents[1];D=R/'deliverables';D.mkdir(exist_ok=True)
-include={'AGENTS.md','SKILL.md','README.md','CHANGELOG.md','INSTALL.md','CLAUDE.md','LICENSE','THIRD_PARTY.md','install.sh','kit.json','package.json','.gitignore','.claude-plugin','.agents','skills','workflows','runtime','adapters','schemas','templates','reference','catalog','tools','tests','vendor','assets','research'}
+include={'AGENTS.md','SKILL.md','README.md','CHANGELOG.md','INSTALL.md','CLAUDE.md','LICENSE','THIRD_PARTY.md','install.sh','skill_launcher.md','kit.json','package.json','.gitignore','.claude-plugin','.agents','skills','workflows','runtime','adapters','schemas','templates','reference','catalog','tools','tests','vendor','assets','research'}
 exclude={'__pycache__','node_modules','.cache','.git','out','build','dist'}
 ver=json.loads((R/'kit.json').read_text())['version'];file=D/f'arabic-motion-forge-core-{ver}.zip';members=[]
 with zipfile.ZipFile(file,'w',compression=zipfile.ZIP_DEFLATED,compresslevel=9) as z:
