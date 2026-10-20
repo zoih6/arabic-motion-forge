@@ -21,5 +21,29 @@
     "anonymous_digest_match": true,
     "main": "101487436b3b712bf0bedb0c1dfa63700c72f73a",
     "v1_intact": "v1.0.0"
+  },
+  "release_2_3_1": {
+    "date": "2026-10-20",
+    "tag": "v2.3.1",
+    "commit": "1cb7700",
+    "core_zip": "arabic-motion-forge-core-2.3.1.zip",
+    "core_sha256": "94ecd21484acb5767e740e73a238f39fa897f4bf4e72c3545ed8297b66b3062b",
+    "core_bytes": 1217463,
+    "checks": {
+      "validate_kit": "157/157",
+      "node": "27/27",
+      "browser": "18/18",
+      "compat": "PASS (v1 runtime frozen)"
+    },
+    "public_verification": {
+      "latest_tag_anonymous": "v2.3.1",
+      "digest_match_anonymous_download": true,
+      "cold_install_stdout_lines": 1,
+      "cold_install_seconds": 1.1,
+      "installed_validate": "157/157",
+      "first_reply_template_present": true,
+      "notes": "installer SHA256SUMS parser now tolerant to size field; full report only in install-report.json"
+    },
+    "fix": "silent self-preparing setup: install.sh warms render deps in background; AGENTS §0 verbatim ≤5-line first-reply template + NEVER-DUMP list enforced by validate_kit"
   }
 }
