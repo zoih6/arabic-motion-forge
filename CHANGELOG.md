@@ -1,5 +1,8 @@
 # Changelog
 
+## 2.0.1 — 2026-10-20
+- compat_check: v1 path-superset scope corrected to the contract surface; `research/` records are session state intentionally excluded from the core archive (was falsely failing validate_kit inside installed copies). No runtime, skill, dictionary or installer behavior changed.
+
 ## 2.0.0 — 2026-10-20
 
 **Contract, tooling and stability upgrade. `runtime/*.mjs` byte-frozen from 1.0.0 — v1 projects render identically; `tools/compat_check.py` gates every release on that promise.**

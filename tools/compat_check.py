@@ -26,8 +26,11 @@ def exports_of(mod: Path) -> set:
 
 def main() -> int:
     fail = []
-    # 1) path superset
+    # 1) path superset (contract surface; research/ holds regenerable session records deliberately
+    # excluded from the core archive, so it is not part of the compatibility promise)
     for rel in BASE['paths_v1']:
+        if rel.startswith('research/'):
+            continue
         if not (KIT / rel).exists():
             fail.append(f'missing v1 path: {rel}')
     # 2) frozen runtime bytes

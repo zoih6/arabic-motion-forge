@@ -1,6 +1,6 @@
 {
   "name": "arabic-motion-forge",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "status": "verified_release_ready",
   "language": "en (agent contracts) / ar (on-screen copy)",
   "default_runtime": "deterministic-canvas",

@@ -1,8 +1,8 @@
 {
-  "file": "arabic-motion-forge-core-2.0.0.zip",
-  "bytes": 1162497,
-  "sha256": "17947b8e7a17ce2466fd0e45fd866e874ec95e3d6c20edfb54cd4774e774d4b9",
-  "files": 389,
+  "file": "arabic-motion-forge-core-2.0.1.zip",
+  "bytes": 1165599,
+  "sha256": "ad5581ff1eae9b0d1a90506092f9793a7ebd02a57a9562e42d0ae2b03d81a79e",
+  "files": 390,
   "excluded_demo_compositions": true,
   "included_media_files": 0,
   "members": [
@@ -119,6 +119,7 @@
     "research/upstream-licenses/svg-path-properties.txt",
     "research/upstream-licenses/theatrejs.txt",
     "research/upstream-licenses/threejs.txt",
+    "research/v2-upgrade-report.json",
     "runtime/canvas.mjs",
     "runtime/core.mjs",
     "schemas/project.schema.json",

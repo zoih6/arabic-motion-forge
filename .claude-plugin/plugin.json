@@ -1,6 +1,6 @@
 {
   "name": "arabic-motion-forge",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Arabic-first layered motion production with an inspiration engine, dictionary-backed choreography, draft-tier QA, crash-safe journals and verified checkpointed delivery.",
   "author": {
     "name": "zoih6",
