@@ -1,3 +1,7 @@
+## Where things land
+
+Kit: `~/.motion-forge` (NOT your workspace). Personal skill: `~/.claude/skills/arabic-motion-forge/SKILL.md` — a thin launcher that points into the kit; agents discover it automatically across all projects with no restart. Project folders appear in your workspace only when you ask for one.
+
 # تثبيت خفيف واختيار واضح للمنصة · Lightweight install
 
 **Fastest (v2):** `curl -fsSL https://raw.githubusercontent.com/zoih6/arabic-motion-forge/main/install.sh | sh` → verified latest core zip (<60 s, no history/media), then `python3 ./motion-forge/tools/doctor.py`. Pin: `sh install.sh ./mf v1.0.0`. Troubleshooting: `reference/install-troubleshooting.md`.

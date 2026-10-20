@@ -5,7 +5,7 @@ description: Entry point when a motion/video request arrives or a session resume
 
 # Start
 
-1. Kit present? `python3 tools/doctor.py` → one JSON verdict. If absent, AGENTS.md §0 bootstrap (<60 s). Never clone history or fetch media "to look around".
+1. Kit present? It lives at `~/.motion-forge` with the personal skill registered (install.sh does both silently). First touch → greet + 5 intake questions (AGENTS §0). `tools/doctor.py` only when something is broken; never its output in chat. Never clone history or fetch media "to look around".
 2. Existing project? `python3 tools/journal.py stats --project <dir>/project.json` + read `project.json`/`brief.json`. Resume at the recorded `next`; do not re-ask settled questions, do not re-render verified parts (compare `render-report.json` build hash first).
 2b. Setup/bootstrap turns: reply with the AGENTS §0 template ONLY (install.sh already prints the single `MOTION FORGE READY` line — quote that, nothing else). doctor/bootstrap logs live in `~/.cache/motion-forge-session/bootstrap.log`; tail it when a render is about to start, never in chat.
 3. New brief? ≤30 s or simple → `new_project.py --quick`. Route: unclear → `intake`; weak/generic concept → `ideate` FIRST; then `creative-direction`; audio → `tools/transcribe.py`; scenes via `motion-direction` (+ `arabic-type` if Arabic), assets (`asset-craft`), audio (`audio-sync`).

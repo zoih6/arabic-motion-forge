@@ -1,6 +1,6 @@
 {
   "name": "arabic-motion-forge",
-  "version": "2.3.1",
+  "version": "2.4.0",
   "status": "verified_release_ready",
   "language": "en (agent contracts) / ar (on-screen copy)",
   "default_runtime": "deterministic-canvas",
@@ -67,5 +67,5 @@
   "fast_lane": "new_project.py --quick + tools/gate.py aggregation; safety laws in both modes",
   "ae_bridge": "tools/export_ae.py -> adapters/after-effects/export_ae.jsx (bridge export, no parity claims)",
   "typography": "catalog/dictionaries/typography.json + tools/fetch_font.py (OFL, sha-locked)",
-  "installer": "self-preparing one-liner (silent background dep warmup, single READY line)"
+  "installer": "skill-native: kit → ~/.motion-forge, personal skill → ~/.claude/skills, workspace untouched; greet+5-question intake first-touch"
 }

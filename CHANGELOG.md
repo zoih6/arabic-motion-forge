@@ -1,5 +1,12 @@
 # Changelog
 
+## 2.4.0 — 2026-10-21 — skill-native install + studio intake
+- Install is now skill-native per Claude/Codex skill conventions: kit lands in `~/.motion-forge` (never the workspace), a personal skill is auto-registered at `~/.claude/skills/arabic-motion-forge` (thin launcher → kit; progressive disclosure), render engines still warm silently in background. One READY line, no JSON dumps (full report stays in `install-report.json`).
+- First touch is a real studio onboarding, not a status report: greeting + EXACTLY 5 kickoff questions with options (`tools/intake.py --emit`, via the host question tool when available; numbered inline otherwise). Answers scaffold the project (`intake.py --record` → new_project --quick + `intake.json` + brief patch).
+- Direct-task autopilot: `intake.py --defaults --text '…'` derives duration/platform/type from the user's own message; nothing derived is ever re-asked; max one blocking question.
+- AGENTS §0 / root SKILL.md / start / intake skills rewritten around this flow; validate_kit now enforces the install layout + intake wiring (159 checks).
+
+
 ## 2.3.1 — 2026-10-20 — setup chatter patch
 - install.sh is now self-preparing: verifies+installs the release, silently backgrounds render-dependency warmup (log at ~/.cache/motion-forge-session/bootstrap.log), prints ONE `MOTION FORGE READY` line. No user decisions about toolchains.
 - AGENTS §0 rewritten as SILENT AUTOPILOT with a verbatim ≤5-line first-reply template (rendered in the user's language) and explicit NEVER-DUMP list (raw JSON, doctor tables, feature menus, code blocks) — the field-observed setup wall is now a named contract breach; validate_kit enforces the wiring.

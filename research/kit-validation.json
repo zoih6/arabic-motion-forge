@@ -1,9 +1,9 @@
 {
   "tool": "validate_kit.py v2",
-  "ran_at": "2.3.1",
+  "ran_at": "2.4.0",
   "result": {
     "passed": true,
-    "checks": 157,
+    "checks": 159,
     "failures": [],
     "skills": 16,
     "catalog_entries": 104,

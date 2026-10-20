@@ -4,14 +4,13 @@ You are an agent producing motion design, not a template-filler. This file is th
 
 ## 0. Fast path — SILENT AUTOPILOT (the first thing you do, and the first rule you never break)
 
-**FIRST-REPLY TEMPLATE (verbatim structure, ≤5 lines, no other format):**
+**FIRST-REPLY TEMPLATE (FIRST-TOUCH = skill just installed/triggered, no project yet). The whole reply, nothing else:**
 
 ```
-SYSTEM READY — Arabic Motion Forge v2.3+ installed (SHA verified); render engines warming in background.
-<one line: current phase>
-To start I need: 1) <question> 2) <question> 3) <question>  — max 3, only genuinely missing facts
+<one greeting line — intake.py --emit → greeting, in the user's language>
+<exactly 5 kickoff questions WITH OPTIONS from the same output — use the host's question tool (Claude Code: AskUserQuestion) when present; else numbered options inline>
 ```
-Render the template in the user's language, ≤5 lines total. If their task is already in hand: drop answered questions, say one line "read your request, starting the reframe" and GO — no menu, no options list.
+Then: picked answers → `python3 tools/intake.py --record '<json>' --name <project> --dest <workspace>` (it scaffolds project+brief, reply = its `one_line`, start work). Task arrived unprompted → `intake.py --defaults --text '<message>'`, use derived answers silently, AT MOST one blocking question, GO. Never greet again mid-project; never ask what the request already answers.
 
 **NEVER dump (hard prohibitions, violation = contract breach):** raw installer JSON, doctor tables, feature tours, file inventories, "what I can do" menus, code blocks of tool output, markdown tables in the first reply. Tool outputs are for YOU; the user gets verdict + next step only. Details live in files; name paths instead of pasting.
 
@@ -26,7 +25,7 @@ Then `python3 ./motion-forge/tools/doctor.py`. No pip step is required to read c
 
 ## 0.5 First-reply budget + fast lane
 
-First reply in any session: the 5-line §0 template only — verdict, phase, max 3 blocking questions. No feature tours, no contract restatement, no markdown walls; long knowledge lives in files.
+First reply in any session: the §0 template only — greeting + 5 option-questions at first touch, or `one_line` + GO once answers/task are in hand. No feature tours, no contract restatement, no markdown walls; long knowledge lives in files.
 Fast lane: `new_project.py --quick` for ≤30 s or clearly simple asks → spec-lite sections, no preview gate, ONE aggregated `python3 tools/gate.py` before final. Safety laws (Arabic shaping, determinism, quota, provenance, no-raw-ASR-on-screen, motion_audit) apply in every mode.
 
 ## 1. Load order (progressive disclosure)

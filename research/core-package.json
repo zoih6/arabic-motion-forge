@@ -1,8 +1,8 @@
 {
-  "file": "arabic-motion-forge-core-2.3.1.zip",
-  "bytes": 1217463,
-  "sha256": "94ecd21484acb5767e740e73a238f39fa897f4bf4e72c3545ed8297b66b3062b",
-  "files": 410,
+  "file": "arabic-motion-forge-core-2.4.0.zip",
+  "bytes": 1221309,
+  "sha256": "1cd2d25668451bc32bdcd01a36820747ebc68ed5650071027949c5da9cf7b78e",
+  "files": 411,
   "excluded_demo_compositions": true,
   "included_media_files": 0,
   "members": [
@@ -167,6 +167,7 @@
     "tools/harvest_libraries.py",
     "tools/install_agent.py",
     "tools/install_from_release.py",
+    "tools/intake.py",
     "tools/journal.py",
     "tools/motion_audit.py",
     "tools/new_project.py",
