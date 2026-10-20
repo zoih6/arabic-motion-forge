@@ -11,14 +11,10 @@ if [ -d "$DEST" ] && [ -n "$(ls -A "$DEST" 2>/dev/null || true)" ]; then
   echo "Refusing to install into non-empty $DEST" >&2
   exit 1
 fi
-python3 - "$DEST" "$TAG" "$REPO" <<'PY'
-import subprocess,sys,urllib.request,os
-dest,tag,repo=sys.argv[1:4]
-boot='/tmp/iamf-bootstrap.py'
-with urllib.request.urlopen(f'https://raw.githubusercontent.com/{repo}/main/tools/install_from_release.py',timeout=30) as r:
-    open(boot,'wb').write(r.read())
-sys.exit(subprocess.call([sys.executable,boot,'--destination',dest,'--tag',tag,'--repo',repo]))
-PY
+BOOT=/tmp/iamf-bootstrap.py
+curl -fsSL "https://raw.githubusercontent.com/$REPO/main/tools/install_from_release.py" -o "$BOOT" || { echo "could not fetch installer" >&2; exit 1; }
+set -- "$BOOT" "$DEST" "$TAG" "$REPO"
+python3 "$1" --destination "$2" --tag "$3" --repo "$4" >/dev/null || { echo "install failed — rerun with the installer visible" >&2; exit 1; }
 # silent autopilot: pre-provision the render stack unless already present
 LOG="$HOME/.cache/motion-forge-session/bootstrap.log"
 mkdir -p "$(dirname "$LOG")"
