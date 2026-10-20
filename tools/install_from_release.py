@@ -18,11 +18,12 @@ else:
  if not core:raise SystemExit('No core archive asset found on this release.')
  name=core[-1]  # highest-sorted version asset
  if 'SHA256SUMS.txt' in assets:
-  sums=get(assets['SHA256SUMS.txt']['browser_download_url']).decode();expected=next(l.split()[0] for l in sums.splitlines() if len(l.split())>=2 and l.split()[1]==name)
+  import time as _t;_cb='?cb=%d'%_t.time()
+ sums=get(assets['SHA256SUMS.txt']['browser_download_url']+_cb).decode();expected=next(l.split()[0] for l in sums.splitlines() if len(l.split())>=2 and l.split()[1]==name)
  else:
   expected=assets[name].get('digest') or ''
   if not expected:raise SystemExit('Release carries no verifiable checksum; refuse blind install. Pass --sha256 if you have one.')
- data=get(assets[name]['browser_download_url'])
+ data=get(assets[name]['browser_download_url']+_cb)
 if len(data)>16*1024**2:raise SystemExit('Core archive exceeds the declared lightweight safety budget.')
 assert hashlib.sha256(data).hexdigest()==expected,'Archive checksum mismatch'
 import io
