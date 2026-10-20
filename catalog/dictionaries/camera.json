@@ -1,0 +1,17 @@
+{
+  "usage": "Camera decisions are designed, not defaulted. Depth is a number per layer; parallax falls out of projection, not hand-tuned drifts.",
+  "projection": {
+    "model": "2.5D planar dolly: k = focal / (focal - z - dolly); layer translate origin by -cam.x*p, screen scale by k/k_ref",
+    "parameters": {"focal": "1400–2000 px for filmic falloff", "overscan": "plates rendered ≥15% larger than frame; crop budget documented", "max_roll": "≤0.6° unless diegetic"}
+  },
+  "moves": [
+    {"id": "static", "when": "busy content, data reading, most lower thirds", "rules": "layers own all motion"},
+    {"id": "slow-push", "when": "arrival of a claim, entering a diagram", "rules": "one push per shot; settle before text resolves; secondary planes at depth ratios"},
+    {"id": "lateral-drift", "when": "surveying maps/timelines", "rules": "drift direction must match reading order (RTL right-to-left reading flow for Arabic)"},
+    {"id": "focus-travel", "when": "stacked evidence planes", "rules": "focus keyframes per AGENTS rack; blur distance proportional to |z - focus|"},
+    {"id": "whip-connection", "when": "linking two scenes once", "rules": "temporal samples ≥4 at shutter 180°, pre-position incoming content"},
+    {"id": "reveal-pull", "when": "ending wide after detail", "rules": "only when content outside the old frame matters next"}
+  ],
+  "anti_default": "No arbitrary zoom on every shot. If removing the camera move changes nothing, remove it.",
+  "verification": ["sample mid-motion frames: horizon/line continuity", "no layer crosses camera plane (k>0 guard)", "determinism: identical frames at identical t in different call order"]
+}

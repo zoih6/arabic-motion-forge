@@ -1,5 +1,3 @@
-# Project instructions
+# CLAUDE.md
 
-@AGENTS.md
-
-The plugin entry is `/arabic-motion-forge:start`. Read the root SKILL.md and follow progressive routes. Do not import the showcase composition into a new project.
+This repo IS the Arabic Motion Forge kit. Read `AGENTS.md` (contract) and `SKILL.md` (router) first; they are canonical and in English by design. Plugin manifest: `.claude-plugin/`. Skills: `skills/*/SKILL.md` (12). Do not treat `examples/vertical-showcase` scene code as a template — originality gate rules apply to your output too. Rendering in this environment: deterministic Canvas + FFmpeg via `tools/` (no Adobe AE here; never claim AE-native execution). Heavy sessions: follow AGENTS.md §9 and `skills/performance`.

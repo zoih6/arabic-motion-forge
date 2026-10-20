@@ -1,0 +1,48 @@
+{
+  "usage": "Style families as systems of decisions. 'steal' = structural lessons safe to learn; 'never' = identity or assets that belong to others. Every film must still derive its own direction via tools/direct.py and pass check_directions.",
+  "families": [
+    {
+      "id": "vox-explainer",
+      "seen_in": "Vox / Earth Studio published explainers (study concepts, not files)",
+      "steal": ["map/graph as protagonist, camera travels to it instead of cutting to it", "collage of archives+drawn layers with one shared texture treatment", "numbers animate with physical weight (paper cut, not glow)", "hook frame states the question visually in <2 s"],
+      "never": ["their exact paper palette, hand-drawn figure style, or lower-third templates", "newspaper-texture overlay as an excuse for low effort"],
+      "arabic_fit": "strong; keep headline words on matte bands, avoid decorative 3D"
+    },
+    {
+      "id": " Kurzgesagt-plain",
+      "seen_in": "Kurzgesagt process interviews",
+      "steal": ["flat shapes + one depth trick (silhouette parallax) beat fake 3D", "cut-timed animation: idle states stay alive with micro-motion (≤2% amplitude)", "character/object silhouettes readable at thumbnail"],
+      "never": ["their rounded-rectangle UI motifs as default card system", "cute-ification of serious subject matter"],
+      "arabic_fit": "good for educational; test headline mass at 1080 width"
+    },
+    {
+      "id": "ordinary-folk-craft",
+      "seen_in": "Ordinary Folk process breakdowns",
+      "steal": ["type is set like print: measure, baseline rhythm, one accent", "sound design carries transitions more than wipes do", "restraint: one signature move per film, executed everywhere"],
+      "never": ["copying their brand color combos or their signature grid as template", "motion minimalism that is actually absence of ideas"],
+      "arabic_fit": "excellent for typographic films; mattes instead of fades"
+    },
+    {
+      "id": "carbon-motion-systems",
+      "seen_in": "Carbon design motion guidelines (product UI motion)",
+      "steal": ["entrance=productive (fast, ease-out), exit=expressive (slow, ease-in) asymmetry", "motion encodes spatial relationship, not decoration"],
+      "never": ["importing UI easing wholesale into film beats (film needs longer settles)", "treating duration tables as law for emotional content"],
+      "arabic_fit": "neutral; useful for product segments inside documentaries"
+    },
+    {
+      "id": "heritage-collage",
+      "seen_in": "kit's own Alhambra production learnings (original)",
+      "steal": ["photo cutouts with independent paper mounts and shadows read as artifacts, not slides", "sung/archival inserts get their own frame treatment and hard in/out points", "annotations drawn on location imagery with trim-paths feel scholarly"],
+      "never": ["reusing its specific scenes/palette for unrelated clients", "matte hairline halos — always QA on two backgrounds"],
+      "arabic_fit": "native; Arabic annotations need font-load wait + shaped-word mattes"
+    },
+    {
+      "id": "kinetic-arabic-print",
+      "seen_in": "kit original research; type-driven Arabic spots",
+      "steal": ["word-unit reveal through shaped clip bands per phrase", "diacritic-aware line boxes measured from real metrics", "one lam-alef column can host the whole vertical rhythm"],
+      "never": ["per-letter jumps that break connection", "Latin kinetic tropes (glitch, elastic) glued onto Arabic words"],
+      "arabic_fit": "purpose-built"
+    }
+  ],
+  "policy": ["Reference study produces bullet lessons in the journal, never files copied.", "A project may cite 1–2 families but must outgrow them via direction axes.", "check_directions enforces non-imitation fingerprints."]
+}

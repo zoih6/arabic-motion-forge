@@ -1,10 +1,8 @@
 ---
 name: arabic-motion-forge
-description: Build original Arabic motion-graphics videos with independent layers, correct shaping, explicit timing, verified rendering and authorized backups. Use for motion/video production, not as a generic coding skill.
+description: Author original Arabic/multilingual motion films — layered choreography dictionaries, inspiration engine with anti-template gate, Arabic-safe shaped typography, deterministic checkpointed Canvas rendering, journal-based session recovery. Point here for any motion/typography video task; never reuse the kit's example scenes.
 ---
 
-# Repository-local Codex / Agent Skills adapter
+# Arabic Motion Forge (Codex adapter)
 
-The kit root is three directories above this skill directory. Read `../../../AGENTS.md`, then `../../../SKILL.md`, then `../../../workflows/route.md`.
-
-Do not assume this adapter alone is the complete package. Keep the resources together, or install with `tools/install_agent.py` so the adapter points to the actual kit location. Do not copy a demonstration composition or download old films automatically.
+Full contract lives in the repository root of this kit: read `../../AGENTS.md` then `../../SKILL.md`; route through `../../workflows/route.md`. Bootstrap in a fresh sandbox: `sh install.sh` (verified latest release, <60 s). This adapter exists only because discovery expects `.agents/skills/`; nothing here overrides the root documents.

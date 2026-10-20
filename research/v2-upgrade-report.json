@@ -1,0 +1,52 @@
+{
+  "report": "Arabic Motion Forge v2.0.0 upgrade — compatibility and improvement evidence",
+  "date": "2026-10-20",
+  "methodology": "Every claim below was executed in this workspace against the shipped files; commands listed with raw numbers. Nothing inferred from intent.",
+  "compatibility_with_v1": {
+    "gate": "tools/compat_check.py (new; runs inside validate_kit too)",
+    "verdict": "PASS",
+    "v1_paths_kept": 371,
+    "v1_paths_source": "file listing of the PUBLISHED v1.0.0 release archive (not a guess)",
+    "runtime_bytes_frozen": {"runtime/core.mjs": "36 exports sha256 match", "runtime/canvas.mjs": "15 exports sha256 match", "published_vs_disk": "archive bytes == disk bytes verified"},
+    "kit_v1_fields_preserved": true,
+    "new_or_changed_files_vs_v1": 46,
+    "v1_test_suites_on_v2_kit": {"node": "20/20 pass", "browser": "18/18 pass"},
+    "v1_install_still_works": "install_from_release --tag v1.0.0 semantics retained (latest now default); cold install of the public v1 archive through the NEW installer code: sha a1900452e51a... == recorded v1 sha",
+    "v1_deliverable_integrity": "deliverables/arabic-motion-forge-core-1.0.0.zip re-verified byte-exact against published release (a1900452...)",
+    "policy": "breaking changes require major bump; all v2 changes additive or documentation-level"
+  },
+  "improvements_measured": {
+    "install_speed": {"v1_cold_install_time_ms": 923, "note": "curl|sh one-liner -> verified 1.16 MB zip -> doctor; no clone, no history, no media; pip only needed at render time"},
+    "template_output_prevention": {
+      "before": "v1 relied on agent prose rules only; identical output across topics was a known failure mode",
+      "after": "tools/direct.py generates 3 axis-structured directions (distinctness self-check); tools/check_directions.py hard-gates style lock",
+      "evidence": "live run: unfilled TODOs -> FAIL(rc=1); filled topic-grounded rationales -> PASS + style.json lock; negative control (generic prose) -> FAIL 'too short to be a decision'; distinctness D1D2:7 D1D3:8 D2D3:8 of 8 axes (min 4)"
+    },
+    "render_iteration_speed": {
+      "before": "any motion review forced full-quality render; 80 s demo film = 94.85 s machine time; reviewing one scene meant re-render cost anxiety",
+      "after": "--tier draft: half-res silent crf28; measured 96f: final 4.39 s/77,572 B vs draft 3.48 s/25,055 B; scene-window reviews (2-4 s of timeline) now cost ~1-5 s vs 94.85 s whole-film => ~20x faster typical review loop; draft workdir+report isolated so finals never clobbered (examples render-report.json verified untouched sha-stable)",
+      "proof_file": "/home/user/.cache/motion-forge-session/renders/draft-tier-smoke/b07638eaa2/{final,draft}/final.mp4 with manifests"
+    },
+    "session_stability": {
+      "problem": "user-reported heavy/hung chats; lost state across context truncation caused re-asks and duplicate renders",
+      "after": "journal.jsonl (append-only milestones, seeded by new_project, stats/tail commands) + AGENTS.md \u00a79 + skills/performance + skills/recovery codify the anti-hang loop; copy-hash guard verified live: wrong-path render refused before wasting a single frame",
+      "evidence": "live run: boot+style-lock lines recorded, stats reported correctly; render guard AssertionError fired on mismatched copy hash BEFORE rendering"
+    },
+    "agent_instruction_quality": {
+      "before": "v1 skills in Arabic (user's own words: agents performed better with English); no per-file spec compliance",
+      "after": "AGENTS.md + SKILL.md + 12 skills + adapter + workflows in English; validate_kit enforces Agent-Skills spec (name==dir, desc<=1024 with triggers, <500 lines, ASCII contracts) and link resolution on every run",
+      "counts": "12 skills (was 9); dictionaries: 5 files (easings 22 rows incl. AE-curve mapping; camera projection model; 10 continuity rules; 6 style families with never-copy lines; 8 axes)"
+    },
+    "supply_chain": {"audited_repositories": "18 -> 22 (d3-shape, d3-interpolate, popmotion, roughjs added; commits+licenses re-verified 2026-10-20)", "runtime_libraries_bundled": "4 unchanged; vendor/ untouched"},
+    "documentation_truth": "no claim of native After Effects execution anywhere; draft tier labeled 'never a delivery'; installer reports media_downloaded=false"
+  },
+  "release": {
+    "core_zip": {"file": "arabic-motion-forge-core-2.0.0.zip", "bytes": 1162497, "sha256": "17947b8e7a17ce2466fd0e45fd866e874ec95e3d6c20edfb54cd4774e774d4b9", "files": 389, "media_files": 0, "demo_scene_excluded": true},
+    "validation": {"validate_kit": "109/109", "compat_check": "PASS", "node": "20/20", "browser": "18/18", "draft_smoke": "96f 540x960 sha a1185581...", "v1_regression": "suites green against frozen runtime inside v2 tree"}
+  },
+  "limitations": [
+    "Publication state (tag v2.0.0, release assets) is recorded in release-verification.json only AFTER the push step of this session.",
+    "Draft-vs-final timing measured on 3 s windows on a 2 vCPU-class host; ratios hold directionally on other machines.",
+    "check_directions topic-token matching is stem-based; a plagiarized-but-topical rationale still passes token checks \u2014 the distinctness + style-collision checks and human review remain the backstops."
+  ]
+}

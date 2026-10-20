@@ -1,22 +1,15 @@
 ---
 name: audio-sync
-description: Preserve supplied speech and music, obey exact source intervals, align typography, and verify the encoded mix.
+description: Sync motion to real audio — narration word/phoneme timing, music beat maps, sung inserts replacing narration spans, LUFS/true-peak targets, frame-quantized cuts. Use whenever voice or music drives timing or when the edit must preserve/replace spoken content.
 ---
 
-# audio-sync
+# Audio sync
 
-اقرأ `../../AGENTS.md` أولًا. لا تحمّل هذا المسار إلا حين يحتاجه الطلب.
+Source of truth = the audio FILE, measured, never guessed.
 
-## الإجراء
-1. افحص الملف الفعلي ومدته ووسومه وأخذ عيناته. مطابقة الكلمات لا تعني مطابقة الأداء أو النسخة المطلوبة.
-2. التوقيت الذي حدده المستخدم أَولى من ذوق الوكيل. إن كان الأداء ملتبسًا، اطلب تحديدًا أو اعرض مقتطفًا بدل التخمين.
-3. افصل sample-accurate cut عن frame-quantized video؛ سجل أي padding أو فرق تكميم.
-4. في الغناء: دوّن هل يتوقف الراوي، وما النص المستبدل، ومن أين يعود. لا تطبق ducking فقط إذا طُلب إيقافه.
-5. LRC/ASR قرائن. صحح الكلمات من النص الصحيح، وميّز التوقيت التقريبي والمدود. لا تدّعِ استماعًا لم تسمح به الأداة.
-6. استخرج onsets/energy للرسوم المتفاعلة. لا تجعل موجة عشوائية تبدو كتحليل للصوت.
-7. قِس LUFS/true peak بعد الترميز. عند الدمج استخدم mix مستمرًا بدل تكرار priming AAC لكل جزء.
-
-## المخرجات
-audio-edit-map.json، cue/word timing، mix report، حقوق ومصدر التسجيل.
-
-اقرأ [الصوت](../../reference/audio.md).
+1. **Analysis.** Narration: transcribe with word timestamps (whisper on windowed ≤60 s clips — full-file runs OOM at 2 GB RAM; refine ±3 s around boundaries). Music: onsets/beat grid (librosa or ffmpeg silencedetect+energy comb; record method in research JSON). Store `audio-map.json`: `{words:[{t0,t1,text}], beats:[...], energy:[...]}` with source sha256.
+2. **Lock.** Entrances land on word onsets or beat multiples (±1 frame tolerance asserted in QA `audio-visual-phase`). Narration-driven films: motion timeline derived from word times; music only ducks under voice (measure, don't vibe).
+3. **Replacements/inserts** (e.g., a sung passage over a spoken span): exact source in/out points in `audio-map.json`; narration silenced for the span; original files untouched (build new mix via ffmpeg filter graph, keep splice map).
+4. **Frame-quantize.** All cut points = k/fps seconds; mix sample rate locked (48k); master loudness on the ENCODED file: target −14 LUFS I, TP ≤ −1.5 dBTP, report measured values honestly; loudness via ffmpeg `loudnorm=print_format=json` two-pass or ebur128.
+5. **Mux.** render.py streams per-part AAC from the same master — never mux a separate full-length mix against concat (drift); if replacing mux after, re-run PTS audit.
+6. Agent honesty: you cannot listen. "Sounds good" is not a report — deliver the numbers (LUFS, TP, duration deltas, onset deltas), spot-check spectrograms around splices for clicks (energy spike >12dB at boundary = 2ms fade-in/out), and say what only a human can confirm.

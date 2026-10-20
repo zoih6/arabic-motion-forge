@@ -29,3 +29,10 @@
 - Theatre: تعارض بين notice الجذر وmetadata الحزمة؛ لا تثبيت تلقائي قبل فحص المكون المحدد.
 - svg-path-properties: notice الموزع MIT وmetadata يقول ISC؛ احتُفظ بكليهما وكُشف التعارض بدل إخفائه.
 - لا تثبت كل المحركات. اختر الأقل الذي يحقق المطلب، مع اختبار للعربية والتصيير الحتمي.
+
+## إضافات تدقيق 2.0.0 (v2 audit additions)
+
+- d3-shape: ISC-like-verify-notice @ a82254af78f0 — ISC expected; audit source-and-license-inspected
+- d3-interpolate: ISC-like-verify-notice @ 2eeffc0d02f2 — ISC expected; audit source-and-license-inspected
+- popmotion: not-found-do-not-assume @ adf681efd856 — MIT expected; audit source-and-license-inspected
+- roughjs: MIT-like-verify-notice @ 56a2762171b1 — MIT expected; audit source-and-license-inspected

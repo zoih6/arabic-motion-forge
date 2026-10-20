@@ -7,17 +7,19 @@ import argparse,json,subprocess,time,base64,hashlib,shutil,math,os
 import av,imageio_ffmpeg
 from playwright.sync_api import sync_playwright
 KIT=Path(__file__).resolve().parents[1]
-P=argparse.ArgumentParser();P.add_argument('--project',required=True);P.add_argument('--audio');P.add_argument('--publish-session');P.add_argument('--output');P.add_argument('--chunk-seconds',type=float,default=10);P.add_argument('--crf',type=int,default=18);P.add_argument('--workspace-root',default=str(Path.home()));P.add_argument('--snapshot-limit-mib',type=float,default=118);a=P.parse_args()
-PROJECT=Path(a.project).resolve();ROOT=PROJECT.parent;cfg=json.loads(PROJECT.read_text());fps=int(cfg['fps']);total=int(cfg['frames']);entry=(ROOT/cfg['entry']).resolve()
+P=argparse.ArgumentParser();P.add_argument('--project',required=True);P.add_argument('--audio');P.add_argument('--publish-session');P.add_argument('--output');P.add_argument('--chunk-seconds',type=float,default=10);P.add_argument('--crf',type=int,default=18);P.add_argument('--workspace-root',default=str(Path.home()));P.add_argument('--snapshot-limit-mib',type=float,default=118);P.add_argument('--tier',choices=['final','draft'],default='final',help='draft = half-resolution silent motion review, never a delivery');P.add_argument('--heartbeat-seconds',type=float,default=300,help='max wait for a checkpoint upload before pausing cleanly');a=P.parse_args()
+DRAFT=a.tier=='draft'
+PROJECT=Path(a.project).resolve();ROOT=PROJECT.parent;cfg=json.loads(PROJECT.read_text());fps=int(cfg['fps']);total=int(cfg['frames']);entry=(ROOT/cfg['entry']).resolve();DW,DH=(cfg['width']//2)//2*2,(cfg['height']//2)//2*2
 assert cfg.get('render_allowed') is True,'Explicit render approval is required.'
 assert abs(total/fps-cfg['duration'])<1e-8,'Duration must explicitly match the frame grid.'
 assert (ROOT/cfg['layer_plan']).exists(),'Layer plan required before production rendering.'
 copy=(ROOT/cfg['copy_file']).read_bytes();assert hashlib.sha256(copy).hexdigest()==cfg['copy_sha256'],'Approved copy hash changed.'
 allowed=set(copy.decode().splitlines());BUILD=hashlib.sha256(entry.read_bytes()+PROJECT.read_bytes()).hexdigest()[:10]
 SESSION=Path(a.publish_session).expanduser().resolve() if a.publish_session else Path.home()/'.cache/motion-forge-session'
-WORK=SESSION/'renders'/cfg['id']/BUILD;WORK.mkdir(parents=True,exist_ok=True);FF=imageio_ffmpeg.get_ffmpeg_exe();AUDIO=Path(a.audio).resolve() if a.audio else None
-report={'project_id':cfg['id'],'build':BUILD,'status':'rendering','fps':fps,'width':cfg['width'],'height':cfg['height'],'frames':total,'duration':total/fps,'segments':[],'publish_requested':bool(a.publish_session),'copy_checked_against':cfg['copy_file'],'source_entry_sha256':hashlib.sha256(entry.read_bytes()).hexdigest()}
-REPORT=ROOT/'render-report.json'
+WORK=SESSION/'renders'/cfg['id']/BUILD/('draft' if DRAFT else 'final');WORK.mkdir(parents=True,exist_ok=True);FF=imageio_ffmpeg.get_ffmpeg_exe();AUDIO=None if DRAFT else (Path(a.audio).resolve() if a.audio else None)
+if DRAFT and a.audio:print('NOTE: draft tier is silent by design; --audio ignored',flush=True)
+report={'project_id':cfg['id'],'build':BUILD,'tier':a.tier,'status':'rendering','fps':fps,'width':cfg['width'],'height':cfg['height'],'frames':total,'duration':total/fps,'segments':[],'publish_requested':bool(a.publish_session),'copy_checked_against':cfg['copy_file'],'source_entry_sha256':hashlib.sha256(entry.read_bytes()).hexdigest()}
+REPORT=ROOT/('render-report.draft.json' if DRAFT else 'render-report.json')
 def save():
  temp=REPORT.with_suffix('.pending');temp.write_text(json.dumps(report,ensure_ascii=False,indent=2));temp.replace(REPORT)
 def info(path):
@@ -29,7 +31,7 @@ def checkpoint(path,name):
  q=SESSION/'publish-queue';q.mkdir(exist_ok=True);p=q/(name+'.json');temp=p.with_suffix('.pending')
  job={'kind':'asset','path':str(path),'name':name+'.mp4','tag':'session-checkpoints-2026-10-19','prerelease':True}
  temp.write_text(json.dumps(job));temp.replace(p);started=time.monotonic()
- while time.monotonic()-started<300:
+ while time.monotonic()-started<a.heartbeat_seconds:
   try:
    result=json.loads(p.read_text())
    if result.get('status')=='uploaded':return {'job':p.name,'source_commit':result.get('source_commit'),'release_tag':job['tag'],'asset_name':job['name']}
@@ -46,7 +48,7 @@ try:
    cmd=[FF,'-y','-hide_banner','-loglevel','warning','-threads','1','-f','image2pipe','-vcodec','mjpeg','-framerate',str(fps),'-i','pipe:0']
    if AUDIO:cmd+=['-ss',str(first/fps),'-i',str(AUDIO),'-map','0:v:0','-map','1:a:0','-c:a','aac','-b:a','160k','-ar','48000']
    else:cmd+=['-an']
-   cmd+=['-frames:v',str(count),'-t',str(count/fps),'-c:v','libx264','-preset','veryfast','-crf',str(a.crf),'-pix_fmt','yuv420p','-r',str(fps),'-g',str(fps*2),'-threads','2','-movflags','+faststart',str(target)]
+   cmd+=['-frames:v',str(count),'-t',str(count/fps),'-c:v','libx264','-preset','veryfast','-crf',str(28 if DRAFT else a.crf),'-pix_fmt','yuv420p','-r',str(fps),'-g',str(fps*2),'-threads','2']+(['-vf',f'scale={DW}:{DH}'] if DRAFT else [])+['-movflags','+faststart',str(target)]
    print('RENDER_CHECKPOINT',idx+1,first/fps,(first+count)/fps,flush=True);stamp=time.monotonic()
    with logfile.open('wb') as log:
     encoder=subprocess.Popen(cmd,stdin=subprocess.PIPE,stderr=log,stdout=subprocess.DEVNULL)
@@ -58,8 +60,8 @@ try:
     finally:encoder.stdin.close()
     code=encoder.wait(timeout=120)
    if code or errors:raise RuntimeError('Encoder/browser error: '+str(errors)+' '+logfile.read_text()[-1200:])
-   data=info(target);assert data['frames']==count and data['fps']==fps and data['width']==cfg['width'] and data['height']==cfg['height'],data
-   data.update(file=str(target),frame_in=first,frame_out=first+count,elapsed=round(time.monotonic()-stamp,2));asset=f'{cfg["id"]}-{BUILD}-p{idx+1:02}-{data["sha256"][:8]}'
+   data=info(target);assert data['frames']==count and data['fps']==fps and data['width']==(DW if DRAFT else cfg['width']) and data['height']==(DH if DRAFT else cfg['height']),data
+   data.update(file=str(target),frame_in=first,frame_out=first+count,elapsed=round(time.monotonic()-stamp,2));asset=f'{cfg["id"]}-{BUILD}-p{idx+1:02}-{data["sha256"][:8]}'+('-draft' if DRAFT else '')
    data['backup']=checkpoint(target,asset);report['segments'].append(data);save();print('CHECKPOINT_VERIFIED',idx+1,data['bytes'],flush=True)
   browser.close()
  # Stream-copy video-only pieces to avoid per-piece AAC priming and concat start shifts.
@@ -85,6 +87,6 @@ try:
   if eligible_bytes(Path(a.workspace_root))+increase>a.snapshot_limit_mib*1024**2:raise RuntimeError('Persistent snapshot budget exceeded; master remains safely staged. Publish it before choosing a smaller same-resolution delivery.')
   shutil.copy2(master,output)
  else:output=master
- report.update(status='rendered_media_checks_passed',master=meta,output=str(output),pts_constant=True,full_decode=True,elapsed_total=round(time.monotonic()-start,2));save();print('RENDER_COMPLETE',json.dumps({'output':str(output),**meta},ensure_ascii=False),flush=True)
+ report.update(status='rendered_media_checks_passed',master=meta,output=str(output),pts_constant=True,full_decode=True,elapsed_total=round(time.monotonic()-start,2));save();print(('DRAFT_' if DRAFT else '')+'RENDER_COMPLETE',json.dumps({'output':str(output),**meta},ensure_ascii=False),flush=True)
 except Exception as e:
  report.update(status='paused_on_error',error=str(e));save();print('RENDER_PAUSED',str(e),flush=True);raise

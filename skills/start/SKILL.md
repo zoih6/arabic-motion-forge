@@ -1,17 +1,13 @@
 ---
 name: start
-description: Start or resume an Arabic motion-graphics or film-production project. Use for brief, original art direction, layer choreography, rendering and delivery; not for unrelated coding. Routes to the relevant specialized skills without loading the entire repository.
+description: Entry point when a motion/video request arrives or a session resumes with this kit. Use to reach a running project state fast: bootstrap check, journal read, route selection. First action for any new conversation using Arabic Motion Forge.
 ---
 
-# Start Arabic Motion Forge
+# Start
 
-Resolve KIT_ROOT as the directory two levels above this skill directory, or use ${CLAUDE_PLUGIN_ROOT} when provided by the host. Do not guess the user project's location from the plugin path.
-
-1. Read `KIT_ROOT/AGENTS.md` and `KIT_ROOT/SKILL.md`.
-2. Follow `KIT_ROOT/workflows/route.md`.
-3. Inspect the existing project's state, or gather only missing brief inputs.
-4. Run `python KIT_ROOT/tools/doctor.py`; setup instructions are in `KIT_ROOT/INSTALL.md`.
-5. Do not copy a demonstration scene. The public example is excluded from the core release for this reason.
-6. Publication is opt-in per project. No token belongs in source, examples or prompts.
-
-This is the Claude plugin entry adapter; canonical production policy lives at the root, not duplicated here.
+1. Kit present? `python3 tools/doctor.py` → one JSON verdict. If absent, AGENTS.md §0 bootstrap (<60 s). Never clone history or fetch media "to look around".
+2. Existing project? `python3 tools/journal.py stats --project <dir>/project.json` + read `project.json`/`brief.json`. Resume at the recorded `next`; do not re-ask settled questions, do not re-render verified parts (compare `render-report.json` build hash first).
+3. New brief? route: unclear constraints → `intake`; needs visual identity → `creative-direction`; then author scenes via `motion-direction` (+ `arabic-type` if Arabic), assets (`asset-craft`), audio (`audio-sync`).
+4. Session budgeting (prevents heavy/hung chats): plan phases up to the next natural checkpoint; keep tool output samples small; heavy renders in background with `get_process_output`-style waits; one presentable file per reply.
+5. Before ANY render: `tools/check_directions.py` then `tools/check_project.py` must pass; `render_allowed:true` only after user sees direction+first-frame approval (or explicitly waives).
+6. Long or risky work: say the phase you are in once, do the phase, journal it. If interrupted, the journal is the handoff — close with the exact next command.

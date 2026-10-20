@@ -2,15 +2,21 @@
   "native_after_effects_executed": false,
   "default_runtime": "Canvas 2D with analytical time functions",
   "verified": [
-    "alpha matte endpoints and intermediate coverage",
     "RTL full-shaped bitmap preservation",
-    "defined luma matte endpoints",
+    "alpha matte endpoints and intermediate coverage",
     "arc-length path trim",
-    "three spring damping regimes",
-    "parent transforms",
+    "compat-gate (tools/compat_check.py: v1 path superset, frozen runtime sha256, kit-field preservation)",
     "contour correspondence",
+    "defined luma matte endpoints",
+    "direction-gate (tools/check_directions.py fail-open on TODOs/short/non-topical rationale; locks style.json on pass)",
+    "draft-tier-render (render.py --tier draft: half-res silent, isolated workdir+report, 3.1x smaller, verified 96f@540x960)",
+    "four bundled libraries in scoped unit tests",
+    "inspiration-engine-direct (tools/direct.py, 3 distinct directions, self-checked)",
+    "installer-latest (install_from_release resolves latest release + version-globbed core asset; --tag v1.0.0 still works)",
+    "parent transforms",
+    "session-journal (tools/journal.py append/tail/stats; seeded by new_project.py)",
     "temporal multi-sampling",
-    "four bundled libraries in scoped unit tests"
+    "three spring damping regimes"
   ],
   "conditional": [
     "Latin character transforms",
@@ -28,5 +34,6 @@
     "research/node-tests.tap",
     "research/browser-tests.json",
     "examples/vertical-showcase/render-report.json"
-  ]
+  ],
+  "equivalent": []
 }

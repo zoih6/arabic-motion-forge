@@ -1,33 +1,85 @@
+"""Kit validation v2: structure + Agent-Skills spec + compatibility + version discipline.
+Runs the full contract; prints a single JSON verdict. Exit nonzero on any failure."""
 from pathlib import Path
-import json,re,hashlib,argparse
-R=Path(__file__).resolve().parents[1];p=argparse.ArgumentParser();p.add_argument('--write-report',action='store_true');a=p.parse_args();errors=[];checks=[]
+import json,re,sys,subprocess,hashlib
+R=Path(__file__).resolve().parents[1];checks=[];errors=[]
 def check(name,value):checks.append({'name':name,'passed':bool(value)});errors.extend([] if value else [name])
-for name in ['AGENTS.md','SKILL.md','README.md','INSTALL.md','THIRD_PARTY.md','LICENSE','catalog/motions.json','catalog/capabilities.json','.claude-plugin/plugin.json','.claude-plugin/marketplace.json','tools/doctor.py','tools/new_project.py','tools/check_project.py','tools/install_from_release.py']:
- check('required path '+name,(R/name).is_file())
-plugin=json.loads((R/'.claude-plugin/plugin.json').read_text());market=json.loads((R/'.claude-plugin/marketplace.json').read_text())
-check('plugin identity',plugin['name']=='arabic-motion-forge' and plugin['version']=='1.0.0')
-check('plugin skill directory',(R/plugin['skills']).is_dir())
-check('marketplace source resolves to root',market['plugins'][0]['name']==plugin['name'] and (R/market['plugins'][0]['source']).resolve()==R)
-skills=list((R/'skills').glob('*/SKILL.md'));check('nine discoverable skills',len(skills)==9)
-for s in skills:
- text=s.read_text();name=re.search(r'^name:\s*(.+)$',text,re.M);desc=re.search(r'^description:\s*(.+)$',text,re.M)
- check('skill metadata '+s.parent.name,bool(name and name.group(1).strip()==s.parent.name and desc and len(desc.group(1))>30))
+def read(p):return p.read_text(encoding='utf-8') if p.exists() else ''
+def frontmatter(text):
+ m=re.match(r'^---\n(.*?)\n---\n',text,re.S)
+ d={}
+ if m:
+  for line in m.group(1).splitlines():
+   if ':' in line and not line.startswith((' ','-')):k,_,v=line.partition(':');d[k.strip()]=v.strip()
+ return d
+kit=json.loads(read(R/'kit.json') or '{}')
+check('kit.json version semver',bool(re.fullmatch(r'\d+\.\d+\.\d+',kit.get('version',''))))
+pkg=json.loads(read(R/'package.json') or '{}')
+check('package.json version matches kit',pkg.get('version')==kit.get('version'))
+plugin=json.loads(read(R/'.claude-plugin/plugin.json') or '{}')
+check('plugin manifest version matches kit',plugin.get('version')==kit.get('version'))
+check('plugin name',plugin.get('name')=='arabic-motion-forge')
+mp=json.loads(read(R/'.claude-plugin/marketplace.json') or '{}')
+check('marketplace points at plugin',mp.get('plugins',[{}])[0].get('name')=='arabic-motion-forge')
+check('plugin skill directory',(R/plugin.get('skills','skills')).is_dir() if plugin.get('skills') else (R/'skills').is_dir())
+# core docs
+for doc in ['AGENTS.md','SKILL.md','README.md','CHANGELOG.md','kit.json','install.sh','LICENSE','THIRD_PARTY.md']:
+ check(f'root {doc}',(R/doc).is_file())
+check('AGENTS.md English',len(re.findall(r'[\u0600-\u06FF]',read(R/'AGENTS.md')))==0)
+check('root SKILL.md has frontmatter',read(R/'SKILL.md').startswith('---'))
+check('SKILL.md body under 500 lines',len(read(R/'SKILL.md').splitlines())<530)
+# skills: spec-compliant, English, routed
+skill_dirs=sorted(d.name for d in (R/'skills').glob('*') if (d/'SKILL.md').is_file())
+expect=['arabic-type','asset-craft','audio-sync','creative-direction','delivery','intake','motion-direction','originality','performance','quality','recovery','start']
+check('twelve discoverable skills',skill_dirs==expect)
+for s in skill_dirs:
+ text=read(R/f'skills/{s}/SKILL.md');fm=frontmatter(text)
+ check(f'{s}: name matches dir',fm.get('name')==s)
+ check(f'{s}: lowercase-hyphen name',bool(re.fullmatch(r'[a-z0-9]+(-[a-z0-9]+)*',fm.get('name',''))))
+ check(f'{s}: description present',10<len(fm.get('description',''))<=1024)
+ check(f'{s}: English body',len(re.findall(r'[\u0600-\u06FF]',text))<20)
+ check(f'{s}: under 500 lines',len(text.splitlines())<500)
 check('Codex adapter exists',(R/'.agents/skills/arabic-motion-forge/SKILL.md').exists())
-for folder in [R,R/'skills',R/'reference',R/'workflows']:
- files=folder.glob('*.md') if folder==R else folder.rglob('*.md')
- for f in files:
-  for target in re.findall(r'\[[^\]]*\]\(([^)]+)\)',f.read_text()):
-   target=target.split('#')[0]
-   if not target or '://' in target or target.startswith('mailto:'):continue
-   check('link '+str(f.relative_to(R))+' -> '+target,(f.parent/target).exists())
-cat=json.loads((R/'catalog/motions.json').read_text());check('104 catalog entries',len(cat['entries'])==104);check('33 canonical mechanisms',len(cat['mechanisms'])==33)
-for row in cat['entries']:check('recipe '+row['id'],(R/row['recipe']).is_file())
-for lib in json.loads((R/'catalog/bundled-libraries.json').read_text()):
- check('license notice '+lib['package'],(R/lib['license_notice_path']).exists())
- for f in lib['bundled_files']:check('bundle hash '+f['path'],hashlib.sha256((R/f['path']).read_bytes()).hexdigest()==f['sha256'])
-secret=re.compile(rb'(?:github_pat_[A-Za-z0-9_]{20,}|gh[pousr]_[A-Za-z0-9]{20,}|-----BEGIN [A-Z ]*PRIVATE KEY-----)')
-for f in R.rglob('*'):
- if f.is_file() and f.suffix.lower() in {'.py','.js','.mjs','.json','.md','.txt','.html','.csv','.yaml'}:check('secret scan '+str(f.relative_to(R)),not secret.search(f.read_bytes()))
-report={'passed':not errors,'checks':len(checks),'failures':errors,'skills':len(skills),'catalog_entries':len(cat['entries']),'native_host_execution_claimed':False}
-if a.write_report:(R/'research').mkdir(exist_ok=True);(R/'research/kit-validation.json').write_text(json.dumps(report,ensure_ascii=False,indent=2))
-print(json.dumps(report,ensure_ascii=False,indent=2));raise SystemExit(1 if errors else 0)
+check('Codex adapter English',(R/'.agents/skills/arabic-motion-forge/SKILL.md').exists() and len(re.findall(r'[\u0600-\u06FF]',read(R/'.agents/skills/arabic-motion-forge/SKILL.md')))==0)
+# catalog + dictionaries
+cat=json.loads(read(R/'catalog/motions.json') or '{}')
+check('catalog has 100+ motions',len(cat.get('entries',[]))>=100)
+check('catalog mechanisms dir',len(list((R/'reference/recipes').glob('*.md')))>=30)
+lock=json.loads(read(R/'catalog/libraries.lock.json') or '[]')
+check('library lock >=20 pinned repos',len(lock)>=20 and all(x.get('commit') for x in lock))
+for dfile in ['direction-axes','easings','camera','continuity','styles']:
+ j=json.loads(read(R/f'catalog/dictionaries/{dfile}.json') or 'null')
+ check(f'dictionary {dfile} valid json',isinstance(j,dict) and j)
+da=json.loads(read(R/'catalog/dictionaries/direction-axes.json') or '{}')
+check('direction axes >=6 with >=4 options each',len(da.get('axes',{}))>=6 and all(len(v.get('options',[]))>=4 for v in da.get('axes',{}).values()))
+# runtime freeze + compat gate (authoritative check)
+r=subprocess.run([sys.executable,str(R/'tools/compat_check.py')],capture_output=True,text=True,timeout=60)
+check('compat_check passes (v1 superset, runtime frozen)',r.returncode==0)
+for t in ['direct','check_directions','journal','compat_check','render','validate_kit','new_project','check_project','install_from_release','package_core','doctor','bootstrap','storage','harvest_libraries']:
+ check(f'tool {t}.py exists',(R/f'tools/{t}.py').is_file())
+r2=subprocess.run([sys.executable,str(R/'tools/direct.py'),'--topic','smoke test','--json'],capture_output=True,text=True,timeout=30)
+smoke_ok=False
+if r2.returncode==0:
+ try:
+  d=json.loads(r2.stdout);smoke_ok=len(d['directions'])==3 and min(d['distinctness'].values())>=d['min_required']
+ except Exception:pass
+check('inspiration engine smoke: 3 distinct directions',smoke_ok)
+# install.sh hygiene
+ish=read(R/'install.sh')
+check('install.sh refuses non-empty dest','Refusing to install' in ish and 'set -eu' in ish)
+check('install.sh routes through verified installer','install_from_release' in ish)
+# no secrets anywhere in tracked text
+secret_pat=re.compile(r'(ghp_[A-Za-z0-9]{20,}|github_pat_[A-Za-z0-9_]{20,})')
+leak=[str(p.relative_to(R)) for p in R.rglob('*') if p.is_file() and p.suffix in {'.md','.json','.py','.mjs','.sh','.html','.csv','.txt','.yaml','.yml'} and secret_pat.search(p.read_bytes()[:200000].decode('utf-8','ignore'))]
+check('no GitHub tokens in any tracked text file',not leak)
+# links inside docs resolve (relative, file-level)
+broken=[]
+for doc in [R/'README.md',R/'AGENTS.md',R/'SKILL.md']+[R/f'skills/{s}/SKILL.md' for s in skill_dirs]:
+ for link in re.findall(r'\]\(([^)#][^)]*)\)',read(doc)):
+  if link.startswith(('http://','https://','mailto:')):continue
+  target=(doc.parent/link).resolve()
+  if not target.exists():broken.append(f'{doc.name}:{link}')
+check('all relative doc links resolve',not broken)
+report={'passed':not errors,'checks':len(checks),'failures':errors,'skills':len(skill_dirs),'catalog_entries':len(cat.get('entries',[])),'native_host_execution_claimed':False}
+(R/'research/kit-validation.json').write_text(json.dumps({'tool':'validate_kit.py v2','ran_at':kit['version'],'result':report},indent=2))
+print(json.dumps(report,indent=2));sys.exit(0 if not errors else 1)

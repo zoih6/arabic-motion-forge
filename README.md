@@ -1,92 +1,47 @@
 # Arabic Motion Forge
-### نظام إنتاج موشن جرافيك عربي — لا مكتبة قوالب يعاد تلوينها
 
-حزمة تعليمات ومهارات وكود تنفيذي لبناء فيديوهات جديدة بطبقات مستقلة، كشف طباعي سليم، حركة مقصودة، وتصـيير قابل للتحقق. **الفيديو التجريبي منجز: 80 ثانية، 1080×1920، 32fps، 4.7 MB.** **الإصدار 1.0.0 جُرّب بتثبيت نظيف**: الحزمة لا تحمل الفيديو أو كود مشاهد المثال، وتعيد اختبارات النواة بنجاح. راجع تقارير `research/` لنطاق الإثبات والقيود.
+**An agent operating system for original Arabic motion design — layered choreography, Arabic-safe typography, deterministic rendering, crash-safe sessions.** Not a template pack: every project is authored from the brief; the kit guarantees the machinery, the quality contract and the evidence.
 
-## التنزيل والتشغيل
+v2.0.0: English agent contracts, inspiration engine + motion dictionaries, draft-tier QA, session journals (hang-proof resumption), one-command bootstrap. `runtime/` is byte-frozen from v1 — old projects render identically (`tools/compat_check.py` proves it on every build).
 
-- [حزمة التثبيت الخفيفة — نحو 1.1 MB](https://github.com/zoih6/arabic-motion-forge/releases/download/v1.0.0/arabic-motion-forge-core-1.0.0.zip)
-- [الفيديو العمودي الكامل — 80 ثانية](https://github.com/zoih6/arabic-motion-forge/releases/download/v1.0.0/meaning-first-portrait-1080p32.mp4)
-- [مختبر مستقل قابل للتمرير الزمني](https://github.com/zoih6/arabic-motion-forge/releases/download/v1.0.0/motion-lab.html)
-- [تعليمات التثبيت والمنصات](INSTALL.md) · [المصادر والتراخيص](THIRD_PARTY.md) · [البحث](research/README.md)
+## Install from a link (< 60 s, verified, no history, no media)
 
-الفيديو يعرض الفئات الثماني بأمثلة منتقاة، وليس كل تسمية من 104 كأنها تقنية مستقلة. المختبر التشخيصي يعرض أربع آليات فعلية؛ بقية النطاق موثّق في القاموس والاختبارات.
-
-## ابدأ من هنا
-
-- **[AGENTS.md — عقد تشغيل الوكيل](AGENTS.md)**
-- **[SKILL.md — المدخل المحمول لأي وكيل](SKILL.md)**
-- **[مسار الإنتاج](workflows/route.md)**
-- **[قاموس 104 مداخل / 103 مسميات / 33 آلية](catalog/README.md)**
-- **[سجل 18 مستودعًا ومراجعة تراخيصها](catalog/libraries.lock.json)**
-- **[المكتبات الأربع المضمّنة والمثبتة](catalog/bundled-libraries.json)**
-
-## هيكلة فعلية للمهارة والإضافة
-
-```text
-.claude-plugin/
-  plugin.json                 # تعريف Claude Code plugin
-  marketplace.json            # فهرس تثبيت الإضافة
-.agents/skills/arabic-motion-forge/
-  SKILL.md                    # مدخل Codex / Agent Skills
-  agents/openai.yaml          # بيانات اكتشاف المهارة
-AGENTS.md                     # قواعد الإنتاج والأمان والتسليم
-SKILL.md                      # العقد المحمول ونقطة البداية
-CLAUDE.md                     # إدخال تعليمات المستودع
-skills/
-  start/                      # /arabic-motion-forge:start
-  intake/                     # brief وأسئلة ونطاق
-  originality/                # هوية جديدة ومنع استنساخ الأمثلة
-  motion-direction/           # طبقات ومفاتيح وكاميرا ومسارات
-  arabic-type/                # shaping وRTL وmatte reveals
-  asset-craft/                # أصول حقيقية/مولدة وقص وظلال
-  audio-sync/                 # صوت وتوقيت وغناء ووصلات
-  quality/                    # اختبارات ومراجعة الفيلم المرمّز
-  delivery/                   # ميزانية وحفظ ونشر واستعادة
-runtime/                      # رياضيات ورسم عام، لا تكوينات جاهزة
-catalog/                      # القاموس والقدرات والتراخيص
-reference/recipes/            # عقود سلوك الحركات وقيودها
-vendor/ai-film-studio/         # نظام الفيلم المقدم من المستخدم
-vendor/motion-reel/            # المهارة المساعدة مع بيان ترخيصها
-vendor/primitives/             # مكتبات صغيرة مع إشعاراتها
-examples/vertical-showcase/    # دراسة تطبيقية، ممنوع استعمالها قالبًا
+```sh
+curl -fsSL https://raw.githubusercontent.com/zoih6/arabic-motion-forge/main/install.sh | sh
+python3 ./motion-forge/tools/doctor.py
 ```
 
-## تثبيت Claude Code plugin
+Any agent anywhere: fetch `AGENTS.md` + `SKILL.md` from this repo root and follow §0. Pinned older version: `--tag v1.0.0` on `tools/install_from_release.py`. Renderer deps (Chromium/FFmpeg) only when you actually render: `tools/bootstrap.py --install`.
 
-```text
-/plugin install arabic-motion-forge --marketplace zoih6/arabic-motion-forge
-/arabic-motion-forge:start
+## What a film gets from this kit
+
+- **Layered motion, not flat slides** — per AGENTS.md §3: element decomposition, three-stage timing, mattes/trim reveals, multi-plane camera with depth-projection rules, motion-blur policy; every mechanism has a tested contract in `catalog/` (104 entries / 33 mechanisms) and dictionaries (`catalog/dictionaries/`: easings, camera, continuity, styles, direction axes).
+- **Arabic correctness** — whole-word shaping, real metrics, bidi isolation, copy-hash lock; guards throw on the shortcuts that break scripts.
+- **Originality gate** — `tools/direct.py` generates three structurally distinct concept directions from the topic; `tools/check_directions.py` refuses style-lock until rationales are real and fingerprints avoid the kit example and your prior projects.
+- **Deterministic renders** — `seek(t)` purity, 10 s checkpoints streamed into FFmpeg, frame-count/PTS/decode asserts, per-part sha; `--tier draft` for motion review at half cost.
+- **Evidence, not vibes** — quality loops bounded to 3 passes with reported numbers; publication verified by anonymous fetch + sha compare; nothing is claimed that the environment cannot prove (no Adobe AE here — Canvas equivalents are labeled as equivalents).
+- **Sessions that don't die** — `journal.jsonl` milestones; resume = two reads, never re-asking, never re-rendering verified parts; strict output-size and memory discipline (AGENTS.md §9, `skills/performance`).
+
+## Layout
+
+```
+AGENTS.md                canonical agent contract (English)      skills/            12 spec-compliant skills
+SKILL.md                 router + load order + gates             runtime/           frozen math+canvas core (v1 API)
+install.sh               one-shot bootstrap                       catalog/           motions, mechanisms, dictionaries, locks
+tools/                   direct, check_directions, compat_check,  reference/         recipes per mechanism, AE equivalence,
+  journal, render, doctor, new_project, check_project,             workflows/         route + production docs
+  install_from_release, package_core, validate_kit …               tests/             node suite (20) + browser harness
+examples/vertical-showcase/  80 s reference film (CODE PROTECTED — study, never copy)
 ```
 
-هذه بنية توزيع وفق توثيق المنصة، وليست ادعاءً بتشغيل وكيل Claude أو نموذج مدفوع هنا. اختبار manifest واختبار workflow حي مرحلتان مختلفتان.
+## Releases
 
-## تشغيل وفحص الأدوات البرمجية
+- **v2.0.0 assets**: verified core zip (no media, no demo scene), demo film, motion lab. Checksums in `SHA256SUMS.txt`; the installer validates before extracting.
+- **v1.0.0 remains available** — same repo, tag `v1.0.0`; archive installs identically.
 
-```bash
-python tools/bootstrap.py --install
-npm test
-python tests/browser_checks.py
-```
+## Honesty ledger
 
-إضافة `--system-deps` اختيار صريح لتثبيت تبعيات Chromium على Linux. لا تفترض Windows ولا تتبع أبعاد أو fps ملفات vendor آليًا.
+Canvas-based AE-equivalent behavior (documented in `reference/ae-equivalence.md`), not AE-native. Demo covers representative examples per family, not all 104 labels as separate shots. Agent-side audio QA is numeric/spectral; humans should still listen before broadcast.
 
-## ما هو منفذ وما هو مرجع فقط؟
-
-- نواة حتمية: keyframes، منحنيات Bezier، نوابض تحليلية، سقوط وارتداد، قص مسارات، تتبع رأس السهم، morph برؤوس متقابلة، parent transforms، وأقنعة ألفا وسطوع محددة النموذج.
-- **20 اختبار Node ناجحًا و18 اختبار متصفح ناجحًا**، مع ملفات النتائج داخل `research/`.
-- المكتبات المضمّنة: Anime.js، Bezier Easing، d3-ease، svg-path-properties. اختُبرت واجهات محددة منها، لا كل ميزاتها.
-- بقية المحركات مراجع مدققة وليست جميعها مثبتة أو مختبرة. GSAP وRemotion لا يُصنّفان تلقائيًا كرخص MIT. سجلات التعارضات الترخيصية محفوظة.
-- لا تشغيل أصلي لـAfter Effects ولا إنشاء `.aep` مزعوم. المكافئات البرمجية تُسمّى بآلياتها، والقيود ظاهرة.
-
-## لماذا لا يعيد إنتاج الحمراء؟
-
-الأمثلة للتعلّم فقط. ممنوع نقل أسلوب الحمراء أو أصولها أو كود مشاهدها، وممنوع نسخ تكوين العرض العمودي ثم تبديل كلماته. المسموح هو البنية الرياضية وأدوات الرسم والتصيير العامة. كل موضوع يبدأ بفكرة وهوية وأصول وخطة طبقات جديدة.
-
-## التثبيت الخفيف والحفظ
-
-الفيديوهات لا تدخل git؛ رُفعت الأجزاء إلى **[Releases](https://github.com/zoih6/arabic-motion-forge/releases)**. التنزيل الأساسي للإصدار يستثني الوسائط وكود composition التجريبي. تثبيت plugin من Git يحمل المصدر الصغير، لا ملفات الفيديو. لا يُحمّل النظام مستودع الحمراء كاملًا.
-
-كل مشروع جديد يحتاج إذنًا ووجهة نشر خاصة به. لا تنشر مواد المستخدم تلقائيًا في مستودع المهارة. لا توكنات في المصدر أو الأوامر الملتزمة أو روابط git.
-
-**الترخيص:** الكود الأصلي منفصل عن تراخيص vendor؛ احتفظ بكل إشعارات المصادر. لا تفترض أن حزمة مجانية تعني أن جميع مكوناتها OSI open-source.
+### للعربية (quick facts)
+المدخل للوكلاء: `AGENTS.md` ثم `SKILL.md`. التثبيت من الرابط بأمر واحد أعلاه. كل مشروع يُصمَّم من الصفر؛ الفحص الآلي يمنع سرقة الأنماط ويتحقق من سلامة العربية والحركة والطباعة والتصدير. لا يُدَّعى تنفيذ After Effects أصلي — المكافئات موثقة.

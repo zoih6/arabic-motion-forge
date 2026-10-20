@@ -1,7 +1,7 @@
 {
   "$schema": "https://www.schemastore.org/claude-code-marketplace.json",
   "name": "arabic-motion-forge",
-  "description": "Arabic motion-production skills, verified code primitives and safe lightweight project workflows.",
+  "description": "Arabic motion-production agent skills: originality gates, layered choreography dictionaries, deterministic rendering, session recovery.",
   "owner": {
     "name": "zoih6"
   },
@@ -9,7 +9,7 @@
     {
       "name": "arabic-motion-forge",
       "source": "./",
-      "description": "Arabic-first layered motion production, verified primitives, original scene design, deterministic rendering and lightweight checkpointed delivery."
+      "description": "Arabic-first layered motion production with an inspiration engine, dictionary-backed choreography, draft-tier QA, crash-safe journals and verified checkpointed delivery."
     }
   ]
 }

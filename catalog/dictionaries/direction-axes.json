@@ -1,0 +1,96 @@
+{
+  "usage": "Fed by tools/direct.py to generate three structurally distinct concept directions; agents refine, never ship these raw. Options are seeds of contrast, not templates.",
+  "axes": {
+    "story_device": {
+      "options": [
+        {"id": "question-first", "behavior": "Open on the exact question; every later layer answers one clause."},
+        {"id": "object-biography", "behavior": "Follow one object through states; camera age/time cues only when they earn it."},
+        {"id": "countdown-escalation", "behavior": "Numbers tighten; rhythm accelerates; hold before the final value."},
+        {"id": "split-world", "behavior": "Two visual registers share frame; the cut point is the argument."},
+        {"id": "second-person-walk", "behavior": "Viewer POV moves through a schematic space that reacts on cue."},
+        {"id": "evidence-board", "behavior": "Documents/claims pin onto a surface; connections drawn between them."}
+      ]
+    },
+    "visual_metaphor": {
+      "options": [
+        {"id": "living-material", "behavior": "The subject's physical substance (fiber, glass, ore) carries meaning through its states."},
+        {"id": "blueprint-world", "behavior": "Construction-line drawing space; built forms emerge from measurements."},
+        {"id": "specimen-glass", "behavior": "Clinical framing: items under plates, labels, focus pulls like examination."},
+        {"id": "constellation-data", "behavior": "Values as stars/orbits; distances encode magnitudes honestly."},
+        {"id": "single-transformation", "behavior": "One continuous morph from before-state to after-state across the whole film."},
+        {"id": "weather-of-numbers", "behavior": "Statistics behave like climate: fronts, pressure, tides animate the argument."}
+      ]
+    },
+    "material_language": {
+      "options": [
+        {"id": "riso-flat", "behavior": "2-color misregistration, paper bite, hard ink edges."},
+        {"id": "matte-depth", "behavior": "Soft 2.5D planes, volumetric light, physical contact shadows."},
+        {"id": "engraving-lines", "behavior": "Hatching density carries tone; lines draw on as argument progresses."},
+        {"id": "glass-layers", "behavior": "Translucent stacked panels; depth via refraction cues, blur budget respected."},
+        {"id": "cut-silhouette", "behavior": "Flat solid shapes, sharp negativespace, stop-motion stepped life."},
+        {"id": "terminal-precision", "behavior": "Grid, mono labels, exact easing; motion reads as instrumentation."}
+      ]
+    },
+    "typography_architecture": {
+      "options": [
+        {"id": "monolith-headline", "behavior": "One huge Arabic word builds by shaped-matte bands; everything else is whisper."},
+        {"id": "stacked-kinetic-lines", "behavior": "Lines arrive as a column; each line own easing; underline traces separately."},
+        {"id": "annotation-field", "behavior": "Small labels scatter onto targets; leader lines trim in from anchors."},
+        {"id": "margin-notes", "behavior": "Primary statement static; secondary thoughts intrude from margin with delay."},
+        {"id": "number-hero", "behavior": "Digits are the protagonists; glyph-level counter motion only for Latin/numerals."},
+        {"id": "call-and-response", "behavior": "Two type voices alternate; alternation itself carries the narrative beat."}
+      ]
+    },
+    "camera_grammar": {
+      "options": [
+        {"id": "locked-stage", "behavior": "No camera; all motion is performed by layers. Default when content is busy."},
+        {"id": "drift-attention", "behavior": "Slow drift reframes the focal element; secondary depth ratio 0.4–0.6."},
+        {"id": "push-into-detail", "behavior": "Dolly into one component as its name is spoken; settle, no bounce."},
+        {"id": "scroll-world", "behavior": "Content moves through a fixed window; focus rules are separate layers."},
+        {"id": "whip-relations", "behavior": "Transitions are camera moves that physically connect two scenes once only."},
+        {"id": "rack-reveal", "behavior": "Focus shifts between planes carry the reading order; blur budget documented."}
+      ]
+    },
+    "rhythm_policy": {
+      "options": [
+        {"id": "voice-locked", "behavior": "All entrances keyed to narration words; music secondary and ducked."},
+        {"id": "pulse-grid", "behavior": "On-beat accents every 2 s min; holds on meaning, not on grid."},
+        {"id": "syncopated-holds", "behavior": "Late entrances and abrupt stops create tension at argument turns."},
+        {"id": "breath-first", "behavior": "Long stillness, dense action, stillness; only for heavy claims."},
+        {"id": "accelerando-funnel", "behavior": "Interval shrinks toward the reveal; final beat is a hard hold."}
+      ]
+    },
+    "accent_system": {
+      "options": [
+        {"id": "single-accent-color", "behavior": "One hue marks truth; its reappearances are the through-line."},
+        {"id": "drawn-underlines", "behavior": "Accents are trim-path strokes timed half a beat after the word."},
+        {"id": "spotlight-wipes", "behavior": "Emphasis via light windows over muted base."},
+        {"id": "ink-bleed-marks", "behavior": "Highlights bloom like ink on paper; never opacity-fade boxes."},
+        {"id": "mechanical-indicators", "behavior": "Counters, brackets, ticks; instrumentation aesthetic."}
+      ]
+    },
+    "transition_logic": {
+      "options": [
+        {"id": "hard-cut-on-beat", "behavior": "Cuts are the rhythm; no transition when content changes scale anyway."},
+        {"id": "occluder-handoff", "behavior": "A scene element wipes the frame; incoming element pre-positioned behind it."},
+        {"id": "shape-correspondence", "behavior": "Same geometry changes role (circle→lens→chart); vertices correspond."},
+        {"id": "camera-through-window", "behavior": "Exit through a portal the next scene opens into."},
+        {"id": "type-bridge", "behavior": "The connecting word persists across both scenes and mutates state."}
+      ]
+    }
+  },
+  "palette_sets": [
+    {"id": "ink-citron", "colors": ["#101820", "#f4f1e8", "#d7e24c", "#2f6fe4"], "mood": "editorial tension"},
+    {"id": "oxide-teal", "colors": ["#1b2f2f", "#efe7d8", "#b5462f", "#4c8c8a"], "mood": "archival warmth"},
+    {"id": "graphite-amber", "colors": ["#14151a", "#e8e6e1", "#f0a33c", "#5a6b7c"], "mood": "industrial night"},
+    {"id": "plum-sand", "colors": ["#2e1f35", "#efe3cf", "#a3567f", "#7f9c6a"], "mood": "textile heritage"},
+    {"id": "signal-blue", "colors": ["#0d1b2a", "#e0e1dd", "#4cc9f0", "#778da9"], "mood": "data clarity"},
+    {"id": "clay-mono", "colors": ["#26180f", "#f2e6d8", "#c1774f", "#8a9a5b"], "mood": "handmade earth"}
+  ],
+  "anti_patterns": [
+    "Choosing options because they were the previous project's identity.",
+    "Rendering all directions with the same composition skeleton.",
+    "Shipping a direction whose rationale field is still TODO.",
+    "Reading 'style' as a filter preset rather than a system of decisions."
+  ]
+}

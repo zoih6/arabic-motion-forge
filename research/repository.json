@@ -1,5 +1,5 @@
 {
-  "status": "awaiting_explicit_jobs",
+  "status": "complete",
   "credential_persisted": false,
   "assets": [
     {
@@ -127,5 +127,5 @@
   "url": "https://github.com/zoih6/arabic-motion-forge",
   "clone_url": "https://github.com/zoih6/arabic-motion-forge.git",
   "public": true,
-  "source_commit": "d171e5dbfab90f4c11955c613a4255fc5f979fdf"
+  "source_commit": "d2b5d4b824d748f0156dbb2b1db8d8a24171a602"
 }

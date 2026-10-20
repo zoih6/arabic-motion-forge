@@ -1,7 +1,7 @@
 {
   "name": "arabic-motion-forge",
-  "version": "1.0.0",
-  "description": "Arabic-first layered motion production, verified primitives, original scene design, deterministic rendering and lightweight checkpointed delivery.",
+  "version": "2.0.0",
+  "description": "Arabic-first layered motion production with an inspiration engine, dictionary-backed choreography, draft-tier QA, crash-safe journals and verified checkpointed delivery.",
   "author": {
     "name": "zoih6",
     "url": "https://github.com/zoih6"

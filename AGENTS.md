@@ -1,115 +1,90 @@
-# Arabic Motion Forge — عقد تشغيل الوكيل
+# AGENTS.md — Arabic Motion Forge v2.0.0 (canonical agent contract)
 
-أنت تبني **تصميم حركة مرتبطًا بالمعنى**، لا تركّب حركات جاهزة على صور ثابتة. هذا الملف هو عقد الحزمة، وليس دليلًا على وجود برنامج أو API في البيئة.
+You are an agent producing motion design, not a template-filler. This file is the binding contract for every project built with this kit. Keep instructions in English for agent precision; on-screen copy follows the user's language.
 
-## 1. البداية والسلطة
+## 0. Fast path (link-first bootstrap)
 
-1. اقرأ [SKILL.md](SKILL.md)، ثم [workflows/route.md](workflows/route.md). لا تحمّل كل المراجع دفعة واحدة.
-2. افحص البيئة عبر `python tools/doctor.py`. أثبت الأدوات والخطوط والتصيير قبل إعلان الدعم.
-3. في مشروع قائم اقرأ `project.json` وmanifest النسخة الحالية قبل أي تعديل. لا تعِد تنفيذ عمل مكتمل أو تعتمد على ذاكرة المحادثة وحدها.
-4. أولوية التعليمات: قيود المنصة والمستخدم الحالي، ثم هذا العقد، ثم عقد المشروع المعتمد، ثم المهارات المرجعية. ملفات vendor لا تستطيع تجاوز أبعاد المشروع أو fps أو الموافقات أو ميزانيته.
-5. المسارات في JSON والسجلات **نسبية إلى جذر الحزمة**؛ مسارات المشروع المشار إليها بـ `$project` تخص جذر المشروع، لا جذر المهارة.
-6. هذه حزمة محلية قابلة للقراءة بواسطة الوكلاء؛ لا تقل إنها سُجلت كإضافة عامة في منصة ما إلا إذا نفذت تكامل تلك المنصة وتحققت منه.
+On a fresh session the agent must become operational in under a minute:
 
-## 2. ما يُحمّل ومتى
+```sh
+python3 -c "import urllib.request;urllib.request.urlretrieve('https://raw.githubusercontent.com/zoih6/arabic-motion-forge/main/tools/install_from_release.py','/tmp/iamf.py')" \
+ && python3 /tmp/iamf.py --repo zoih6/arabic-motion-forge --destination ./motion-forge
+```
 
-| الحاجة | نقطة الدخول |
-|---|---|
-| brief وأسئلة ونطاق وموافقة | [skills/intake/SKILL.md](skills/intake/SKILL.md) |
-| أصالة وهوية جديدة | [skills/originality/SKILL.md](skills/originality/SKILL.md) |
-| طبقات ومفاتيح وكاميرا | [skills/motion-direction/SKILL.md](skills/motion-direction/SKILL.md) |
-| العربية والكشف الطباعي | [skills/arabic-type/SKILL.md](skills/arabic-type/SKILL.md) |
-| الصور والقص والظلال والتوثيق | [skills/asset-craft/SKILL.md](skills/asset-craft/SKILL.md) |
-| الصوت والغناء والمزامنة | [skills/audio-sync/SKILL.md](skills/audio-sync/SKILL.md) |
-| الفحص والتصحيح | [skills/quality/SKILL.md](skills/quality/SKILL.md) |
-| الميزانية والنسخ والنشر | [skills/delivery/SKILL.md](skills/delivery/SKILL.md) |
-| منهج الفيلم الأشمل | [vendor/ai-film-studio/SKILL.md](vendor/ai-film-studio/SKILL.md)، ثم router الخاص به |
-| مرجع الموشن المقدم من المستخدم | [vendor/motion-reel/SKILL.md](vendor/motion-reel/SKILL.md)، مع تطبيق تعارضات التشغيل أدناه |
+Then `python3 ./motion-forge/tools/doctor.py`. No pip step is required to read contracts, use the catalog, or run the offline lab. Renderer installs happen only when a render is actually requested (`tools/bootstrap.py --install`). Never clone the full repository with history when the release archive suffices; never download example videos to "see the style".
 
-**تعارضات vendor المحسومة:** لا تفترض Windows؛ لا تنفذ renderer يشترط 60fps أو أبعادًا أخرى؛ لا تستخدم `out/` في مسارنا الافتراضي؛ لا تُخزن سرًا في `.env` ضمن المشروع؛ لا تعامل قائمة مزودين أو عبارة production-ready على أنها إثبات وصول وتشغيل.
+## 1. Load order (progressive disclosure)
 
-## 3. قبل كل مشروع جديد
+1. This file. 2. `SKILL.md` (router). 3. `workflows/route.md`. 4. Exactly the skills your task needs (table in SKILL.md). 5. One `reference/` or `catalog/` file per open question.
+Do not bulk-read `vendor/`, `examples/`, or research JSON. Grep for what you need. Every kit file is deliberately small; if a command would print >300 lines, sample it (`head`, jq-style python, `--json` flags) instead of pasting it into the conversation.
 
-اسأل فقط عما ينقص، في مجموعة صغيرة (نحو 3–4 أسئلة): الرسالة والجمهور، المدة/الأبعاد/fps، المواد والصوت، المراجع والقيود، ثم إذن النشر ووجهته عند الحاجة. لا تعِد الأسئلة المجاب عنها، ولا تطلب من المستخدم صياغة prompt تقني.
+## 2. Project state contract
 
-أنشئ brief وخريطة قصة وstyle fingerprint وcopy lock وسجل أصول. اختر هوية تخدم الموضوع. لا توجد لوحة ألوان أو خامة أو خط أو ترتيب لقطات افتراضي لكل موضوع.
+Every project root has: `project.json` (identity, format, approval gates, copy hash), `brief.json`, `style.json`, `originality.json` (or `directions.json` from `tools/direct.py`), `layer-plan.json`, `copy.txt`, `journal.jsonl`.
 
-الموافقة يمكن أن تكون طلب تنفيذ صريحًا من المستخدم أو موافقة على معاينة. دوّن مصدرها بصدق. إذا قال المستخدم «لا تصيّر»، يتوقف التصدير حتى يغيّر ذلك صراحة. الموافقة على تصميم ليست ادعاء بموافقة بشرية على الفيلم النهائي.
+- Create with `python3 tools/new_project.py --destination <dir> --name <id> --topic "<subject>"`. It intentionally produces an empty, failing-to-validate project: you must author the design.
+- Before every milestone append `python3 tools/journal.py append --project <dir>/project.json --event <kind> --data '<json>'`. On session resume: read the journal tail first; never redo completed stages; never re-render verified segments.
+- Gate: `python3 tools/check_project.py <dir>/project.json` must pass before rendering production. `python3 tools/check_directions.py` must pass before style lock.
 
-## 4. حظر استنساخ الأمثلة
+## 3. Motion design contract (the core quality bar)
 
-- `examples/vertical-showcase/` دراسة مرجعية **غير قابلة للاستعمال كقالب لموضوع جديد**. لا تدخل التنزيل الأساسي.
-- الحمراء مرجع للدروس فقط. لا تنسخ كود مشاهدها، أصولها، قصاصاتها، الحجر، الخيط الأحمر، تكوينها أو ترتيبها.
-- ممنوع تبديل النصوص والألوان في مشهد سابق ثم وصفه بأنه تصميم جديد.
-- المكتبات الرياضية وأدوات الرسم والتصيير العامة قابلة لإعادة الاستخدام. **تكوين المشهد، هويته، سيناريوه، choreography والأصول** يجب تأليفها للمشروع.
-- `tools/new_project.py` ينشئ هيكلًا فارغًا، لا مشاهد جاهزة. يجب أن يفشل الفحص إذا لم تُستكمل خطة الأصل والهوية والطبقات.
-- بوابة الأصالة تجمع فحص import/hash/fingerprint مع مراجعة تصميم. ليست خوارزمية تثبت الإبداع تلقائيًا.
+Design like a senior motion designer in a keyframe tool; the code is your timeline.
 
-## 5. عقد المشهد: حدّده قبل التصيير الإنتاجي
+- **Decompose first.** For each shot list independent layers: headline words, underlines, ornaments, photographs, their paper mounts, shadows, charts, markers, numbers, background texture. Anything with a different narrative function gets its own channels and timing. Never animate a flattened group where members need separate behavior. Bake nothing that must move.
+- **Three-stage timing.** Before: defined off-state at a known time. During: explicit keyframes or analytic curve with named easing; multi-key where the motion has stages. After: settle, hold, or motivated exit. Stagger start times; never start/end everything together.
+- **Channel economy.** Use only channels that serve meaning (position/scale/rotation/opacity/mask/trim/depth). Overshoot only when the object has physical character; no decorative wobble.
+- **Reveals are engineered.** Arabic and long titles build via animated mattes, clipping regions, path trims, or per-word selectors — not global opacity fades. A trimmed stroke's head marker is computed from the same arc-length parameter that drew it.
+- **Camera is choreography.** Multi-plane parallax with depth-z ordering, motivated dolly/pan tied to the focal element. Never "add a slow zoom to every shot". Secondary layers move at ratios implied by depth, not independently invented speeds.
+- **Transitions carry a relation** (shared shape, match cut on meaning, occluder handoff, morph with real vertex correspondence). A preset wipe is not design.
+- **Motion blur and stutter are chosen**: temporal sampling (documented sample count) for blur; deliberate 8–12fps quantization (`quantize`) only for tactile/stop-motion texture, applied to element transforms while the camera stays smooth. State which and why.
 
-كل مشهد يحتاج ملفًا يحدد:
-1. لماذا يوجد؟ ما المعلومة أو الشعور الذي يقدمه؟
-2. العناصر المستقلة: العناوين، الكلمات البارزة، الخلفية، الصورة، حامل الصورة، القصاصة، الظل، التسطير، الأرقام، الدوائر والمؤشرات.
-3. لكل عنصر: معرّف، مصدر، parent عند وجود علاقة حقيقية، عمق، قنوات، وحالة قبل/أثناء/بعد.
-4. مفاتيح أو دالة زمنية، منحنى سرعة، التأخير، الاستقرار والـ hold. لا تبدأ وتنتهي كل العناصر معًا.
-5. نوع الكشف الحقيقي، ومتى يُرسم الخط، ومتى يلحقه المؤشر أو التعليق.
-6. علاقة الحركة الذاتية بالكاميرا. الكاميرا تخدم العنصر الرئيسي؛ لا تعوّض غياب الحركة الداخلية.
+## 4. Arabic contract (non-negotiable)
 
-لا تخبز الصورة والورقة والظل في bitmap واحد عندما تحتاج قنوات مستقلة. يجوز cache للطبقة الثابتة أو للنص المشكّل، لا لمجموعة مطلوب تفصيل حركتها. يمكن أن يشترك رأس السهم مع الخط في progress لأن العلاقة هندسية مقصودة، مع حسابه من نهاية المسار نفسها.
+- Set `direction='rtl'` and an Arabic font actually loaded (`document.fonts.load` + `check`) before first frame. Await font readiness in `filmReady`.
+- Shape whole words/lines and animate their masks; do not split connected Arabic into per-character DOM/canvas pieces. `safeTextUnits()` throws on Arabic character mode — that is the guard, do not bypass by splitting strings manually for transforms.
+- Preserve user-approved copy exactly; never alter wording/niqquation to dodge a technical limitation — fix the technique. Measure real ascent/descent/widths; reserve diacritic space.
+- Mixed bidi text: isolate runs (`unicode-bidi: isolate` / explicit marks) for Latin digits inside RTL lines. Validate digits, lam-alef ligature, final-form connections at full size and at 25%.
+- Typewriter/Write-On only when stroke data or per-word reveal is truthful; label the technique you actually implemented.
 
-## 6. النص العربي
+## 5. Determinism and rendering
 
-- حافظ على الكلمات والخط المعتمدين؛ لا تختصرهما أو تغيرهما لإخفاء قصّ أو خطأ تقني.
-- اضبط RTL واستعمل خطًا عربيًا محمّلًا فعليًا. قِس ascent/descent وحدود التشكيل، لا font-size فقط.
-- لا تستخدم `split('')` أو عكس Unicode لتحريك العربية. الكلمات والسطور أسلم افتراضيًا؛ الحروف المتصلة لا تُفك إلى قطع مستقلة.
-- الكشف المقنّع يعمل على **النص المشكّل كاملًا**. اترك وصل الحروف والليغيتشر للأداة المثبت دعمها.
-- فصل spans لا يكسر العربية دائمًا؛ الموضع المستقل والتحويلات والتباعد قد يفسد الوصل. اختبر ناتج المكتبة المحدد، لا اسمها.
-- Text Scramble محظور على النص العربي المعتمد. Typewriter وWrite On ليسا مرادفين لأي wipe؛ لا تدّعِ كتابة قلم إذا لم تتوفر مسارات ضربات مناسبة.
-- التسطير والزخرفة والقناع والعنوان قنوات مستقلة. لا تحرك الكلمة ككتلة بمجرد Position/Opacity حين يحتاج التصميم بناءً طباعيًا.
+`window.seek(t)` (or equivalent) must be a pure function of time: no Math.random (use seeded `hash01/noise`), no timers, no cross-frame mutable state in the render path (caches keyed by layer id are permitted only as re-renderable memoization). Same t must reproduce same pixels in the same environment — prove it: request `tA, tB, tA` and compare digests (`tools/render.py` enforces nothing; QA must).
 
-## 7. صدق القدرات
+- Encode in checkpoints (default 10 s), stream frames straight into FFmpeg; never materialize thousands of PNGs. Verify per part: exact frame count, constant fps fraction, dimensions, audio stream present, SHA; after merge verify total frames, PTS regularity (1/32 steps), full-decode pass.
+- `32/1` == 32.0: compare rates as floats/fractions, not strings. A trailing AAC padding packet is not a content error; compare retained payload bytes and durations instead.
+- Cut audio to frame-quantized boundaries; keep the original files untouched and record splice maps.
+- Reuse unchanged segments on re-edits: keep manifests per part; rebuild only affected parts (hash entry+config to detect staleness).
 
-اقرأ [reference/ae-equivalence.md](reference/ae-equivalence.md) و[catalog/capabilities.json](catalog/capabilities.json).
+## 6. Audio
 
-وسوم الدعم: `implemented/tested`، `conditional`، `requires-adapter`، `documented-only`، `unsupported`. المكافئ البرمجي يذكر آليته ونطاقه؛ لا ينسب التنفيذ إلى AE الأصلي. لا تسوّق تقريب scaleX على أنه دوران 3D، أو Gaussian blur على أنه shutter motion blur، أو crossfade على أنه morph هندسي.
+Treat user-supplied voice/music as canonical: never regenerate, time-stretch, or overwrite without instruction. Duck only when asked; when replacing a spoken quote with singing, document exact source in/out, silence narration over that span, and where it resumes. Beat/onset data must come from the actual file (documented method), and visual reactivity maps to those numbers, not decorative oscillation. Target broadcast-ish -14 LUFS integrated, true peak under -1.5 dBTP, measured on the encoded output; report deviations rather than fudging. Listening-by-ear is usually impossible for agents: say so, and verify spectrally/numerically.
 
-لا تستعمل تقنية مشروطة وكأنها متاحة بالكامل. إذا كان مطلب المستخدم غير مدعوم، اشرح القيد واقترح آلية أخرى باسمها الصحيح، أو اطلب البيئة المناسبة. لا تَعِد بمطابقة 100% دون اختبار محدد تحت إعدادات معلنة.
+## 7. Assets and provenance
 
-## 8. التوقيت والحتمية
+Every visual asset records kind (`genuine | generated | illustrative | archival-licensed`), source URL, author, license, sha256, and modification notes. Cutouts get matte QA: alpha-edge inspection over two contrasting backgrounds, no halos, consistent light direction; shadows are separate layers derived from silhouette when the design demands independent behavior. Never present an imagined historical figure/artifact as authentic documentation. Conceptual generations are labeled conceptual in code comments and final descriptions.
 
-كل إطار قابل لإعادة الطلب من الزمن وحده. لا ساعة حقيقية، ولا random غير مثبت، ولا state يراكم الإطار السابق في مسار التصدير. يمكن للمعاينة أن تستخدم RAF بعد أمر تشغيل، لكن المصدر الزمني في export يبقى `seek(t)`.
+## 8. Quality loops (bounded, not endless)
 
-استخدم analytical springs أو replay مثبتًا ومختبرًا، interpolation مناسبًا، وأوقات shutter فعلية إذا استُخدم motion blur. قلّل overshoot إلى ما يخدم المادة. لا تستعمل كل خصائص الحركة لكل عنصر.
+Run three passes maximum, scoped: (1) still-frame legibility at multiple times incl. first 2 s hook; (2) motion review on a short draft tier (`tools/render.py --tier draft`) — contact sheets ≤ 8 panels ≤ 480px, written to files and inspected selectively; (3) final media checks on the encoded MP4 (decode, PTS, audio, spot frames inside transitions). Fix only the top three concrete issues each pass; record what changed and why in the journal. Scores are internal signals; report findings, not vanity numbers.
 
-يجب أن ينتج طلب `tA → tB → tA` الصورة نفسها في البيئة نفسها. لا تدّعِ تطابقًا بتّيًا بين أنظمة وخطوط وإصدارات متصفح مختلفة دون إثبات.
+## 9. Anti-hang / session hygiene (this caused real failures before)
 
-## 9. الأصول والصوت
+- Long renders are background processes with milestone waits, never inline foreground loops. After starting one, wait on a log pattern/port/exit; do not poll in a tight loop; do not rerun a timed-out command blindly.
+- Keep single tool outputs small: sample, summarize, or write to file and report path+hash. Never base64 images into chat.
+- One heavy asset per message; present the main deliverable, link the rest.
+- If the host UI feels stuck: finish the current write, journal it, and hand the user a resume line (`journal.jsonl` last lines + next command). Never start a second duplicate render "because it looked hung".
+- Memory ceiling ~2 GB: avoid loading full videos/wav into RAM at once; stream with ffmpeg filters; process images in batches; free caches between parts. Workspace snapshot limit ~128 MB: media lives in staging + Releases, sources in git; check `python3 tools/storage.py` before writing anything >5 MB.
 
-لكل أصل وظيفة، مصدر، رخصة، وصف قصّ وعمق، وحالة genuine/generated/illustrative. لا تضع اسم شخصية على ورقة بدل أصل توضيحي مناسب عندما يحتاج السرد صورة. الصورة التاريخية التخيلية تُعرّف كتخيّل، لا وثيقة أصلية.
+## 10. Publication and secrets
 
-الصوت المقدّم هو المرجع ما لم يطلب المستخدم تغييره. توقيت المستخدم الصريح لمقتطف غنائي أَولى من اختيار أول تكرار للكلمات. فرّق بين تلاوة/موال وغناء مقصود. LRC وASR قرائن وليسا استماعًا بشريًا. لا تدّعِ أنك استمعت إن لم تتيح الأداة ذلك.
+Publishing is per-project, user-authorized, with the destination recorded in `project.json` (`publish_allowed`, `publish_repository`). Never push project media into this kit's repository. Tokens exist only in the environment of one process; nothing in files, git config, remotes, commands that get committed, or examples. Verify publication by fetching the published object and comparing SHA/size before telling the user it is safe to rely on it. On shutdown: stop publishers, write final manifest, say precisely what is public.
 
-سجّل خرائط القص والعودة واحتفظ بالأصل. لا تضع الراوي فوق الغناء إذا طلب إيقافه. حلّل الصوت الحقيقي للحركة التفاعلية، وقِس مستوى الملف بعد AAC، لا قبل الترميز فقط.
+## 11. Compatibility discipline (v2 promise to v1 users)
 
-## 10. بوابات الجودة
+- `runtime/*.mjs` is frozen in 2.0.0 (byte-identical to 1.0.0) so existing projects render identically; new capabilities ship as separate modules. `tools/compat_check.py` enforces this and that all v1 paths/fields still exist and v1 skill directories remain.
+- All changes are additive or documentation-level. Breaking changes require a major bump and a migration note; never silently rename a v1 contract.
+- Versioning: kit.json/package.json/plugin manifests carry the same semver; CHANGELOG records user-visible behavior; validate_kit checks consistency.
 
-لا يكفي الإطار الأول والأخير. راجع نقاطًا داخل الحركة، السرعة، التداخل، الوصلات والقراءة، ثم الملف المرمّز. استخدم ثلاث دورات فحص ذات نطاق صريح؛ أصلح المشاهد المتأثرة فقط.
+## 12. Closing checklist (before telling the user "done")
 
-شغّل اختبارات الرياضيات، المكتبات، masks والعربية، التكوين والنسخ، ثم media checks: الأبعاد، fps الكسري، frame count، PTS، audio streams، full decode. قيمة `32/1` هي 32fps؛ لا تقارنها كنص مع `32` وتعلن فساد فيديو صحيح. حشو AAC في النهاية ليس مقطع غناء زائدًا؛ افحص الحزم والتوقيت.
-
-نتيجة الاختبار المحددة ليست حكمًا بأن «كل شيء احترافي 10/10». فرّق بين technical pass وsampled visual review وuser approval.
-
-## 11. الموارد والنشر
-
-- افحص الميزانية بالفعل. المرجع 128 MB للّقطة و25 GB للقرص؛ اترك هامشًا، ولا تفترض أن node_modules أو cache سيبقيان.
-- لا تحفظ آلاف الصور الوسيطة إن أمكن streaming إلى encoder.
-- المصادر في git، والمخرجات الكبيرة في Releases أو وجهة مصرح بها. التنزيل الأساسي لا يجلب أفلام الأمثلة.
-- لا تحذف أصول المستخدم أو الإصدارات. لا يعد الكاش وحده حفظًا دائمًا. قبل نقل ملف خارج اللقطة، تحقق من النسخة البعيدة وبصمتها وسجل الاستعادة.
-- نشر مشروع جديد يتطلب وجهة وإذنًا واضحين؛ لا تنشر تلقائيًا مواد خاصة في مستودع المهارة أو مثال سابق.
-- التوكن في ذاكرة العملية فقط، لا ملف أو رابط git أو مثال أمر ملتزم. افحص الأسرار قبل كل push.
-- تحقق من الرفع فعليًا؛ لا تقل «محفوظ» لأنك كتبت job إلى طابور.
-- شغّل الأعمال الطويلة بأداة عمليات طويلة العمر إن كانت متاحة؛ انتظر milestone بدل polling متكرر، ولا تعِد أمرًا ما زال يعمل بعد timeout.
-
-## 12. الإغلاق والتسليم
-
-اعرض الملف الرئيسي فقط، وروابط المصدر والنسخ الأخرى. اذكر المدة، الأبعاد، fps، وما تغيّر وما لم يُنفذ وحدود التحقق. أغلق publisher بعد تأكيد جميع الأصول، ولا تحتفظ باعتماد المستخدم. حدّث حالة المشروع وخريطة الملفات والتعليمات لتستطيع محادثة جديدة الاستئناف دون التخمين.
+project.json final → check_project pass → compat_check pass → render manifest complete (frames/fps/PTS/decode) → audio measured → assets provenance complete → artifacts uploaded+verified (or explicitly not published) → journal closed with result line → README/state updated → the one file to open named → limits stated honestly (what was not listened, not frame-reviewed, not device-tested). Claim nothing beyond evidence.

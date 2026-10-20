@@ -1,0 +1,24 @@
+{
+  "usage": "Name→implementation lookup so agents never guess whether a curve exists. 'implemented' = in runtime/core.mjs and unit-tested; semantics noted.",
+  "curves": [
+    {"name": "linear", "runtime": "eases.linear", "status": "implemented", "use_for": "constant-rate scroll, ticker loops", "avoid_for": "entrances/exits (reads mechanical)"},
+    {"name": "ease-in (slow-out)", "runtime": "eases.in", "status": "implemented", "use_for": "exits that accelerate away", "avoid_for": "arrivals"},
+    {"name": "ease-out (fast-slow)", "runtime": "eases.out", "status": "implemented", "use_for": "entrances that settle", "avoid_for": "leaves"},
+    {"name": "ease-in-out", "runtime": "eases.inOut", "status": "implemented", "use_for": "on-screen repositions", "avoid_for": "entrances needing instant presence"},
+    {"name": "smooth / smootherstep", "runtime": "smooth, smoother", "status": "implemented", "use_for": "matte sweeps, blends", "note": "zero first-derivative both ends"},
+    {"name": "cubic-bezier (custom)", "runtime": "cubicBezier(x1,y1,x2,y2); vendored bezier-easing cross-tested", "status": "implemented", "use_for": "any AE-style curve port", "ae_equivalence": "speed/value graph handles, behavior-level not identical sampling"},
+    {"name": "spring (analytic)", "runtime": "spring + springPresets", "status": "implemented", "use_for": "settle motion, overshoot when mass is meaningful", "note": "closed-form damped oscillator; deterministic"},
+    {"name": "overshoot & settle", "runtime": "spring(springPresets.playful) bounded checks", "status": "implemented", "use_for": "pop-in with control", "avoid_for": "text bodies where wobble hurts reading"},
+    {"name": "bounce / ballistic", "runtime": "ballistic", "status": "implemented", "use_for": "gravity objects, drops", "note": "restitution decay, no ground tunneling"},
+    {"name": "inertia / flick", "runtime": "inertia", "status": "implemented", "use_for": "drag-release continuations", "ae_equivalence": "expression-driven decay; no live physics sim"},
+    {"name": "elastic damped", "runtime": "recoil", "status": "implemented", "use_for": "small reactions, pings"},
+    {"name": "anticipation", "runtime": "composition recipe: reversed micro-move in track()", "status": "recipe", "docs": "reference/recipes/anticipation-settle.md"},
+    {"name": "squash & stretch", "runtime": "squashStretch", "status": "implemented", "use_for": "impact frames on elastic bodies"},
+    {"name": "follow-through", "runtime": "followThrough", "status": "implemented", "use_for": "secondary parts lagging the lead"},
+    {"name": "stagger (wave)", "runtime": "stagger + waveOffset", "status": "implemented", "arabic": "word/line units only; characters blocked by safeTextUnits"},
+    {"name": "posterize-time (stop-motion)", "runtime": "quantize(t, 8..12)", "status": "implemented", "use_for": "tactile element motion while camera stays smooth", "ae_equivalence": "Posterize Time layer behavior"},
+    {"name": "hold keyframe", "runtime": "track {hold:true}", "status": "implemented", "use_for": "true snaps, beat cuts"},
+    {"name": "motion blur (temporal)", "runtime": "temporalAverage (canvas adapter)", "status": "implemented-in-adapter", "note": "RGBA linear-space average of N samples; documented count; not AE vector blur"},
+    {"name": "graph editor", "runtime": "lab curve panel (value vs derivative)", "status": "diagnostic-only", "note": "inspection aid; no native AE UI implied"}
+  ]
+}

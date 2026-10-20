@@ -147,3 +147,14 @@
 | Stagger | [range-stagger](../reference/recipes/range-stagger.md) | implemented-with-arabic-guard |
 | Hold | [hold](../reference/recipes/hold.md) | implemented |
 | Motion Blur | [motion-blur](../reference/recipes/motion-blur.md) | implemented-temporal-sampling |
+
+## Dictionaries (v2)
+
+| File | Role |
+|---|---|
+| `dictionaries/direction-axes.json` | Inspiration-engine fuel: 8 axes × 5–6 options + palette sets + anti-patterns |
+| `dictionaries/easings.json` | Every curve by implementation status (implemented / recipe / adapter / diagnostic) with use/avoid rules |
+| `dictionaries/camera.json` | Depth-projection model, camera-move legality, verification list |
+| `dictionaries/continuity.json` | 10 machine-checkable continuity rules QA enforces by id |
+| `dictionaries/styles.json` | Reference study notes (Vox, Kurzgesagt, Ordinary Folk, Carbon…) with never-copy lines |
+| `compatibility-baseline.json` | v1 public surface (371 paths, runtime exports+hashes, kit fields) enforced by `tools/compat_check.py` |

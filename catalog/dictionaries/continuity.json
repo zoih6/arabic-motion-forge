@@ -1,0 +1,16 @@
+{
+  "usage": "Continuity = elements keep identity across cuts; state survives time. These are checkable constraints the QA pass enforces.",
+  "rules": [
+    {"id": "identity-continuity", "check": "an element that persists across a transition must share one layer id + seeded color/geometry lineage", "why": "viewer reads it as the same object"},
+    {"id": "screen-space-match", "check": "cut on motion: outgoing velocity direction continues in incoming (angle delta <25°) unless the edit argues contrast", "tool": "sample 2 frames either side of cut from contact sheet"},
+    {"id": "light-consistency", "check": "key light azimuth fixed per scene (record angle in style.json); shadows and gradients derive from it", "fail_action": "rotate shadow vectors, do not just dim"},
+    {"id": "scale-ladder", "check": "a chart's axis units persist through camera moves; type size step between hierarchy levels ≥1.5× and constant within a scene"},
+    {"id": "color-claim-link", "check": "each semantic claim binds to one accent; reappearances reuse exact hex from palette_set, no drift"},
+    {"id": "time-integrity", "check": "clocks/timelines advance monotonically; loops are intentional and flagged in layer plan"},
+    {"id": "arabic-line-continuity", "check": "a word never changes font/weight mid-shot without narrative reason; line order stays RTL-consistent after any bidi isolation"},
+    {"id": "audio-visual-phase", "check": "accent hits land within ±1 frame of the onset they claim; measured from onset file, not eyeballed"},
+    {"id": "settle-before-cut", "check": "≥6 frames of stillness before a hard cut unless the cut-on-motion rule is used deliberately"},
+    {"id": "state-purity", "check": "seek(t) reproduces every element state; no accumulated jitter — compare digests tA,tB,tA"}
+  ],
+  "enforcement": "quality skill runs these on the draft tier contact sheets + measured numbers; failures become journal issues with fixed-frame evidence."
+}

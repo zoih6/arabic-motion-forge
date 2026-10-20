@@ -1,11 +1,17 @@
 {
   "name": "arabic-motion-forge",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "status": "verified_release_ready",
-  "language": "ar",
+  "language": "en (agent contracts) / ar (on-screen copy)",
   "default_runtime": "deterministic-canvas",
   "default_auto_download_media": false,
   "default_auto_publish": false,
+  "runtime_frozen_from": "1.0.0",
+  "compatibility": {
+    "baseline": "catalog/compatibility-baseline.json",
+    "guarantee": "v1 paths, fields and runtime bytes preserved; all changes additive",
+    "gate": "tools/compat_check.py"
+  },
   "demo": {
     "width": 1080,
     "height": 1920,
@@ -17,11 +23,30 @@
   "source_policy": "No project-specific scene reuse. Generic mathematical/runtime infrastructure is separate from newly authored composition code.",
   "native_after_effects_tested": false,
   "credentials_persisted": false,
-  "skills": 9,
+  "skills": 12,
   "catalog_entries": 104,
   "unique_motion_names": 103,
   "mechanism_contracts": 33,
-  "audited_repositories": 18,
+  "audited_repositories": 22,
   "bundled_libraries_tested": 4,
-  "core_install_excludes_demo_compositions": true
+  "dictionaries": [
+    "direction-axes",
+    "easings",
+    "camera",
+    "continuity",
+    "styles"
+  ],
+  "inspiration_engine": "tools/direct.py + tools/check_directions.py",
+  "install": {
+    "one_liner": "curl -fsSL https://raw.githubusercontent.com/zoih6/arabic-motion-forge/main/install.sh | sh",
+    "verified_checksum": true,
+    "media_downloaded_by_default": false
+  },
+  "render_tiers": [
+    "final",
+    "draft"
+  ],
+  "session_hygiene": "AGENTS.md §9 + skills/performance + skills/recovery",
+  "core_install_excludes_demo_compositions": true,
+  "v1_language": "ar"
 }

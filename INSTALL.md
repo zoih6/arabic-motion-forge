@@ -1,4 +1,6 @@
-# تثبيت خفيف واختيار واضح للمنصة
+# تثبيت خفيف واختيار واضح للمنصة · Lightweight install
+
+**Fastest (v2):** `curl -fsSL https://raw.githubusercontent.com/zoih6/arabic-motion-forge/main/install.sh | sh` → verified latest core zip (<60 s, no history/media), then `python3 ./motion-forge/tools/doctor.py`. Pin: `sh install.sh ./mf v1.0.0`. Troubleshooting: `reference/install-troubleshooting.md`.
 
 ## المسار الموصى به لأي وكيل
 

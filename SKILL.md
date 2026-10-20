@@ -1,54 +1,50 @@
 ---
 name: arabic-motion-forge
-description: Arabic-first motion production system for layered text, masks, paths, physics, maps, documentary graphics and original vertical or horizontal films. Routes the brief to verified tools, protects Arabic shaping, forbids recycling project compositions, renders deterministically, and preserves authorized checkpoints without heavy default downloads.
-license: MIT for original code and documentation; third-party components retain their notices
+description: Produce original Arabic or multilingual motion-graphics videos and films with layered After-Effects-style choreography, Arabic-safe typography, deterministic Canvas/FFmpeg rendering, audio-accurate synchronization, provenance-recorded assets, and verified GitHub checkpointing. Use for any motion/video/kinetic-typography request. Do not use for unrelated coding, and never reuse this kit's example compositions or any prior project's scenes as templates.
+license: MIT (original components only; see THIRD_PARTY.md)
+compatibility: Linux/macOS; Python 3.11+ and Node 18+ for tools; Chromium+FFmpeg needed only for rendering (tools/bootstrap.py); no Adobe products required; network used only for explicitly authorized fetch/publish.
 ---
 
-# Arabic Motion Forge
+# Arabic Motion Forge — router
 
-## Start here
+You have been pointed here by a link; that means: become operational fast, read only what the task needs, and produce original motion design under the kit contract.
 
-1. Read [AGENTS.md](AGENTS.md).
-2. Follow [workflows/route.md](workflows/route.md). Do not load every vendor document.
-3. Inspect `project.json` if continuing a project. Otherwise collect only missing brief fields.
-4. Run `python tools/doctor.py`; install only the required profile using [INSTALL.md](INSTALL.md).
-5. Write a new story, style fingerprint, asset plan, copy lock and layer plan for the subject. Use [templates/](templates/) as data contracts, **not** visual scene templates.
-6. Route to the relevant skill, choose real supported mechanisms from [catalog/README.md](catalog/README.md), and verify the chosen path in [catalog/capabilities.json](catalog/capabilities.json).
-7. Prototype the hardest technical shot, review meaningful motion samples, then render with checkpoints. Publish only to the explicitly authorized destination.
-8. Finish with encoded-media checks, verified links/hashes and updated project state.
+## First response on a fresh session (target < 60 s)
 
-## One-link installation for a fresh agent
+1. Bootstrap the kit (see `AGENTS.md` §0). Skip if already present.
+2. `python3 <kit>/tools/doctor.py` — one JSON summary; do not re-read other files to double-check it.
+3. If a project exists at the stated path: read `journal.jsonl` tail + `project.json`, resume from the recorded next step. Do not re-ask answered questions; do not re-run completed renders.
+4. New project: `python3 tools/new_project.py ...`, then collect only genuinely missing brief facts in one short message (max 3–4 questions).
 
-Repository: https://github.com/zoih6/arabic-motion-forge
+## Route table — load exactly what matches
 
-Read this file and `INSTALL.md` first. The default release archive is **code, rules, schemas, tested primitives, fonts and the two supplied skills only**. It excludes the demonstration composition, old film media and rendered videos. A public install needs no token.
+| Task signal | Load |
+|---|---|
+| vague brief, missing constraints | `skills/intake/SKILL.md` |
+| style identity, "make it creative", anti-template gate | `skills/creative-direction/SKILL.md` + run `tools/direct.py` |
+| layer/timing/camera design | `skills/motion-direction/SKILL.md`, `catalog/choreography-recipes.md` |
+| any Arabic on-screen text | `skills/arabic-type/SKILL.md` (mandatory before text animation) |
+| photos, cutouts, charts, generated art | `skills/asset-craft/SKILL.md` |
+| voiceover, music, singing interlude, sync | `skills/audio-sync/SKILL.md` |
+| render slow, big job, flaky session | `skills/performance/SKILL.md` |
+| crash, resume, "continue where we stopped" | `skills/recovery/SKILL.md` |
+| QA, review loops, approval honesty | `skills/quality/SKILL.md` |
+| publish, backup, storage budget | `skills/delivery/SKILL.md` |
+| full documentary/film pipeline beyond this kit | `vendor/ai-film-studio/SKILL.md` (routing starts at its `workflows/intent-router.md`) |
 
-Use `tools/install_from_release.py` after inspecting it, or a sparse checkout of the documented core paths. Do not clone the Alhambra repository or automatically download Releases media.
+Mechanism lookup: `catalog/README.md` → `catalog/motions.json` → `reference/recipes/<mechanism>.md`. Style families and their honest boundaries: `catalog/dictionaries/styles.json`. Motion vocabulary for directions: `catalog/dictionaries/direction-axes.json`.
 
-## Non-negotiable design contract
+## Non-negotiable gates (details in AGENTS.md)
 
-- Motion serves information and emotion; it does not fill dead time.
-- A title, its underline, ornament, matte and nearby picture have independent timing when their functions differ.
-- Arabic letters remain correctly shaped and connected. Do not fake character animation by splitting strings.
-- The camera cannot substitute for detailed element choreography.
-- Do not claim a native After Effects operation when using Canvas/SVG or an unverified adapter.
-- A technique name is a behavior description, not proof of a separate engine feature.
-- Approved words, fonts and designs do not change to hide technical failures.
-- Reuse generic infrastructure, **never a prior project's scene code, style, assets or shot sequence as the new project**.
+1. Original design per topic: reference learning is allowed, scene/template copying is not. `tools/check_directions.py` and `tools/check_project.py` enforce the paperwork; the aesthetic judgment is yours and must be written down.
+2. Arabic shaping integrity: words/lines as shaped units; transforms on masks and layout, never fractured letters.
+3. Capability honesty: implemented vs equivalent vs documented-only vs unsupported. No fake "After Effects" claims; the AE tool is not in this environment.
+4. Deterministic rendering: `seek(t)` purity, checkpointed encode, per-part verification, PTS checks, reuse-unchanged-on-fix.
+5. Evidence before "done": media checks, upload verification, journal entry, and explicit statement of what remains unverified.
+6. Never store secrets in repo files; publishing is per-project and user-authorized.
 
-## Progressive routes
+## Deliverable shapes
 
-- Brief: `skills/intake/SKILL.md`
-- New identity: `skills/originality/SKILL.md`
-- Layer/timing/camera design: `skills/motion-direction/SKILL.md`
-- Arabic and typography: `skills/arabic-type/SKILL.md`
-- Genuine/generated assets: `skills/asset-craft/SKILL.md`
-- Voice, lyrics and score: `skills/audio-sync/SKILL.md`
-- Tests and critique: `skills/quality/SKILL.md`
-- Storage, publication and recovery: `skills/delivery/SKILL.md`
-
-For the broader film-production workflow, load `vendor/ai-film-studio/SKILL.md` and its `workflows/intent-router.md`. For the supplied motion helper, load `vendor/motion-reel/SKILL.md`, but override its platform/fps/output assumptions with the current project's actual contract. Read `THIRD_PARTY.md` before redistributing vendor material.
-
-## What this skill does not promise
-
-It does not train the underlying model, guarantee creativity, create native `.aep` files without an actual AE environment, grant third-party media rights, or prove unsupported engines work. It provides a tested process, explicit failure gates, executable primitives, and reproducible recovery records.
+- Draft/motion review: short MP4 at draft tier + ≤8-panel contact sheet (files, not chat blobs).
+- Final: verified MP4 + manifest (frames/fps/duration/sha), `journal.jsonl`, updated `project.json`.
+- Always report: what ran, what passed, what could not be verified here (e.g., no human ear on the mix), and the exact next command for the user or the next session.
