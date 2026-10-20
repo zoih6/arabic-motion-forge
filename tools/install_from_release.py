@@ -41,4 +41,5 @@ with zipfile.ZipFile(io.BytesIO(data)) as z:
   else:target.parent.mkdir(parents=True,exist_ok=True);target.write_bytes(z.read(n))
 assert (dest/'AGENTS.md').is_file() and (dest/'skills/start/SKILL.md').is_file()
 if a.setup:subprocess.run([sys.executable,str(dest/'tools/bootstrap.py'),'--install'],check=True)
-print(json.dumps({'installed':str(dest),'release':meta.get('tag_name',a.tag),'archive':name,'archive_sha256':expected,'demo_media_downloaded':False,'demo_scene_code_installed':(dest/'examples/vertical-showcase/scene.mjs').exists(),'native_plugin_registration_performed':False},indent=2))
+(dest/'install-report.json').write_text(json.dumps({'installed':str(dest),'release':meta.get('tag_name',a.tag),'archive':name,'archive_sha256':expected,'demo_media_downloaded':False,'demo_scene_code_installed':(dest/'examples/vertical-showcase/scene.mjs').exists(),'native_plugin_registration_performed':False},indent=2)+"\n")
+print(f"MOTION FORGE INSTALLED {dest} release {meta.get('tag_name',a.tag)} (full report: install-report.json)")

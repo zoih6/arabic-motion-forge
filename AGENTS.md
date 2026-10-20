@@ -2,9 +2,20 @@
 
 You are an agent producing motion design, not a template-filler. This file is the binding contract for every project built with this kit. Keep instructions in English for agent precision; on-screen copy follows the user's language.
 
-## 0. Fast path (link-first bootstrap)
+## 0. Fast path — SILENT AUTOPILOT (the first thing you do, and the first rule you never break)
 
-On a fresh session the agent must become operational in under a minute:
+**FIRST-REPLY TEMPLATE (verbatim structure, ≤5 lines, no other format):**
+
+```
+SYSTEM READY — Arabic Motion Forge v2.3+ installed (SHA verified); render engines warming in background.
+<one line: current phase>
+To start I need: 1) <question> 2) <question> 3) <question>  — max 3, only genuinely missing facts
+```
+Render the template in the user's language, ≤5 lines total. If their task is already in hand: drop answered questions, say one line "read your request, starting the reframe" and GO — no menu, no options list.
+
+**NEVER dump (hard prohibitions, violation = contract breach):** raw installer JSON, doctor tables, feature tours, file inventories, "what I can do" menus, code blocks of tool output, markdown tables in the first reply. Tool outputs are for YOU; the user gets verdict + next step only. Details live in files; name paths instead of pasting.
+
+Install (target < 60 s; install.sh auto-warms render deps in the background, never block on it):
 
 ```sh
 python3 -c "import urllib.request;urllib.request.urlretrieve('https://raw.githubusercontent.com/zoih6/arabic-motion-forge/main/tools/install_from_release.py','/tmp/iamf.py')" \
@@ -15,7 +26,7 @@ Then `python3 ./motion-forge/tools/doctor.py`. No pip step is required to read c
 
 ## 0.5 First-reply budget + fast lane
 
-First reply in any session: ≤6 lines — install/doctor verdict, one phase line, max 3 blocking questions. No feature tours, no contract restatement, no markdown walls; long knowledge lives in files.
+First reply in any session: the 5-line §0 template only — verdict, phase, max 3 blocking questions. No feature tours, no contract restatement, no markdown walls; long knowledge lives in files.
 Fast lane: `new_project.py --quick` for ≤30 s or clearly simple asks → spec-lite sections, no preview gate, ONE aggregated `python3 tools/gate.py` before final. Safety laws (Arabic shaping, determinism, quota, provenance, no-raw-ASR-on-screen, motion_audit) apply in every mode.
 
 ## 1. Load order (progressive disclosure)

@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.3.1 — 2026-10-20 — setup chatter patch
+- install.sh is now self-preparing: verifies+installs the release, silently backgrounds render-dependency warmup (log at ~/.cache/motion-forge-session/bootstrap.log), prints ONE `MOTION FORGE READY` line. No user decisions about toolchains.
+- AGENTS §0 rewritten as SILENT AUTOPILOT with a verbatim ≤5-line first-reply template (rendered in the user's language) and explicit NEVER-DUMP list (raw JSON, doctor tables, feature menus, code blocks) — the field-observed setup wall is now a named contract breach; validate_kit enforces the wiring.
+
+
 ## 2.3.0 — 2026-10-20 — "quality is measurable, ceremony is optional"
 Fixes from real-world v2.2 field test (user report: verbose first replies, superficial output, reframe deleting content, random research, bad ASR, weak type, slow pipeline, gate ceremony, doc drift):
 - **First-reply budget (AGENTS §0.5, SKILL):** ≤6 lines contract — verdict + phase + ≤3 questions; no essays.

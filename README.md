@@ -4,7 +4,9 @@
 
 v2.3.0: creative ideation engine (hooks, wild cards, cliché blacklist), motion-focused web-research registry, true ASR tool with approved-copy alignment + sync verifier, objective motion audit (anti-slideshow), typography system dictionary + OFL font fetcher, AE bridge export, quick mode + one-command gate aggregator. v2.2.0: spec-reframe gate (chaotic one-line requests are professionally rewritten, never executed literally), bounded web-research agent, inspiration engine + 6 dictionaries, **true-3D runtime module**, mandatory ≤30 s approval preview before long renders, workspace quota guardian, capped delivery (light ≤25 MiB / hi ≤50 MiB) landing in the workspace — never an `out/` folder. `runtime/core|canvas` remain byte-frozen from v1 — old projects render identically (`tools/compat_check.py` proves it on every build).
 
-## Install from a link (< 60 s, verified, no history, no media)
+## Install from a link (< 60 s, self-preparing, verified)
+
+The one-liner installs AND silently warms render dependencies — expect a single READY line, not a tutorial.
 
 ```sh
 curl -fsSL https://raw.githubusercontent.com/zoih6/arabic-motion-forge/main/install.sh | sh

@@ -9,7 +9,7 @@ compatibility: Linux/macOS; Python 3.11+ and Node 18+ for tools; Chromium+FFmpeg
 
 You have been pointed here by a link; that means: become operational fast, read only what the task needs, and produce original motion design under the kit contract.
 
-## First response: ≤6 lines total (verdict + phase + ≤3 questions). No essays — contract, not style tip.
+## FIRST REPLY = the 3-line template in AGENTS.md §0 (status · phase · ≤3 genuinely-missing questions). Never paste JSON/tables/menus. This outranks every other output instinct; a chatty setup reply is a contract breach even if everything else is right.
 
 ## Quick vs full
 `new_project.py --quick` (≤30 s / simple): spec-lite, no preview gate, one aggregated `tools/gate.py` before final. `full` for everything else: complete chain. Safety laws run in BOTH modes; quick cuts ceremony, never quality.
