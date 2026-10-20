@@ -1,48 +1,18 @@
 {
   "verified_at": "2026-10-20",
-  "method": "anonymous HTTPS only, no credentials",
-  "release_tag": "v2.0.0",
-  "main_commit": "3e7e3987c4b6f0d7ce1cc866ce17ed46bead7de6",
-  "main_commit_is_v2": true,
-  "root_structure_ok": true,
-  "raw_kit_json_version": "2.0.0",
-  "assets": {
-    "arabic-motion-forge-core-2.0.0.zip": {
-      "size": 1162497,
-      "size_match": true,
-      "digest": "sha256:17947b8e7a17ce2466fd0e45fd866e874ec95e3d6c20edfb54cd4774e774d4b9",
-      "digest_match_local_sha": true
-    },
-    "meaning-first-portrait-1080p32.mp4": {
-      "size": 4703190,
-      "size_match": true,
-      "digest": "sha256:43fa32c8d52ee3ce589147fd2699fcd15d431ea3196d0db16d39100181fb5493",
-      "digest_match_local_sha": true
-    },
-    "motion-lab.html": {
-      "size": 342532,
-      "size_match": true,
-      "digest": "sha256:f3bed561cb9a35a7872207c0413c9357e9cb7cae393ce3a0121bc987afd924c6",
-      "digest_match_local_sha": true
+  "release": "v2.2.0",
+  "main_head": "2d23ee5c18c3d393fab0a8ca06d2e7d411b46005",
+  "main_is_v220": true,
+  "assets_public_match": {
+    "arabic-motion-forge-core-2.2.0.zip": {
+      "size_ok": true,
+      "digest_ok": true
     },
     "SHA256SUMS.txt": {
-      "size": 471,
-      "size_match": true,
-      "digest": "sha256:ca54e1da2a9975cf165c26281e1922e4d6532da6058906a9aaf9514f7802dc11",
-      "digest_match_local_sha": true
-    },
-    "showcase-poster.jpg": {
-      "size": 31335,
-      "size_match": true,
-      "digest": "sha256:eac603c66eb938eea77a673ad49877989a7b584fd84ac81343f42a3f653e59fa",
-      "digest_match_local_sha": true
+      "size_ok": true,
+      "digest_ok": false
     }
   },
-  "v1_release_still_intact": "v1.0.0",
-  "patch_2.0.1": {
-    "release": "v2.0.1",
-    "core_sha256": "ad5581ff1eae9b0d1a90506092f9793a7ebd02a57a9562e42d0ae2b03d81a79e",
-    "anonymous_digest_match": true,
-    "main_commit": "6289b46dd42329550f4a7c4efc393aac2dfeb614"
-  }
+  "v1_release": "v1.0.0",
+  "v20_release": "v2.0.0"
 }
