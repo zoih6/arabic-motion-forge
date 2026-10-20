@@ -1,44 +1,42 @@
 {
-  "public_root_verified": [
-    ".agents",
-    ".claude-plugin",
-    ".gitignore",
-    "AGENTS.md",
-    "CHANGELOG.md",
-    "CLAUDE.md",
-    "INSTALL.md",
-    "LICENSE",
-    "README.md",
-    "SKILL.md",
-    "THIRD_PARTY.md",
-    "adapters",
-    "assets",
-    "catalog",
-    "examples",
-    "kit.json",
-    "lab",
-    "package.json",
-    "reference",
-    "research",
-    "runtime",
-    "schemas",
-    "skills",
-    "templates",
-    "tests",
-    "tools",
-    "vendor",
-    "workflows"
-  ],
-  "public_skills": 9,
-  "release_url": "https://github.com/zoih6/arabic-motion-forge/releases/tag/v1.0.0",
-  "release_assets_verified": [
-    "arabic-motion-forge-core-1.0.0.zip",
-    "meaning-first-portrait-1080p32.mp4",
-    "motion-lab.html",
-    "SHA256SUMS.txt",
-    "showcase-poster.jpg"
-  ],
-  "remote_core_install_passed": true,
-  "source_commit": "d171e5dbfab90f4c11955c613a4255fc5f979fdf",
-  "native_agent_model_workflow_tested": false
+  "verified_at": "2026-10-20",
+  "method": "anonymous HTTPS only, no credentials",
+  "release_tag": "v2.0.0",
+  "main_commit": "3e7e3987c4b6f0d7ce1cc866ce17ed46bead7de6",
+  "main_commit_is_v2": true,
+  "root_structure_ok": true,
+  "raw_kit_json_version": "2.0.0",
+  "assets": {
+    "arabic-motion-forge-core-2.0.0.zip": {
+      "size": 1162497,
+      "size_match": true,
+      "digest": "sha256:17947b8e7a17ce2466fd0e45fd866e874ec95e3d6c20edfb54cd4774e774d4b9",
+      "digest_match_local_sha": true
+    },
+    "meaning-first-portrait-1080p32.mp4": {
+      "size": 4703190,
+      "size_match": true,
+      "digest": "sha256:43fa32c8d52ee3ce589147fd2699fcd15d431ea3196d0db16d39100181fb5493",
+      "digest_match_local_sha": true
+    },
+    "motion-lab.html": {
+      "size": 342532,
+      "size_match": true,
+      "digest": "sha256:f3bed561cb9a35a7872207c0413c9357e9cb7cae393ce3a0121bc987afd924c6",
+      "digest_match_local_sha": true
+    },
+    "SHA256SUMS.txt": {
+      "size": 471,
+      "size_match": true,
+      "digest": "sha256:ca54e1da2a9975cf165c26281e1922e4d6532da6058906a9aaf9514f7802dc11",
+      "digest_match_local_sha": true
+    },
+    "showcase-poster.jpg": {
+      "size": 31335,
+      "size_match": true,
+      "digest": "sha256:eac603c66eb938eea77a673ad49877989a7b584fd84ac81343f42a3f653e59fa",
+      "digest_match_local_sha": true
+    }
+  },
+  "v1_release_still_intact": "v1.0.0"
 }
