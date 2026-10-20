@@ -1,11 +1,11 @@
 {
   "tool": "validate_kit.py v2",
-  "ran_at": "2.0.1",
+  "ran_at": "2.2.0",
   "result": {
     "passed": true,
-    "checks": 109,
+    "checks": 132,
     "failures": [],
-    "skills": 12,
+    "skills": 15,
     "catalog_entries": 104,
     "native_host_execution_claimed": false
   }

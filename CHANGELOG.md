@@ -1,5 +1,16 @@
 # Changelog
 
+## 2.2.0 — 2026-10-20 — "professional intake pipeline"
+- **Reframe gate (skills/request-reframe + spec.md + check_project enforcement):** messy/one-line/contradictory user requests are NEVER executed literally — a spec-engineer pass rewrites them into a full production spec with visible corrections (letter-splitting→word reveals, fake-3D claims→spatial module rules, size-without-duration→bitrate math, "exactly like X"→transferable rules).
+- **Web-research agent (skills/web-research + research/facts.json + notes.md):** bounded (≤8 sources, ≤10 min) knowledge intake for unfamiliar topics, on-screen facts and reference-media study; offline-safe, never blocks the pipeline.
+- **True 3D: `runtime/spatial.mjs`** — additive, zero-dependency perspective compositor: camera pose math, point/quad projection with behind-camera guard, stable painter sort, unit-normal faces + Lambert-lite shade, axis-aligned slabs, orbit/dolly deterministic keys, exact two-triangle affine planar texturing (drawPlanar), depth-parallax ratio helper. 7 node tests; rules and honesty boundaries in `catalog/dictionaries/spatial-3d.json` (no C4D/AE claims; three.js documented as opt-in).
+- **Preview gate:** `tools/preview.py` builds a ≤30 s representative draft (hook + per-scene windows), assembles ONE small mp4 + contact sheets for approval; render.py refuses final >30 s projects (kit_contract≥2) until `preview_approved` — no more 40-minute renders nobody sanctioned; windows cache by hash.
+- **Quota guardian:** `tools/quota.py` (snapshot/disk/staging audit, ok|warn|block) consulted before every render; block verdict aborts cleanly with relocation advice. Kills the filled-disk/lost-data failure mode in hosted sandboxes.
+- **Capped workspace delivery:** `tools/deliver.py` extracts light ≤25 MiB + hi ≤50 MiB copies into `<project>/deliverables/` (refuses out/ paths; decode+duration parity checks; sha+journal). Results land in the persistent workspace even after session churn; masters stay in staging.
+- `new_project.py` seeds spec.md skeleton + preview fields; route/router/AGENTS updated; validate_kit enforces the new surface.
+- Measured live: preview run 24.9 s (9 windows, 16.25 s, deterministic sha across runs) → re-run 170 ms via per-window persistent cache keyed to entry hash; render.py refuses unapproved >30 s finals and quota-blocked starts; deliver parity+decode checks; spatial suite 7/7; totals: 27 node tests, 18 browser checks, 132 kit checks, compat PASS (371 v1 paths, frozen runtime).
+
+
 ## 2.0.1 — 2026-10-20
 - compat_check: v1 path-superset scope corrected to the contract surface; `research/` records are session state intentionally excluded from the core archive (was falsely failing validate_kit inside installed copies). No runtime, skill, dictionary or installer behavior changed.
 

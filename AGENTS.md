@@ -18,6 +18,14 @@ Then `python3 ./motion-forge/tools/doctor.py`. No pip step is required to read c
 1. This file. 2. `SKILL.md` (router). 3. `workflows/route.md`. 4. Exactly the skills your task needs (table in SKILL.md). 5. One `reference/` or `catalog/` file per open question.
 Do not bulk-read `vendor/`, `examples/`, or research JSON. Grep for what you need. Every kit file is deliberately small; if a command would print >300 lines, sample it (`head`, jq-style python, `--json` flags) instead of pasting it into the conversation.
 
+## 1.5 Request reframe — hard gate (no literal obedience to chaos)
+
+A user request is INPUT, not a spec. Before touching tools/scene/asset code, transform the raw ask (even a single sentence) into `spec.md` per `skills/request-reframe`: fill every section, auto-correct contract violations with visible notes (letter-splitting Arabic → word-level shaped reveals; "real 3D" → spatial.mjs or documented 2.5D; size demands without duration → derive bitrate math; "exactly like video X" → extract transferable rules only), mark assumptions vetoable in one word, and get explicit confirmation. Executing an ambiguous or self-contradictory request directly is forbidden — resolve first, log in `## Refusals & corrections`. `tools/check_project.py` enforces the spec sections for kit_contract≥2.
+
+## 1.6 Web research — bounded knowledge intake
+
+Unknown topic territory, on-screen numbers, or named style references trigger `skills/web-research`: ≤8 sources, facts recorded in `research/facts.json` with URLs, craft techniques as 2–4 transferable rules in `research/notes.md`, reference-media studied structurally not downloaded wholesale. Offline → declare in spec and continue; research never blocks the pipeline indefinitely. Every fact that appears on screen must trace to a recorded source or be labeled illustrative.
+
 ## 2. Project state contract
 
 Every project root has: `project.json` (identity, format, approval gates, copy hash), `brief.json`, `style.json`, `originality.json` (or `directions.json` from `tools/direct.py`), `layer-plan.json`, `copy.txt`, `journal.jsonl`.
@@ -34,7 +42,8 @@ Design like a senior motion designer in a keyframe tool; the code is your timeli
 - **Three-stage timing.** Before: defined off-state at a known time. During: explicit keyframes or analytic curve with named easing; multi-key where the motion has stages. After: settle, hold, or motivated exit. Stagger start times; never start/end everything together.
 - **Channel economy.** Use only channels that serve meaning (position/scale/rotation/opacity/mask/trim/depth). Overshoot only when the object has physical character; no decorative wobble.
 - **Reveals are engineered.** Arabic and long titles build via animated mattes, clipping regions, path trims, or per-word selectors — not global opacity fades. A trimmed stroke's head marker is computed from the same arc-length parameter that drew it.
-- **Camera is choreography.** Multi-plane parallax with depth-z ordering, motivated dolly/pan tied to the focal element. Never "add a slow zoom to every shot". Secondary layers move at ratios implied by depth, not independently invented speeds.
+- **Camera is choreography.** Multi-plane parallax with depth-z ordering, motivated dolly/pan tied to the focal element. **True 3D when the idea needs rotation/perspective**: `runtime/spatial.mjs` (perspective camera, planar-quad warp with exact affine triangles, painter sort, Lambert shading, orbit keys) under the rules of `catalog/dictionaries/spatial-3d.json`; default stays 2.5D — never claim native AE/C4D renderer parity; Arabic text on 3D planes is shaped first then warped as a whole plane.
+- **Preview before commitment.** Any project >30 s renders a ≤30 s representative preview (tools/preview.py, draft tier) and gets user approval before final-tier rendering (render.py gate for kit_contract≥2). Never "add a slow zoom to every shot". Secondary layers move at ratios implied by depth, not independently invented speeds.
 - **Transitions carry a relation** (shared shape, match cut on meaning, occluder handoff, morph with real vertex correspondence). A preset wipe is not design.
 - **Motion blur and stutter are chosen**: temporal sampling (documented sample count) for blur; deliberate 8–12fps quantization (`quantize`) only for tactile/stop-motion texture, applied to element transforms while the camera stays smooth. State which and why.
 
@@ -73,6 +82,8 @@ Run three passes maximum, scoped: (1) still-frame legibility at multiple times i
 - Keep single tool outputs small: sample, summarize, or write to file and report path+hash. Never base64 images into chat.
 - One heavy asset per message; present the main deliverable, link the rest.
 - If the host UI feels stuck: finish the current write, journal it, and hand the user a resume line (`journal.jsonl` last lines + next command). Never start a second duplicate render "because it looked hung".
+- **Quota guardian.** `tools/quota.py` before starting renders and before any write >2 MB; render.py refuses to start on `block` verdict (workspace snapshot ~128 MB on hosted agents, disk ceilings). Masters live in non-snapshotted staging; the workspace receives ONLY capped delivery copies. If the session dies after checkpoints, `tools/deliver.py` still assembles from staging — a 40-minute render must never end with "result not found".
+- **Capped final outputs.** Final delivery = `tools/deliver.py`: light copy ≤25 MiB + high copy ≤50 MiB into `<project>/deliverables/` (never `out/`, never outside the workspace), frame/duration parity + decode checks, sha in journal.
 - Memory ceiling ~2 GB: avoid loading full videos/wav into RAM at once; stream with ffmpeg filters; process images in batches; free caches between parts. Workspace snapshot limit ~128 MB: media lives in staging + Releases, sources in git; check `python3 tools/storage.py` before writing anything >5 MB.
 
 ## 10. Publication and secrets
@@ -87,4 +98,4 @@ Publishing is per-project, user-authorized, with the destination recorded in `pr
 
 ## 12. Closing checklist (before telling the user "done")
 
-project.json final → check_project pass → compat_check pass → render manifest complete (frames/fps/PTS/decode) → audio measured → assets provenance complete → artifacts uploaded+verified (or explicitly not published) → journal closed with result line → README/state updated → the one file to open named → limits stated honestly (what was not listened, not frame-reviewed, not device-tested). Claim nothing beyond evidence.
+spec.md complete+confirmed → check_project pass → preview approved → render-report final → tools/deliver.py copies (≤25/≤50 MiB) land in workspace deliverables → check compat_check+quota verdicts → render manifest complete (frames/fps/PTS/decode) → audio measured → assets provenance complete → artifacts uploaded+verified (or explicitly not published) → journal closed with result line → README/state updated → the one file to open named → limits stated honestly (what was not listened, not frame-reviewed, not device-tested). Claim nothing beyond evidence.

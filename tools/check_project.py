@@ -33,6 +33,14 @@ if not errors:
   o=json.loads((r/d['originality_file']).read_text())
   if not o.get('declared_new_composition') or not o.get('differences_from_references'):errors.append('Originality review incomplete')
  if not (r/d['entry']).exists():errors.append('Render entry missing')
+ if d.get('kit_contract',0)>=2:
+  sf=r/d.get('spec_file','spec.md')
+  if not sf.exists():errors.append('Reframe gate: spec.md missing (skills/request-reframe)')
+  else:
+   spec=sf.read_text()
+   for sec in ['## Objective','## Confirmed understanding','## Constraints & format','## Content & copy','## Motion & style','## Deliverables','## Refusals & corrections']:
+    body=spec.split(sec,1)[-1].split('\n## ',1)[0] if sec in spec else ''
+    if len(body.strip())<25 or 'TODO' in body:errors.append('spec.md section unresolved: '+sec)
 kit=Path(__file__).resolve().parents[1]
 baselines=json.loads((kit/'catalog/originality-baselines.json').read_text())
 protected={x['sha256'] for x in baselines['protected_scene_hashes']}

@@ -1,0 +1,18 @@
+{
+  "usage": "True-3D is an ADDITIVE capability (runtime/spatial.mjs). Default remains 2.5D multi-plane (camera.json); escalate to 3D only when rotation/perspective IS the idea. Honesty: planar-quad compositor on 2D canvas — not a ray tracer, not After Effects Cinema4D; never claim otherwise.",
+  "primitives": [
+    {"id": "slab", "api": "slab()/renderPlan()", "use": "cards, products, stage pieces with visible thickness under camera moves", "limits": "axis-aligned boxes; curved solids need subdivision into strips"},
+    {"id": "planar-texture", "api": "drawPlanar/triTransforms", "use": "photos/posters as textured quads warped exactly under perspective", "limits": "convex quads only; vertices must stay in front of near plane (guard throws) — subdivide large walls instead of cheating"},
+    {"id": "parallax-ratio", "api": "parallaxRatio", "use": "secondary-layer speed derived from depth, never hand-tuned independently"},
+    {"id": "orbit-key", "api": "orbitKey", "use": "deterministic dolly+turn around a focal object; single move per shot"}
+  ],
+  "rules": [
+    "focal 1400–2000px equivalent; overscan geometry 15%; roll ≤0.6° unless diegetic (same law as camera.json — projection differs, discipline doesn't)",
+    "every 3D object registers center, size, and the light azimuth from style.json; shading comes from shade(), not hand-painted gradients that fight the light rule",
+    "painter sort is stable — never rely on frame-mutable z state; seek(t) purity applies",
+    "text on 3D planes: shape words first (arabic-type rules), then warp the rendered plane; never project per-letter",
+    "blur: no real DOF; fake depth blur only as static per-plane blur amounts stepped at keyframes, documented in layer plan",
+    "cost honesty: 3D scenes render ~1.5–2× slower; prefer 2.5D for flat-type-heavy films"
+  ],
+  "threejs_option": "three.js (MIT, pinned in catalog/libraries.lock.json) is permitted for genuine WebGL projects, but it is NOT bundled and NOT used by the default deterministic renderer; bringing it in requires its own QA + a note in project README. This kit's default path stays dependency-light and reproducible."
+}

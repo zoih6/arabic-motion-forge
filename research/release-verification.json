@@ -38,5 +38,11 @@
       "digest_match_local_sha": true
     }
   },
-  "v1_release_still_intact": "v1.0.0"
+  "v1_release_still_intact": "v1.0.0",
+  "patch_2.0.1": {
+    "release": "v2.0.1",
+    "core_sha256": "ad5581ff1eae9b0d1a90506092f9793a7ebd02a57a9562e42d0ae2b03d81a79e",
+    "anonymous_digest_match": true,
+    "main_commit": "6289b46dd42329550f4a7c4efc393aac2dfeb614"
+  }
 }

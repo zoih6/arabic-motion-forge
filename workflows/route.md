@@ -1,19 +1,19 @@
 # Production route (one page)
 
 ```
-intake ──► direct.py (3 directions) ──► user picks ──► check_directions ──► style lock
+RAW REQUEST ──► request-reframe (spec.md, corrections logged) ──► web-research (bounded facts) ──► intake ──► direct.py (3 directions) ──► user picks ──► check_directions ──► style lock
    │                                                              │
    └ brief.json, copy.txt approved                          layer plan per shot
                                                                   │
-     asset-craft ◄────────────────────────────────── motion-direction authors scene
+     asset-craft ◄── (2.5D camera.json | true 3D via runtime/spatial.mjs + spatial-3d.json)──────────────────────────────── motion-direction authors scene
         (provenance, matte QA)                     (seek(t) purity, dictionaries)
                           \                       /
                            ▼                     ▼
                      draft-tier render ──► quality passes 1–2 ──► fixes (reuse verified parts)
                                                         │
-                                        check_project ──► final render (checkpoints) ──► audio mux
+                                        check_project ──► tools/preview.py ≤30s ──► USER APPROVES ──► final render (checkpoints) ──► quota-aware encode ──► audio mux
                                                                     │
-                                             verification (frames/PTS/decode/LUFS) ──► delivery/publish
+                                             verification (frames/PTS/decode/LUFS) ──► tools/deliver.py (≤25/≤50MiB into workspace deliverables/) ──► publish (optional)
                                                                     │
                                               journal `final` line closes the loop
 ```

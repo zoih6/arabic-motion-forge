@@ -18,7 +18,10 @@ You have been pointed here by a link; that means: become operational fast, read 
 
 ## Route table — load exactly what matches
 
-| Task signal | Load |
+| Raw/messy/one-line request — ALWAYS before anything else | `skills/request-reframe/SKILL.md` + fill `spec.md` (hard gate) |
+| Unknown topic, on-screen facts, style references | `skills/web-research/SKILL.md` (≤8 sources, recorded) |
+| Project >30 s, before final render | `skills/preview/SKILL.md` + `tools/preview.py` (approval unlocks render gate) |
+| Disk/snapshot pressure, slow chats | `skills/performance/SKILL.md` + `tools/quota.py` |
 |---|---|
 | vague brief, missing constraints | `skills/intake/SKILL.md` |
 | style identity, "make it creative", anti-template gate | `skills/creative-direction/SKILL.md` + run `tools/direct.py` |
@@ -42,6 +45,7 @@ Mechanism lookup: `catalog/README.md` → `catalog/motions.json` → `reference/
 4. Deterministic rendering: `seek(t)` purity, checkpointed encode, per-part verification, PTS checks, reuse-unchanged-on-fix.
 5. Evidence before "done": media checks, upload verification, journal entry, and explicit statement of what remains unverified.
 6. Never store secrets in repo files; publishing is per-project and user-authorized.
+7. Reframe gate first (no literal execution of chaotic briefs), research when the topic demands it, preview before long renders, deliver capped copies into the workspace via `tools/deliver.py`, and watch `tools/quota.py` — data loss and filled disks are contract violations.
 
 ## Deliverable shapes
 

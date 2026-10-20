@@ -2,7 +2,7 @@
 
 **An agent operating system for original Arabic motion design — layered choreography, Arabic-safe typography, deterministic rendering, crash-safe sessions.** Not a template pack: every project is authored from the brief; the kit guarantees the machinery, the quality contract and the evidence.
 
-v2.0.0: English agent contracts, inspiration engine + motion dictionaries, draft-tier QA, session journals (hang-proof resumption), one-command bootstrap. `runtime/` is byte-frozen from v1 — old projects render identically (`tools/compat_check.py` proves it on every build).
+v2.2.0: spec-reframe gate (chaotic one-line requests are professionally rewritten, never executed literally), bounded web-research agent, inspiration engine + 6 dictionaries, **true-3D runtime module**, mandatory ≤30 s approval preview before long renders, workspace quota guardian, capped delivery (light ≤25 MiB / hi ≤50 MiB) landing in the workspace — never an `out/` folder. `runtime/core|canvas` remain byte-frozen from v1 — old projects render identically (`tools/compat_check.py` proves it on every build).
 
 ## Install from a link (< 60 s, verified, no history, no media)
 
@@ -18,6 +18,7 @@ Any agent anywhere: fetch `AGENTS.md` + `SKILL.md` from this repo root and follo
 - **Layered motion, not flat slides** — per AGENTS.md §3: element decomposition, three-stage timing, mattes/trim reveals, multi-plane camera with depth-projection rules, motion-blur policy; every mechanism has a tested contract in `catalog/` (104 entries / 33 mechanisms) and dictionaries (`catalog/dictionaries/`: easings, camera, continuity, styles, direction axes).
 - **Arabic correctness** — whole-word shaping, real metrics, bidi isolation, copy-hash lock; guards throw on the shortcuts that break scripts.
 - **Originality gate** — `tools/direct.py` generates three structurally distinct concept directions from the topic; `tools/check_directions.py` refuses style-lock until rationales are real and fingerprints avoid the kit example and your prior projects.
+- **3D when it matters** — `runtime/spatial.mjs`: real perspective camera, planar-quad texturing with exact affine triangles, stable painter sort, Lambert shading, deterministic orbit keys; rules + honesty bounds in `catalog/dictionaries/spatial-3d.json`. Default stays 2.5D; no fake C4D claims.
 - **Deterministic renders** — `seek(t)` purity, 10 s checkpoints streamed into FFmpeg, frame-count/PTS/decode asserts, per-part sha; `--tier draft` for motion review at half cost.
 - **Evidence, not vibes** — quality loops bounded to 3 passes with reported numbers; publication verified by anonymous fetch + sha compare; nothing is claimed that the environment cannot prove (no Adobe AE here — Canvas equivalents are labeled as equivalents).
 - **Sessions that don't die** — `journal.jsonl` milestones; resume = two reads, never re-asking, never re-rendering verified parts; strict output-size and memory discipline (AGENTS.md §9, `skills/performance`).

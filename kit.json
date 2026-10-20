@@ -1,6 +1,6 @@
 {
   "name": "arabic-motion-forge",
-  "version": "2.0.1",
+  "version": "2.2.0",
   "status": "verified_release_ready",
   "language": "en (agent contracts) / ar (on-screen copy)",
   "default_runtime": "deterministic-canvas",
@@ -23,7 +23,7 @@
   "source_policy": "No project-specific scene reuse. Generic mathematical/runtime infrastructure is separate from newly authored composition code.",
   "native_after_effects_tested": false,
   "credentials_persisted": false,
-  "skills": 12,
+  "skills": 15,
   "catalog_entries": 104,
   "unique_motion_names": 103,
   "mechanism_contracts": 33,
@@ -48,5 +48,17 @@
   ],
   "session_hygiene": "AGENTS.md §9 + skills/performance + skills/recovery",
   "core_install_excludes_demo_compositions": true,
-  "v1_language": "ar"
+  "v1_language": "ar",
+  "spatial_engine": "runtime/spatial.mjs (additive, tested)",
+  "gates": {
+    "reframe": "spec.md sections enforced by check_project (kit_contract>=2)",
+    "preview": "render.py blocks >30s finals without preview_approved",
+    "quota": "render.py refuses on quota block verdict"
+  },
+  "delivery_budget": {
+    "light_mib": 25,
+    "high_mib": 50,
+    "location": "<project>/deliverables/",
+    "out_dir": "forbidden"
+  }
 }

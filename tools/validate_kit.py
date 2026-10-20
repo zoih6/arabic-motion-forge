@@ -30,8 +30,8 @@ check('root SKILL.md has frontmatter',read(R/'SKILL.md').startswith('---'))
 check('SKILL.md body under 500 lines',len(read(R/'SKILL.md').splitlines())<530)
 # skills: spec-compliant, English, routed
 skill_dirs=sorted(d.name for d in (R/'skills').glob('*') if (d/'SKILL.md').is_file())
-expect=['arabic-type','asset-craft','audio-sync','creative-direction','delivery','intake','motion-direction','originality','performance','quality','recovery','start']
-check('twelve discoverable skills',skill_dirs==expect)
+expect=['arabic-type','asset-craft','audio-sync','creative-direction','delivery','intake','motion-direction','originality','performance','preview','quality','recovery','request-reframe','start','web-research']
+check('fifteen discoverable skills',skill_dirs==expect)
 for s in skill_dirs:
  text=read(R/f'skills/{s}/SKILL.md');fm=frontmatter(text)
  check(f'{s}: name matches dir',fm.get('name')==s)
@@ -52,10 +52,17 @@ for dfile in ['direction-axes','easings','camera','continuity','styles']:
  check(f'dictionary {dfile} valid json',isinstance(j,dict) and j)
 da=json.loads(read(R/'catalog/dictionaries/direction-axes.json') or '{}')
 check('direction axes >=6 with >=4 options each',len(da.get('axes',{}))>=6 and all(len(v.get('options',[]))>=4 for v in da.get('axes',{}).values()))
+# spatial engine (additive)
+sp = read(R/'runtime/spatial.mjs')
+check('spatial engine exists with core exports', sp.count('export') > 8 and all(x in sp for x in ('projectPoint','sortPainterly','slab','orbitKey','drawPlanar')))
+check('spatial dictionary present',(R/'catalog/dictionaries/spatial-3d.json').is_file())
+check('preview gate wired in render','preview_approved' in read(R/'tools/render.py'))
+check('quota guardian present',(R/'tools/quota.py').is_file() and 'QUOTA BLOCK' in read(R/'tools/render.py'))
+check('deliver policy in place',(R/'tools/deliver.py').is_file() and 'deliverables must live under' in read(R/'tools/deliver.py'))
 # runtime freeze + compat gate (authoritative check)
 r=subprocess.run([sys.executable,str(R/'tools/compat_check.py')],capture_output=True,text=True,timeout=60)
 check('compat_check passes (v1 superset, runtime frozen)',r.returncode==0)
-for t in ['direct','check_directions','journal','compat_check','render','validate_kit','new_project','check_project','install_from_release','package_core','doctor','bootstrap','storage','harvest_libraries']:
+for t in ['direct','check_directions','journal','compat_check','render','validate_kit','new_project','check_project','install_from_release','package_core','doctor','bootstrap','storage','harvest_libraries','preview','deliver','quota']:
  check(f'tool {t}.py exists',(R/f'tools/{t}.py').is_file())
 r2=subprocess.run([sys.executable,str(R/'tools/direct.py'),'--topic','smoke test','--json'],capture_output=True,text=True,timeout=30)
 smoke_ok=False
