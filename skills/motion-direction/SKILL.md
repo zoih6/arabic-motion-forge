@@ -23,6 +23,9 @@ One flat motion across a whole scene is a defect. Work per shot through the loop
 - Holds carry meaning; ≥6 frames settle before cuts unless cutting on motion.
 - Text entrance pattern for Arabic: shaped whole-word blocks revealed by moving mattes/clip bands, or per-word `stagger` on position+opacity — mask moves, glyph stays intact.
 
+## Richness minimums (enforced: check_project + motion_audit)
+≥4 independent layers per scene (full mode), unique per-layer start times, named easing per channel, one signature move repeated with escalation (style.json.escalation: opening-development-final strictly rising). Flat motion fails the audit regardless of code quality.
+
 ## Verification (per shot, before moving on)
 - `seek(t)` sanity at in/out/mid + determinism ping-pong (same t twice → identical digest).
 - Draft tier: `python3 tools/render.py --project <dir>/project.json --tier draft` for the shot window (`--chunk-seconds` small); inspect ≤8 contact panels at file level — check per-layer separation (elements out-of-phase), no popping, matte edges, camera depth ratios.

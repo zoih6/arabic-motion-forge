@@ -1,6 +1,6 @@
 {
   "name": "arabic-motion-forge",
-  "version": "2.2.0",
+  "version": "2.3.0",
   "status": "verified_release_ready",
   "language": "en (agent contracts) / ar (on-screen copy)",
   "default_runtime": "deterministic-canvas",
@@ -23,7 +23,7 @@
   "source_policy": "No project-specific scene reuse. Generic mathematical/runtime infrastructure is separate from newly authored composition code.",
   "native_after_effects_tested": false,
   "credentials_persisted": false,
-  "skills": 15,
+  "skills": 16,
   "catalog_entries": 104,
   "unique_motion_names": 103,
   "mechanism_contracts": 33,
@@ -60,5 +60,11 @@
     "high_mib": 50,
     "location": "<project>/deliverables/",
     "out_dir": "forbidden"
-  }
+  },
+  "creative_engine": "skills/ideate + catalog/dictionaries/creative-bank.json + tools/direct.py hooks",
+  "audio_engine": "tools/transcribe.py (faster-whisper/openai-whisper, aligned to approved copy) + tools/sync_check.py",
+  "visual_qa": "tools/motion_audit.py — objective anti-slideshow metrics (flat/layered/simultaneity/bursts)",
+  "fast_lane": "new_project.py --quick + tools/gate.py aggregation; safety laws in both modes",
+  "ae_bridge": "tools/export_ae.py -> adapters/after-effects/export_ae.jsx (bridge export, no parity claims)",
+  "typography": "catalog/dictionaries/typography.json + tools/fetch_font.py (OFL, sha-locked)"
 }

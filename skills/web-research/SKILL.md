@@ -1,22 +1,28 @@
 ---
 name: web-research
-description: Bounded web research agent role — gather topic facts, style techniques, Arabic typography findings and reference rules BEFORE design, so the film is informed by real knowledge instead of assumptions. Use when the topic is unfamiliar, the user names reference styles/videos, or fact-checking on-screen claims is required.
+description: Motion-design-specialized research agent — targeted digs into AE technique education, motion studios, 2026 trends, GitHub expression repos and Arabic type case studies, producing a mapped design-language brief, not generic browsing. Use for craft input, current trends, unfamiliar topics, or when output risks being template-flat.
 ---
 
-# Web research (bounded, evidence-shaped)
+# Web research (motion-craft focused — random browsing is a failure mode)
 
-Mission: build the knowledge the brief lacks — cheaply, with citations, in ≤8 sources, ~10 minutes, never as a procrastination loop.
+Mission: pull CREATIVE INTELLIGENCE into the project before design. Mandatory targets in priority order; skip none that match the project:
 
-## What to search (per project, in order)
-1. Topic facts that will APPEAR on screen: numbers, dates, names — one search per claim class, prefer primary/official sources; any figure going on screen gets `{value, source_url, retrieved}` in `research/facts.json`. Unverified numbers are cut or labeled illustrative — never "approximated".
-2. Craft techniques: "[subject] motion design technique", "[reference studio] process breakdown", "arabic kinetic typography [specific need]" — harvest 2–4 transferable RULES (sentences), not files. Log to `research/notes.md` with URL.
-3. Style/reference media the user linked: fetch the interview/article ABOUT it (not the raw video); record "steal/never" lines in the SAME shape as `catalog/dictionaries/styles.json`. If the user attached a reference video file: analyze structurally (shot lengths via ffprobe, motion cadence from sampled frames ≤16) — describe, don't copy.
-4. Fonts/assets if needed: license-checked sources only (OFL/SIL, clearly public-domain); record sha + license before use.
+## Target registry (queries are patterns, adapt them)
+1. **AE/motion technique education** — Video Copilot breakdowns, Ben Marriott / Portugal the Man / Mt. Mograph / ECAbrams / School of Motion writes: `after effects [technique] site:videocopilot.co.uk`, `kinetic typography [need] tutorial 2025 2026`, `ae expression [bounce|whip|wave|trim] explanation`. Extract the MECHANIC (math/behavior), map to kit primitive (`catalog/README.md`).
+2. **GitHub open craft** — search `topic:after-effects-expressions`, `topic:motion-design` repos, expression collections, easing/physics gists; read CODE for formulas worth porting into `runtime/` usage (record as `maps_to: spring/trimPath/...` rows).
+3. **Studios + current trends (production year)** — Buck/ManvsMachine/Ordinary Folk/Gimbal/Hello Monday behind-the-scenes & interviews; `motion design trends 2026 typography`, `editorial animation paper collage 2026`, Behance/Dribbble motion-branding boards — structure and behavior only, files are off-limits (originality gate).
+4. **Arabic-specific** — Arabic rebrand idents, museum/cultural-festival motion case studies, foundry specimen pages for pairing inspiration; W3C alreq as the technical backstop. Any font that survives goes through `tools/fetch_font.py` (OFL only).
+5. **Platform conventions** for the delivery surface (Reels/TikTok/YouTube/DOOH): native pacing, safe margins, muted-viewing conventions → feeds style.json camera/rhythm choices honestly.
 
-## Hard limits (they protect the session)
-- ≤8 sources total, ≤2 searches per sub-question; stop when answers repeat.
-- No bulk media download; thumbnails/screenshots only when a single still decides a design choice — save to research/, never into deliverables.
-- Every fact used on screen must trace to `facts.json`; the quality pass spot-checks two numbers.
-- Offline or blocked network: declare it in the spec's Constraints ("research unavailable; proceeding on kit knowledge") and continue — never stall the pipeline waiting on web.
+## Deliverable (full mode ≥6 rows, quick ≥3)
+`research/design-language.md` table:
+`| source(url) | technique observed | maps to kit primitive/recipe | steal-rule | never-line |`
+plus `research/facts.json` for anything appearing ON SCREEN: `{value, source_url, retrieved, confidence}` — unverified numbers are cut or labeled illustrative, never "approximated".
 
-Output: `research/notes.md` (3–8 bullets + URLs) + `facts.json` referenced by spec.md `## Content & copy`. These feed tools/direct.py's topic vocabulary and make rationales substantive (check_directions counts topic-token grounding — real facts help pass honestly, not by padding).
+## Limits (they protect the session)
+- ≤8 sources total; ≤2 follow-ups per thread; STOP when sources repeat each other — repeat findings = diminishing creativity, move to ideation.
+- No bulk media downloads; one still only when a frame decides a choice; interviews/articles over raw scraping.
+- Offline/blocked → write `design-language.md` header `mode: no-network` and proceed from kit dictionaries; research NEVER blocks the pipeline beyond one retry.
+- Every borrowed idea must end as a MECHANIC row; "we liked their vibe" rows are rejected by the quality pass.
+
+Feeds: `skills/ideate` (concepts + cliché blacklist check) and `tools/direct.py` (trend_questions field in output is your checklist).

@@ -13,6 +13,11 @@ python3 -c "import urllib.request;urllib.request.urlretrieve('https://raw.github
 
 Then `python3 ./motion-forge/tools/doctor.py`. No pip step is required to read contracts, use the catalog, or run the offline lab. Renderer installs happen only when a render is actually requested (`tools/bootstrap.py --install`). Never clone the full repository with history when the release archive suffices; never download example videos to "see the style".
 
+## 0.5 First-reply budget + fast lane
+
+First reply in any session: ≤6 lines — install/doctor verdict, one phase line, max 3 blocking questions. No feature tours, no contract restatement, no markdown walls; long knowledge lives in files.
+Fast lane: `new_project.py --quick` for ≤30 s or clearly simple asks → spec-lite sections, no preview gate, ONE aggregated `python3 tools/gate.py` before final. Safety laws (Arabic shaping, determinism, quota, provenance, no-raw-ASR-on-screen, motion_audit) apply in every mode.
+
 ## 1. Load order (progressive disclosure)
 
 1. This file. 2. `SKILL.md` (router). 3. `workflows/route.md`. 4. Exactly the skills your task needs (table in SKILL.md). 5. One `reference/` or `catalog/` file per open question.
@@ -20,7 +25,7 @@ Do not bulk-read `vendor/`, `examples/`, or research JSON. Grep for what you nee
 
 ## 1.5 Request reframe — hard gate (no literal obedience to chaos)
 
-A user request is INPUT, not a spec. Before touching tools/scene/asset code, transform the raw ask (even a single sentence) into `spec.md` per `skills/request-reframe`: fill every section, auto-correct contract violations with visible notes (letter-splitting Arabic → word-level shaped reveals; "real 3D" → spatial.mjs or documented 2.5D; size demands without duration → derive bitrate math; "exactly like video X" → extract transferable rules only), mark assumptions vetoable in one word, and get explicit confirmation. Executing an ambiguous or self-contradictory request directly is forbidden — resolve first, log in `## Refusals & corrections`. `tools/check_project.py` enforces the spec sections for kit_contract≥2.
+A user request is INPUT, not a spec. Before touching tools/scene/asset code, transform the raw ask (even a single sentence) into `spec.md` per `skills/request-reframe`: fill every section, auto-correct contract violations with visible notes (letter-splitting Arabic → word-level shaped reveals; "real 3D" → spatial.mjs or documented 2.5D; size demands without duration → derive bitrate math; "exactly like video X" → extract transferable rules only), mark assumptions vetoable in one word, and get explicit confirmation. Executing an ambiguous or self-contradictory request directly is forbidden — resolve first, log in `## Refusals & corrections`. `tools/check_project.py` enforces the spec sections for kit_contract≥2. **Preservation law: reframing may only ADD structure or CONVERT a demand into the compliant equivalent with a written note — deleting or silently dropping any user demand (a word, an image, a song, a must) is a critical failure.** `## User requirements` numbers every ask with status preserved/converted/corrected; converted items cite the rule forcing the change.
 
 ## 1.6 Web research — bounded knowledge intake
 
@@ -54,14 +59,16 @@ Design like a senior motion designer in a keyframe tool; the code is your timeli
 - Preserve user-approved copy exactly; never alter wording/niqquation to dodge a technical limitation — fix the technique. Measure real ascent/descent/widths; reserve diacritic space.
 - Mixed bidi text: isolate runs (`unicode-bidi: isolate` / explicit marks) for Latin digits inside RTL lines. Validate digits, lam-alef ligature, final-form connections at full size and at 25%.
 - Typewriter/Write-On only when stroke data or per-word reveal is truthful; label the technique you actually implemented.
+- **Typography is a designed system** (`catalog/dictionaries/typography.json`): display + body + numeral rule + size ladder ≥1.5x, one deliberate break max, recorded in `style.json.type_system`. Single-family default output is template behavior. `tools/fetch_font.py --family X --project <dir>` fetches OFL faces (sha+license recorded).
 
 ## 5. Determinism and rendering
 
 `window.seek(t)` (or equivalent) must be a pure function of time: no Math.random (use seeded `hash01/noise`), no timers, no cross-frame mutable state in the render path (caches keyed by layer id are permitted only as re-renderable memoization). Same t must reproduce same pixels in the same environment — prove it: request `tA, tB, tA` and compare digests (`tools/render.py` enforces nothing; QA must).
 
-- Encode in checkpoints (default 10 s), stream frames straight into FFmpeg; never materialize thousands of PNGs. Verify per part: exact frame count, constant fps fraction, dimensions, audio stream present, SHA; after merge verify total frames, PTS regularity (1/32 steps), full-decode pass.
+- Encode in checkpoints (default 10 s), stream frames straight into FFmpeg; never materialize thousands of PNGs. Verify per part: exact frame count, constant fps fraction, dimensions, audio stream present, SHA; after merge verify total frames, PTS regularity (1/32 steps), full-decode pass; then `tools/motion_audit.py` on any review render: no sustained stillness >3s, flat_ratio ≤55%, layered_ratio ≥45%, bursts ≥1.5/10s — the objective anti-slideshow gate. A valid file with flat choreography FAILS audit and gets re-choreographed, not re-encoded.
 - `32/1` == 32.0: compare rates as floats/fractions, not strings. A trailing AAC padding packet is not a content error; compare retained payload bytes and durations instead.
-- Cut audio to frame-quantized boundaries; keep the original files untouched and record splice maps.
+- Transcription is a TOOL, not a guess: `tools/transcribe.py` (windowed ASR + word timestamps + confidence; cached by audio sha; `--text` aligns to approved strings) — raw ASR text NEVER goes on screen. Word entrances must cite `audio-map.json` and pass `tools/sync_check.py` (±1.2 frames, stale maps refused) in both quick and full modes.
+Cut audio to frame-quantized boundaries; keep the original files untouched and record splice maps.
 - Reuse unchanged segments on re-edits: keep manifests per part; rebuild only affected parts (hash entry+config to detect staleness).
 
 ## 6. Audio
@@ -95,6 +102,10 @@ Publishing is per-project, user-authorized, with the destination recorded in `pr
 - `runtime/*.mjs` is frozen in 2.0.0 (byte-identical to 1.0.0) so existing projects render identically; new capabilities ship as separate modules. `tools/compat_check.py` enforces this and that all v1 paths/fields still exist and v1 skill directories remain.
 - All changes are additive or documentation-level. Breaking changes require a major bump and a migration note; never silently rename a v1 contract.
 - Versioning: kit.json/package.json/plugin manifests carry the same semver; CHANGELOG records user-visible behavior; validate_kit checks consistency.
+
+## 11.5 After Effects users — bridge export, not claims
+
+No AE exists in this environment and parity is never claimed. For Adobe users: `python3 tools/export_ae.py <p>/project.json` emits `<project>-ae-bridge.jsx` (template `adapters/after-effects/export_ae.jsx`) — comps, layer in/out, position/opacity/scale/rotation keyframes with eased interpolation approximating the analytic curves; footage/expressions/glyph sources relink inside AE. Label artifacts bridge export, never AE project.
 
 ## 12. Closing checklist (before telling the user "done")
 

@@ -2,7 +2,7 @@
 
 **An agent operating system for original Arabic motion design — layered choreography, Arabic-safe typography, deterministic rendering, crash-safe sessions.** Not a template pack: every project is authored from the brief; the kit guarantees the machinery, the quality contract and the evidence.
 
-v2.2.0: spec-reframe gate (chaotic one-line requests are professionally rewritten, never executed literally), bounded web-research agent, inspiration engine + 6 dictionaries, **true-3D runtime module**, mandatory ≤30 s approval preview before long renders, workspace quota guardian, capped delivery (light ≤25 MiB / hi ≤50 MiB) landing in the workspace — never an `out/` folder. `runtime/core|canvas` remain byte-frozen from v1 — old projects render identically (`tools/compat_check.py` proves it on every build).
+v2.3.0: creative ideation engine (hooks, wild cards, cliché blacklist), motion-focused web-research registry, true ASR tool with approved-copy alignment + sync verifier, objective motion audit (anti-slideshow), typography system dictionary + OFL font fetcher, AE bridge export, quick mode + one-command gate aggregator. v2.2.0: spec-reframe gate (chaotic one-line requests are professionally rewritten, never executed literally), bounded web-research agent, inspiration engine + 6 dictionaries, **true-3D runtime module**, mandatory ≤30 s approval preview before long renders, workspace quota guardian, capped delivery (light ≤25 MiB / hi ≤50 MiB) landing in the workspace — never an `out/` folder. `runtime/core|canvas` remain byte-frozen from v1 — old projects render identically (`tools/compat_check.py` proves it on every build).
 
 ## Install from a link (< 60 s, verified, no history, no media)
 
@@ -26,7 +26,7 @@ Any agent anywhere: fetch `AGENTS.md` + `SKILL.md` from this repo root and follo
 ## Layout
 
 ```
-AGENTS.md                canonical agent contract (English)      skills/            12 spec-compliant skills
+AGENTS.md                canonical agent contract (English)      skills/            16 spec-compliant skills
 SKILL.md                 router + load order + gates             runtime/           frozen math+canvas core (v1 API)
 install.sh               one-shot bootstrap                       catalog/           motions, mechanisms, dictionaries, locks
 tools/                   direct, check_directions, compat_check,  reference/         recipes per mechanism, AE equivalence,

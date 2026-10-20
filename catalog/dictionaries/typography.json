@@ -1,0 +1,29 @@
+{
+  "usage": "Type is the film's voice — no more default-single-family output. tools/fetch_font.py pulls OFL fonts from google/fonts at pin. Pairings below are STARTING points; check_project (full mode) requires style.json.type_system to name display+body roles, size ladder, and what is deliberately broken.",
+  "arabic_display": [
+    {"family": "Rakkas", "character": "loud theatrical tar-based; poster energy", "pair_with": "Tajawal light", "use": "one word heroes"},
+    {"family": "Lalezar", "character": "fat rounded street-poster", "pair_with": "Vazirmatn", "use": "youth/retail hooks"},
+    {"family": "Reem Kufi", "character": "geometric kufi, architectural", "pair_with": "IBM Plex Sans Arabic", "use": "heritage+data mixes"},
+    {"family": "Aref Ruqaa", "character": "calligraphic ruqaa ink", "pair_with": "Noto Sans Arabic", "use": "literary/emotional"},
+    {"family": "Amiri", "character": "naskh classical, heavy contrast", "pair_with": "Plex", "use": "quotes, poems"},
+    {"family": "Blaka", "character": "ultra-black stencil", "pair_with": "anything thin", "use": "shout frames only"},
+    {"family": "Noto Kufi Arabic", "character": "neutral modernist", "pair_with": "display above", "use": "safe body in bold contexts"}
+  ],
+  "latin_accents": [
+    {"family": "Archivo Black", "use": "numeric heroes with Arabic display"},
+    {"family": "Space Mono", "use": "data labels, timecodes"},
+    {"family": "Fraunces", "use": "editorial serif counterpoint"}
+  ],
+  "laws": [
+    "size ladder >= 1.5x between hierarchy levels; ONE deliberate break per film, noted in style.json.broken_rules",
+    "one display + one body + one mono/numeric max; a third family needs a written reason",
+    "weight contrast is the default emphasis tool (900 vs 300), not color or glow",
+    "Arabic display at >= 96px hero sizes; small print stays in a naskh-leaning body face for tashkeel legibility",
+    "never simulate weight by stroke (fake-bold breaks Arabic joins) — request the real Bold face",
+    "letter-spacing on Arabic >= 0.02em ONLY for display tracking; zero for body",
+    "mixed line: Latin runs isolated (bidi), digit set consistent (Arabic-Indic OR Western) declared in style.json.numeral_system",
+    "every entrance obeys arabic-type: shaped words, masks not letters"
+  ],
+  "anti_monotony": "A film where every line is same family+weight+size reads as template output even if motion is rich. motion_audit catches flat animation; THIS dictionary + review catch flat typography.",
+  "fetch": "python3 tools/fetch_font.py --family 'Reem Kufi' --project <dir> — downloads ttf+LICENSE, records sha256 into assets/fonts/manifest.json"
+}

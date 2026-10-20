@@ -24,5 +24,9 @@ This kit has been hung and bloated chats before; these rules are the fix, not su
 - No repeated identical tool calls; if a command fails twice, change approach, not the retry counter.
 - Progress pings to the user: phase name + one number ("scene 5/8 drafted"), not narration of every step.
 
+## Timebox contract (quick mode: a 30-second ad should land ≤20 min wall on a normal host)
+setup+doctor 2m - reframe+directions 3m - assets 4m - scene author 8m - preview 2m - final 6-10m - deliver 1m.
+Overrunning a box = change strategy (fewer scenes, reuse primitives, smaller windows), not grind. Chronic overrun: journal `issue` with the measurement and simplify the DESIGN, not the contract. The true failure is 60 minutes producing a 30-second slideshow: rich plan on paper, small render, audit, scale up.
+
 ## Diagnose before optimizing
 Suspected stall: (1) process alive? logs last lines? (2) disk free, snapshot size; (3) `storage.py`; (4) swap/OOM `dmesg | tail`. Fix the named cause; log it as journal `issue`.

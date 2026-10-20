@@ -1,6 +1,6 @@
 {
   "name": "arabic-motion-forge",
-  "version": "2.2.0",
+  "version": "2.3.0",
   "description": "Arabic-first layered motion production with spec-reframe and web-research agents, inspiration engine, 3D spatial runtime, preview approval gate, quota-aware capped delivery.",
   "author": {
     "name": "zoih6",

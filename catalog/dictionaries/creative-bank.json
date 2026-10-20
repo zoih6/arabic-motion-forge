@@ -1,0 +1,49 @@
+{
+  "usage": "Fuel for tools/direct.py + skills/ideate. Hooks and wild cards are PROMPTS to think from, not presets to copy. Blacklist is enforced by the ideate pass before concepts are shown.",
+  "hook_bank": [
+    {"id": "cold-open-sound", "idea": "Black frame, one diegetic sound 0.4s, then the visual answers it mid-motion."},
+    {"id": "mid-action-drop", "idea": "Open at 70% of the action, rewind 1s to explain — momentum first, context second."},
+    {"id": "object-macro", "idea": "Extreme macro on a texture (bean surface, thread fiber, concrete pore) that pulls back to reveal context."},
+    {"id": "wrong-number", "idea": "Open on a stat framed as false, let motion prove it true or expose the twist."},
+    {"id": "hand-cuts", "idea": "Physical hand/scissor/brush performs every transition as the film's grammar."},
+    {"id": "reverse-entropy", "idea": "Everything assembles backwards; the 'reveal' is order emerging from scatter."},
+    {"id": "single-line-war", "idea": "One Arabic sentence occupies frame alone; the drama is purely its internal timing per-word."},
+    {"id": "grid-collapse", "idea": "Tidy editorial grid progressively breaks as the argument gets bold."},
+    {"id": "duel-columns", "idea": "Two claims race in split RTL/LTR columns; the winner takes the full frame."},
+    {"id": "ticker-lie", "idea": "A ticker/badges/labels animate as UI lies people accept, then strip them off."},
+    {"id": "breath-first-frame", "idea": "Hold 1.5s on one perfect poster frame before anything moves — confidence as hook."},
+    {"id": "second-person-map", "idea": "'You are here' literal: camera is the viewer's route through the data-space."}
+  ],
+  "wild_cards": [
+    {"domain": "sports broadcast", "seed": "lower-third AR overlays riding real footage with ball-tracking energy"},
+    {"domain": "museum wall label", "seed": "tiny precise typography + enormous negative space as the flex"},
+    {"domain": "music video match-cut", "seed": "cuts on timbre change, not beat"},
+    {"domain": "UI micro-motion", "seed": "skeuomorphic feedback (bounce, tick, haptic-flash) at film scale"},
+    {"domain": "VJ set", "seed": "audio-reactive geometry with hard limiters — reactive, never wobbling"},
+    {"domain": "hand-painted sign", "seed": "imperfect ink weight as the anti-CAD signature"},
+    {"domain": "architect section drawing", "seed": "camera cuts the world in half to explain depth"},
+    {"domain": "retail packaging", "seed": "the product photo is the hero type; type is the label"}
+  ],
+  "cliche_blacklist": [
+    "fade-in headline on blurred bokeh background",
+    "particles + lens flare as 'cinematic' filler",
+    "zoom-pulse on every beat",
+    "triangular split-screen 'comparison' default",
+    "glitch effect on non-digital subjects",
+    "underline sweep + fade as the only text animation",
+    "stock 'corporate' isometric buildings/figures",
+    "letter-by-letter Arabic pop (also contract-illegal)",
+    "3D gold text for anything 'premium'",
+    "infinite white-background product rotation with soft shadow",
+    "same easing on entrance and exit for every layer",
+    "stock whoosh sound on every single cut"
+  ],
+  "trend_questions_2026": [
+    "editorial-collage revival: what did motion designers DO with paper/cut texture this year that wasn't done in 2023?",
+    "AI-assisted frames as background layers — what remains the human craft signal?",
+    "kinetic Arabic: which studios are setting the word-reveal bar right now, by what technique?",
+    "vertical-first cinema crops: what safe-margin grammar won?",
+    "audio-reactive restrained (one channel bound), where is it overused?"
+  ],
+  "quality_bar": "A concept is bold when: it survives the blacklist, has a nameable signature move, reads muted at phone size, and the first frame is designed — not generated."
+}

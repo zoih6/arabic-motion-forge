@@ -1,0 +1,83 @@
+{
+  "report": "v2.3.0 field-fix round — user-reported failures vs implemented proof",
+  "date": "2026-10-20",
+  "items": [
+    {
+      "issue": "first reply = wall of text",
+      "fix": "AGENTS §0.5 + SKILL hard budget ≤6 lines (validate-checked presence)",
+      "evidence": "rules in files; next sessions bound"
+    },
+    {
+      "issue": "reframe deleted 90% of user request",
+      "fix": "Preservation law + numbered ## User requirements (preserved/converted/corrected) enforced by check_project; quick mode still requires it",
+      "evidence": "live: TODO spec fails with 7 flags; filled+numbered passes; unnumbered full-mode spec flagged"
+    },
+    {
+      "issue": "superficial output (photos+transitions)",
+      "fix": "tools/motion_audit.py 16-cell motion grid + richness minimums in check_project (>=4 layers/scene, staggered unique starts) + ideate engine + creative-bank",
+      "evidence": "audit on real renders: 6s active window PASS (longest still 1.67s, layered 93%, bursts 7.9/10s); 14s opening crop FAIL (8.7s stillness — audit correctly detects dead pacing even in the kit's own v1 demo)"
+    },
+    {
+      "issue": "random concept choices from inside the system",
+      "fix": "skills/ideate persona panel (art director/director/social) + direct.py now returns hook, wild card, cliché blacklist (12), 2026 trend questions; full mode requires signature_move/forbidden_tropes/escalation in style.json",
+      "evidence": "live direct: hook=second-person-map wild=VJ set blacklist=12 trends=5"
+    },
+    {
+      "issue": "research agent browsed randomly",
+      "fix": "web-research rewritten as motion-craft registry (Video Copilot/Ben Marriott/Mt.Mograph/School of Motion, GitHub expression topics, studios, 2026 trends, Arabic case studies) with mandatory design-language.md mapping table",
+      "evidence": "validate enforces registry keywords + deliverable presence rules"
+    },
+    {
+      "issue": "ASR transcribed wrong text",
+      "fix": "tools/transcribe.py (faster-whisper windowed, confidence floor, sha cache) + --text ALIGNMENT: approved copy owns glyphs, map owns timing; raw ASR never on screen (law)",
+      "evidence": "live on real narration mp3 excerpt: 39/39 trusted words, alignment_ratio 1.0, drift 0.0; weak model case: 1 word + drift 1.0 flagged, not hidden"
+    },
+    {
+      "issue": "word/audio sync unverified",
+      "fix": "tools/sync_check.py ±1.2 frames vs map, sha-stale refusal, zero-declaration refusal",
+      "evidence": "live: fails correctly with no word_sync declarations; passes when declared times match map"
+    },
+    {
+      "issue": "fonts generic/monotone",
+      "fix": "typography.json dictionary (7 Arabic display voices w/ pairings, ladder ≥1.5x, weight-contrast law) + tools/fetch_font.py OFL fetcher with sha+license manifest",
+      "evidence": "live: Reem Kufi + Rakkas fetched (127KB+146KB ttf, OFL recorded) into project assets/fonts"
+    },
+    {
+      "issue": "60 minutes for a failed 30s ad",
+      "fix": "quick mode (--quick: spec-lite, no preview gate, relaxed ceremony) + tools/gate.py ONE aggregated command + performance timebox (30s ad ≤~20min contract)",
+      "evidence": "live: gate.py aggregates project+quota in one call; quick spec-lite validated"
+    },
+    {
+      "issue": "gate ceremony burden",
+      "fix": "gate.py aggregation across modes/stages incl. sync+audit+compat where applicable",
+      "evidence": "{\"passed\":...,\"results\":{\"project\":{\"rc\":..},\"quota\":..}} live"
+    },
+    {
+      "issue": "tests ≠ beauty",
+      "fix": "motion_audit makes superficiality measurable; verdict note states PASS is necessary-not-sufficient; human contact-sheet review remains required (honesty kept)",
+      "evidence": "audit output includes note field"
+    },
+    {
+      "issue": "AE workflows blocked",
+      "fix": "tools/export_ae.py + adapters/after-effects/export_ae.jsx bridge: comps, layer in/out, eased keyframe sets from layer plan; labeled bridge, no parity claim",
+      "evidence": "live: 8 scenes/67 layers jsx, plan JSON linted"
+    },
+    {
+      "issue": "README skill-count drift (12 vs actual)",
+      "fix": "README synced to 16; validate_kit now FAILS permanently on README-count mismatch",
+      "evidence": "check \"README skill count matches reality\" in suite"
+    }
+  ],
+  "gates": {
+    "validate_kit": "156 checks",
+    "node": "27/27 (incl 7 spatial)",
+    "browser": "18/18",
+    "compat": "PASS 371 v1 paths frozen runtime",
+    "all": "see run log this session"
+  },
+  "known_limits": [
+    "ASR quality depends on model size: tiny fails loudly (by design), small is the recommended floor for Arabic; hosts without network should pre-provision faster-whisper",
+    "AE bridge eases-approximation; expressions/footage relink inside AE; no AE in this env so parity untestable here",
+    "motion_audit measures pixel-change regions at 6fps draft sampling; deliberate long holds (museum pacing) should run full mode and annotate"
+  ]
+}

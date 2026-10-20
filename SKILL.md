@@ -9,11 +9,17 @@ compatibility: Linux/macOS; Python 3.11+ and Node 18+ for tools; Chromium+FFmpeg
 
 You have been pointed here by a link; that means: become operational fast, read only what the task needs, and produce original motion design under the kit contract.
 
+## First response: ≤6 lines total (verdict + phase + ≤3 questions). No essays — contract, not style tip.
+
+## Quick vs full
+`new_project.py --quick` (≤30 s / simple): spec-lite, no preview gate, one aggregated `tools/gate.py` before final. `full` for everything else: complete chain. Safety laws run in BOTH modes; quick cuts ceremony, never quality.
+
 ## First response on a fresh session (target < 60 s)
 
 1. Bootstrap the kit (see `AGENTS.md` §0). Skip if already present.
 2. `python3 <kit>/tools/doctor.py` — one JSON summary; do not re-read other files to double-check it.
 3. If a project exists at the stated path: read `journal.jsonl` tail + `project.json`, resume from the recorded next step. Do not re-ask answered questions; do not re-run completed renders.
+3b. Gates in ONE call: `python3 tools/gate.py <dir>/project.json [--stage final]`.
 4. New project: `python3 tools/new_project.py ...`, then collect only genuinely missing brief facts in one short message (max 3–4 questions).
 
 ## Route table — load exactly what matches
@@ -24,6 +30,9 @@ You have been pointed here by a link; that means: become operational fast, read 
 | Disk/snapshot pressure, slow chats | `skills/performance/SKILL.md` + `tools/quota.py` |
 |---|---|
 | vague brief, missing constraints | `skills/intake/SKILL.md` |
+| generic/weak concept, make it bold | `skills/ideate/SKILL.md` (creative bank + persona panel BEFORE directions) |
+| voiceover/song supplied | `tools/transcribe.py` then `tools/sync_check.py` (mandatory both modes) |
+| user works in After Effects | `tools/export_ae.py` bridge after final render |
 | style identity, "make it creative", anti-template gate | `skills/creative-direction/SKILL.md` + run `tools/direct.py` |
 | layer/timing/camera design | `skills/motion-direction/SKILL.md`, `catalog/choreography-recipes.md` |
 | any Arabic on-screen text | `skills/arabic-type/SKILL.md` (mandatory before text animation) |

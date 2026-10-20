@@ -10,6 +10,9 @@ Three passes MAX per version; each pass: measure → top-3 fixes → journal. En
 ## Pass 1 — stills (cheap, catches 40%)
 Sample `seek()` frames: first frame, t=1.0s hook, each shot's in/mid/out, one frame at every transition midpoint. Inspect as ≤8-panel contact sheets (files under `research/qa/`, ≤480px panels). Checklist: Arabic shaping intact (final forms, lam-alef), diacritic clipping, text safe margins, contrast at 25% scale, unapproved text absent (render enforces copy.txt), element overlap accidents.
 
+## Pass 2b — objective superficiality audit (both modes)
+`python3 tools/motion_audit.py <draft.mp4>`: FAILS when longest_flat_run>3s (dead air), flat_ratio>55%, layered_ratio<45% (one global motion), simultaneity>55% (zoom-pulse film), <1.5 motion events/10s (no choreographed entrances). A slideshow of photos+transitions cannot pass — the user's complaint made mechanical. Fix = per-element keyframed behavior (motion-direction), re-audit, then proceed.
+
 ## Pass 2 — motion (draft tier)
 `tools/render.py --tier draft` over windows around entrances/exits (2 s each, not the whole film at first). Review: per-layer independence visible? stagger readable, not mushy? camera depth ratio consistent (`camera.json`)? matte edges crisp (no AA crawl)? hold before cut ≥6f unless cutting on motion; continuity dictionary ids one by one (`continuity.json`).
 

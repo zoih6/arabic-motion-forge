@@ -35,6 +35,7 @@ def main() -> int:
     args = ap.parse_args()
 
     spec = json.loads(AXES_PATH.read_text())
+    bank = json.loads((KIT / 'catalog/dictionaries/creative-bank.json').read_text())
     axes = spec['axes']
     seed = hashlib.sha256(args.topic.encode()).hexdigest()[:12]
     gen = rng(seed)
@@ -44,11 +45,14 @@ def main() -> int:
         choice = pick_options(gen, axes, i, used)
         used.append(choice)
         pal = palettes[next(gen) % len(palettes)]
+        hook = bank['hook_bank'][next(gen) % len(bank['hook_bank'])]
+        wild = bank['wild_cards'][next(gen) % len(bank['wild_cards'])]
         label = f"{choice['story_device']} / {choice['visual_metaphor']}"
         directions.append({
             'id': f'D{i+1}',
             'axes': choice,
             'palette': pal,
+            'hook': hook, 'wild_card': wild,
             'first_frame_prompt': (
                 f"{choice['visual_metaphor']} stage, {choice['material_language']} surface, "
                 f"{choice['typography_architecture']} headline treatment, camera: {choice['camera_grammar']}, "
@@ -66,6 +70,8 @@ def main() -> int:
         return sum(1 for k in axes if a['axes'][k] != b['axes'][k])
     pairs = {f"{x['id']}{y['id']}": ham(x, y) for i, x in enumerate(directions) for y in directions[i+1:]}
     out = {'topic': args.topic, 'audience': args.audience, 'seed': seed,
+           'cliche_blacklist': bank['cliche_blacklist'], 'trend_questions': bank['trend_questions_2026'],
+           'quality_bar': bank['quality_bar'],
            'distinctness': pairs, 'min_required': max(3, len(axes)//2),
            'directions': directions,
            'next': 'Fill every TODO field with real rationale, present the three to the user, then run tools/check_directions.py.'}

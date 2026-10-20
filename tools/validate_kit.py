@@ -30,8 +30,8 @@ check('root SKILL.md has frontmatter',read(R/'SKILL.md').startswith('---'))
 check('SKILL.md body under 500 lines',len(read(R/'SKILL.md').splitlines())<530)
 # skills: spec-compliant, English, routed
 skill_dirs=sorted(d.name for d in (R/'skills').glob('*') if (d/'SKILL.md').is_file())
-expect=['arabic-type','asset-craft','audio-sync','creative-direction','delivery','intake','motion-direction','originality','performance','preview','quality','recovery','request-reframe','start','web-research']
-check('fifteen discoverable skills',skill_dirs==expect)
+expect=['arabic-type','asset-craft','audio-sync','creative-direction','delivery','ideate','intake','motion-direction','originality','performance','preview','quality','recovery','request-reframe','start','web-research']
+check('sixteen discoverable skills',skill_dirs==expect)
 for s in skill_dirs:
  text=read(R/f'skills/{s}/SKILL.md');fm=frontmatter(text)
  check(f'{s}: name matches dir',fm.get('name')==s)
@@ -47,7 +47,7 @@ check('catalog has 100+ motions',len(cat.get('entries',[]))>=100)
 check('catalog mechanisms dir',len(list((R/'reference/recipes').glob('*.md')))>=30)
 lock=json.loads(read(R/'catalog/libraries.lock.json') or '[]')
 check('library lock >=20 pinned repos',len(lock)>=20 and all(x.get('commit') for x in lock))
-for dfile in ['direction-axes','easings','camera','continuity','styles']:
+for dfile in ['direction-axes','easings','camera','continuity','styles','typography','creative-bank','spatial-3d']:
  j=json.loads(read(R/f'catalog/dictionaries/{dfile}.json') or 'null')
  check(f'dictionary {dfile} valid json',isinstance(j,dict) and j)
 da=json.loads(read(R/'catalog/dictionaries/direction-axes.json') or '{}')
@@ -62,7 +62,7 @@ check('deliver policy in place',(R/'tools/deliver.py').is_file() and 'deliverabl
 # runtime freeze + compat gate (authoritative check)
 r=subprocess.run([sys.executable,str(R/'tools/compat_check.py')],capture_output=True,text=True,timeout=60)
 check('compat_check passes (v1 superset, runtime frozen)',r.returncode==0)
-for t in ['direct','check_directions','journal','compat_check','render','validate_kit','new_project','check_project','install_from_release','package_core','doctor','bootstrap','storage','harvest_libraries','preview','deliver','quota']:
+for t in ['direct','check_directions','journal','compat_check','render','validate_kit','new_project','check_project','install_from_release','package_core','doctor','bootstrap','storage','harvest_libraries','preview','deliver','quota','gate','transcribe','sync_check','motion_audit','fetch_font','export_ae']:
  check(f'tool {t}.py exists',(R/f'tools/{t}.py').is_file())
 r2=subprocess.run([sys.executable,str(R/'tools/direct.py'),'--topic','smoke test','--json'],capture_output=True,text=True,timeout=30)
 smoke_ok=False
@@ -79,6 +79,20 @@ check('install.sh routes through verified installer','install_from_release' in i
 secret_pat=re.compile(r'(ghp_[A-Za-z0-9]{20,}|github_pat_[A-Za-z0-9_]{20,})')
 leak=[str(p.relative_to(R)) for p in R.rglob('*') if p.is_file() and p.suffix in {'.md','.json','.py','.mjs','.sh','.html','.csv','.txt','.yaml','.yml'} and secret_pat.search(p.read_bytes()[:200000].decode('utf-8','ignore'))]
 check('no GitHub tokens in any tracked text file',not leak)
+# v2.3 surface
+check('gate aggregator exists',(R/'tools/gate.py').is_file() and 'tools/gate.py' in read(R/'AGENTS.md'))
+check('quick mode wired', '--quick' in read(R/'tools/new_project.py') and 'mode' in read(R/'tools/check_project.py'))
+check('preservation law in AGENTS+reframe','Preservation law' in read(R/'AGENTS.md') and 'PRESERVE EVERYTHING' in read(R/'skills/request-reframe/SKILL.md'))
+check('motion_audit thresholds present',all(x in read(R/'tools/motion_audit.py') for x in ('flat_ratio','layered_ratio','simultaneity','bursts')))
+check('user requirements section in spec template','## User requirements' in read(R/'tools/new_project.py') and '## User requirements' in read(R/'tools/check_project.py'))
+check('typography law in arabic-type skill','typography.json' in read(R/'skills/arabic-type/SKILL.md'))
+check('research registry motion-focused','videocopilot' in read(R/'skills/web-research/SKILL.md').lower() and 'design-language.md' in read(R/'skills/web-research/SKILL.md'))
+check('first-reply budget in AGENTS+SKILL','≤6 lines' in read(R/'AGENTS.md') and '≤6 lines' in read(R/'SKILL.md'))
+check('AE bridge files present',(R/'adapters/after-effects/export_ae.jsx').is_file() and 'AMF_AE_PLAN' in read(R/'adapters/after-effects/export_ae.jsx'))
+# README/actual skill-count sync (drift was user-flagged)
+rm = read(R/'README.md')
+m = re.search(r'(\d+) spec-compliant skills', rm)
+check('README skill count matches reality', bool(m) and int(m.group(1)) == len(skill_dirs))
 # links inside docs resolve (relative, file-level)
 broken=[]
 for doc in [R/'README.md',R/'AGENTS.md',R/'SKILL.md']+[R/f'skills/{s}/SKILL.md' for s in skill_dirs]:
