@@ -14,5 +14,12 @@
     }
   },
   "v1_release": "v1.0.0",
-  "v20_release": "v2.0.0"
+  "v20_release": "v2.0.0",
+  "release_2_3_0": {
+    "tag": "v2.3.0",
+    "core_sha256": "2ffbe4a50830a151f1d158f5a81e17eed9f4639c6082141291ccec63c9db8e7d",
+    "anonymous_digest_match": true,
+    "main": "101487436b3b712bf0bedb0c1dfa63700c72f73a",
+    "v1_intact": "v1.0.0"
+  }
 }
