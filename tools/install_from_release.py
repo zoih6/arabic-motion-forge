@@ -18,7 +18,7 @@ else:
  if not core:raise SystemExit('No core archive asset found on this release.')
  name=core[-1]  # highest-sorted version asset
  if 'SHA256SUMS.txt' in assets:
-  sums=get(assets['SHA256SUMS.txt']['browser_download_url']).decode();expected=next(line.split()[0] for line in sums.splitlines() if line.split()[-1]==name)
+  sums=get(assets['SHA256SUMS.txt']['browser_download_url']).decode();expected=next(l.split()[0] for l in sums.splitlines() if len(l.split())>=2 and l.split()[1]==name)
  else:
   expected=assets[name].get('digest') or ''
   if not expected:raise SystemExit('Release carries no verifiable checksum; refuse blind install. Pass --sha256 if you have one.')
