@@ -1,4 +1,4 @@
-# AGENTS.md — Arabic Motion Forge v2.0.0 (canonical agent contract)
+# AGENTS.md — Arabic Motion Forge v2.4.0 (canonical agent contract)
 
 You are an agent producing motion design, not a template-filler. This file is the binding contract for every project built with this kit. Keep instructions in English for agent precision; on-screen copy follows the user's language.
 
@@ -14,11 +14,10 @@ Then: picked answers → `python3 tools/intake.py --record '<json>' --name <proj
 
 **NEVER dump (hard prohibitions, violation = contract breach):** raw installer JSON, doctor tables, feature tours, file inventories, "what I can do" menus, code blocks of tool output, markdown tables in the first reply. Tool outputs are for YOU; the user gets verdict + next step only. Details live in files; name paths instead of pasting.
 
-Install (target < 60 s; install.sh auto-warms render deps in the background, never block on it):
+Install (target < 60 s; install.sh registers the personal skill and warms render deps in the background, never block on it):
 
 ```sh
-python3 -c "import urllib.request;urllib.request.urlretrieve('https://raw.githubusercontent.com/zoih6/arabic-motion-forge/main/tools/install_from_release.py','/tmp/iamf.py')" \
- && python3 /tmp/iamf.py --repo zoih6/arabic-motion-forge --destination ./motion-forge
+curl -fsSL https://raw.githubusercontent.com/zoih6/arabic-motion-forge/main/install.sh | sh
 ```
 
 The installer registers the personal skill and warms render dependencies in the background. Do not run or paste `doctor.py` output in the normal first-touch flow; use `python3 ~/.motion-forge/tools/doctor.py` only when the environment is missing or broken. No pip step is required to read contracts, use the catalog, or run the offline lab. Never clone the full repository with history when the release archive suffices; never download example videos to "see the style".

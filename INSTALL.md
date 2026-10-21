@@ -6,11 +6,11 @@ Kit: `~/.motion-forge` (NOT your workspace). Personal skill: `~/.claude/skills/a
 
 **Fastest (v2):** `curl -fsSL https://raw.githubusercontent.com/zoih6/arabic-motion-forge/main/install.sh | sh` → verified latest core zip (<60 s, no history/media), personal skill registration, and background renderer warmup. Then say `ثبت المهارة` or send a direct brief. Run `python3 ~/.motion-forge/tools/doctor.py` only for troubleshooting. Pin: `sh install.sh ./mf v1.0.0`. Troubleshooting: `reference/install-troubleshooting.md`.
 
-## المسار الموصى به لأي وكيل
+## المسار اليدوي للمطورين أو تشخيص بيئة منفصلة
 
 1. اقرأ AGENTS.md وSKILL.md.
 2. نزّل الإصدار core فقط؛ لا يحتوي أفلامًا أو كود composition العرض.
-3. افتح المساحة الجديدة مع هذه الملفات، ثم افحص البيئة.
+3. افتح المساحة الجديدة مع هذه الملفات، ثم افحص البيئة. هذا المسار لا يلزم مستخدم التثبيت skill-native أعلاه.
 
 ```bash
 python tools/install_from_release.py --destination ./motion-forge-installed
@@ -37,7 +37,7 @@ python tests/browser_checks.py
 /plugin install arabic-motion-forge@arabic-motion-forge
 ```
 
-ملفا manifest وmarketplace داخل `.claude-plugin/`، والمهارات داخل `skills/`. بعد التفعيل المجرد يرد `start` بتحية عربية من سطرين ولا يشغل أدوات. عند وجود brief جديد يعرض أسئلة onboarding في المحادثة، ثم يحفظ الإجابات عبر `tools/onboarding.py` في `brief.json` و`journal.jsonl`. لا تفترض أن root CLAUDE.md يُحمّل كـplugin context؛ عقد التفعيل موجود أيضاً داخل `skills/start/SKILL.md`. تثبيت plugin من Git يحمل المصدر الصغير، بما فيه المثال النصي، لكنه لا يحمل الفيديو. لتجنب كود المثال أيضًا استعمل core archive.
+ملفا manifest وmarketplace داخل `.claude-plugin/`، والمهارات داخل `skills/`. عند أول تفعيل يعرض `start` تحية وخمسة أسئلة بخيارات عبر `tools/intake.py --emit`، ثم يحفظ الإجابات عبر `tools/intake.py --record` في `intake.json` و`brief.json` و`journal.jsonl`. لا تفترض أن root CLAUDE.md يُحمّل كـplugin context؛ عقد التفعيل موجود أيضاً داخل `skills/start/SKILL.md`. تثبيت plugin من Git يحمل المصدر الصغير، بما فيه المثال النصي، لكنه لا يحمل الفيديو. لتجنب كود المثال أيضًا استعمل core archive.
 
 ## Codex أو standalone Claude skill
 
