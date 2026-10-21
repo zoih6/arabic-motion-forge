@@ -1,7 +1,9 @@
 # Production route (one page)
 
+**Mandatory spine:** every video request first follows `workflows/vendor-bridge.md` → `vendor/ai-film-studio/workflows/intent-router.md` → the smallest vendor shortcut/engine. Only the approved handoff enters the Arabic Motion Forge route below. Vendor plans the production; this kit implements and verifies it.
+
 ```
-RAW REQUEST ──► request-reframe (spec.md, corrections logged) ──► web-research (bounded facts) ──► intake ──► direct.py (3 directions) ──► user picks ──► check_directions ──► style lock
+RAW REQUEST ──► vendor bridge + intent-router ──► production-brief/sheet + refs + storyboard ──► request-reframe (spec.md) ──► web-research (bounded facts) ──► intake ──► direct.py (3 directions) ──► user picks ──► check_directions ──► style lock
    │                                                              │
    └ brief.json, copy.txt approved                          layer plan per shot
                                                                   │
@@ -19,3 +21,5 @@ RAW REQUEST ──► request-reframe (spec.md, corrections logged) ──► we
 ```
 
 Rules that bind every arrow: AGENTS.md §2 (state contract), §5 (determinism), §8 (bounded QA), §9 (hygiene), §12 (closing checklist). Recovery at any arrow: `skills/recovery` — the journal tail tells you where you are.
+
+The bridge handoff is a hard prerequisite for new projects: run `python3 tools/vendor_bridge.py init --project <dir>/project.json --route <vendor-route>`, author the required vendor artifacts, mark the vendor and local handoffs approved/ready, then run `python3 tools/vendor_bridge.py check --project <dir>/project.json` before local gates.

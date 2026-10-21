@@ -16,6 +16,10 @@ curl -fsSL https://raw.githubusercontent.com/zoih6/arabic-motion-forge/main/inst
 
 Any agent anywhere: fetch `AGENTS.md` + `SKILL.md` from this repo root and follow §0. On first touch, `tools/intake.py --emit` supplies the greeting and five option questions; `--record` saves answers and starts the project. A direct production brief uses `--defaults` and starts without redundant questions. Pinned older version: `--tag v1.0.0` on `tools/install_from_release.py`. Renderer deps (Chromium/FFmpeg) only when you actually render: `tools/bootstrap.py --install`.
 
+## Unified production spine
+
+Every video request passes through [`workflows/vendor-bridge.md`](workflows/vendor-bridge.md): `vendor/ai-film-studio` owns intent, narrative, production sheet, references, storyboard and audio plan; Arabic Motion Forge owns Arabic-safe motion implementation, deterministic rendering, QA and delivery. A new project receives a `vendor-bridge.json` handoff and cannot pass the local project gate until the vendor plan is approved and mapped into the local artifacts.
+
 ## What a film gets from this kit
 
 - **Layered motion, not flat slides** — per AGENTS.md §3: element decomposition, three-stage timing, mattes/trim reveals, multi-plane camera with depth-projection rules, motion-blur policy; every mechanism has a tested contract in `catalog/` (104 entries / 33 mechanisms) and dictionaries (`catalog/dictionaries/`: easings, camera, continuity, styles, direction axes).

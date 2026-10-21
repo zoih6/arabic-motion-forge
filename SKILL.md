@@ -32,9 +32,14 @@ You have been pointed here by a link; that means: become operational fast, read 
 3b. Gates in ONE call: `python3 tools/gate.py <dir>/project.json [--stage final]`.
 4. New project: use `tools/intake.py --record` after the five answers; it creates the project and preserves the answers before production begins.
 
+## Unified video route — vendor first, local execution second
+
+For **every** video/animation/motion request, read `workflows/vendor-bridge.md` and route through `vendor/ai-film-studio/workflows/intent-router.md` before `direct.py`, scene code, prompts, or rendering. The vendor route owns intent, story, production sheet, references, storyboard, and audio plan; Arabic Motion Forge owns Arabic-safe implementation, deterministic rendering, QA, and delivery. A new project cannot pass `check_project.py` until `vendor-bridge.json` and its mapped handoff artifacts are approved.
+
 ## Route table — load exactly what matches
 
-| Raw/messy/one-line request — ALWAYS before anything else | `skills/request-reframe/SKILL.md` + fill `spec.md` (hard gate) |
+| Any video/animation/motion request — ALWAYS | `workflows/vendor-bridge.md` → vendor `intent-router.md` → smallest matching vendor route, then local execution |
+| Raw/messy/one-line request — ALWAYS before implementation | `skills/request-reframe/SKILL.md` + fill `spec.md` (hard gate) |
 | Unknown topic, on-screen facts, style references | `skills/web-research/SKILL.md` (≤8 sources, recorded) |
 | Project >30 s, before final render | `skills/preview/SKILL.md` + `tools/preview.py` (approval unlocks render gate) |
 | Disk/snapshot pressure, slow chats | `skills/performance/SKILL.md` + `tools/quota.py` |
@@ -52,7 +57,7 @@ You have been pointed here by a link; that means: become operational fast, read 
 | crash, resume, "continue where we stopped" | `skills/recovery/SKILL.md` |
 | QA, review loops, approval honesty | `skills/quality/SKILL.md` |
 | publish, backup, storage budget | `skills/delivery/SKILL.md` |
-| full documentary/film pipeline beyond this kit | `vendor/ai-film-studio/SKILL.md` (routing starts at its `workflows/intent-router.md`) |
+| full documentary/film pipeline beyond this kit | vendor `ai-film-studio` engine selected by the bridge |
 
 Mechanism lookup: `catalog/README.md` → `catalog/motions.json` → `reference/recipes/<mechanism>.md`. Style families and their honest boundaries: `catalog/dictionaries/styles.json`. Motion vocabulary for directions: `catalog/dictionaries/direction-axes.json`.
 

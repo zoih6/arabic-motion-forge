@@ -32,6 +32,16 @@ if not errors:
  if d.get('originality_file'):
   o=json.loads((r/d['originality_file']).read_text())
   if not o.get('declared_new_composition') or not o.get('differences_from_references'):errors.append('Originality review incomplete')
+ if d.get('vendor_bridge_required'):
+  bpath=r/d.get('vendor_bridge_file','vendor-bridge.json')
+  if not bpath.exists(): errors.append('Vendor bridge handoff missing')
+  else:
+   bridge=json.loads(bpath.read_text())
+   if bridge.get('vendor',{}).get('status') not in {'approved','complete'}: errors.append('Vendor bridge is not approved')
+   if bridge.get('local',{}).get('status') not in {'ready','in_progress','complete'}: errors.append('Vendor bridge local handoff is not ready')
+   for artifact in bridge.get('required_artifacts',[]):
+    af=r/artifact
+    if not af.exists() or not af.read_text().strip(): errors.append('Vendor bridge artifact missing/empty: '+artifact)
  if not (r/d['entry']).exists():errors.append('Render entry missing')
  if d.get('kit_contract',0)>=2 and d.get('mode','full')=='full':
   if (r/'spec.md').exists():
