@@ -37,7 +37,7 @@ python tests/browser_checks.py
 /plugin install arabic-motion-forge@arabic-motion-forge
 ```
 
-ملفا manifest وmarketplace داخل `.claude-plugin/`، والمهارات التسع في `skills/` بجانبهما. لا تفترض أن root CLAUDE.md يُحمّل كـplugin context؛ مهارة start تقرأ العقد صراحة. تثبيت plugin من Git يحمل المصدر الصغير، بما فيه المثال النصي، لكنه لا يحمل الفيديو. لتجنب كود المثال أيضًا استعمل core archive.
+ملفا manifest وmarketplace داخل `.claude-plugin/`، والمهارات داخل `skills/`. بعد التفعيل المجرد يرد `start` بتحية عربية من سطرين ولا يشغل أدوات. عند وجود brief جديد يعرض أسئلة onboarding في المحادثة، ثم يحفظ الإجابات عبر `tools/onboarding.py` في `brief.json` و`journal.jsonl`. لا تفترض أن root CLAUDE.md يُحمّل كـplugin context؛ عقد التفعيل موجود أيضاً داخل `skills/start/SKILL.md`. تثبيت plugin من Git يحمل المصدر الصغير، بما فيه المثال النصي، لكنه لا يحمل الفيديو. لتجنب كود المثال أيضًا استعمل core archive.
 
 ## Codex أو standalone Claude skill
 

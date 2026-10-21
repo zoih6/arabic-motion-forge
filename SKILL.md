@@ -1,11 +1,24 @@
 ---
 name: arabic-motion-forge
-description: Produce original Arabic or multilingual motion-graphics videos and films with layered After-Effects-style choreography, Arabic-safe typography, deterministic Canvas/FFmpeg rendering, audio-accurate synchronization, provenance-recorded assets, and verified GitHub checkpointing. Use for any motion/video/kinetic-typography request. Do not use for unrelated coding, and never reuse this kit's example compositions or any prior project's scenes as templates.
+description: Use when creating Arabic or multilingual motion-graphics videos, kinetic typography, reels, ads, explainers, or short films that need Arabic-safe text, layered choreography, deterministic rendering, or verified delivery.
 license: MIT (original components only; see THIRD_PARTY.md)
 compatibility: Linux/macOS; Python 3.11+ and Node 18+ for tools; Chromium+FFmpeg needed only for rendering (tools/bootstrap.py); no Adobe products required; network used only for explicitly authorized fetch/publish.
 ---
 
 # Arabic Motion Forge — router
+
+## Activation contract — highest priority
+
+Classify the user's first message before loading tools or production references:
+
+- **Activation only** (`install`, `ثبت`, `فعّل`, `شغّل`, `ابدأ المهارة`, with no brief): do not run tools, inspect files, explain the architecture, or list features. Reply with exactly:
+  `مرحباً بك في استديو عربي موشن.`
+  `وش تحب نصمم اليوم؟`
+- **New brief**: greet in one short line, create or open the project, then present the onboarding questions below only for missing facts. Save answers to `brief.json` and append an `onboarding` event to `journal.jsonl` before designing.
+- **Direct brief**: do not force onboarding questions for facts that can be safely assumed. Record assumptions in `brief.json`, preserve every user requirement in `spec.md`, and start the normal internal route.
+- **Resume**: read the journal tail and project state first, state the resume phase in one line, and never re-ask saved answers.
+
+The onboarding is a conversational form, not a feature tour. Ask at most one compact round of up to four questions. Never expose the internal gate list unless the user asks about it.
 
 You have been pointed here by a link; that means: become operational fast, read only what the task needs, and produce original motion design under the kit contract.
 

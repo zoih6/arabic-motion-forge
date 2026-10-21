@@ -12,7 +12,7 @@ save('project.json',{'id':a.name,'topic':a.topic,'kit_contract':2,'width':a.widt
 save('style.json',{'palette':[],'fonts':[],'material_language':'','composition_grammar':'','camera_grammar':'','motif':'','reason_for_subject':'','type_system':{'display':'','body':'','numerals':'','size_ladder':'','broken_rule':''},'signature_move':'','forbidden_tropes':[],'escalation':''})
 save('originality.json',{'declared_new_composition':False,'reference_lessons':[],'differences_from_references':[],'copied_scene_imports':[]})
 save('layer-plan.json',{'scenes':[]})
-save('brief.json',{'message':'','audience':'','assets':[],'narration':None,'approval':'pending'})
+save('brief.json',{'message':'','audience':'','assets':[],'narration':None,'approval':'pending','onboarding':{'status':'pending','answers':{},'source':None}})
 (r/'spec.md').write_text("""# Production spec
 
 ## Objective
