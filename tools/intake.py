@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """First-touch intake: greet + exactly 5 option-questions, record answers into a new project,
 or auto-derive answers from the user's own request when they skip the form. Stdlib only."""
-import argparse, json, re, subprocess, sys
+import argparse, json, re, subprocess, sys, time
 from pathlib import Path
 import os
 KIT = Path(__file__).resolve().parent.parent
@@ -50,7 +50,12 @@ def record(answers, name, dest):
     bp = proj/"brief.json"
     brief = json.loads(bp.read_text()) if bp.exists() else {}
     brief["intake"] = {"answers":answers,"assumed":[k for k,v in (answers or {}).items() if v in (None,"default")]}
+    brief.setdefault("onboarding", {})["status"] = "complete"
+    brief["onboarding"]["answers"] = answers
     bp.write_text(json.dumps(brief, ensure_ascii=False, indent=2)+"\n")
+    journal = proj / "journal.jsonl"
+    event = {"ts": time.strftime("%Y-%m-%dT%H:%M:%S%z"), "kind":"onboarding", "event":"intake answers saved", "fields":sorted(answers), "next":"reframe brief into spec.md, then directions"}
+    with journal.open("a", encoding="utf-8") as fh: fh.write(json.dumps(event, ensure_ascii=False)+"\n")
     print(json.dumps({"project":str(proj),"ok":True,"one_line":f"مشروع «{name}» جاهز — {flags.get('seconds','?')}s · {flags.get('width','?')}×{flags.get('height','?')} — أبدأ بإعادة الصياغة"}, ensure_ascii=False))
 
 def defaults(text):

@@ -9,16 +9,13 @@ compatibility: Linux/macOS; Python 3.11+ and Node 18+ for tools; Chromium+FFmpeg
 
 ## Activation contract — highest priority
 
-Classify the user's first message before loading tools or production references:
+Use `tools/intake.py` as the only first-touch router:
 
-- **Activation only** (`install`, `ثبت`, `فعّل`, `شغّل`, `ابدأ المهارة`, with no brief): do not run tools, inspect files, explain the architecture, or list features. Reply with exactly:
-  `مرحباً بك في استديو عربي موشن.`
-  `وش تحب نصمم اليوم؟`
-- **New brief**: greet in one short line, create or open the project, then present the onboarding questions below only for missing facts. Save answers to `brief.json` and append an `onboarding` event to `journal.jsonl` before designing.
-- **Direct brief**: do not force onboarding questions for facts that can be safely assumed. Record assumptions in `brief.json`, preserve every user requirement in `spec.md`, and start the normal internal route.
+- **First touch with no brief** (`install`, `ثبت`, `فعّل`, `شغّل`, or a bare start): run `python3 tools/intake.py --emit`, show its greeting and exactly five option questions through the host question tool when available, then record answers with `--record`. Do not show JSON, diagnostics, architecture, or feature tours.
+- **Direct brief**: run `python3 tools/intake.py --defaults --text '<user message>'`, use the derived answers silently, ask at most one blocking question, and start the normal route.
 - **Resume**: read the journal tail and project state first, state the resume phase in one line, and never re-ask saved answers.
 
-The onboarding is a conversational form, not a feature tour. Ask at most one compact round of up to four questions. Never expose the internal gate list unless the user asks about it.
+The intake answers are saved in `intake.json`, `brief.json`, and `journal.jsonl`. The intake form is the onboarding UI; all production gates and quality contracts remain active after it.
 
 You have been pointed here by a link; that means: become operational fast, read only what the task needs, and produce original motion design under the kit contract.
 
@@ -30,10 +27,10 @@ You have been pointed here by a link; that means: become operational fast, read 
 ## First response on a fresh session (target < 60 s)
 
 1. Bootstrap the kit (see `AGENTS.md` §0). Skip if already present.
-2. `python3 <kit>/tools/doctor.py` — one JSON summary; do not re-read other files to double-check it.
+2. On first touch, use `tools/intake.py --emit`; run `doctor.py` only when the environment is missing or broken.
 3. If a project exists at the stated path: read `journal.jsonl` tail + `project.json`, resume from the recorded next step. Do not re-ask answered questions; do not re-run completed renders.
 3b. Gates in ONE call: `python3 tools/gate.py <dir>/project.json [--stage final]`.
-4. New project: `python3 tools/new_project.py ...`, then collect only genuinely missing brief facts in one short message (max 3–4 questions).
+4. New project: use `tools/intake.py --record` after the five answers; it creates the project and preserves the answers before production begins.
 
 ## Route table — load exactly what matches
 
