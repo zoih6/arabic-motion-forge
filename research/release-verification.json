@@ -45,5 +45,30 @@
       "notes": "installer SHA256SUMS parser now tolerant to size field; full report only in install-report.json"
     },
     "fix": "silent self-preparing setup: install.sh warms render deps in background; AGENTS §0 verbatim ≤5-line first-reply template + NEVER-DUMP list enforced by validate_kit"
+  },
+  "release_2_4_0": {
+    "date": "2026-10-21",
+    "tag": "v2.4.0",
+    "commit": "83fd5e1",
+    "core_sha256": "eb9e0a7e391e694708b0db5efae5d32f4d76e71ad7f394bbda7a1d40cf9993a3",
+    "core_bytes": 1222532,
+    "files": 412,
+    "checks": {
+      "validate_kit": "159/159",
+      "node": "27/27",
+      "browser": "18/18",
+      "compat": "PASS"
+    },
+    "skill_native": {
+      "kit_dest": "~/.motion-forge",
+      "personal_skill": "~/.claude/skills/arabic-motion-forge/SKILL.md",
+      "workspace_pollution": "none (cold-field-tested)"
+    },
+    "first_touch": "greeting + exactly 5 option-questions (intake.py --emit); --record scaffolds project+brief; --defaults auto-derives from unprompted tasks",
+    "cold_field_test": "1 output line · digest verified · installed kit validate 159/159 · skill registered non-empty",
+    "installer_hardening": [
+      "SHA256SUMS parser tolerant to size field",
+      "cache-buster query on release downloads (defeats stale CDN copies after asset swaps)"
+    ]
   }
 }
