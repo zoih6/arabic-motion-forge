@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.4.1 — 2026-10-21 — vendor-first production spine
+- Every video request now routes through `workflows/vendor-bridge.md` and the selected `vendor/ai-film-studio` route before local scene work.
+- New projects initialize `vendor-bridge.json`; local gates reject incomplete vendor handoffs.
+- The release archive now includes the bridge, launcher updates, and the corrected intake-to-production flow, so the curl installer matches `main`.
+
 ## 2.4.0 — 2026-10-21 — skill-native install + studio intake
 - Install is now skill-native per Claude/Codex skill conventions: kit lands in `~/.motion-forge` (never the workspace), a personal skill is auto-registered at `~/.claude/skills/arabic-motion-forge` (thin launcher → kit; progressive disclosure), render engines still warm silently in background. One READY line, no JSON dumps (full report stays in `install-report.json`).
 - First touch is a real studio onboarding, not a status report: greeting + EXACTLY 5 kickoff questions with options (`tools/intake.py --emit`, via the host question tool when available; numbered inline otherwise). Answers scaffold the project (`intake.py --record` → new_project --quick + `intake.json` + brief patch).
