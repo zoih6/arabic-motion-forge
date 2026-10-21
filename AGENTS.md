@@ -21,7 +21,7 @@ python3 -c "import urllib.request;urllib.request.urlretrieve('https://raw.github
  && python3 /tmp/iamf.py --repo zoih6/arabic-motion-forge --destination ./motion-forge
 ```
 
-Then `python3 ./motion-forge/tools/doctor.py`. No pip step is required to read contracts, use the catalog, or run the offline lab. Renderer installs happen only when a render is actually requested (`tools/bootstrap.py --install`). Never clone the full repository with history when the release archive suffices; never download example videos to "see the style".
+The installer registers the personal skill and warms render dependencies in the background. Do not run or paste `doctor.py` output in the normal first-touch flow; use `python3 ~/.motion-forge/tools/doctor.py` only when the environment is missing or broken. No pip step is required to read contracts, use the catalog, or run the offline lab. Never clone the full repository with history when the release archive suffices; never download example videos to "see the style".
 
 ## 0.5 First-reply budget + fast lane
 

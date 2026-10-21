@@ -10,8 +10,9 @@ The one-liner follows agent-skill conventions: kit → `~/.motion-forge`, person
 
 ```sh
 curl -fsSL https://raw.githubusercontent.com/zoih6/arabic-motion-forge/main/install.sh | sh
-python3 ./motion-forge/tools/doctor.py
 ```
+
+بعد التثبيت قل للوكيل: `ثبت المهارة` أو أرسل طلبك مباشرة. لا تشغّل `doctor.py` في المسار الطبيعي؛ استخدم `python3 ~/.motion-forge/tools/doctor.py` فقط إذا ظهرت مشكلة في البيئة.
 
 Any agent anywhere: fetch `AGENTS.md` + `SKILL.md` from this repo root and follow §0. On first touch, `tools/intake.py --emit` supplies the greeting and five option questions; `--record` saves answers and starts the project. A direct production brief uses `--defaults` and starts without redundant questions. Pinned older version: `--tag v1.0.0` on `tools/install_from_release.py`. Renderer deps (Chromium/FFmpeg) only when you actually render: `tools/bootstrap.py --install`.
 
